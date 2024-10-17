@@ -44,7 +44,7 @@ namespace User_setup
             pictureBox2.BackColor = Color.LightGray;
         }
 
-  
+
         private void richTextBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar))
@@ -56,6 +56,7 @@ namespace User_setup
         private void richTextBox3_Leave(object sender, EventArgs e)
         {
             string input = Date_TextBox.Text;
+            if (input == "") { return; }
             if (!Validation_class.IsValidDate_match_with_mask(input))
             {
                 Date_TextBox.Clear();
@@ -121,13 +122,21 @@ namespace User_setup
         {
             if (char.IsLetter(e.KeyChar) && e.KeyChar >= 'А' && e.KeyChar <= 'я')
             {
+                Only_english.Visible = true;
                 e.Handled = true;
+
+            }
+            else
+            {
+                Only_english.Visible = false;
             }
 
             if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = true;
+                Only_english.Visible = true;
             }
+
         }
 
         private void Name_TextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -135,11 +144,17 @@ namespace User_setup
             if (char.IsLetter(e.KeyChar) && e.KeyChar >= 'А' && e.KeyChar <= 'я')
             {
                 e.Handled = true;
+                Name_ne_dayet.Visible = true;
+            }
+            else
+            {
+                Name_ne_dayet.Visible = false;
             }
 
             if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = true;
+                Name_ne_dayet.Visible = true;
             }
         }
 
@@ -148,11 +163,19 @@ namespace User_setup
             if (char.IsLetter(e.KeyChar) && e.KeyChar >= 'А' && e.KeyChar <= 'я')
             {
                 e.Handled = true;
+                interest_ne_daet.Visible = true;
+
+            }
+            else
+            {
+                interest_ne_daet.Visible = false;
             }
 
             if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = true;
+                interest_ne_daet.Visible = true;
+
             }
         }
 
@@ -163,6 +186,80 @@ namespace User_setup
 
         }
 
-        
+        private void clear_int_Click(object sender, EventArgs e)
+        {
+            Interests_TextBox.Clear();
+        }
+
+        private void Date_TextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clear_date_Click(object sender, EventArgs e)
+        {
+            Date_TextBox.Clear();
+        }
+
+        private void clear_name_Click(object sender, EventArgs e)
+        {
+            Name_TextBox.Clear();
+        }
+
+        private void clear_usrname_Click(object sender, EventArgs e)
+        {
+            UserName_TextBox.Clear();
+        }
+
+
+
+        private void Only_english_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserName_TextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserName_TextBox_Leave(object sender, EventArgs e)
+        {
+            Only_english.Visible = false;
+        }
+
+        private void Only_english_ChangeUICues(object sender, UICuesEventArgs e)
+        {
+
+        }
+
+        private void Name_TextBox_Leave(object sender, EventArgs e)
+        {
+            interest_ne_daet.Visible = false;
+        }
+
+        private void interest_ne_daet_Leave(object sender, EventArgs e)
+        {
+            interest_ne_daet.Visible = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Date_TextBox_Enter(object sender, EventArgs e)
+        {
+            date_label_type.Visible = false;
+        }
+
+        private void date_label_type_Leave(object sender, EventArgs e)
+        {
+            if (Date_TextBox.Text == "")
+            {
+                date_label_type.Visible = true;
+            }
+
+        }
     }
 }
