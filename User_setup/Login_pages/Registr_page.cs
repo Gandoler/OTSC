@@ -55,7 +55,7 @@ namespace User_Interface.Login_pages
             txtPassword.PasswordChar = '*';
         }
 
-        
+
         private void Show_pass_CheckedChanged(object sender, EventArgs e)
         {
             if (Show_pass.Checked)
@@ -89,6 +89,6 @@ namespace User_Interface.Login_pages
             }
         }
 
-        
+       
     }
 }
