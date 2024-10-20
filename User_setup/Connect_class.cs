@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace User_Interface
 {
-    internal class Connect_class
+    public class Connect_class
     {
         [JsonPropertyName("Server")]
         public string Server { get; set; }

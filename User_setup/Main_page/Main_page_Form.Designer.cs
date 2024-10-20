@@ -1,6 +1,6 @@
 ﻿namespace User_setup
 {
-    partial class Main_page
+    partial class Main_page_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_page));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_page_Form));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Add_button = new Guna.UI2.WinForms.Guna2GradientButton();
             Update_button = new Guna.UI2.WinForms.Guna2GradientButton();
             pictureBox2 = new PictureBox();
@@ -73,7 +73,7 @@
             // 
             Add_button.AutoRoundedCorners = true;
             Add_button.BorderRadius = 24;
-            Add_button.CustomizableEdges = customizableEdges11;
+            Add_button.CustomizableEdges = customizableEdges1;
             Add_button.DisabledState.BorderColor = Color.DarkGray;
             Add_button.DisabledState.CustomBorderColor = Color.DarkGray;
             Add_button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -85,7 +85,7 @@
             Add_button.ForeColor = Color.Black;
             Add_button.Location = new Point(12, 441);
             Add_button.Name = "Add_button";
-            Add_button.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            Add_button.ShadowDecoration.CustomizableEdges = customizableEdges2;
             Add_button.Size = new Size(103, 50);
             Add_button.TabIndex = 1;
             Add_button.Text = "Add";
@@ -95,7 +95,7 @@
             // 
             Update_button.AutoRoundedCorners = true;
             Update_button.BorderRadius = 24;
-            Update_button.CustomizableEdges = customizableEdges13;
+            Update_button.CustomizableEdges = customizableEdges3;
             Update_button.DisabledState.BorderColor = Color.DarkGray;
             Update_button.DisabledState.CustomBorderColor = Color.DarkGray;
             Update_button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -107,7 +107,7 @@
             Update_button.ForeColor = Color.Black;
             Update_button.Location = new Point(121, 441);
             Update_button.Name = "Update_button";
-            Update_button.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            Update_button.ShadowDecoration.CustomizableEdges = customizableEdges4;
             Update_button.Size = new Size(103, 50);
             Update_button.TabIndex = 3;
             Update_button.Text = "Update";
@@ -138,26 +138,26 @@
             // 
             // Data_table
             // 
-            dataGridViewCellStyle4.BackColor = Color.White;
-            Data_table.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            Data_table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            Data_table.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            Data_table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             Data_table.ColumnHeadersHeight = 4;
             Data_table.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            Data_table.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            Data_table.DefaultCellStyle = dataGridViewCellStyle3;
             Data_table.GridColor = Color.FromArgb(231, 229, 255);
             Data_table.Location = new Point(342, 58);
             Data_table.Name = "Data_table";
@@ -276,7 +276,7 @@
             // 
             Delete_button.AutoRoundedCorners = true;
             Delete_button.BorderRadius = 24;
-            Delete_button.CustomizableEdges = customizableEdges15;
+            Delete_button.CustomizableEdges = customizableEdges5;
             Delete_button.DisabledState.BorderColor = Color.DarkGray;
             Delete_button.DisabledState.CustomBorderColor = Color.DarkGray;
             Delete_button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -288,7 +288,7 @@
             Delete_button.ForeColor = Color.Black;
             Delete_button.Location = new Point(230, 441);
             Delete_button.Name = "Delete_button";
-            Delete_button.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            Delete_button.ShadowDecoration.CustomizableEdges = customizableEdges6;
             Delete_button.Size = new Size(103, 50);
             Delete_button.TabIndex = 17;
             Delete_button.Text = "Delete";
@@ -305,11 +305,11 @@
             clear_name.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             clear_name.FillColor = Color.FromArgb(105, 214, 172);
             clear_name.FillColor2 = Color.FromArgb(192, 255, 165);
-            clear_name.Font = new Font("Showcard Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            clear_name.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             clear_name.ForeColor = Color.Black;
             clear_name.Location = new Point(299, 196);
             clear_name.Name = "clear_name";
-            clear_name.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            clear_name.ShadowDecoration.CustomizableEdges = customizableEdges7;
             clear_name.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             clear_name.Size = new Size(34, 31);
             clear_name.TabIndex = 18;
@@ -327,11 +327,11 @@
             clear_usrname.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             clear_usrname.FillColor = Color.FromArgb(105, 214, 172);
             clear_usrname.FillColor2 = Color.FromArgb(192, 255, 165);
-            clear_usrname.Font = new Font("Showcard Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            clear_usrname.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             clear_usrname.ForeColor = Color.Black;
             clear_usrname.Location = new Point(299, 114);
             clear_usrname.Name = "clear_usrname";
-            clear_usrname.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            clear_usrname.ShadowDecoration.CustomizableEdges = customizableEdges8;
             clear_usrname.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             clear_usrname.Size = new Size(34, 31);
             clear_usrname.TabIndex = 19;
@@ -349,11 +349,11 @@
             clear_date.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             clear_date.FillColor = Color.FromArgb(105, 214, 172);
             clear_date.FillColor2 = Color.FromArgb(192, 255, 165);
-            clear_date.Font = new Font("Showcard Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            clear_date.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             clear_date.ForeColor = Color.Black;
             clear_date.Location = new Point(299, 279);
             clear_date.Name = "clear_date";
-            clear_date.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            clear_date.ShadowDecoration.CustomizableEdges = customizableEdges9;
             clear_date.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             clear_date.Size = new Size(34, 31);
             clear_date.TabIndex = 20;
@@ -371,11 +371,11 @@
             clear_int.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             clear_int.FillColor = Color.FromArgb(105, 214, 172);
             clear_int.FillColor2 = Color.FromArgb(192, 255, 165);
-            clear_int.Font = new Font("Showcard Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            clear_int.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             clear_int.ForeColor = Color.Black;
             clear_int.Location = new Point(299, 362);
             clear_int.Name = "clear_int";
-            clear_int.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            clear_int.ShadowDecoration.CustomizableEdges = customizableEdges10;
             clear_int.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             clear_int.Size = new Size(34, 31);
             clear_int.TabIndex = 21;
@@ -386,11 +386,11 @@
             // 
             Only_english.AutoSize = true;
             Only_english.BackColor = Color.White;
-            Only_english.Font = new Font("Centaur", 32.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Only_english.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             Only_english.ForeColor = Color.IndianRed;
-            Only_english.Location = new Point(12, 105);
+            Only_english.Location = new Point(32, 114);
             Only_english.Name = "Only_english";
-            Only_english.Size = new Size(274, 48);
+            Only_english.Size = new Size(192, 31);
             Only_english.TabIndex = 22;
             Only_english.Text = "Write on ENG";
             Only_english.Visible = false;
@@ -401,11 +401,11 @@
             // 
             interest_ne_daet.AutoSize = true;
             interest_ne_daet.BackColor = Color.White;
-            interest_ne_daet.Font = new Font("Centaur", 32.25F, FontStyle.Bold | FontStyle.Italic);
+            interest_ne_daet.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold | FontStyle.Italic);
             interest_ne_daet.ForeColor = Color.IndianRed;
-            interest_ne_daet.Location = new Point(12, 354);
+            interest_ne_daet.Location = new Point(32, 362);
             interest_ne_daet.Name = "interest_ne_daet";
-            interest_ne_daet.Size = new Size(274, 48);
+            interest_ne_daet.Size = new Size(192, 31);
             interest_ne_daet.TabIndex = 23;
             interest_ne_daet.Text = "Write on ENG";
             interest_ne_daet.Visible = false;
@@ -415,11 +415,11 @@
             // 
             Name_ne_dayet.AutoSize = true;
             Name_ne_dayet.BackColor = Color.White;
-            Name_ne_dayet.Font = new Font("Centaur", 32.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Name_ne_dayet.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold | FontStyle.Italic);
             Name_ne_dayet.ForeColor = Color.IndianRed;
-            Name_ne_dayet.Location = new Point(12, 188);
+            Name_ne_dayet.Location = new Point(32, 196);
             Name_ne_dayet.Name = "Name_ne_dayet";
-            Name_ne_dayet.Size = new Size(274, 48);
+            Name_ne_dayet.Size = new Size(192, 31);
             Name_ne_dayet.TabIndex = 24;
             Name_ne_dayet.Text = "Write on ENG";
             Name_ne_dayet.Visible = false;
@@ -428,17 +428,17 @@
             // 
             date_label_type.AutoSize = true;
             date_label_type.BackColor = Color.White;
-            date_label_type.Font = new Font("Centaur", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            date_label_type.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold | FontStyle.Italic);
             date_label_type.ForeColor = Color.IndianRed;
-            date_label_type.Location = new Point(189, 284);
+            date_label_type.Location = new Point(32, 279);
             date_label_type.Name = "date_label_type";
-            date_label_type.Size = new Size(104, 21);
+            date_label_type.Size = new Size(170, 31);
             date_label_type.TabIndex = 25;
             date_label_type.Text = "dd.mm.yyyy";
             date_label_type.Click += label1_Click;
             date_label_type.Leave += date_label_type_Leave;
             // 
-            // Main_page
+            // Main_page_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -467,7 +467,7 @@
             Controls.Add(Update_button);
             Controls.Add(Add_button);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Main_page";
+            Name = "Main_page_Form";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             Load += Main_page_Load;

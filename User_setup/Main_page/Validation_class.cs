@@ -2,7 +2,7 @@
 
 namespace User_Interface.Main_page
 {
-    static class Validation_class
+    public static class Validation_class
     {
         public static bool IsValidDate_match_with_mask(string input)
         { 
