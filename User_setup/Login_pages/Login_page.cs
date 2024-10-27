@@ -72,7 +72,7 @@ namespace User_setup
             if (login)
             {
                 this.Hide();
-                new Main_page(userId).Show();
+                new Main_page_Form(userId).Show();
                 
                 
 

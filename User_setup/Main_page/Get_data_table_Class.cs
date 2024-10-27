@@ -4,7 +4,7 @@ using System.Data;
 
 namespace User_Interface.Main_page
 {
-    internal class Get_data_table_Class
+    public class Get_data_table_Class
     {
         Connect_class connec_Class;
 
