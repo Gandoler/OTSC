@@ -1,4 +1,4 @@
-###***[Серверная часть приложения]([https://github.com/username/my-awesome-project](https://github.com/Gandoler/Cpo_server))***
+####***[Серверная часть приложения]([https://github.com/username/my-awesome-project](https://github.com/Gandoler/Cpo_server))***
 
 ### 1. **Перечень технологий для реализации проекта**
 
