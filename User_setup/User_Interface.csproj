@@ -20,6 +20,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Properties\Settings1.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings1.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -33,11 +38,16 @@
     <None Update="Old_content\Data\Data_config_for_app.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Properties\Settings1.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Login_page_mvp\Presenter\" />
-    <Folder Include="Login_page_mvp\Model\" />
+    <Folder Include="Login_page_mvp\Login\Model\" />
+    <Folder Include="Login_page_mvp\Registration\" />
+    <Folder Include="Login_page_mvp\Forgor_password\" />
   </ItemGroup>
 
 

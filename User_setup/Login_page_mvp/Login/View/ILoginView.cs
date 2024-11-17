@@ -9,10 +9,10 @@ namespace User_Interface.Login_page_mvp.View
     internal interface ILoginView
     {
 
-        string Login_text { get; init; }
-        string Password_text { get; init; }
 
-
+        event EventHandler Exit;
+        event EventHandler<string> leaveTextBox;
+        event EventHandler<bool> clickTextBox;
         void UpdateUI();
 
     }

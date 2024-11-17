@@ -15,7 +15,7 @@ namespace User_setup
             long ID = 314627387;//менять
             //SSSS
             
-            Application.Run(new LoginForm());
+            Application.Run(new formLogin());
             //Application.Run(new Main_page_Form(ID));
 
         }
