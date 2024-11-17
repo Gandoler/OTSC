@@ -1,11 +1,11 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace User_Interface.Main_page
+namespace User_Interface.Old_content.Main_page
 {
     public static class Validation_class
     {
         public static bool IsValidDate_match_with_mask(string input)
-        { 
+        {
             string pattern = @"^\d{2}.\d{2}.\d{4}$";
             if (Regex.IsMatch(input, pattern))
             {
@@ -57,8 +57,8 @@ namespace User_Interface.Main_page
             }
 
             // Проверка на будущее
-            if ((Year == currentYear && Month > currentMonth) ||
-                (Year == currentYear && Month == currentMonth && Day > currentDay))
+            if (Year == currentYear && Month > currentMonth ||
+                Year == currentYear && Month == currentMonth && Day > currentDay)
             {
                 MessageBox.Show("Вы в будущем:)", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;

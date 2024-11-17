@@ -30,9 +30,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Data\Data_config_for_app.json">
+    <None Update="Old_content\Data\Data_config_for_app.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Login_page_mvp\Presenter\" />
+    <Folder Include="Login_page_mvp\Model\" />
   </ItemGroup>
 
 

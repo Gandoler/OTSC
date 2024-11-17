@@ -1,7 +1,7 @@
 ﻿
 using Guna.UI2.WinForms;
-using User_Interface;
-using User_Interface.Main_page;
+using User_Interface.Old_content;
+using User_Interface.Old_content.Main_page;
 
 
 namespace User_setup
