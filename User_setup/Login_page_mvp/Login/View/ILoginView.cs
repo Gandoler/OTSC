@@ -8,6 +8,9 @@ namespace User_Interface.Login_page_mvp.View
 {
     internal interface ILoginView 
     {
+        string Login { get; }
+        string Password { get; }
+        string ConfirmPassword { get; }
 
 
         event EventHandler ExitApl;
@@ -15,6 +18,8 @@ namespace User_Interface.Login_page_mvp.View
         event EventHandler<string> leaveSecondPasswordTextBox;
         event EventHandler<string> leaveLoginTextBox;
         event EventHandler<bool> clickTextBox;
+        void ShowPasswordMismatchMessageBox(string message); 
+        void ClearPasswords(); 
 
     }
 }

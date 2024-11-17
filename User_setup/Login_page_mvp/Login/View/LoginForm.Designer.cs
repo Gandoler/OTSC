@@ -169,6 +169,7 @@ namespace User_Interface.Login_page_mvp.View
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             UseWaitCursor = true;
+            
             panelBackTitle.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();

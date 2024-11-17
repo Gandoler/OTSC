@@ -18,14 +18,33 @@ namespace User_Interface.Login_page_mvp.Login.Presenter
         private string _login { get; set; }
         private bool _theme { get; set; }
 
-        public Presenter(ILoginView _loginView, Imodelka _imodelka)
+        public Presenter(ILoginView loginView, Imodelka imodelka)
         {
+            _loginView = loginView ?? throw new ArgumentNullException(nameof(loginView));
+            _imodelka = imodelka ?? throw new ArgumentNullException(nameof(imodelka));
+
             _loginView.ExitApl += _loginView_Exit;
-            _loginView.leaveLoginTextBox += EnterLogin;
+            _loginView.leaveLoginTextBox += LeaveLogin;
+            _loginView.leavePasswordTextBox += LeavePassword;
+            _loginView.leaveSecondPasswordTextBox += Leave_second_check;
+
+        }
+
+        private void Leave_second_check(object? sender, string e)
+        {
+            
+
+                _loginView.ClearPasswords();
+                _loginView.ShowPasswordMismatchMessageBox("Miss psw");
             
         }
 
-        private void EnterLogin(object? sender, string e)
+        private void LeavePassword(object? sender, string e)
+        {
+            _password = e;
+        }
+
+        private void LeaveLogin(object? sender, string e)
         {
             _login = e;
         }
