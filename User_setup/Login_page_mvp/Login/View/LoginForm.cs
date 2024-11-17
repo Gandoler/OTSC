@@ -15,11 +15,12 @@ namespace User_Interface.Login_page_mvp.View
         public formLogin()
         {
             InitializeComponent();
-            textBoxLogin.Leave += (s, e) => leaveTextBox?.Invoke(this, textBoxLogin.Text);
-            textBoxPassword.Leave += (s, e) => leaveTextBox?.Invoke(this, textBoxPassword.Text);
-            textBoxSecPasswordT.Leave += (s, e) => leaveTextBox?.Invoke(this, textBoxSecPasswordT.Text);
+            textBoxLogin.Leave += (s, e) => leaveLoginTextBox?.Invoke(this, textBoxLogin.Text);
+            textBoxPassword.Leave += (s, e) => leavePasswordTextBox?.Invoke(this, textBoxPassword.Text);
+            textBoxSecPasswordT.Leave += (s, e) => leaveSecondPasswordTextBox?.Invoke(this, textBoxSecPasswordT.Text);
             checkBoxSWhowPsw.Click += (s, e) => clickTextBox?.Invoke(this, checkBoxSWhowPsw.Checked);
-            buttonExit.Click += (s,e) => Exit?.Invoke(this,EventArgs.Empty);
+            buttonExit.Click += (s, e) => ExitApl?.Invoke(this, EventArgs.Empty);
+
         }
 
 
@@ -27,15 +28,10 @@ namespace User_Interface.Login_page_mvp.View
 
         
 
-        public event EventHandler<string> leaveTextBox;
+        public event EventHandler<string> leavePasswordTextBox;
         public event EventHandler<bool> clickTextBox;
-        public event EventHandler Exit;
-
-        public void UpdateUI()
-        {
-            this.Update();
-        }
-
-        
+        public event EventHandler ExitApl;
+        public event EventHandler<string> leaveSecondPasswordTextBox;
+        public event EventHandler<string> leaveLoginTextBox;
     }
 }

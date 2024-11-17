@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace User_Interface.Login_page_mvp.View
 {
-    internal interface ILoginView
+    internal interface ILoginView 
     {
 
 
-        event EventHandler Exit;
-        event EventHandler<string> leaveTextBox;
+        event EventHandler ExitApl;
+        event EventHandler<string> leavePasswordTextBox;
+        event EventHandler<string> leaveSecondPasswordTextBox;
+        event EventHandler<string> leaveLoginTextBox;
         event EventHandler<bool> clickTextBox;
-        void UpdateUI();
 
     }
 }
