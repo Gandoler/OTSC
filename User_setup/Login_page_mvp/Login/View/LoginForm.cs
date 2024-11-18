@@ -33,7 +33,7 @@ namespace User_Interface.Login_page_mvp.View
             // 
             // checkBoxSWhowPsw
             // 
-            checkBoxSWhowPsw.Click += (s, e) => show_Psw?.Invoke(this, checkBoxSWhowPsw.Checked);
+            checkBoxSWhowPsw.CheckedChanged += (s, e) => show_Psw?.Invoke(this, checkBoxSWhowPsw.Checked);
             // 
             // buttonExit
             // 
@@ -77,6 +77,8 @@ namespace User_Interface.Login_page_mvp.View
         public void ShowPsw()
         {
             textBoxSecPasswordT_def.UseSystemPasswordChar = false;
+            textBoxPassword_def.UseSystemPasswordChar = false;
+
         }
 
         public void UnBlockSecPsw()
@@ -87,6 +89,8 @@ namespace User_Interface.Login_page_mvp.View
         public void UnShowPsw()
         {
             textBoxSecPasswordT_def.UseSystemPasswordChar = true;
+            textBoxPassword_def.UseSystemPasswordChar = true;
+
         }
     }
 }
