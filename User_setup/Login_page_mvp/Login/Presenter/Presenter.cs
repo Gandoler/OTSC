@@ -30,7 +30,19 @@ namespace User_Interface.Login_page_mvp.Login.Presenter
             _loginView.leavePasswordTextBox += LeavePassword;
             _loginView.leaveSecondPasswordTextBox += LeaveSecondPswAndCheck;
             _loginView.enter += enterButtonClicked;
+            _loginView.show_Psw += View_show_Psw;
 
+        }
+
+        private void View_show_Psw(object? sender, bool e)
+        {
+            if (e)
+            {
+                _loginView.ShowPsw();
+            }
+            else{
+                _loginView.UnShowPsw();
+            }
         }
 
         private void enterButtonClicked(object? sender, EventArgs e)

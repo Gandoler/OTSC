@@ -22,14 +22,14 @@ namespace User_Interface.Login_page_mvp.View
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Leave += (s, e) => leavePasswordTextBox?.Invoke(this, textBoxPassword.Text);
-            textBoxPassword.KeyDown += (s, e) => leavePasswordTextBox?.Invoke(this, textBoxPassword.Text);
-
+            textBoxPassword_def.Leave += (s, e) => leavePasswordTextBox?.Invoke(this, textBoxPassword_def.Text);
+            textBoxPassword_def.KeyDown += (s, e) => leavePasswordTextBox?.Invoke(this, textBoxPassword_def.Text);
+                
             // 
             // textBoxSecPasswordT
             // 
-            textBoxSecPasswordT.Leave += (s, e) => leaveSecondPasswordTextBox?.Invoke(this, textBoxSecPasswordT.Text);
-            textBoxSecPasswordT.KeyDown += (s, e) => leaveSecondPasswordTextBox?.Invoke(this, textBoxSecPasswordT.Text);
+            textBoxSecPasswordT_def.Leave += (s, e) => leaveSecondPasswordTextBox?.Invoke(this, textBoxSecPasswordT_def.Text);
+            textBoxSecPasswordT_def.KeyDown += (s, e) => leaveSecondPasswordTextBox?.Invoke(this, textBoxSecPasswordT_def.Text);
             // 
             // checkBoxSWhowPsw
             // 
@@ -45,8 +45,8 @@ namespace User_Interface.Login_page_mvp.View
         }
 
 
-        public string Password => textBoxPassword.Text;
-        public string ConfirmPassword => textBoxSecPasswordT.Text;
+        public string Password => textBoxPassword_def.Text;
+        public string ConfirmPassword => textBoxSecPasswordT_def.Text;
 
         public string Login => textBoxLogin.Text;
 
@@ -59,13 +59,13 @@ namespace User_Interface.Login_page_mvp.View
 
         public void BlockSecPsw()
         {
-            textBoxSecPasswordT.Enabled = false;
+            textBoxSecPasswordT_def.Enabled = false;
         }
 
         public void ClearPasswords()
         {
-            textBoxPassword.Text = "";
-            textBoxSecPasswordT.Text = "";
+            textBoxPassword_def.Text = "";
+            textBoxSecPasswordT_def.Text = "";
             
         }
 
@@ -76,17 +76,17 @@ namespace User_Interface.Login_page_mvp.View
 
         public void ShowPsw()
         {
-           
+            textBoxSecPasswordT_def.UseSystemPasswordChar = false;
         }
 
         public void UnBlockSecPsw()
         {
-            textBoxSecPasswordT.Enabled = true;
+            textBoxSecPasswordT_def.Enabled = true;
         }
 
         public void UnShowPsw()
         {
-            throw new NotImplementedException();
+            textBoxSecPasswordT_def.UseSystemPasswordChar = true;
         }
     }
 }

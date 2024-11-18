@@ -31,35 +31,34 @@ namespace User_Interface.Login_page_mvp.View
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
             panelBackTitle = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             buttonExit = new Button();
             textBoxLogin = new RichTextBox();
-            textBoxPassword = new RichTextBox();
-            textBoxSecPasswordT = new RichTextBox();
             buttonForgot = new Button();
             buttonRegistr = new Button();
             buttonEnter = new Button();
             checkBoxSWhowPsw = new Guna.UI2.WinForms.Guna2CheckBox();
+            textBoxSecPasswordT_def = new TextBox();
+            textBoxPassword_def = new TextBox();
             panelBackTitle.SuspendLayout();
             SuspendLayout();
             // 
             // panelBackTitle
             // 
             panelBackTitle.Controls.Add(buttonExit);
-            panelBackTitle.CustomizableEdges = customizableEdges3;
+            panelBackTitle.CustomizableEdges = customizableEdges1;
             panelBackTitle.FillColor = Color.FromArgb(4, 32, 44);
             panelBackTitle.FillColor2 = Color.FromArgb(48, 64, 64);
             panelBackTitle.FillColor3 = Color.FromArgb(91, 112, 101);
             panelBackTitle.FillColor4 = Color.FromArgb(201, 209, 200);
             panelBackTitle.Location = new Point(0, 0);
             panelBackTitle.Name = "panelBackTitle";
-            panelBackTitle.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            panelBackTitle.ShadowDecoration.CustomizableEdges = customizableEdges2;
             panelBackTitle.Size = new Size(800, 35);
-            panelBackTitle.TabIndex = 1;
-            panelBackTitle.UseWaitCursor = true;
+            panelBackTitle.TabIndex = 1;            
             // 
             // buttonExit
             // 
@@ -70,8 +69,7 @@ namespace User_Interface.Login_page_mvp.View
             buttonExit.Size = new Size(30, 35);
             buttonExit.TabIndex = 2;
             buttonExit.Text = "X";
-            buttonExit.UseVisualStyleBackColor = false;
-            buttonExit.UseWaitCursor = true;
+            buttonExit.UseVisualStyleBackColor = false; 
             // 
             // textBoxLogin
             // 
@@ -79,27 +77,7 @@ namespace User_Interface.Login_page_mvp.View
             textBoxLogin.Name = "textBoxLogin";
             textBoxLogin.Size = new Size(168, 51);
             textBoxLogin.TabIndex = 2;
-            textBoxLogin.Text = "";
-            textBoxLogin.UseWaitCursor = true;
-            // 
-            // textBoxPassword
-            // 
-            textBoxPassword.Location = new Point(311, 177);
-            textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(168, 51);
-            textBoxPassword.TabIndex = 3;
-            textBoxPassword.Text = "";
-            textBoxPassword.UseWaitCursor = true;
-            // 
-            // textBoxSecPasswordT
-            // 
-            textBoxSecPasswordT.Enabled = false;
-            textBoxSecPasswordT.Location = new Point(311, 234);
-            textBoxSecPasswordT.Name = "textBoxSecPasswordT";
-            textBoxSecPasswordT.Size = new Size(168, 51);
-            textBoxSecPasswordT.TabIndex = 4;
-            textBoxSecPasswordT.Text = "";
-            textBoxSecPasswordT.UseWaitCursor = true;
+            textBoxLogin.Text = "";            
             // 
             // buttonForgot
             // 
@@ -108,8 +86,7 @@ namespace User_Interface.Login_page_mvp.View
             buttonForgot.Size = new Size(78, 49);
             buttonForgot.TabIndex = 5;
             buttonForgot.Text = "Forgot";
-            buttonForgot.UseVisualStyleBackColor = true;
-            buttonForgot.UseWaitCursor = true;
+            buttonForgot.UseVisualStyleBackColor = true;           
             // 
             // buttonRegistr
             // 
@@ -119,7 +96,6 @@ namespace User_Interface.Login_page_mvp.View
             buttonRegistr.TabIndex = 6;
             buttonRegistr.Text = "Registr";
             buttonRegistr.UseVisualStyleBackColor = true;
-            buttonRegistr.UseWaitCursor = true;
             // 
             // buttonEnter
             // 
@@ -129,7 +105,6 @@ namespace User_Interface.Login_page_mvp.View
             buttonEnter.TabIndex = 7;
             buttonEnter.Text = "Enter";
             buttonEnter.UseVisualStyleBackColor = true;
-            buttonEnter.UseWaitCursor = true;
             // 
             // checkBoxSWhowPsw
             // 
@@ -148,19 +123,40 @@ namespace User_Interface.Login_page_mvp.View
             checkBoxSWhowPsw.UncheckedState.BorderRadius = 0;
             checkBoxSWhowPsw.UncheckedState.BorderThickness = 0;
             checkBoxSWhowPsw.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
-            checkBoxSWhowPsw.UseWaitCursor = true;
+            // 
+            // textBoxSecPasswordT_def
+            // 
+            textBoxSecPasswordT_def.Enabled = false;
+            textBoxSecPasswordT_def.Location = new Point(311, 228);
+            textBoxSecPasswordT_def.Multiline = true;
+            textBoxSecPasswordT_def.Name = "textBoxSecPasswordT_def";
+            textBoxSecPasswordT_def.Size = new Size(168, 46);
+            textBoxSecPasswordT_def.TabIndex = 9;
+            textBoxSecPasswordT_def.PasswordChar = '*';
+            textBoxSecPasswordT_def.UseSystemPasswordChar = false;
+            
+            // 
+            // textBoxPassword_def
+            // 
+            textBoxPassword_def.Location = new Point(311, 177);
+            textBoxPassword_def.Multiline = true;
+            textBoxPassword_def.Name = "textBoxPassword_def";
+            textBoxPassword_def.Size = new Size(168, 45);
+            textBoxPassword_def.TabIndex = 10;
+            textBoxPassword_def.PasswordChar = '*';
+            textBoxPassword_def.UseSystemPasswordChar = false;
             // 
             // formLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 500);
+            Controls.Add(textBoxPassword_def);
+            Controls.Add(textBoxSecPasswordT_def);
             Controls.Add(checkBoxSWhowPsw);
             Controls.Add(buttonEnter);
             Controls.Add(buttonRegistr);
             Controls.Add(buttonForgot);
-            Controls.Add(textBoxSecPasswordT);
-            Controls.Add(textBoxPassword);
             Controls.Add(textBoxLogin);
             Controls.Add(panelBackTitle);
             FormBorderStyle = FormBorderStyle.None;
@@ -169,7 +165,6 @@ namespace User_Interface.Login_page_mvp.View
             Name = "formLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
-            UseWaitCursor = true;
             panelBackTitle.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -179,11 +174,11 @@ namespace User_Interface.Login_page_mvp.View
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelBackTitle;
         private Button buttonExit;
         private RichTextBox textBoxLogin;
-        private RichTextBox textBoxPassword;
-        private RichTextBox textBoxSecPasswordT;
         private Button buttonForgot;
         private Button buttonRegistr;
         private Button buttonEnter;
         private Guna.UI2.WinForms.Guna2CheckBox checkBoxSWhowPsw;
+        private TextBox textBoxSecPasswordT_def;
+        private TextBox textBoxPassword_def;
     }
 }
