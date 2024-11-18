@@ -50,7 +50,7 @@ namespace User_Interface.Login_page_mvp.Login.Presenter
             if (_password.CompareTo(_secPassword) != 0)
             {
                 _loginView.ClearPasswords();
-                _loginView.ShowPasswordMismatchMessageBox("MSG MISMATCH");
+                _loginView.ShowPasswordMismatchMessageBox("Password MISMATCH");
                 _loginView.BlockSecPsw();
             }
             
@@ -67,8 +67,10 @@ namespace User_Interface.Login_page_mvp.Login.Presenter
         private void LeavePassword(object? sender, string e)
         {
             _password = e;
-            _loginView.UnBlockSecPsw();
-
+            if (e.Length > 0)
+            {
+                _loginView.UnBlockSecPsw();
+            }
         }
 
         private void LeaveLogin(object? sender, string e)

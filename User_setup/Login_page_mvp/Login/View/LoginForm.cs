@@ -18,13 +18,13 @@ namespace User_Interface.Login_page_mvp.View
             // 
             // textBoxLogin
             // 
-            textBoxLogin.Leave += (s, e) => leaveLoginTextBox?.Invoke(this, textBoxLogin.Text);
+            textBoxLoginNew.Leave += (s, e) => leaveLoginTextBox?.Invoke(this, textBoxLoginNew.Text);
             // 
             // textBoxPassword
             // 
             textBoxPassword_def.Leave += (s, e) => leavePasswordTextBox?.Invoke(this, textBoxPassword_def.Text);
             textBoxPassword_def.KeyDown += (s, e) => leavePasswordTextBox?.Invoke(this, textBoxPassword_def.Text);
-                
+
             // 
             // textBoxSecPasswordT
             // 
@@ -48,7 +48,7 @@ namespace User_Interface.Login_page_mvp.View
         public string Password => textBoxPassword_def.Text;
         public string ConfirmPassword => textBoxSecPasswordT_def.Text;
 
-        public string Login => textBoxLogin.Text;
+        public string Login => textBoxLoginNew.Text;
 
         public event EventHandler<string> leavePasswordTextBox;
         public event EventHandler<bool> show_Psw;
@@ -66,7 +66,7 @@ namespace User_Interface.Login_page_mvp.View
         {
             textBoxPassword_def.Text = "";
             textBoxSecPasswordT_def.Text = "";
-            
+
         }
 
         public void ShowPasswordMismatchMessageBox(string message)
@@ -92,5 +92,7 @@ namespace User_Interface.Login_page_mvp.View
             textBoxPassword_def.UseSystemPasswordChar = true;
 
         }
+
+       
     }
 }

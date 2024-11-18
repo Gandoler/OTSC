@@ -45,8 +45,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Login_page_mvp\Registration\" />
     <Folder Include="Login_page_mvp\Forgor_password\" />
+    <Folder Include="Login_page_mvp\Registration\Model\" />
+    <Folder Include="Login_page_mvp\Registration\Presenter\" />
+    <Folder Include="Login_page_mvp\Registration\View\" />
   </ItemGroup>
 
 
