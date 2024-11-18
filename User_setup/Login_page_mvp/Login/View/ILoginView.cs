@@ -19,6 +19,7 @@ namespace User_Interface.Login_page_mvp.View
         event EventHandler<string> leaveLoginTextBox;
         event EventHandler<bool> show_Psw;
         event EventHandler enter;
+        event EventHandler<EventArgs> charKeyPresd;
 
         void ShowPasswordMismatchMessageBox(string message); 
         void ClearPasswords(); 
@@ -27,6 +28,8 @@ namespace User_Interface.Login_page_mvp.View
 
         void ShowPsw();
         void UnShowPsw();
+
+       
 
     }
 }

@@ -215,7 +215,7 @@ namespace User_Interface.Login_page_mvp.View
             textBoxLoginNew.MaxLength = 20;
             textBoxLoginNew.MinimumSize = new Size(200, 50);
             textBoxLoginNew.Name = "textBoxLoginNew";
-            textBoxLoginNew.PasswordChar = '*';
+           
             textBoxLoginNew.PlaceholderText = "Login";
             textBoxLoginNew.Size = new Size(200, 50);
             textBoxLoginNew.TabIndex = 12;

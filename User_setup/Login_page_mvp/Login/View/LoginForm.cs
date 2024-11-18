@@ -19,6 +19,7 @@ namespace User_Interface.Login_page_mvp.View
             // textBoxLogin
             // 
             textBoxLoginNew.Leave += (s, e) => leaveLoginTextBox?.Invoke(this, textBoxLoginNew.Text);
+            textBoxLoginNew.KeyPress += (s, e) => charKeyPresd?.Invoke(textBoxLoginNew, e);
             // 
             // textBoxPassword
             // 
@@ -56,11 +57,16 @@ namespace User_Interface.Login_page_mvp.View
         public event EventHandler<string> leaveSecondPasswordTextBox;
         public event EventHandler<string> leaveLoginTextBox;
         public event EventHandler enter;
+        public event EventHandler<EventArgs> charKeyPresd;
+
+       
 
         public void BlockSecPsw()
         {
             textBoxSecPasswordT_def.Enabled = false;
         }
+
+      
 
         public void ClearPasswords()
         {

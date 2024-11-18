@@ -31,6 +31,30 @@ namespace User_Interface.Login_page_mvp.Login.Presenter
             _loginView.leaveSecondPasswordTextBox += LeaveSecondPswAndCheck;
             _loginView.enter += enterButtonClicked;
             _loginView.show_Psw += View_show_Psw;
+            _loginView.charKeyPresd += OnlyEnglishCheck;
+
+        }
+
+        private void OnlyEnglishCheck(object? sender, EventArgs e)
+        {
+            
+            var args = e as KeyPressEventArgs;
+            
+
+            if (args != null)
+            {
+
+
+                if (!(Char.IsLetterOrDigit(args.KeyChar) &&
+                 ((args.KeyChar >= 'A' && args.KeyChar <= 'Z') ||
+                   (args.KeyChar >= 'a' && args.KeyChar <= 'z'))))
+                {
+
+                    args.Handled = true;
+                }
+                
+            }
+
 
         }
 
