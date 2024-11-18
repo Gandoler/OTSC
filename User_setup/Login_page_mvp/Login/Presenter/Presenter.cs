@@ -15,33 +15,48 @@ namespace User_Interface.Login_page_mvp.Login.Presenter
         private Imodelka _imodelka;
 
         private string _password { get; set; }
+        private string _secPassword { get; set; }
         private string _login { get; set; }
         private bool _theme { get; set; }
 
-        public Presenter(ILoginView loginView, Imodelka imodelka)
+        internal Presenter(ILoginView loginView, Imodelka imodelka)
         {
             _loginView = loginView ?? throw new ArgumentNullException(nameof(loginView));
             _imodelka = imodelka ?? throw new ArgumentNullException(nameof(imodelka));
 
             _loginView.ExitApl += _loginView_Exit;
             _loginView.leaveLoginTextBox += LeaveLogin;
+          
             _loginView.leavePasswordTextBox += LeavePassword;
-            _loginView.leaveSecondPasswordTextBox += Leave_second_check;
+            _loginView.leaveSecondPasswordTextBox += LeaveSecondPswAndCheck;
+            _loginView.enter += enterButtonClicked;
 
         }
 
-        private void Leave_second_check(object? sender, string e)
+        private void enterButtonClicked(object? sender, EventArgs e)
         {
-            
-
+            if (_password.CompareTo(_secPassword) != 0)
+            {
                 _loginView.ClearPasswords();
-                _loginView.ShowPasswordMismatchMessageBox("Miss psw");
+                _loginView.ShowPasswordMismatchMessageBox("MSG MISMATCH");
+                _loginView.BlockSecPsw();
+            }
             
+        }
+
+        private void LeaveSecondPswAndCheck(object? sender, string e)
+        {
+            _secPassword = e;
+
+
+
         }
 
         private void LeavePassword(object? sender, string e)
         {
             _password = e;
+            _loginView.UnBlockSecPsw();
+
         }
 
         private void LeaveLogin(object? sender, string e)

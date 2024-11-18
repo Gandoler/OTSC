@@ -17,9 +17,16 @@ namespace User_Interface.Login_page_mvp.View
         event EventHandler<string> leavePasswordTextBox;
         event EventHandler<string> leaveSecondPasswordTextBox;
         event EventHandler<string> leaveLoginTextBox;
-        event EventHandler<bool> clickTextBox;
+        event EventHandler<bool> show_Psw;
+        event EventHandler enter;
+
         void ShowPasswordMismatchMessageBox(string message); 
         void ClearPasswords(); 
+        void BlockSecPsw();
+        void UnBlockSecPsw();
+
+        void ShowPsw();
+        void UnShowPsw();
 
     }
 }

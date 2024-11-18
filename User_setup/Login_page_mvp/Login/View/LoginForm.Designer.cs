@@ -31,8 +31,8 @@ namespace User_Interface.Login_page_mvp.View
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
             panelBackTitle = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             buttonExit = new Button();
@@ -49,14 +49,14 @@ namespace User_Interface.Login_page_mvp.View
             // panelBackTitle
             // 
             panelBackTitle.Controls.Add(buttonExit);
-            panelBackTitle.CustomizableEdges = customizableEdges1;
+            panelBackTitle.CustomizableEdges = customizableEdges3;
             panelBackTitle.FillColor = Color.FromArgb(4, 32, 44);
             panelBackTitle.FillColor2 = Color.FromArgb(48, 64, 64);
             panelBackTitle.FillColor3 = Color.FromArgb(91, 112, 101);
             panelBackTitle.FillColor4 = Color.FromArgb(201, 209, 200);
             panelBackTitle.Location = new Point(0, 0);
             panelBackTitle.Name = "panelBackTitle";
-            panelBackTitle.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            panelBackTitle.ShadowDecoration.CustomizableEdges = customizableEdges4;
             panelBackTitle.Size = new Size(800, 35);
             panelBackTitle.TabIndex = 1;
             panelBackTitle.UseWaitCursor = true;
@@ -93,6 +93,7 @@ namespace User_Interface.Login_page_mvp.View
             // 
             // textBoxSecPasswordT
             // 
+            textBoxSecPasswordT.Enabled = false;
             textBoxSecPasswordT.Location = new Point(311, 234);
             textBoxSecPasswordT.Name = "textBoxSecPasswordT";
             textBoxSecPasswordT.Size = new Size(168, 51);
@@ -169,7 +170,6 @@ namespace User_Interface.Login_page_mvp.View
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             UseWaitCursor = true;
-            
             panelBackTitle.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
