@@ -5,5 +5,25 @@
     <Setting Name="Theme" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="IP_server" Type="System.String" Scope="User">
+      <Value Profile="(Default)">5.144.179.242
+</Value>
+    </Setting>
+    <Setting Name="Port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">4000</Value>
+    </Setting>
+    <Setting Name="Database" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Users</Value>
+    </Setting>
+    <Setting Name="TableLog" Type="System.String" Scope="User">
+      <Value Profile="(Default)">UsersLogins</Value>
+    </Setting>
+    <Setting Name="Uid" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Gleb_project
+</Value>
+    </Setting>
+    <Setting Name="Pwd" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Gtybc001</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

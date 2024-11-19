@@ -80,11 +80,11 @@ namespace User_Interface.Login_page_mvp.View
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Showcard Gothic", 20F);
+            label1.Font = new Font("Microsoft Sans Serif", 20F);
             label1.ForeColor = SystemColors.ButtonFace;
             label1.Location = new Point(353, 1);
             label1.Name = "label1";
-            label1.Size = new Size(95, 33);
+            label1.Size = new Size(99, 31);
             label1.TabIndex = 4;
             label1.Text = "LOGIN";
             // 
@@ -93,11 +93,11 @@ namespace User_Interface.Login_page_mvp.View
             LoginLabel.Anchor = AnchorStyles.Top;
             LoginLabel.AutoSize = true;
             LoginLabel.BackColor = Color.Transparent;
-            LoginLabel.Font = new Font("Showcard Gothic", 20F);
+            LoginLabel.Font = new Font("Microsoft Sans Serif", 20F);
             LoginLabel.ForeColor = SystemColors.ButtonFace;
             LoginLabel.Location = new Point(355, 0);
             LoginLabel.Name = "LoginLabel";
-            LoginLabel.Size = new Size(95, 33);
+            LoginLabel.Size = new Size(99, 31);
             LoginLabel.TabIndex = 3;
             LoginLabel.Text = "LOGIN";
             // 
@@ -122,7 +122,7 @@ namespace User_Interface.Login_page_mvp.View
             checkBoxSWhowPsw.CheckedState.BorderThickness = 0;
             checkBoxSWhowPsw.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
             checkBoxSWhowPsw.ForeColor = SystemColors.ButtonFace;
-            checkBoxSWhowPsw.Location = new Point(355, 326);
+            checkBoxSWhowPsw.Location = new Point(311, 326);
             checkBoxSWhowPsw.Name = "checkBoxSWhowPsw";
             checkBoxSWhowPsw.Size = new Size(76, 19);
             checkBoxSWhowPsw.TabIndex = 8;
@@ -169,7 +169,7 @@ namespace User_Interface.Login_page_mvp.View
             textBoxLoginGuna.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             textBoxLoginGuna.FillColor = Color.FromArgb(201, 209, 200);
             textBoxLoginGuna.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            textBoxLoginGuna.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxLoginGuna.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxLoginGuna.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             textBoxLoginGuna.Location = new Point(300, 99);
             textBoxLoginGuna.Margin = new Padding(5, 4, 5, 4);
@@ -196,7 +196,7 @@ namespace User_Interface.Login_page_mvp.View
             textBoxPasswordGuna.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             textBoxPasswordGuna.FillColor = Color.FromArgb(201, 209, 200);
             textBoxPasswordGuna.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            textBoxPasswordGuna.Font = new Font("Showcard Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxPasswordGuna.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBoxPasswordGuna.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             textBoxPasswordGuna.Location = new Point(300, 157);
             textBoxPasswordGuna.Margin = new Padding(5, 4, 5, 4);
@@ -220,7 +220,7 @@ namespace User_Interface.Login_page_mvp.View
             guna2ButtonRegistr.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2ButtonRegistr.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2ButtonRegistr.FillColor = Color.FromArgb(48, 64, 64);
-            guna2ButtonRegistr.Font = new Font("Showcard Gothic", 10F);
+            guna2ButtonRegistr.Font = new Font("Microsoft Sans Serif", 10F);
             guna2ButtonRegistr.ForeColor = Color.White;
             guna2ButtonRegistr.Location = new Point(300, 214);
             guna2ButtonRegistr.Name = "guna2ButtonRegistr";
@@ -239,7 +239,7 @@ namespace User_Interface.Login_page_mvp.View
             guna2ButtonLogin.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2ButtonLogin.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2ButtonLogin.FillColor = Color.FromArgb(48, 64, 64);
-            guna2ButtonLogin.Font = new Font("Showcard Gothic", 10F);
+            guna2ButtonLogin.Font = new Font("Microsoft Sans Serif", 10F);
             guna2ButtonLogin.ForeColor = Color.White;
             guna2ButtonLogin.Location = new Point(300, 270);
             guna2ButtonLogin.Name = "guna2ButtonLogin";

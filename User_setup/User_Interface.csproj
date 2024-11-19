@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Login_page_mvp\Registration\**" />
+    <EmbeddedResource Remove="Login_page_mvp\Registration\**" />
+    <None Remove="Login_page_mvp\Registration\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.6" />
     <PackageReference Include="MySql.Data" Version="9.0.0" />
     <PackageReference Include="System.Text.Json" Version="8.0.5" />
@@ -46,9 +52,6 @@
 
   <ItemGroup>
     <Folder Include="Login_page_mvp\Forgor_password\" />
-    <Folder Include="Login_page_mvp\Registration\Model\" />
-    <Folder Include="Login_page_mvp\Registration\Presenter\" />
-    <Folder Include="Login_page_mvp\Registration\View\" />
   </ItemGroup>
 
 
