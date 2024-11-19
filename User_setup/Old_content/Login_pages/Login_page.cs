@@ -1,5 +1,6 @@
-using User_Interface;
 using User_Interface.Login_pages;
+using User_Interface.Old_content;
+using User_Interface.Old_content.Login_pages;
 
 namespace User_setup
 {
@@ -22,7 +23,7 @@ namespace User_setup
             txtPassword.Clear();
         }
 
-       
+
 
         private void Show_pass_CheckedChanged(object sender, EventArgs e)
         {
@@ -73,8 +74,8 @@ namespace User_setup
             {
                 this.Hide();
                 new Main_page_Form(userId).Show();
-                
-                
+
+
 
             }
             else
@@ -93,7 +94,7 @@ namespace User_setup
 
         }
 
-        
+
 
         private void Login_page_Load(object sender, EventArgs e)
         {
@@ -102,7 +103,7 @@ namespace User_setup
 
         }
 
-        
+
 
         private void txtLogin_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -123,6 +124,11 @@ namespace User_setup
             {
                 e.Handled = true;
             }
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

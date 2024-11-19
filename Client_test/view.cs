@@ -2,7 +2,8 @@
 using Moq;
 using System;
 using System.Windows.Forms;
-using User_Interface;
+using User_Interface.Old_content.Main_page;
+using User_Interface.Old_content;
 
 namespace User_setup.Tests
 {
@@ -10,15 +11,15 @@ namespace User_setup.Tests
     public class MainPageTests
     {
         private IDisposable disposableResource;
-        private Mock<User_Interface.Main_page.Get_data_table_Class> mockDataTableClass;
-        private Mock<User_Interface.Connect_class> mockConnectClass;
+        private Mock<Get_data_table_Class> mockDataTableClass;
+        private Mock<Connect_class> mockConnectClass;
         private Main_page_Form mainPage;
 
         [SetUp]
         public void Setup()
         {
             mockConnectClass = new Mock<Connect_class>();
-            mockDataTableClass = new Mock<User_Interface.Main_page.Get_data_table_Class>(mockConnectClass.Object);
+            mockDataTableClass = new Mock<Get_data_table_Class>(mockConnectClass.Object);
             mainPage = new Main_page_Form(1);
 
         }

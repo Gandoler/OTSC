@@ -1,6 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 
-namespace User_Interface.Login_pages
+namespace User_Interface.Old_content.Login_pages
 {
     static class Login_class
     {
@@ -35,7 +35,7 @@ namespace User_Interface.Login_pages
 
                     // Выполняем команду и получаем результат
                     object result = command.ExecuteScalar();
-                    long userExists = (result != null) ? Convert.ToInt64(result) : 0;
+                    long userExists = result != null ? Convert.ToInt64(result) : 0;
 
                     // Проверяем, существует ли пользователь
                     if (userExists > 0)
@@ -84,7 +84,7 @@ namespace User_Interface.Login_pages
                     command.Parameters.AddWithValue("@ID", ID);
 
                     object result = command.ExecuteScalar();
-                    long userExists = (result != null) ? Convert.ToInt64(result) : 0;
+                    long userExists = result != null ? Convert.ToInt64(result) : 0;
 
                     if (userExists > 0)
                     {

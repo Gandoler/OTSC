@@ -1,5 +1,6 @@
 using User_Interface;
 using NUnit.Framework;
+using User_Interface.Old_content.Main_page;
 
 namespace Client_test
 {
@@ -30,7 +31,7 @@ namespace Client_test
             [TestCase("01-01-2023", false)] // Неправильный формат
             public void IsValidDate_match_with_mask_Test(string input, bool expectedResult)
             {
-                bool result = User_Interface.Main_page.Validation_class.IsValidDate_match_with_mask(input);
+                bool result = Validation_class.IsValidDate_match_with_mask(input);
                 Assert.AreEqual(expectedResult, result);
             }
 
@@ -44,7 +45,7 @@ namespace Client_test
             [TestCase("01.01.1919", false)] // Год вне диапазона
             public void IsValidDate_match_good_date_Test(string input, bool expectedResult)
             {
-                bool result = User_Interface.Main_page.Validation_class.IsValidDate_match_good_date(input);
+                bool result = Validation_class.IsValidDate_match_good_date(input);
                 Assert.AreEqual(expectedResult, result);
             }
         }

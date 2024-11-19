@@ -2,18 +2,18 @@
 using System.Data;
 
 
-namespace User_Interface.Main_page
+namespace User_Interface.Old_content.Main_page
 {
     public class Get_data_table_Class
     {
         Connect_class connec_Class;
 
 
-        public Get_data_table_Class( Connect_class connec_Class_im)
+        public Get_data_table_Class(Connect_class connec_Class_im)
         {
-            this.connec_Class  = connec_Class_im;
+            connec_Class = connec_Class_im;
             connec_Class.LoadConfig();
-            
+
         }
 
 
@@ -22,12 +22,12 @@ namespace User_Interface.Main_page
         {
             string query = "SELECT friend_username, NAME, birthday,interests FROM users WHERE telegram_id = @telegramId";
             MySqlConnection connection = connec_Class.Get_connect();
-            DataTable dataTable ;
-            MySqlCommand command ;
+            DataTable dataTable;
+            MySqlCommand command;
             MySqlDataAdapter adapter;
             try
             {
-                if (connection != null && connection.State == System.Data.ConnectionState.Open)
+                if (connection != null && connection.State == ConnectionState.Open)
                 {
                     command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@telegramId", id);

@@ -2,7 +2,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace User_Interface
+namespace User_Interface.Old_content
 {
     public class Connect_class
     {
