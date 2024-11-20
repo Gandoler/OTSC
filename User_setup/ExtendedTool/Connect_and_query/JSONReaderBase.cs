@@ -29,7 +29,7 @@ namespace User_Interface.ExtendedTool.Connect_and_query
                 try
                 {
                     string jsonchikData = File.ReadAllText(filePath);
-                    DBdata dBdata = JsonSerializer.Deserialize<DBdata>(jsonchikData);
+                    DBdata? dBdata = JsonSerializer.Deserialize<DBdata>(jsonchikData);
                     return dBdata;
                 }
                 catch (SerializationException ex)

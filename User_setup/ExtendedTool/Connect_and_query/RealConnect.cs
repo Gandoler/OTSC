@@ -29,8 +29,8 @@ namespace User_Interface.ExtendedTool.Connect_and_query
 
         public void CreateConnectionString()
         {
-            string c = "Server=localhost;Database=mydatabase;User=myusername;Password=mypassword;";
-            string connectionString = "";
+           
+            string? connectionString = "";
             DBdata? dBdata = JSONReader.bdata();
             if (dBdata != null)
             {
