@@ -80,6 +80,7 @@ namespace User_Interface.Login_page_mvp.View
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
+            label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Microsoft Sans Serif", 20F);
             label1.ForeColor = SystemColors.ButtonFace;
             label1.Location = new Point(353, 1);
@@ -253,7 +254,6 @@ namespace User_Interface.Login_page_mvp.View
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-           
             BackgroundImage = Properties.Resources._1709693764_bogatyr_club_f06x_p_fon_dlya_prilozheniya_101;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 500);
