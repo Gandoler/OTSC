@@ -37,7 +37,7 @@ namespace User_Interface.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5.144.179.242")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string IP {
             get {
                 return ((string)(this["IP"]));
@@ -49,7 +49,7 @@ namespace User_Interface.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Gleb_project")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Username {
             get {
                 return ((string)(this["Username"]));
@@ -61,7 +61,7 @@ namespace User_Interface.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Gtybc001")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string PSW {
             get {
                 return ((string)(this["PSW"]));
@@ -73,7 +73,7 @@ namespace User_Interface.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public int Port {
             get {
                 return ((int)(this["Port"]));
