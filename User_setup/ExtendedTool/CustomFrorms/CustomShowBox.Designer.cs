@@ -33,20 +33,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomShowBox));
             pathExceptionlabbel = new Label();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            guna2CustomGradientPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // pathExceptionlabbel
             // 
             pathExceptionlabbel.AutoSize = true;
-            pathExceptionlabbel.Location = new Point(95, 110);
+            pathExceptionlabbel.Location = new Point(95, 9);
             pathExceptionlabbel.Name = "pathExceptionlabbel";
             pathExceptionlabbel.Size = new Size(86, 15);
             pathExceptionlabbel.TabIndex = 0;
             pathExceptionlabbel.Text = "Path Exception";
-         
             // 
             // guna2CustomGradientPanel1
             // 
+            guna2CustomGradientPanel1.Controls.Add(pathExceptionlabbel);
             guna2CustomGradientPanel1.CustomizableEdges = customizableEdges1;
             guna2CustomGradientPanel1.Dock = DockStyle.Top;
             guna2CustomGradientPanel1.Location = new Point(0, 0);
@@ -62,14 +63,14 @@
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(300, 200);
             Controls.Add(guna2CustomGradientPanel1);
-            Controls.Add(pathExceptionlabbel);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CustomShowBox";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PathError";
+            guna2CustomGradientPanel1.ResumeLayout(false);
+            guna2CustomGradientPanel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
