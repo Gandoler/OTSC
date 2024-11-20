@@ -44,7 +44,6 @@
             panelBackTitle = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             label1 = new Label();
             buttonExit = new Button();
-            logoPanel = new Panel();
             checkBoxSWhowPsw = new Guna.UI2.WinForms.Guna2CheckBox();
             guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             labelOnlyDigits = new Label();
@@ -54,6 +53,7 @@
             textBoxLoginGuna = new Guna.UI2.WinForms.Guna2TextBox();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            panel1 = new Panel();
             panelBackTitle.SuspendLayout();
             SuspendLayout();
             // 
@@ -95,16 +95,6 @@
             buttonExit.TabIndex = 2;
             buttonExit.Text = "X";
             buttonExit.UseVisualStyleBackColor = false;
-            // 
-            // logoPanel
-            // 
-            logoPanel.BackColor = Color.Transparent;
-            logoPanel.BackgroundImage = Properties.Resources.logo_removebg_preview;
-            logoPanel.BackgroundImageLayout = ImageLayout.Zoom;
-            logoPanel.Location = new Point(641, 395);
-            logoPanel.Name = "logoPanel";
-            logoPanel.Size = new Size(147, 99);
-            logoPanel.TabIndex = 21;
             // 
             // checkBoxSWhowPsw
             // 
@@ -267,6 +257,17 @@
             guna2TextBox2.Size = new Size(200, 30);
             guna2TextBox2.TabIndex = 28;
             // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Left;
+            panel1.BackColor = Color.Transparent;
+            panel1.BackgroundImage = Properties.Resources.logo_removebg_preview;
+            panel1.BackgroundImageLayout = ImageLayout.Zoom;
+            panel1.Location = new Point(638, 388);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(150, 100);
+            panel1.TabIndex = 29;
+            // 
             // RegistrForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -274,10 +275,10 @@
             BackgroundImage = Properties.Resources._1709693764_bogatyr_club_f06x_p_fon_dlya_prilozheniya_101;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 500);
+            Controls.Add(panel1);
             Controls.Add(guna2TextBox2);
             Controls.Add(guna2TextBox1);
             Controls.Add(panelBackTitle);
-            Controls.Add(logoPanel);
             Controls.Add(checkBoxSWhowPsw);
             Controls.Add(labelOnlyDigits);
             Controls.Add(guna2ButtonRegistr);
@@ -299,7 +300,6 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelBackTitle;
         private Label label1;
         private Button buttonExit;
-        private Panel logoPanel;
         private Guna.UI2.WinForms.Guna2CheckBox checkBoxSWhowPsw;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Label labelOnlyDigits;
@@ -309,5 +309,6 @@
         private Guna.UI2.WinForms.Guna2TextBox textBoxLoginGuna;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Panel panel1;
     }
 }

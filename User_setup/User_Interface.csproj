@@ -9,8 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Login_page_mvp\Forgor_password\**" />
     <Compile Remove="Login_page_mvp\Registration\**" />
+    <EmbeddedResource Remove="Login_page_mvp\Forgor_password\**" />
     <EmbeddedResource Remove="Login_page_mvp\Registration\**" />
+    <None Remove="Login_page_mvp\Forgor_password\**" />
     <None Remove="Login_page_mvp\Registration\**" />
   </ItemGroup>
 
@@ -48,10 +51,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Login_page_mvp\Forgor_password\" />
   </ItemGroup>
 
 
