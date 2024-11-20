@@ -21,6 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Properties\RealSecret.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RealSecret.settings</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -43,6 +48,10 @@
   <ItemGroup>
     <None Update="Old_content\Data\Data_config_for_app.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\RealSecret.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>RealSecret.Designer.cs</LastGenOutput>
     </None>
     <None Update="Properties\Settings1.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
