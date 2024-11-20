@@ -11,12 +11,12 @@ namespace User_setup
         [STAThread]
         static void Main()
         {
-           
 
-       
-            ApplicationConfiguration.Initialize();
-            long ID = 314627387;//менять
-            //SSSS
+
+
+            //ApplicationConfiguration.Initialize();
+            //long ID = 314627387;//менять
+            ////SSSS
             formLogin formLogin = new formLogin();
             Model model = new Model();
             RegistrForm registrForm = new RegistrForm();
