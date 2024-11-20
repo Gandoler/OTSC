@@ -14,7 +14,13 @@ namespace User_Interface.ExtendedTool.Connect_and_query
             {
                 using (var inputForm = new CustomShowBox())
                 {
-                    filePath = inputForm.FilePath;
+                    if(inputForm.ShowDialog() == DialogResult.OK)
+                    {
+                        DBdata dBdata = inputForm.DBdata;
+                        return dBdata;
+
+                    }
+                   
                 }
             }
 
@@ -28,16 +34,16 @@ namespace User_Interface.ExtendedTool.Connect_and_query
                 }
                 catch (SerializationException ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
                 catch (JsonException ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             

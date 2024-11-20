@@ -2,23 +2,26 @@
 
 namespace User_Interface.ExtendedTool.Connect_and_query
 {
-    internal class DBdata
+    public class DBdata
     {
         [JsonPropertyName("IP")]
-        private string _ip { get; init; }
+        public string ip { get; init; }
         [JsonPropertyName("Username")]
-        private string _Username { get; init; }
+        public string Database { get; init; }
+        [JsonPropertyName("Database")]
+        public string Username { get; init; }
         [JsonPropertyName("PSW")]
-        private string _PSW { get; init; }
+        public string PSW { get; init; }
         [JsonPropertyName("PORT")]
-        private int _PORT { get; init; }
+        public int PORT { get; init; }
 
-        internal DBdata(string ip, string Username, string PSW, int PORT)
+        public DBdata(string ip, string Username, string Database, string PSW, int PORT)
         {
-            _ip = ip;
-            _Username = Username;
-            _PSW = PSW;
-            _PORT = PORT;
+            this.ip = ip;
+            this.Database = Username;
+            this.Username = Database;
+            this.PSW = PSW;
+            this.PORT = PORT;
         }
 
     }

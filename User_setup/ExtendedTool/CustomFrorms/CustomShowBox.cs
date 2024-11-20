@@ -18,7 +18,7 @@ namespace User_Interface.ExtendedTool
     {
         
         public string FilePath { get; private set; }
-        private DBdata? DBdata { get; set; }
+        public DBdata? DBdata { get; set; }
 
         public CustomShowBox()
         {
@@ -40,18 +40,18 @@ namespace User_Interface.ExtendedTool
                 }
                 catch (SerializationException ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     guna2TextBoxFilePath.Clear();
 
                 }
                 catch (JsonException ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     guna2TextBoxFilePath.Clear();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     guna2TextBoxFilePath.Clear();
                 }
                 

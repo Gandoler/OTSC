@@ -14,26 +14,58 @@ namespace User_Interface.ExtendedTool.Connect_and_query
 
 
 
-    internal class RealConnect : IConnect
+    internal  class RealConnect : IConnect
     {
-        public string CreateConnectionString()
+        
+        private string _connectionString="";
+
+
+        public RealConnect()
         {
-            throw new NotImplementedException();
+            CreateConnectionString();
         }
 
-        //public string CreateConnectionString()
-        //{
-        //    DBdata? dBdata = JSONReader.bdata();
-        //    if (dBdata != null)
-        //    {
-        //    }
-        //    else { 
-        //    }
-        //}
+
+
+        public void CreateConnectionString()
+        {
+            string c = "Server=localhost;Database=mydatabase;User=myusername;Password=mypassword;";
+            string connectionString = "";
+            DBdata? dBdata = JSONReader.bdata();
+            if (dBdata != null)
+            {
+                _connectionString =
+                                 $"Server={(dBdata?.ip ?? "localhost")};" +
+                                 $"Port={(dBdata?.PORT > 0 ? dBdata.PORT : 3306)};" +
+                                 $"Database={(dBdata?.Database ?? "default_database")};" +
+                                 $"User={(dBdata?.Username ?? "default_user")};" +
+                                 $"Password={(dBdata?.PSW ?? "default_password")};";
+            }
+            else
+            {
+                MessageBox.Show("Problems with JSON", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
+        }
 
         public MySqlConnection GetConnection()
         {
+            MySqlConnection connection;
+            try
+            {
+                connection = new MySqlConnection(_connectionString);
+                connection.Open();
+                Console.WriteLine("Соединение успешно установлено!");
+                return connection;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Ошибка подключения к базе данных: {ex.Message}", "Ошибка подключения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"Ошибка подключения: {ex.Message}");
+            }
             throw new NotImplementedException();
         }
+
+        
     }
 }
