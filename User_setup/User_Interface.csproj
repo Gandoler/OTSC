@@ -44,9 +44,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Old_content\Data\Data_config_for_app.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Properties\Settings1.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
