@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -10,26 +11,15 @@ using System.Xml.Linq;
 
 namespace User_Interface.ExtendedTool.Connect_and_query
 {
-
-
-
-
-    internal  class RealConnect : IConnect
+    internal  static class RealConnect 
     {
-        
-        private string _connectionString="";
+
+        private static readonly string _connectionString;
+        private static MySqlConnection _connection;
 
 
-        public RealConnect()
+        static RealConnect()
         {
-            CreateConnectionString();
-        }
-
-
-
-        public void CreateConnectionString()
-        {
-           
             string? connectionString = "";
             DBdata? dBdata = JSONReader.bdata();
             if (dBdata != null)
@@ -45,10 +35,10 @@ namespace User_Interface.ExtendedTool.Connect_and_query
             {
                 MessageBox.Show("Problems with JSON", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-           
         }
 
-        public MySqlConnection GetConnection()
+
+        public  static MySqlConnection GetConnection()
         {
             MySqlConnection connection;
             try
@@ -64,8 +54,26 @@ namespace User_Interface.ExtendedTool.Connect_and_query
                 Console.WriteLine($"Ошибка подключения: {ex.Message}");
             }
             throw new NotImplementedException();
+             
+        }
+       
+
+        public static async Task OpenConnectionAsync()
+        {
+            if (_connection == null || _connection.State == System.Data.ConnectionState.Closed)
+            {
+                _connection = GetConnection();
+                await _connection.OpenAsync();
+            }
         }
 
-        
+        public static void CloseConnection()
+        {
+            if (_connection?.State == System.Data.ConnectionState.Open)
+            {
+                _connection.Close();
+            }
+        }
+
     }
 }
