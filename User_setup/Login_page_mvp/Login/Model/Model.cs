@@ -11,6 +11,7 @@ namespace User_Interface.Login_page_mvp.Login.Model
 {
     internal class Model : IModelka
     {
+        //
         private long _login;
         private string? _password;
         private string? _email;
