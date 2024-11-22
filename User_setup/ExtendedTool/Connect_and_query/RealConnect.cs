@@ -1,102 +1,107 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+using Serilog;
+using User_Interface.ExtendedTool.Connect_and_query;
 
-namespace User_Interface.ExtendedTool.Connect_and_query
+internal static class RealConnect
 {
-    internal  static class RealConnect 
+    private static readonly string _connectionString;
+    private static MySqlConnection _connection;
+    private static readonly object _lock = new();
+
+    static RealConnect()
     {
-
-        private static readonly string _connectionString;
-        private static MySqlConnection _connection;
-        public static MySqlConnection Connection
+        try
         {
-            get{
-                if (CheckConnectionAlive())
-                {
-                    return _connection;
-                }
-                Task.Run(async () => await OpenConnectionAsync()).Wait();
-                return _connection;
-            }
-        }
-
-        static RealConnect()
-            { 
             DBdata? dBdata = JSONReader.bdata();
+
             if (dBdata != null)
             {
                 _connectionString =
-                                 $"Server={(dBdata?.ip ?? "localhost")};" +
-                                 $"Port={(dBdata?.PORT > 0 ? dBdata.PORT : 3306)};" +
-                                 $"Database={(dBdata?.Database ?? "default_database")};" +
-                                 $"User={(dBdata?.Username ?? "default_user")};" +
-                                 $"Password={(dBdata?.PSW ?? "default_password")};";
+                    $"Server={(dBdata.ip ?? "localhost")};" +
+                    $"Port={(dBdata.PORT > 0 ? dBdata.PORT : 3306)};" +
+                    $"Database={(dBdata.Database ?? "default_database")};" +
+                    $"User={(dBdata.Username ?? "default_user")};" +
+                    $"Password={(dBdata.PSW ?? "default_password")};";
             }
             else
             {
                 MessageBox.Show("Problems with JSON", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            Task.Run(async () => await OpenConnectionAsync());
         }
-
-
-        public  static MySqlConnection GetConnection()
+        catch (Exception ex)
         {
-            MySqlConnection connection;
+            Log.Error(ex.Message, "Ошибка в {MethodName}", nameof(RealConnect));
+            throw;
+        }
+    }
+
+    public static MySqlConnection Connection
+    {
+        get
+        {
+            
+            if (_connection == null || _connection.State != System.Data.ConnectionState.Open)
+            {
+                OpenConnection();
+            }
+            return _connection;
+            
+        }
+    }
+
+    private static void OpenConnection()
+    {
+        try
+        {
+            if (_connection == null)
+            {
+                _connection = new MySqlConnection(_connectionString);
+            }
+
+            if (_connection.State == System.Data.ConnectionState.Closed)
+            {
+                _connection.Open();
+                string ChoiseDB = "USE Users";
+                using var comand  =new MySqlCommand(ChoiseDB, _connection);
+                comand.ExecuteNonQuery();
+            }
+        }
+        catch (MySqlException ex)
+        {
+            Log.Error(ex.Message, "Ошибка подключения к базе данных:", nameof(OpenConnection));
+            throw;
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex.Message, "Ошибка подключения к базе данных:", nameof(OpenConnection));
+            throw;
+        }
+    }
+
+    public static void CloseConnection()
+    {
+        lock (_lock)
+        {
             try
             {
-                connection = new MySqlConnection(_connectionString);
-                connection.Open();
-                Console.WriteLine("Соединение успешно установлено!");
-                return connection;
+                if (_connection?.State == System.Data.ConnectionState.Open)
+                {
+                    _connection.Close();
+                }
             }
-            catch (MySqlException ex)
+            catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка подключения к базе данных: {ex.Message}", "Ошибка подключения", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.WriteLine($"Ошибка подключения: {ex.Message}");
+                Log.Error(ex.Message, "Ошибка отключения от базы данных:", nameof(CloseConnection));
+                throw;
             }
-            throw new NotImplementedException();
-             
         }
-       
+    }
 
-        public static async Task OpenConnectionAsync()
+    public static bool CheckConnectionAlive()
+    {
+        lock (_lock)
         {
-            if (_connection == null || _connection.State == System.Data.ConnectionState.Closed)
-            {
-                _connection = GetConnection();
-                await _connection.OpenAsync();
-            }
+            return _connection?.State == System.Data.ConnectionState.Open;
         }
-
-
-        public static void CloseConnection()
-        {
-            if (_connection?.State == System.Data.ConnectionState.Open)
-            {
-                _connection.Close();
-            }
-        }
-
-
-        public static bool CheckConnectionAlive()
-        {
-            if (_connection?.State == System.Data.ConnectionState.Open)
-            {
-                return true;
-            }
-            return false;
-
-
-        }
-
     }
 }

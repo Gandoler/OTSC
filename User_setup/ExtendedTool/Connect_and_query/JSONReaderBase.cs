@@ -1,6 +1,7 @@
 ﻿using System.Runtime.Serialization;
 using System.Text.Json;
 using User_Interface.ExtendedTool;
+using Serilog;
 
 namespace User_Interface.ExtendedTool.Connect_and_query
 {
@@ -31,19 +32,16 @@ namespace User_Interface.ExtendedTool.Connect_and_query
                     string jsonchikData = File.ReadAllText(filePath);
                     DBdata? dBdata = JsonSerializer.Deserialize<DBdata>(jsonchikData);
                     return dBdata;
-                }
-                catch (SerializationException ex)
-                {
-                    MessageBox.Show(ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                }
+                } 
                 catch (JsonException ex)
                 {
-                    MessageBox.Show(ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Log.Error(ex.Message, "Ошибка в {MethodName}", nameof(DBdata));
+                    throw;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Log.Error(ex.Message, "Ошибка в {MethodName}", nameof(DBdata));
+                    throw;
                 }
             }
             
