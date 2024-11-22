@@ -5,8 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using User_Interface.Login_page_mvp.Login.Model;
-using User_Interface.Login_page_mvp.Login.View.LOGIN;
+using User_Interface.Login_page_mvp;
 using User_Interface.Login_page_mvp.Login.View.Registr;
+using User_Interface.Login_page_mvp.Login.View;
 
 namespace User_Interface.Login_page_mvp.Login.Presenter
 {

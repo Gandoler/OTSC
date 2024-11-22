@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User_Interface.Login_page_mvp.Login.View.LOGIN
+namespace User_Interface.Login_page_mvp.Login.View
 {
     internal interface ILoginView
     {

@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using User_Interface.Login_page_mvp.Login.View.LOGIN;
+using User_Interface.Login_page_mvp.Login.View;
 using User_Interface.Login_page_mvp.Login.View.Registr;
+
 
 namespace User_Interface.Login_page_mvp.View
 {
