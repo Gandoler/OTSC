@@ -6,11 +6,11 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User_Interface.ExtendedTool
+namespace User_Interface.ExtendedTool.CustomFrorms
 {
     internal static class CustomTitle
     {
-        
+
 
         internal static void CreateCustomTitleBar(Form form)
         {
@@ -22,7 +22,7 @@ namespace User_Interface.ExtendedTool
 
             };
 
-            
+
 
 
             form.Controls.Add(TitleBar);
@@ -43,7 +43,7 @@ namespace User_Interface.ExtendedTool
         }
 
 
-        
+
 
 
 

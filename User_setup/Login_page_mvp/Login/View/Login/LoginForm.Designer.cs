@@ -80,6 +80,7 @@ namespace User_Interface.Login_page_mvp.View
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
+            label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Microsoft Sans Serif", 20F);
             label1.ForeColor = SystemColors.ButtonFace;
             label1.Location = new Point(353, 1);
@@ -135,13 +136,14 @@ namespace User_Interface.Login_page_mvp.View
             // 
             // logoPanel
             // 
+            logoPanel.Anchor = AnchorStyles.Left;
             logoPanel.BackColor = Color.Transparent;
             logoPanel.BackgroundImage = Properties.Resources.logo_removebg_preview;
             logoPanel.BackgroundImageLayout = ImageLayout.Zoom;
-            logoPanel.Location = new Point(641, 389);
+            logoPanel.Location = new Point(638, 388);
             logoPanel.Name = "logoPanel";
-            logoPanel.Size = new Size(147, 99);
-            logoPanel.TabIndex = 11;
+            logoPanel.Size = new Size(150, 100);
+            logoPanel.TabIndex = 19;
             // 
             // labelOnlyDigits
             // 
