@@ -8,7 +8,7 @@ using User_Interface.ExtendedTool.Connect_and_query;
 
 namespace User_Interface.Login_page_mvp.Login.Model
 {
-    internal interface Imodelka
+    internal interface IModelka
     {
         long Login { set; }
         string Password {  set; }
@@ -19,8 +19,8 @@ namespace User_Interface.Login_page_mvp.Login.Model
         internal void LogIn();
         internal void Regisrt();
 
-        event Action loginGo;
-        event Action logMismatch;
+        event Action LoginGo;
+        event Action LogMismatch;
         event Action UserExist;
     }
 }

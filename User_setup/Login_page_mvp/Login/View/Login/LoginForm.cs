@@ -20,13 +20,13 @@ namespace User_Interface.Login_page_mvp.View
             // 
             // textBoxLogin
             // 
-            textBoxLoginGuna.Leave += (s, e) => leaveLoginTextBox?.Invoke(this, textBoxLoginGuna.Text);
-            textBoxLoginGuna.KeyPress += (s, e) => charKeyPresd?.Invoke(labelOnlyDigits, e);
+            textBoxLoginGuna.Leave += (s, e) => LeaveLoginTextBox?.Invoke(this, textBoxLoginGuna.Text);
+            textBoxLoginGuna.KeyPress += (s, e) => CharKeyPresd?.Invoke(labelOnlyDigits, e);
             // 
             // textBoxPassword
             // 
-            textBoxPasswordGuna.Leave += (s, e) => leavePasswordTextBox?.Invoke(this, textBoxPasswordGuna.Text);
-            textBoxPasswordGuna.KeyDown += (s, e) => leavePasswordTextBox?.Invoke(this, textBoxPasswordGuna.Text);
+            textBoxPasswordGuna.Leave += (s, e) => LeavePasswordTextBox?.Invoke(this, textBoxPasswordGuna.Text);
+            textBoxPasswordGuna.KeyDown += (s, e) => LeavePasswordTextBox?.Invoke(this, textBoxPasswordGuna.Text);
 
             // 
             // textBoxSecPasswordT
@@ -36,7 +36,7 @@ namespace User_Interface.Login_page_mvp.View
             // 
             // checkBoxSWhowPsw
             // 
-            checkBoxSWhowPsw.CheckedChanged += (s, e) => show_Psw?.Invoke(this, checkBoxSWhowPsw.Checked);
+            checkBoxSWhowPsw.CheckedChanged += (s, e) => Show_Psw?.Invoke(this, checkBoxSWhowPsw.Checked);
             // 
             // buttonExit
             // 
@@ -44,7 +44,7 @@ namespace User_Interface.Login_page_mvp.View
             // 
             // buttonEnter
             // 
-            guna2ButtonLogin.Click += (s, e) => enter?.Invoke(this, EventArgs.Empty);
+            guna2ButtonLogin.Click += (s, e) => Enter?.Invoke(this, EventArgs.Empty);
             // 
             // registrButton
             // 
@@ -58,13 +58,13 @@ namespace User_Interface.Login_page_mvp.View
 
         public string Login => textBoxLoginGuna.Text;
 
-        public event EventHandler<string> leavePasswordTextBox;
-        public event EventHandler<bool> show_Psw;
+        public event EventHandler<string> LeavePasswordTextBox;
+        public event EventHandler<bool> Show_Psw;
         public event EventHandler ExitApl;
         public event EventHandler<string> leaveSecondPasswordTextBox;
-        public event EventHandler<string> leaveLoginTextBox;
-        public event EventHandler enter;
-        public event EventHandler<EventArgs> charKeyPresd;
+        public event EventHandler<string> LeaveLoginTextBox;
+        public event EventHandler Enter;
+        public event EventHandler<EventArgs> CharKeyPresd;
         public event EventHandler Registr_click;
 
         public void NextPage()

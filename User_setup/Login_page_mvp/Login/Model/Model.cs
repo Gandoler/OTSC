@@ -9,14 +9,14 @@ using User_Interface.ExtendedTool.Connect_and_query.query;
 
 namespace User_Interface.Login_page_mvp.Login.Model
 {
-    internal class Model : Imodelka
+    internal class Model : IModelka
     {
         private long _login;
         private string? _password;
         private string? _email;
 
-        public event Action loginGo;
-        public event Action logMismatch;
+        public event Action LoginGo;
+        public event Action LogMismatch;
         public event Action UserExist;
 
         public long Login
@@ -42,7 +42,8 @@ namespace User_Interface.Login_page_mvp.Login.Model
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentNullException(nameof(_login));
+                    ArgumentNullException argumentNullException = new(nameof(_login));
+                    throw argumentNullException;
                 }
                 else
                 {
@@ -59,7 +60,9 @@ namespace User_Interface.Login_page_mvp.Login.Model
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentNullException(nameof(_email));
+                    
+                    ArgumentNullException argumentNullException = new(nameof(_email));
+                    throw argumentNullException;
                 }
                 else
                 {
@@ -89,11 +92,11 @@ namespace User_Interface.Login_page_mvp.Login.Model
                 if (CheckExistANDRegistrUsers.CheckOFExistUser(RealConnect.Connection, _login, _password??throw new Exception("Bad Password")))
                 {
                     Properties.Settings1.Default.ID = _login;
-                    loginGo.Invoke();
+                    LoginGo.Invoke();
                 }
                 else
                 {
-                    logMismatch.Invoke();
+                    LogMismatch.Invoke();
                 }
             }
             catch (Exception ex)
@@ -114,11 +117,11 @@ namespace User_Interface.Login_page_mvp.Login.Model
                 if (CheckExistANDRegistrUsers.RegistrUser(RealConnect.Connection, _login, _password ?? throw new Exception("Bad Password"), _email ?? throw new Exception("Bad Email")))
                 {
                     Properties.Settings1.Default.ID = _login;
-                    loginGo.Invoke();
+                    LoginGo.Invoke();
                 }
                 else
                 {
-                    logMismatch.Invoke();
+                    LogMismatch.Invoke();
                 }
             }
             catch (Exception ex)

@@ -47,7 +47,7 @@ namespace User_Interface.ExtendedTool.Connect_and_query.query
                 using var query_command = new MySqlCommand(query, connection);
                 query_command.Parameters.AddWithValue("@login", login);
                 query_command.Parameters.AddWithValue("@psw", psw);
-                query_command.Parameters.AddWithValue("@email", psw);
+                query_command.Parameters.AddWithValue("@email", email);
                 int rowsAdd = query_command.ExecuteNonQuery();
                 return rowsAdd > 0;
             }

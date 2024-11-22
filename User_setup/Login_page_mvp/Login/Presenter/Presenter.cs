@@ -13,28 +13,28 @@ namespace User_Interface.Login_page_mvp.Login.Presenter
     internal class Presenter
     {
         private ILoginView _loginView;
-        private Imodelka _imodelka;
+        private IModelka _imodelka;
         private IRegistrView _registrView;
 
-        private string _password { get; set; }
-        private string _secPassword { get; set; }
-        private string _login { get; set; }
-        private bool _theme { get; set; }
+        private string Password { get; set; }
+        private string SecPassword { get; set; }
+        private string Login { get; set; }
+        //private bool Theme { get; set; }
 
-        internal Presenter(ILoginView loginView, Imodelka imodelka, IRegistrView registrView)
+        internal Presenter(ILoginView loginView, IModelka imodelka, IRegistrView registrView)
         {
             _loginView = loginView ?? throw new ArgumentNullException(nameof(loginView));
             _imodelka = imodelka ?? throw new ArgumentNullException(nameof(imodelka));
             _registrView = registrView ?? throw new ArgumentNullException(nameof(imodelka));
 
-            _loginView.ExitApl += _loginView_Exit;
-            _loginView.leaveLoginTextBox += LeaveLogin;
+            _loginView.ExitApl += LoginView_Exit;
+            _loginView.LeaveLoginTextBox += LeaveLogin;
           
-            _loginView.leavePasswordTextBox += LeavePassword;
+            _loginView.LeavePasswordTextBox += LeavePassword;
             //_loginView.leaveSecondPasswordTextBox += LeaveSecondPswAndCheck;
-            _loginView.enter += enterButtonClicked;
-            _loginView.show_Psw += View_show_Psw;
-            _loginView.charKeyPresd += OnlyEnglishCheck;
+            _loginView.Enter += EnterButtonClicked;
+            _loginView.Show_Psw += View_show_Psw;
+            _loginView.CharKeyPresd += OnlyEnglishCheck;
             _loginView.Registr_click += Registr_click;
 
         }
@@ -47,10 +47,9 @@ namespace User_Interface.Login_page_mvp.Login.Presenter
         private void OnlyEnglishCheck(object? sender, EventArgs e)
         {
             var label  = sender as Label;
-            var args = e as KeyPressEventArgs;
-            
 
-            if (args != null)
+
+            if (e is KeyPressEventArgs args)
             {
 
 
@@ -65,7 +64,7 @@ namespace User_Interface.Login_page_mvp.Login.Presenter
                 {
                     label.Visible = false;
                 }
-                
+
 
             }
 
@@ -83,7 +82,7 @@ namespace User_Interface.Login_page_mvp.Login.Presenter
             }
         }
 
-        private void enterButtonClicked(object? sender, EventArgs e)
+        private void EnterButtonClicked(object? sender, EventArgs e)
         {
             //if (_password.CompareTo(_secPassword) != 0)
             //{
@@ -96,15 +95,12 @@ namespace User_Interface.Login_page_mvp.Login.Presenter
 
         private void LeaveSecondPswAndCheck(object? sender, string e)
         {
-            _secPassword = e;
-
-
-
+            SecPassword = e;
         }
 
         private void LeavePassword(object? sender, string e)
         {
-            _password = e;
+            Password = e;
             //if (e.Length > 0)
             //{
             //    _loginView.UnBlockSecPsw();
@@ -113,10 +109,10 @@ namespace User_Interface.Login_page_mvp.Login.Presenter
 
         private void LeaveLogin(object? sender, string e)
         {
-            _login = e;
+            Login = e;
         }
 
-        private void _loginView_Exit(object? sender, EventArgs e)
+        private void LoginView_Exit(object? sender, EventArgs e)
         {
             Application.Exit();
         }
