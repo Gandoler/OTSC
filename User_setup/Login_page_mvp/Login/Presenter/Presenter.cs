@@ -84,12 +84,8 @@ namespace User_Interface.Login_page_mvp.Login.Presenter
 
         private void EnterButtonClicked(object? sender, EventArgs e)
         {
-            //if (_password.CompareTo(_secPassword) != 0)
-            //{
-            //    _loginView.ClearPasswords();
-            //    _loginView.ShowPasswordMismatchMessageBox("Password MISMATCH");
-            //    _loginView.BlockSecPsw();
-            //}
+
+           
             
         }
 
