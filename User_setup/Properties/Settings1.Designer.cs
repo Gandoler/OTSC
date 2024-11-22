@@ -47,5 +47,17 @@ namespace User_Interface.Properties {
                 this["Jsonpath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long ID {
+            get {
+                return ((long)(this["ID"]));
+            }
+            set {
+                this["ID"] = value;
+            }
+        }
     }
 }

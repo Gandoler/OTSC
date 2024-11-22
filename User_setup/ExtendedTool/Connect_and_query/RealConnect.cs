@@ -16,11 +16,20 @@ namespace User_Interface.ExtendedTool.Connect_and_query
 
         private static readonly string _connectionString;
         private static MySqlConnection _connection;
-
+        public static MySqlConnection Connection
+        {
+            get{
+                if (CheckConnectionAlive())
+                {
+                    return _connection;
+                }
+                Task.Run(async () => await OpenConnectionAsync()).Wait();
+                return _connection;
+            }
+        }
 
         static RealConnect()
-        {
-            string? connectionString = "";
+            { 
             DBdata? dBdata = JSONReader.bdata();
             if (dBdata != null)
             {
@@ -35,6 +44,7 @@ namespace User_Interface.ExtendedTool.Connect_and_query
             {
                 MessageBox.Show("Problems with JSON", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            Task.Run(async () => await OpenConnectionAsync());
         }
 
 
@@ -67,12 +77,25 @@ namespace User_Interface.ExtendedTool.Connect_and_query
             }
         }
 
+
         public static void CloseConnection()
         {
             if (_connection?.State == System.Data.ConnectionState.Open)
             {
                 _connection.Close();
             }
+        }
+
+
+        public static bool CheckConnectionAlive()
+        {
+            if (_connection?.State == System.Data.ConnectionState.Open)
+            {
+                return true;
+            }
+            return false;
+
+
         }
 
     }

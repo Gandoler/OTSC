@@ -9,18 +9,16 @@ namespace User_Interface.ExtendedTool.Connect_and_query.query
 {
     internal static class CheckExistANDRegistrUsers
     {
-        public static bool CheckOFExistUser(MySqlConnection connection,string login,string psw)
+        public static bool CheckOFExistUser(MySqlConnection connection,long login,string psw)
         {
-            string query = "SELECT COUNT(*) FROM Users WHERE Username = @username and Password = @psw;";
+            string query = "SELECT COUNT(*) FROM Users WHERE Login = @login and Password = @psw;";
             try
             {
-                using (var query_command = new MySqlCommand(query, connection))
-                {
-                    query_command.Parameters.AddWithValue("@username", login);
-                    query_command.Parameters.AddWithValue("@psw", psw);
-                    var result = query_command.ExecuteNonQuery();
-                    return Convert.ToInt32(result) == 1;
-                }
+                using var query_command = new MySqlCommand(query, connection);
+                query_command.Parameters.AddWithValue("@login", login);
+                query_command.Parameters.AddWithValue("@psw", psw);
+                var result = query_command.ExecuteNonQuery();
+                return Convert.ToInt32(result) == 1;
             }
             catch (MySqlException ex)
             {
@@ -35,7 +33,7 @@ namespace User_Interface.ExtendedTool.Connect_and_query.query
 
         }
 
-        public static bool RegistrUser(MySqlConnection connection, string login, string psw)
+        public static bool RegistrUser(MySqlConnection connection, long login, string psw, string email)
         {
 
             if (CheckOFExistUser(connection, login, psw))
@@ -43,16 +41,15 @@ namespace User_Interface.ExtendedTool.Connect_and_query.query
                 MessageBox.Show("User exist already", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            string query = "INSERT INTO Users (Username, Password) VALUES (@username, @psw);";
+            string query = "INSERT INTO Users (Login, Password, Email) VALUES (@login, @psw, @email);";
             try
             {
-                using (var query_command = new MySqlCommand(query, connection))
-                {
-                    query_command.Parameters.AddWithValue("@username", login);
-                    query_command.Parameters.AddWithValue("@psw", psw);
-                    int rowsAdd = query_command.ExecuteNonQuery();
-                    return rowsAdd > 0;
-                }
+                using var query_command = new MySqlCommand(query, connection);
+                query_command.Parameters.AddWithValue("@login", login);
+                query_command.Parameters.AddWithValue("@psw", psw);
+                query_command.Parameters.AddWithValue("@email", psw);
+                int rowsAdd = query_command.ExecuteNonQuery();
+                return rowsAdd > 0;
             }
             catch (MySqlException ex)
             {
