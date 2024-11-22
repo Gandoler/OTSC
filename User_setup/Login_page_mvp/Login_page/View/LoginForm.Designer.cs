@@ -271,7 +271,6 @@ namespace User_Interface.Login_page_mvp.View
             Name = "formLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
-            Load += formLogin_Load;
             panelBackTitle.ResumeLayout(false);
             panelBackTitle.PerformLayout();
             ResumeLayout(false);

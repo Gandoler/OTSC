@@ -3,40 +3,48 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using User_Interface.Login_page_mvp.Login.Model;
-using User_Interface.Login_page_mvp.Login.View.LOGIN;
-using User_Interface.Login_page_mvp.Login.View.Registr;
+using User_Interface.Login_page_mvp.Login_page.Model;
+using User_Interface.Login_page_mvp.Login_page.View;
+using User_Interface.Login_page_mvp.Registr_page.View;
 
-namespace User_Interface.Login_page_mvp.Login.Presenter
+namespace User_Interface.Login_page_mvp.Login_page
 {
-    internal class Presenter
+    internal class PresenterLogin
     {
         private ILoginView _loginView;
-        private IModelka _imodelka;
-        private IRegistrView _registrView;
-
-        private string Password { get; set; }
-        private string SecPassword { get; set; }
-        private string Login { get; set; }
-        //private bool Theme { get; set; }
-
-        internal Presenter(ILoginView loginView, IModelka imodelka, IRegistrView registrView)
+        private ImodelLogin _imodelka;
+        
+        internal PresenterLogin(ILoginView loginView, ImodelLogin imodelka)
         {
             _loginView = loginView ?? throw new ArgumentNullException(nameof(loginView));
             _imodelka = imodelka ?? throw new ArgumentNullException(nameof(imodelka));
-            _registrView = registrView ?? throw new ArgumentNullException(nameof(imodelka));
 
+            //обработчик для вьювера
             _loginView.ExitApl += LoginView_Exit;
-            _loginView.LeaveLoginTextBox += LeaveLogin;
-          
-            _loginView.LeavePasswordTextBox += LeavePassword;
-            //_loginView.leaveSecondPasswordTextBox += LeaveSecondPswAndCheck;
             _loginView.Enter += EnterButtonClicked;
             _loginView.Show_Psw += View_show_Psw;
             _loginView.CharKeyPresd += OnlyEnglishCheck;
             _loginView.Registr_click += Registr_click;
 
+            //обработчик для модели
+            _imodelka.LogMismatch += _imodelka_LogMismatch;
+            _imodelka.LoginGo += _imodelka_LoginGo;
+
+        }
+        /// <summary>
+        /// затычка
+        /// </summary>
+        private void _imodelka_LoginGo()
+        {
+            MessageBox.Show("You ENTER", "OK", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void _imodelka_LogMismatch()
+        {
+            _loginView.ClearAll();
+            MessageBox.Show("LOGIN OR PASSWORD MISMATCH", "ERROR", MessageBoxButtons.OK,MessageBoxIcon.Error);
         }
 
         private void Registr_click(object? sender, EventArgs e)
@@ -46,23 +54,25 @@ namespace User_Interface.Login_page_mvp.Login.Presenter
 
         private void OnlyEnglishCheck(object? sender, EventArgs e)
         {
-            var label  = sender as Label;
+            var label = sender as Label;
 
 
             if (e is KeyPressEventArgs args)
             {
 
 
-                if (!(Char.IsDigit(args.KeyChar) || Char.IsControl(args.KeyChar)))
+                if (!(char.IsDigit(args.KeyChar) || char.IsControl(args.KeyChar)))
                 {
 
                     args.Handled = true;
+                    if(label is not null)
                     label.Visible = true;
 
                 }
                 else
                 {
-                    label.Visible = false;
+                    if (label is not null)
+                        label.Visible = false;
                 }
 
 
@@ -77,36 +87,23 @@ namespace User_Interface.Login_page_mvp.Login.Presenter
             {
                 _loginView.ShowPsw();
             }
-            else{
+            else
+            {
                 _loginView.UnShowPsw();
             }
         }
 
         private void EnterButtonClicked(object? sender, EventArgs e)
         {
-
-           
             
+            (_imodelka.Login, _imodelka.Password) = _loginView.CopyUserLogin();
+            _imodelka.LogInApl();   
         }
 
-        private void LeaveSecondPswAndCheck(object? sender, string e)
-        {
-            SecPassword = e;
-        }
+       
 
-        private void LeavePassword(object? sender, string e)
-        {
-            Password = e;
-            //if (e.Length > 0)
-            //{
-            //    _loginView.UnBlockSecPsw();
-            //}
-        }
 
-        private void LeaveLogin(object? sender, string e)
-        {
-            Login = e;
-        }
+        
 
         private void LoginView_Exit(object? sender, EventArgs e)
         {

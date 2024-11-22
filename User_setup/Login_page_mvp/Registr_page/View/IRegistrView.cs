@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User_Interface.Login_page_mvp.Login.View.Registr
+namespace User_Interface.Login_page_mvp.Registr_page.View
 {
     internal interface IRegistrView
     {

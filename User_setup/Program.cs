@@ -1,8 +1,8 @@
-using User_Interface.Login_page_mvp.Login.Model;
-using User_Interface.Login_page_mvp.Login.Presenter;
 using User_Interface.Login_page_mvp.View;
 using User_Interface.Login_page_mvp.Login.View.Registr;
 using User_Interface.ExtendedTool;
+using User_Interface.Login_page_mvp.Login_page.Model;
+using User_Interface.Login_page_mvp.Login_page;
 namespace User_setup
 {
     internal static class Program
@@ -16,9 +16,9 @@ namespace User_setup
 
 
             formLogin formLogin = new formLogin();
-            Model model = new Model();
-            RegistrForm registrForm = new RegistrForm();
-            Presenter presenter = new Presenter(formLogin, model, registrForm);
+            ModelLogin model = new ModelLogin();
+
+            PresenterLogin presenter = new PresenterLogin(formLogin, model);
             Application.Run(formLogin);
 
 

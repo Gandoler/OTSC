@@ -11,7 +11,7 @@ namespace User_Interface.ExtendedTool.Connect_and_query.query
     {
         public static bool CheckOFExistUser(MySqlConnection connection,long login,string psw)
         {
-            string query = "SELECT COUNT(*) FROM Users WHERE Login = @login and Password = @psw;";
+            string query = "SELECT COUNT(*) FROM UsersLogin WHERE Login = @login and Password = @psw;";
             try
             {
                 using var query_command = new MySqlCommand(query, connection);
@@ -41,7 +41,7 @@ namespace User_Interface.ExtendedTool.Connect_and_query.query
                 MessageBox.Show("User exist already", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            string query = "INSERT INTO Users (Login, Password, Email) VALUES (@login, @psw, @email);";
+            string query = "INSERT INTO UsersLogin (Login, Password, Email) VALUES (@login, @psw, @email);";
             try
             {
                 using var query_command = new MySqlCommand(query, connection);
