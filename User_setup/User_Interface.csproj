@@ -52,5 +52,9 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="MainPageMvp\NotifyPage\" />
+  </ItemGroup>
+
 
 </Project>
