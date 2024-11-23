@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
+namespace User_Interface.ExtendedTool.Connect_and_query
 {
-    internal interface IVievForgotPasswordpage
+    internal class ExitSaftyClass
     {
     }
 }

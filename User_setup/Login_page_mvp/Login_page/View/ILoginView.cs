@@ -19,6 +19,7 @@ namespace User_Interface.Login_page_mvp.Login_page.View
         event EventHandler<EventArgs> CharKeyPresd;
         event EventHandler Registr_click;
 
+
         void ShowPsw();
         void UnShowPsw();
         void NextPage();
