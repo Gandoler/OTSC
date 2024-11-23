@@ -15,7 +15,8 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
         public ForgorPasswordForm()
         {
             InitializeComponent();
-            guna2ButtonSendCode.Click += (s, e) => SendCodeButtonPress?.Invoke(this,EventArgs.Empty);
+            guna2TextBoxEmail.Leave += (s, e) => EnterEmailOpenCodeField?.Invoke(guna2TextBoxEmail, EventArgs.Empty);
+            guna2ButtonSendCode.Click += (s, e) => ButtonCheckCodeClick?.Invoke();
             guna2ButtonSaveNewPassword.Click += (s, e) => SaveNewPasswordButtonPress?.Invoke(this, EventArgs.Empty);
             buttonExit.Click += (s, e) => ExitButtonPress?.Invoke(this, EventArgs.Empty);
             guna2TextBoxEmail.Enter += (s,e) => EnterInEmailField?.Invoke();
@@ -53,8 +54,22 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
 
         public event EventHandler SaveNewPasswordButtonPress;
         public event EventHandler ExitButtonPress;
-        public event EventHandler SendCodeButtonPress;
+        public event EventHandler EnterEmailOpenCodeField;
         public event Action EnterInEmailField;
+        public event Action EnterInPasswordBox;
+        public event Action ButtonCheckCodeClick;
+
+        public void ClearPasswords()
+        {
+            guna2TextBoxPasswordOne?.Clear();
+            PasswordSeconndTime?.Clear();
+            labelPswMissmatch.Visible = true;
+        }
+
+        public void DisableMissmatchLabel()
+        {
+            labelPswMissmatch.Visible = false;
+        }
 
         public void MakeCodeFieldDisable()
         {

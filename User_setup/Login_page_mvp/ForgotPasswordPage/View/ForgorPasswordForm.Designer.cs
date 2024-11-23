@@ -68,6 +68,7 @@
             panel1 = new Panel();
             guna2ButtonSaveNewPassword = new Guna.UI2.WinForms.Guna2Button();
             guna2TextBox7 = new Guna.UI2.WinForms.Guna2TextBox();
+            labelPswMissmatch = new Label();
             panelBackTitle.SuspendLayout();
             SuspendLayout();
             // 
@@ -397,11 +398,24 @@
             guna2TextBox7.TabIndex = 31;
             guna2TextBox7.Visible = false;
             // 
+            // labelPswmissmatch
+            // 
+            labelPswMissmatch.BackColor = Color.Transparent;
+            labelPswMissmatch.Font = new Font("Verdana", 14F, FontStyle.Bold | FontStyle.Italic);
+            labelPswMissmatch.ForeColor = Color.Red;
+            labelPswMissmatch.Location = new Point(100, 43);
+            labelPswMissmatch.Name = "labelPswmissmatch";
+            labelPswMissmatch.Size = new Size(200, 32);
+            labelPswMissmatch.TabIndex = 37;
+            labelPswMissmatch.Text = "PSW MISSMATCH";
+            labelPswMissmatch.Visible = false;
+            // 
             // ForgorPasswordForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(400, 300);
+            Controls.Add(labelPswMissmatch);
             Controls.Add(PasswordSeconndTime);
             Controls.Add(guna2TextBoxPasswordOne);
             Controls.Add(guna2TextBox6);
@@ -442,5 +456,6 @@
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2Button guna2ButtonSaveNewPassword;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox7;
+        private Label labelPswMissmatch;
     }
 }

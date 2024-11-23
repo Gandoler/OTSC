@@ -20,6 +20,10 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
         public void MakeCodeFieldDisable();
         public void RemakeWindow();
 
+        public void ClearPasswords();
+
+        public void DisableMissmatchLabel();
+
         
 
 
@@ -32,9 +36,13 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
         // dlia vihoda
         event EventHandler ExitButtonPress;
         //moment kogda vvel email doljno razblokirovat pole vvoda koda
-        event EventHandler SendCodeButtonPress;
+        event EventHandler EnterEmailOpenCodeField;
         //esli tip reshit pomeniat pochtu
         event Action EnterInEmailField;
+        //tut tip poterial nad soboi kontrol i vvel vtoroi parol ne verno
+        event Action EnterInPasswordBox;
+        // tut sootvetsvenno moment kogda on vvel kod
+        event Action ButtonCheckCodeClick;
 
 
 

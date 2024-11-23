@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using User_Interface.Login_page_mvp.Login_page.Model;
 using User_Interface.Login_page_mvp.Login_page.View;
 using User_Interface.Login_page_mvp.Registr_page.View;
+using User_setup;
 
 namespace User_Interface.Login_page_mvp.Login_page
 {
@@ -107,7 +108,7 @@ namespace User_Interface.Login_page_mvp.Login_page
 
         private void LoginView_Exit(object? sender, EventArgs e)
         {
-            Application.Exit();
+            ExitSaftyClass.AplicationExitSafety();
         }
 
     }

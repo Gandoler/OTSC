@@ -8,5 +8,11 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.Model
 {
     internal interface IModelForgotPasswordPage
     {
+       public int Code { get; set; }
+
+        internal bool isSecEqualFirst(string First, string Second);
+
+        
+
     }
 }

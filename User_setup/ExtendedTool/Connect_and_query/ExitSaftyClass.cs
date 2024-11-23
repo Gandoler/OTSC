@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using User_Interface.ExtendedTool.Connect_and_query;
 
-namespace User_Interface.ExtendedTool.Connect_and_query
+namespace User_setup
 {
-    internal class ExitSaftyClass
+    public static class ExitSaftyClass
     {
+        public static void AplicationExitSafety()
+        {
+            RealConnect.CloseConnection();
+            Application.Exit();
+        }
     }
 }
