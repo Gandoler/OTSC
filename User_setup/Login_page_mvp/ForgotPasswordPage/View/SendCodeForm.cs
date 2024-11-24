@@ -10,16 +10,29 @@ using System.Windows.Forms;
 
 namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
 {
-    public partial class ForgorPasswordForm : Form, IViewForgotPasswordPage
+    public partial class SendCodeForm : Form, IViewForgotPasswordPage
     {
-        public ForgorPasswordForm()
+        public SendCodeForm()
         {
             InitializeComponent();
-            guna2TextBoxEmail.Leave += (s, e) => EnterEmailOpenCodeField?.Invoke(guna2TextBoxEmail, EventArgs.Empty);
-            guna2ButtonSendCode.Click += (s, e) => ButtonCheckCodeClick?.Invoke();
-            guna2ButtonSaveNewPassword.Click += (s, e) => SaveNewPasswordButtonPress?.Invoke(this, EventArgs.Empty);
-            buttonExit.Click += (s, e) => ExitButtonPress?.Invoke(this, EventArgs.Empty);
-            guna2TextBoxEmail.Enter += (s,e) => EnterInEmailField?.Invoke();
+            //FOR ALL
+            //
+            // Exit from application
+            buttonExit.Click += (s, e) => Exit_Aplicatiom?.Invoke(this, EventArgs.Empty);
+
+
+            //FOR CODE ENTER
+            //
+            // User had been Entered his email (Field for code must be enable)
+            guna2ButtonSendCode.Click += (s, e) => ButtonConfirmCode?.Invoke();
+            // User Change his Email
+            guna2TextBoxEmail.Enter += (s, e) => ChangeEmail?.Invoke();
+            // User input code and press 
+            
+
+
+            
+           
         }
 
 
@@ -51,13 +64,11 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
             }
         }
 
-
-        public event EventHandler SaveNewPasswordButtonPress;
-        public event EventHandler ExitButtonPress;
-        public event EventHandler EnterEmailOpenCodeField;
-        public event Action EnterInEmailField;
-        public event Action EnterInPasswordBox;
-        public event Action ButtonCheckCodeClick;
+        public event EventHandler Exit_Aplicatiom;
+        public event EventHandler User_Enter_EMAIL;
+        public event Action ChangeEmail;
+        public event Action ButtonConfirmCode;
+        public event EventHandler Save_New_Password;
 
         public void ClearPasswords()
         {

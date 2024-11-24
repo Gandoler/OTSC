@@ -24,25 +24,32 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
 
         public void DisableMissmatchLabel();
 
+
+        //FOR ALL
+        //
+        // Exit from application
+        event EventHandler Exit_Aplicatiom;
+        ////////////////////////////////////
+
+
+        //FOR CODE ENTER
+        //
+        // User had been Entered his email (Field for code must be enable)
+        event EventHandler User_Enter_EMAIL;
+        // User Change his Email
+        event Action ChangeEmail;
+        // User input code and press 
+        event Action ButtonConfirmCode;
+
+
+        //FOR PASSWORD NEW ENTER
+        //
+        // Save new password
+        event EventHandler Save_New_Password;
+
+
+    
         
-
-
-
-
-
-        // dlia momenta kogda kod uzje vveden 
-        // doljno dernut na polia zameni parolia
-        event EventHandler SaveNewPasswordButtonPress;
-        // dlia vihoda
-        event EventHandler ExitButtonPress;
-        //moment kogda vvel email doljno razblokirovat pole vvoda koda
-        event EventHandler EnterEmailOpenCodeField;
-        //esli tip reshit pomeniat pochtu
-        event Action EnterInEmailField;
-        //tut tip poterial nad soboi kontrol i vvel vtoroi parol ne verno
-        event Action EnterInPasswordBox;
-        // tut sootvetsvenno moment kogda on vvel kod
-        event Action ButtonCheckCodeClick;
 
 
 

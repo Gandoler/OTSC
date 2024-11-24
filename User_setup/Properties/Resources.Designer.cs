@@ -93,6 +93,16 @@ namespace User_Interface.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1709693764_bogatyr_club_f06x_p_fon_dlya_prilozheniya_103 {
+            get {
+                object obj = ResourceManager.GetObject("1709693764_bogatyr-club-f06x-p-fon-dlya-prilozheniya-103", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);

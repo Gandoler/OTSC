@@ -25,18 +25,18 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
             //
             //
             // dlia vihoda
-            _viewForgotPasswordPage.ExitButtonPress += _viewForgotPasswordPage_ExitButtonPress;
+            _viewForgotPasswordPage.Exit_Aplicatiom += _viewForgotPasswordPage_ExitButtonPress;
             //moment kogda vvel email doljno razblokirovat pole vvoda koda
-            _viewForgotPasswordPage.EnterEmailOpenCodeField += _viewForgotPasswordPage_SendCodeButtonPress;
+            _viewForgotPasswordPage.User_Enter_EMAIL += _viewForgotPasswordPage_SendCodeButtonPress;
             // dlia momenta kogda kod uzje vveden 
             // doljno dernut na polia zameni parolia
-            _viewForgotPasswordPage.SaveNewPasswordButtonPress += _viewForgotPasswordPage_SaveNewPasswordButtonPress;
+            _viewForgotPasswordPage.Save_New_Password += _viewForgotPasswordPage_SaveNewPasswordButtonPress;
             //esli tip reshit pomeniat pochtu
-            _viewForgotPasswordPage.EnterInEmailField += _viewForgotPasswordPage_EnterInEmailField;
+            _viewForgotPasswordPage.ChangeEmail += _viewForgotPasswordPage_EnterInEmailField;
             //tut tip poterial nad soboi kontrol i vvel vtoroi parol ne verno
             _viewForgotPasswordPage.EnterInPasswordBox += _viewForgotPasswordPage_EnterInPasswordBox;
             // tut sootvetsvenno moment kogda on vvel kod
-            _viewForgotPasswordPage.EnterEmailOpenCodeField += _viewForgotPasswordPage_EnterEmailOpenCodeField;
+            _viewForgotPasswordPage.User_Enter_EMAIL += _viewForgotPasswordPage_EnterEmailOpenCodeField;
 
 
         }
