@@ -87,7 +87,7 @@
             ExitButton.FillColor = Color.Transparent;
             ExitButton.Font = new Font("Arial Rounded MT Bold", 14F);
             ExitButton.ForeColor = Color.Black;
-            ExitButton.Location = new Point(262, 0);
+            ExitButton.Location = new Point(265, 0);
             ExitButton.Name = "ExitButton";
             ExitButton.PressedColor = Color.Transparent;
             ExitButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -150,6 +150,7 @@
             SaveNewPasswordButton.DisabledState.CustomBorderColor = Color.DarkGray;
             SaveNewPasswordButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             SaveNewPasswordButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            SaveNewPasswordButton.Enabled = false;
             SaveNewPasswordButton.FillColor = Color.FromArgb(48, 64, 64);
             SaveNewPasswordButton.Font = new Font("Microsoft Sans Serif", 10F);
             SaveNewPasswordButton.ForeColor = Color.White;

@@ -103,9 +103,59 @@ namespace User_Interface.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1709693764_bogatyr_club_f06x_p_fon_dlya_prilozheniya_104 {
+            get {
+                object obj = ResourceManager.GetObject("1709693764_bogatyr-club-f06x-p-fon-dlya-prilozheniya-104", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_icon_back_4562793 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-back-4562793", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_error_2731804 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-error-2731804", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_error_27318041 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-error-27318041", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_error_27318042 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-error-27318042", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_error_27318043 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-error-27318043", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
