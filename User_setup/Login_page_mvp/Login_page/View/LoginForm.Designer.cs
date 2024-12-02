@@ -32,8 +32,6 @@ namespace User_Interface.Login_page_mvp.View
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -42,11 +40,14 @@ namespace User_Interface.Login_page_mvp.View
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
             panelBackTitle = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             label1 = new Label();
             LoginLabel = new Label();
-            buttonExit = new Button();
             checkBoxSWhowPsw = new Guna.UI2.WinForms.Guna2CheckBox();
             logoPanel = new Panel();
             guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
@@ -56,22 +57,23 @@ namespace User_Interface.Login_page_mvp.View
             textBoxPasswordGuna = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ButtonRegistr = new Guna.UI2.WinForms.Guna2Button();
             guna2ButtonLogin = new Guna.UI2.WinForms.Guna2Button();
+            ExitButton = new Guna.UI2.WinForms.Guna2Button();
             panelBackTitle.SuspendLayout();
             SuspendLayout();
             // 
             // panelBackTitle
             // 
+            panelBackTitle.Controls.Add(ExitButton);
             panelBackTitle.Controls.Add(label1);
             panelBackTitle.Controls.Add(LoginLabel);
-            panelBackTitle.Controls.Add(buttonExit);
-            panelBackTitle.CustomizableEdges = customizableEdges1;
+            panelBackTitle.CustomizableEdges = customizableEdges3;
             panelBackTitle.FillColor = Color.FromArgb(4, 32, 44);
             panelBackTitle.FillColor2 = Color.FromArgb(48, 64, 64);
             panelBackTitle.FillColor3 = Color.FromArgb(91, 112, 101);
             panelBackTitle.FillColor4 = Color.FromArgb(201, 209, 200);
             panelBackTitle.Location = new Point(0, 0);
             panelBackTitle.Name = "panelBackTitle";
-            panelBackTitle.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            panelBackTitle.ShadowDecoration.CustomizableEdges = customizableEdges4;
             panelBackTitle.Size = new Size(800, 35);
             panelBackTitle.TabIndex = 1;
             // 
@@ -101,17 +103,6 @@ namespace User_Interface.Login_page_mvp.View
             LoginLabel.Size = new Size(99, 31);
             LoginLabel.TabIndex = 3;
             LoginLabel.Text = "LOGIN";
-            // 
-            // buttonExit
-            // 
-            buttonExit.BackColor = Color.FromArgb(201, 209, 200);
-            buttonExit.Dock = DockStyle.Right;
-            buttonExit.Location = new Point(770, 0);
-            buttonExit.Name = "buttonExit";
-            buttonExit.Size = new Size(30, 35);
-            buttonExit.TabIndex = 2;
-            buttonExit.Text = "X";
-            buttonExit.UseVisualStyleBackColor = false;
             // 
             // checkBoxSWhowPsw
             // 
@@ -163,7 +154,7 @@ namespace User_Interface.Login_page_mvp.View
             textBoxLoginGuna.BackColor = Color.Transparent;
             textBoxLoginGuna.BorderColor = Color.FromArgb(201, 209, 200);
             textBoxLoginGuna.BorderRadius = 15;
-            textBoxLoginGuna.CustomizableEdges = customizableEdges3;
+            textBoxLoginGuna.CustomizableEdges = customizableEdges5;
             textBoxLoginGuna.DefaultText = "";
             textBoxLoginGuna.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             textBoxLoginGuna.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -181,7 +172,7 @@ namespace User_Interface.Login_page_mvp.View
             textBoxLoginGuna.PlaceholderForeColor = Color.DimGray;
             textBoxLoginGuna.PlaceholderText = "Login";
             textBoxLoginGuna.SelectedText = "";
-            textBoxLoginGuna.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            textBoxLoginGuna.ShadowDecoration.CustomizableEdges = customizableEdges6;
             textBoxLoginGuna.Size = new Size(200, 50);
             textBoxLoginGuna.TabIndex = 15;
             // 
@@ -190,7 +181,7 @@ namespace User_Interface.Login_page_mvp.View
             textBoxPasswordGuna.BackColor = Color.Transparent;
             textBoxPasswordGuna.BorderColor = Color.FromArgb(201, 209, 200);
             textBoxPasswordGuna.BorderRadius = 15;
-            textBoxPasswordGuna.CustomizableEdges = customizableEdges5;
+            textBoxPasswordGuna.CustomizableEdges = customizableEdges7;
             textBoxPasswordGuna.DefaultText = "";
             textBoxPasswordGuna.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             textBoxPasswordGuna.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -208,7 +199,7 @@ namespace User_Interface.Login_page_mvp.View
             textBoxPasswordGuna.PlaceholderForeColor = Color.DimGray;
             textBoxPasswordGuna.PlaceholderText = "Password";
             textBoxPasswordGuna.SelectedText = "";
-            textBoxPasswordGuna.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            textBoxPasswordGuna.ShadowDecoration.CustomizableEdges = customizableEdges8;
             textBoxPasswordGuna.Size = new Size(200, 50);
             textBoxPasswordGuna.TabIndex = 16;
             // 
@@ -216,7 +207,7 @@ namespace User_Interface.Login_page_mvp.View
             // 
             guna2ButtonRegistr.BackColor = Color.Transparent;
             guna2ButtonRegistr.BorderRadius = 15;
-            guna2ButtonRegistr.CustomizableEdges = customizableEdges7;
+            guna2ButtonRegistr.CustomizableEdges = customizableEdges9;
             guna2ButtonRegistr.DisabledState.BorderColor = Color.DarkGray;
             guna2ButtonRegistr.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2ButtonRegistr.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -226,7 +217,7 @@ namespace User_Interface.Login_page_mvp.View
             guna2ButtonRegistr.ForeColor = Color.White;
             guna2ButtonRegistr.Location = new Point(300, 214);
             guna2ButtonRegistr.Name = "guna2ButtonRegistr";
-            guna2ButtonRegistr.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2ButtonRegistr.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2ButtonRegistr.Size = new Size(200, 50);
             guna2ButtonRegistr.TabIndex = 17;
             guna2ButtonRegistr.Text = "REGISTR";
@@ -235,7 +226,7 @@ namespace User_Interface.Login_page_mvp.View
             // 
             guna2ButtonLogin.BackColor = Color.Transparent;
             guna2ButtonLogin.BorderRadius = 15;
-            guna2ButtonLogin.CustomizableEdges = customizableEdges9;
+            guna2ButtonLogin.CustomizableEdges = customizableEdges11;
             guna2ButtonLogin.DisabledState.BorderColor = Color.DarkGray;
             guna2ButtonLogin.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2ButtonLogin.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -245,10 +236,29 @@ namespace User_Interface.Login_page_mvp.View
             guna2ButtonLogin.ForeColor = Color.White;
             guna2ButtonLogin.Location = new Point(300, 270);
             guna2ButtonLogin.Name = "guna2ButtonLogin";
-            guna2ButtonLogin.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2ButtonLogin.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2ButtonLogin.Size = new Size(200, 50);
             guna2ButtonLogin.TabIndex = 18;
             guna2ButtonLogin.Text = "LOGIN";
+            // 
+            // ExitButton
+            // 
+            ExitButton.BackColor = Color.Transparent;
+            ExitButton.CustomizableEdges = customizableEdges1;
+            ExitButton.DisabledState.BorderColor = Color.DarkGray;
+            ExitButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            ExitButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            ExitButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            ExitButton.FillColor = Color.Transparent;
+            ExitButton.Font = new Font("Arial Rounded MT Bold", 14F);
+            ExitButton.ForeColor = Color.Black;
+            ExitButton.Location = new Point(762, 0);
+            ExitButton.Name = "ExitButton";
+            ExitButton.PressedColor = Color.Transparent;
+            ExitButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            ExitButton.Size = new Size(35, 35);
+            ExitButton.TabIndex = 40;
+            ExitButton.Text = "X";
             // 
             // formLogin
             // 
@@ -279,7 +289,6 @@ namespace User_Interface.Login_page_mvp.View
 
         #endregion
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelBackTitle;
-        private Button buttonExit;
         private Guna.UI2.WinForms.Guna2CheckBox checkBoxSWhowPsw;
         private Panel logoPanel;
         private Label LoginLabel;
@@ -291,5 +300,6 @@ namespace User_Interface.Login_page_mvp.View
         private Guna.UI2.WinForms.Guna2TextBox textBoxPasswordGuna;
         private Guna.UI2.WinForms.Guna2Button guna2ButtonRegistr;
         private Guna.UI2.WinForms.Guna2Button guna2ButtonLogin;
+        private Guna.UI2.WinForms.Guna2Button ExitButton;
     }
 }

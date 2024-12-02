@@ -13,73 +13,20 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
     internal class PresenterForgotPasswoedPage
     {
         private readonly IModelForgotPasswordPage _modelForgotPasswordPage;
-        private readonly IViewForgotPasswordPage _viewForgotPasswordPage;
+        private readonly IViewChangePasswod _viewForgotPasswordPage;
+        private readonly IViewEmailEnter _viewEmailEnter;
 
 
-        public PresenterForgotPasswoedPage(IModelForgotPasswordPage modelForgotPasswordPage, IViewForgotPasswordPage viewForgotPasswordPage)
+        public PresenterForgotPasswoedPage(IModelForgotPasswordPage modelForgotPasswordPage, IViewChangePasswod viewForgotPasswordPage, IViewEmailEnter viewEmailEnter)
         {
-            _modelForgotPasswordPage  = modelForgotPasswordPage ?? throw new ArgumentNullException(nameof(IModelForgotPasswordPage));
-            _viewForgotPasswordPage = viewForgotPasswordPage ?? throw new ArgumentNullException(nameof(IViewForgotPasswordPage));
-            //podpichiki dlia vida
-            //
-            //
-            //
-            // dlia vihoda
-            _viewForgotPasswordPage.Exit_Aplicatiom += _viewForgotPasswordPage_ExitButtonPress;
-            //moment kogda vvel email doljno razblokirovat pole vvoda koda
-            _viewForgotPasswordPage.User_Enter_EMAIL += _viewForgotPasswordPage_SendCodeButtonPress;
-            // dlia momenta kogda kod uzje vveden 
-            // doljno dernut na polia zameni parolia
-            _viewForgotPasswordPage.Save_New_Password += _viewForgotPasswordPage_SaveNewPasswordButtonPress;
-            //esli tip reshit pomeniat pochtu
-            _viewForgotPasswordPage.ChangeEmail += _viewForgotPasswordPage_EnterInEmailField;
-            //tut tip poterial nad soboi kontrol i vvel vtoroi parol ne verno
-            _viewForgotPasswordPage.EnterInPasswordBox += _viewForgotPasswordPage_EnterInPasswordBox;
-            // tut sootvetsvenno moment kogda on vvel kod
-            _viewForgotPasswordPage.User_Enter_EMAIL += _viewForgotPasswordPage_EnterEmailOpenCodeField;
+            _modelForgotPasswordPage= modelForgotPasswordPage;
+            _viewForgotPasswordPage = viewForgotPasswordPage;
+            _viewEmailEnter= viewEmailEnter;
+
 
 
         }
 
-        private void _viewForgotPasswordPage_EnterEmailOpenCodeField(object? sender, EventArgs e)
-        {
-            
-        }
-
-        private void _viewForgotPasswordPage_EnterInPasswordBox()
-        {
-            _viewForgotPasswordPage.DisableMissmatchLabel();
-        }
-
-        private void _viewForgotPasswordPage_EnterInEmailField()
-        {
-            _viewForgotPasswordPage.MakeCodeFieldDisable();
-        }
-
-        private void _viewForgotPasswordPage_SaveNewPasswordButtonPress(object? sender, EventArgs e)
-        {
-            string first = _viewForgotPasswordPage.PasswordField;
-            string second = _viewForgotPasswordPage.PasswordSecondField;
-            if (_modelForgotPasswordPage.isSecEqualFirst(first, second))
-            {
-
-            }
-            else
-            {
-                _viewForgotPasswordPage.ClearPasswords();
-            }
-        }
-
-        private void _viewForgotPasswordPage_SendCodeButtonPress(object? sender, EventArgs e)
-        {
-            _viewForgotPasswordPage.MakeCodeFieldEnable();
-
-        }
-
-        private void _viewForgotPasswordPage_ExitButtonPress(object? sender, EventArgs e)
-        {
-            ExitSaftyClass.AplicationExitSafety();
-
-        }
+     
     }
 }

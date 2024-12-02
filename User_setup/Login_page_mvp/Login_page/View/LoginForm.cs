@@ -35,7 +35,7 @@ namespace User_Interface.Login_page_mvp.View
             // 
             // buttonExit
             // 
-            buttonExit.Click += (s, e) => ExitApl?.Invoke(this, EventArgs.Empty);
+            ExitButton.Click += (s, e) => ExitApl?.Invoke(this, EventArgs.Empty);
             // 
             // buttonEnter
             // 
