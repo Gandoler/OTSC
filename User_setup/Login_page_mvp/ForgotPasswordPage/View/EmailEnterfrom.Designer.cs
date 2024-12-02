@@ -46,7 +46,7 @@
             guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             guna2AnimateWindow2 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             panel1 = new Panel();
-            SaveNewPasswordButton = new Guna.UI2.WinForms.Guna2Button();
+            SendCodeButton = new Guna.UI2.WinForms.Guna2Button();
             EmailFieldTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             panelBackTitle.SuspendLayout();
@@ -123,25 +123,25 @@
             panel1.Size = new Size(0, 0);
             panel1.TabIndex = 42;
             // 
-            // SaveNewPasswordButton
+            // SendCodeButton
             // 
-            SaveNewPasswordButton.BackColor = Color.Transparent;
-            SaveNewPasswordButton.BorderRadius = 15;
-            SaveNewPasswordButton.CustomizableEdges = customizableEdges5;
-            SaveNewPasswordButton.DisabledState.BorderColor = Color.DarkGray;
-            SaveNewPasswordButton.DisabledState.CustomBorderColor = Color.DarkGray;
-            SaveNewPasswordButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            SaveNewPasswordButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            SaveNewPasswordButton.Enabled = false;
-            SaveNewPasswordButton.FillColor = Color.FromArgb(48, 64, 64);
-            SaveNewPasswordButton.Font = new Font("Microsoft Sans Serif", 10F);
-            SaveNewPasswordButton.ForeColor = Color.White;
-            SaveNewPasswordButton.Location = new Point(48, 175);
-            SaveNewPasswordButton.Name = "SaveNewPasswordButton";
-            SaveNewPasswordButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            SaveNewPasswordButton.Size = new Size(200, 50);
-            SaveNewPasswordButton.TabIndex = 40;
-            SaveNewPasswordButton.Text = "Send Code";
+            SendCodeButton.BackColor = Color.Transparent;
+            SendCodeButton.BorderRadius = 15;
+            SendCodeButton.CustomizableEdges = customizableEdges5;
+            SendCodeButton.DisabledState.BorderColor = Color.DarkGray;
+            SendCodeButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            SendCodeButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            SendCodeButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            SendCodeButton.Enabled = false;
+            SendCodeButton.FillColor = Color.FromArgb(48, 64, 64);
+            SendCodeButton.Font = new Font("Microsoft Sans Serif", 10F);
+            SendCodeButton.ForeColor = Color.White;
+            SendCodeButton.Location = new Point(48, 175);
+            SendCodeButton.Name = "SendCodeButton";
+            SendCodeButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            SendCodeButton.Size = new Size(200, 50);
+            SendCodeButton.TabIndex = 40;
+            SendCodeButton.Text = "Send Code";
             // 
             // EmailFieldTextBox
             // 
@@ -200,10 +200,11 @@
             Controls.Add(logoPanel);
             Controls.Add(EmailFieldTextBox);
             Controls.Add(panel1);
-            Controls.Add(SaveNewPasswordButton);
+            Controls.Add(SendCodeButton);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EmailEnterfrom";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             panelBackTitle.ResumeLayout(false);
             ResumeLayout(false);
@@ -218,7 +219,7 @@
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow2;
         private Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button SaveNewPasswordButton;
+        private Guna.UI2.WinForms.Guna2Button SendCodeButton;
         private Guna.UI2.WinForms.Guna2TextBox EmailFieldTextBox;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
     }

@@ -10,8 +10,12 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
     {
         
         public void NextPage();
-        event EventHandler LeaveEmailBoxCheckCorrect;
-        event Action EnterSendCodeButton;
-        event Action LeaveForgotpage;
+
+        public bool ImageErrorrVisible { set; }
+        event EventHandler<string> LeaveEmailBoxAndCheckCorrect;
+        event Action SendCodeButtonClick;
+        event EventHandler ExitForgotPageButtonClick;
+        event EventHandler<Color> EnterExitButton;
+        event EventHandler<Color> LeaveExitButton;
     }
 }

@@ -3,7 +3,7 @@
 
 namespace User_Interface.Login_page_mvp.View
 {
-    partial class formLogin
+    partial class LoginFrom
     {
         /// <summary>
         /// Required designer variable.
@@ -44,7 +44,7 @@ namespace User_Interface.Login_page_mvp.View
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginFrom));
             panelBackTitle = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             label1 = new Label();
             LoginLabel = new Label();

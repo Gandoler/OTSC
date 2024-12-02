@@ -14,9 +14,9 @@ using User_Interface.Login_page_mvp.Login_page.View;
 
 namespace User_Interface.Login_page_mvp.View
 {
-    internal partial class formLogin : Form, ILoginView
+    internal partial class LoginFrom : Form, ILoginView
     {
-        public formLogin()
+        public LoginFrom()
         {
             InitializeComponent();
             // 
