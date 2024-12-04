@@ -25,6 +25,7 @@ internal static class RealConnect
             }
             else
             {
+                Log.Information("Empty set in JSON in RealConnect class");
                 MessageBox.Show("Problems with JSON", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }

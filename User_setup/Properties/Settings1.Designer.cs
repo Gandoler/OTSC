@@ -37,8 +37,7 @@ namespace OTSC_ui.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\\\Users\\\\glkru\\\\OneDrive\\\\Desktop\\\\prj\\\\Project_cpo\\\\User_setup\\\\Properties\\\\Re" +
-            "alSecret.json")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\glkru\\OneDrive\\Desktop\\prj\\Project_cpo\\User_setup\\RealSecret.json")]
         public string Jsonpath {
             get {
                 return ((string)(this["Jsonpath"]));

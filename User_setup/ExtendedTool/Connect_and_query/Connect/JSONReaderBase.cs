@@ -11,6 +11,13 @@ namespace OTSC_ui.ExtendedTool.Connect_and_query.Connect
         public static DBdata? bdata()
         {
             string filePath = Properties.Settings1.Default.Jsonpath;
+
+            Log.Information(filePath + "-filepath");
+            if (File.Exists(filePath))
+            {
+                Log.Information(filePath + "-exist");
+            }
+
             if (filePath == null)
             {
                 using (var inputForm = new CustomShowBox())
