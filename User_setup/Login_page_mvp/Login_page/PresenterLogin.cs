@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using OTSC_ui.ExtendedTool.Connect_and_query.Connect;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,6 @@ using System.Threading.Tasks;
 using User_Interface.Login_page_mvp.Login_page.Model;
 using User_Interface.Login_page_mvp.Login_page.View;
 using User_Interface.Login_page_mvp.Registr_page.View;
-using User_setup;
 
 namespace User_Interface.Login_page_mvp.Login_page
 {

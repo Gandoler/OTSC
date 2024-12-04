@@ -121,4 +121,25 @@
   <data name="Fon_LOGINPAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1709693764_bogatyr-club-f06x-p-fon-dlya-prilozheniya-103.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Fon_RegistPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1709693764_bogatyr-club-f06x-p-fon-dlya-prilozheniya-103.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fon_SendCode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fon_NewPassword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FonPoloskiSleav.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GoBack_newPassword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-icon-back-45627931.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_withoutBackground_LOGINPAGE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_withoutBackground_RegistPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OnlyReflenniy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OnlyReflenniy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

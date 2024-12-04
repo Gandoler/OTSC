@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace User_Interface.ExtendedTool.Connect_and_query
+namespace OTSC_ui.ExtendedTool.Connect_and_query.Connect
 {
     public class DBdata
     {

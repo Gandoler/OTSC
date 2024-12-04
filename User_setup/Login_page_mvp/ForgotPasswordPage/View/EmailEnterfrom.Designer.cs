@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmailEnterfrom));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panelBackTitle = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             ExitButton = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
@@ -56,7 +56,7 @@
             // 
             panelBackTitle.Controls.Add(ExitButton);
             panelBackTitle.Controls.Add(label1);
-            panelBackTitle.CustomizableEdges = customizableEdges3;
+            panelBackTitle.CustomizableEdges = customizableEdges21;
             panelBackTitle.Dock = DockStyle.Top;
             panelBackTitle.FillColor = Color.FromArgb(4, 32, 44);
             panelBackTitle.FillColor2 = Color.FromArgb(48, 64, 64);
@@ -64,14 +64,14 @@
             panelBackTitle.FillColor4 = Color.FromArgb(201, 209, 200);
             panelBackTitle.Location = new Point(0, 0);
             panelBackTitle.Name = "panelBackTitle";
-            panelBackTitle.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            panelBackTitle.ShadowDecoration.CustomizableEdges = customizableEdges22;
             panelBackTitle.Size = new Size(300, 35);
             panelBackTitle.TabIndex = 39;
             // 
             // ExitButton
             // 
             ExitButton.BackColor = Color.Transparent;
-            ExitButton.CustomizableEdges = customizableEdges1;
+            ExitButton.CustomizableEdges = customizableEdges19;
             ExitButton.DisabledState.BorderColor = Color.DarkGray;
             ExitButton.DisabledState.CustomBorderColor = Color.DarkGray;
             ExitButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -82,7 +82,7 @@
             ExitButton.Location = new Point(265, 0);
             ExitButton.Name = "ExitButton";
             ExitButton.PressedColor = Color.Transparent;
-            ExitButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            ExitButton.ShadowDecoration.CustomizableEdges = customizableEdges20;
             ExitButton.Size = new Size(35, 35);
             ExitButton.TabIndex = 39;
             ExitButton.Text = "X";
@@ -125,7 +125,7 @@
             // 
             SendCodeButton.BackColor = Color.Transparent;
             SendCodeButton.BorderRadius = 15;
-            SendCodeButton.CustomizableEdges = customizableEdges5;
+            SendCodeButton.CustomizableEdges = customizableEdges23;
             SendCodeButton.DisabledState.BorderColor = Color.DarkGray;
             SendCodeButton.DisabledState.CustomBorderColor = Color.DarkGray;
             SendCodeButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -136,7 +136,7 @@
             SendCodeButton.ForeColor = Color.White;
             SendCodeButton.Location = new Point(48, 175);
             SendCodeButton.Name = "SendCodeButton";
-            SendCodeButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            SendCodeButton.ShadowDecoration.CustomizableEdges = customizableEdges24;
             SendCodeButton.Size = new Size(200, 50);
             SendCodeButton.TabIndex = 40;
             SendCodeButton.Text = "Send Code";
@@ -147,7 +147,7 @@
             EmailFieldTextBox.BackColor = Color.Transparent;
             EmailFieldTextBox.BorderColor = Color.FromArgb(201, 209, 200);
             EmailFieldTextBox.BorderRadius = 15;
-            EmailFieldTextBox.CustomizableEdges = customizableEdges7;
+            EmailFieldTextBox.CustomizableEdges = customizableEdges25;
             EmailFieldTextBox.DefaultText = "";
             EmailFieldTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             EmailFieldTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -165,7 +165,7 @@
             EmailFieldTextBox.PlaceholderForeColor = Color.DimGray;
             EmailFieldTextBox.PlaceholderText = "email:";
             EmailFieldTextBox.SelectedText = "";
-            EmailFieldTextBox.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            EmailFieldTextBox.ShadowDecoration.CustomizableEdges = customizableEdges26;
             EmailFieldTextBox.Size = new Size(200, 50);
             EmailFieldTextBox.TabIndex = 46;
             // 
@@ -173,13 +173,14 @@
             // 
             guna2ImageButton1.CheckedState.ImageSize = new Size(64, 64);
             guna2ImageButton1.HoverState.ImageSize = new Size(64, 64);
+            guna2ImageButton1.Image = (Image)resources.GetObject("guna2ImageButton1.Image");
             guna2ImageButton1.ImageOffset = new Point(0, 0);
             guna2ImageButton1.ImageRotate = 0F;
             guna2ImageButton1.ImageSize = new Size(32, 32);
             guna2ImageButton1.Location = new Point(200, 127);
             guna2ImageButton1.Name = "guna2ImageButton1";
             guna2ImageButton1.PressedState.ImageSize = new Size(64, 64);
-            guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges27;
             guna2ImageButton1.Size = new Size(32, 32);
             guna2ImageButton1.TabIndex = 47;
             guna2ImageButton1.Visible = false;
@@ -189,6 +190,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CadetBlue;
+            BackgroundImage = OTSC_ui.Properties.Resources.images;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(300, 350);
             Controls.Add(guna2ImageButton1);
