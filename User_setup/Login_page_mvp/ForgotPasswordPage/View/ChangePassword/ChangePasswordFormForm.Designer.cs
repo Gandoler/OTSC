@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePasswordFormForm));
             panelBackTitle = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             ExitButton = new Guna.UI2.WinForms.Guna2Button();
@@ -64,7 +64,7 @@
             panelBackTitle.Controls.Add(ExitButton);
             panelBackTitle.Controls.Add(GoBackButton);
             panelBackTitle.Controls.Add(label1);
-            panelBackTitle.CustomizableEdges = customizableEdges17;
+            panelBackTitle.CustomizableEdges = customizableEdges4;
             panelBackTitle.Dock = DockStyle.Top;
             panelBackTitle.FillColor = Color.FromArgb(4, 32, 44);
             panelBackTitle.FillColor2 = Color.FromArgb(48, 64, 64);
@@ -72,14 +72,14 @@
             panelBackTitle.FillColor4 = Color.FromArgb(201, 209, 200);
             panelBackTitle.Location = new Point(0, 0);
             panelBackTitle.Name = "panelBackTitle";
-            panelBackTitle.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            panelBackTitle.ShadowDecoration.CustomizableEdges = customizableEdges5;
             panelBackTitle.Size = new Size(300, 35);
             panelBackTitle.TabIndex = 20;
             // 
             // ExitButton
             // 
             ExitButton.BackColor = Color.Transparent;
-            ExitButton.CustomizableEdges = customizableEdges14;
+            ExitButton.CustomizableEdges = customizableEdges1;
             ExitButton.DisabledState.BorderColor = Color.DarkGray;
             ExitButton.DisabledState.CustomBorderColor = Color.DarkGray;
             ExitButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -90,7 +90,7 @@
             ExitButton.Location = new Point(265, 0);
             ExitButton.Name = "ExitButton";
             ExitButton.PressedColor = Color.Transparent;
-            ExitButton.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            ExitButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
             ExitButton.Size = new Size(35, 35);
             ExitButton.TabIndex = 39;
             ExitButton.Text = "X";
@@ -98,7 +98,7 @@
             // GoBackButton
             // 
             GoBackButton.BackColor = Color.Transparent;
-            GoBackButton.BackgroundImage = OTSC_ui.Properties.Resources.free_icon_back_4562793;
+            GoBackButton.BackgroundImage = OTSC_ui.Properties.Resources.GoBack_newPassword;
             GoBackButton.BackgroundImageLayout = ImageLayout.Stretch;
             GoBackButton.BorderColor = Color.FromArgb(0, 0, 64);
             GoBackButton.DisabledState.BorderColor = Color.DarkGray;
@@ -110,7 +110,7 @@
             GoBackButton.ForeColor = Color.Transparent;
             GoBackButton.Location = new Point(3, 2);
             GoBackButton.Name = "GoBackButton";
-            GoBackButton.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            GoBackButton.ShadowDecoration.CustomizableEdges = customizableEdges3;
             GoBackButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             GoBackButton.Size = new Size(30, 30);
             GoBackButton.TabIndex = 39;
@@ -144,7 +144,7 @@
             // 
             SaveNewPasswordButton.BackColor = Color.Transparent;
             SaveNewPasswordButton.BorderRadius = 15;
-            SaveNewPasswordButton.CustomizableEdges = customizableEdges19;
+            SaveNewPasswordButton.CustomizableEdges = customizableEdges6;
             SaveNewPasswordButton.DisabledState.BorderColor = Color.DarkGray;
             SaveNewPasswordButton.DisabledState.CustomBorderColor = Color.DarkGray;
             SaveNewPasswordButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -155,7 +155,7 @@
             SaveNewPasswordButton.ForeColor = Color.White;
             SaveNewPasswordButton.Location = new Point(50, 274);
             SaveNewPasswordButton.Name = "SaveNewPasswordButton";
-            SaveNewPasswordButton.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            SaveNewPasswordButton.ShadowDecoration.CustomizableEdges = customizableEdges7;
             SaveNewPasswordButton.Size = new Size(200, 50);
             SaveNewPasswordButton.TabIndex = 25;
             SaveNewPasswordButton.Text = "Save Password";
@@ -165,7 +165,7 @@
             SecondPasswordField.BackColor = Color.Transparent;
             SecondPasswordField.BorderColor = Color.FromArgb(201, 209, 200);
             SecondPasswordField.BorderRadius = 15;
-            SecondPasswordField.CustomizableEdges = customizableEdges21;
+            SecondPasswordField.CustomizableEdges = customizableEdges8;
             SecondPasswordField.DefaultText = "";
             SecondPasswordField.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             SecondPasswordField.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -184,7 +184,7 @@
             SecondPasswordField.PlaceholderForeColor = Color.DimGray;
             SecondPasswordField.PlaceholderText = "return passwod";
             SecondPasswordField.SelectedText = "";
-            SecondPasswordField.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            SecondPasswordField.ShadowDecoration.CustomizableEdges = customizableEdges9;
             SecondPasswordField.Size = new Size(200, 50);
             SecondPasswordField.TabIndex = 36;
             // 
@@ -193,7 +193,7 @@
             FirstPasswordField.BackColor = Color.Transparent;
             FirstPasswordField.BorderColor = Color.FromArgb(201, 209, 200);
             FirstPasswordField.BorderRadius = 15;
-            FirstPasswordField.CustomizableEdges = customizableEdges23;
+            FirstPasswordField.CustomizableEdges = customizableEdges10;
             FirstPasswordField.DefaultText = "";
             FirstPasswordField.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             FirstPasswordField.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -211,7 +211,7 @@
             FirstPasswordField.PlaceholderForeColor = Color.DimGray;
             FirstPasswordField.PlaceholderText = "passwod";
             FirstPasswordField.SelectedText = "";
-            FirstPasswordField.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            FirstPasswordField.ShadowDecoration.CustomizableEdges = customizableEdges11;
             FirstPasswordField.Size = new Size(200, 50);
             FirstPasswordField.TabIndex = 35;
             // 
@@ -243,7 +243,7 @@
             CodeFieldTextBox1.BackColor = Color.Transparent;
             CodeFieldTextBox1.BorderColor = Color.FromArgb(201, 209, 200);
             CodeFieldTextBox1.BorderRadius = 15;
-            CodeFieldTextBox1.CustomizableEdges = customizableEdges25;
+            CodeFieldTextBox1.CustomizableEdges = customizableEdges12;
             CodeFieldTextBox1.DefaultText = "";
             CodeFieldTextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             CodeFieldTextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -261,7 +261,7 @@
             CodeFieldTextBox1.PlaceholderForeColor = Color.DimGray;
             CodeFieldTextBox1.PlaceholderText = "code:";
             CodeFieldTextBox1.SelectedText = "";
-            CodeFieldTextBox1.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            CodeFieldTextBox1.ShadowDecoration.CustomizableEdges = customizableEdges13;
             CodeFieldTextBox1.Size = new Size(200, 50);
             CodeFieldTextBox1.TabIndex = 38;
             // 
@@ -269,7 +269,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = OTSC_ui.Properties.Resources.FonPoloskiSleav;
+            BackgroundImage = OTSC_ui.Properties.Resources.Fon_NewPassword;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(300, 350);
             Controls.Add(CodeFieldTextBox1);

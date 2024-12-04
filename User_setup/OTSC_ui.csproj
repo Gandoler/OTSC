@@ -19,6 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Login_page_mvp\Login_page\View\ckm2wih0.ll0~" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.6" />
     <PackageReference Include="MySql.Data" Version="9.1.0" />
     <PackageReference Include="Serilog" Version="4.1.0" />

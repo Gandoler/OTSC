@@ -113,6 +113,16 @@ namespace OTSC_ui.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconEmailError {
+            get {
+                object obj = ResourceManager.GetObject("iconEmailError", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_withoutBackground_LOGINPAGE {
             get {
                 object obj = ResourceManager.GetObject("logo_withoutBackground_LOGINPAGE", resourceCulture);

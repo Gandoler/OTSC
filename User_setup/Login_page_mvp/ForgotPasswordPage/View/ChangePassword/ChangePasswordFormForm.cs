@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OTSC_ui.Login_page_mvp.ForgotPasswordPage.View.ChangePassword;
 
 namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
 {
@@ -19,8 +20,8 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
 
             //exit and back buttons
             GoBackButton.Click += (s, e) => GoBackButtonCLick?.Invoke();
-            ExitButton.Enter += (s, e) => ExitButtonEntered?.Invoke(ExitButton, EventArgs.Empty);
-            ExitButton.Leave += (s, e) => ExitButtonLeavd?.Invoke(ExitButton, EventArgs.Empty);
+            ExitButton.Enter += (s, e) => ExitButtonEntered?.Invoke(ExitButton,ExitButton.ForeColor);
+            ExitButton.Leave += (s, e) => ExitButtonLeavd?.Invoke(ExitButton, ExitButton.ForeColor);
             ExitButton.Click += (s, e) => ExitForgotpageButtonClick?.Invoke();
 
             //fields
@@ -36,8 +37,8 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
         //exit and back buttons
         public event Action ExitForgotpageButtonClick;
         public event Action GoBackButtonCLick;
-        public event EventHandler ExitButtonEntered;
-        public event EventHandler ExitButtonLeavd;
+        public event EventHandler<Color> ExitButtonEntered;
+        public event EventHandler<Color> ExitButtonLeavd;
 
         //fields
         public event EventHandler<string> LeaveCodeField;
@@ -52,9 +53,26 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
             SecondPasswordField.Clear();
         }
 
+        public void DisablepasswordSField()
+        {
+            FirstPasswordField.Enabled = false;
+            SecondPasswordField.Enabled = false;
+        }
+
         public void EnablepasswordSField()
         {
-            throw new NotImplementedException();
+            FirstPasswordField.Enabled = true;
+            SecondPasswordField.Enabled = true;
+        }
+
+        public void MakeNotVisibleErrorLable()
+        {
+            PswMissmatchLabel.Visible = false;
+        }
+
+        public void MakeVisibleErrorLable()
+        {
+            PswMissmatchLabel.Visible = true;
         }
     }
 }

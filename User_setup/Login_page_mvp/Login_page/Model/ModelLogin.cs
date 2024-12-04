@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using User_Interface.ExtendedTool.Connect_and_query;
 using User_Interface.ExtendedTool.Connect_and_query.query;
+using static Guna.UI2.WinForms.Suite.Descriptions;
 
 namespace User_Interface.Login_page_mvp.Login_page.Model
 {
@@ -75,7 +76,8 @@ namespace User_Interface.Login_page_mvp.Login_page.Model
 
                 if (CheckExistANDRegistrUsers.CheckOFExistUser(RealConnect.Connection, _login, _password ?? throw new Exception("Bad Password")))
                 {
-                    Properties.Settings1.Default.ID = _login;
+                    
+                    OTSC_ui.Properties.Settings1.Default.ID = _login;
                     LoginGo.Invoke();
                 }
                 else

@@ -4,27 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
+namespace OTSC_ui.Login_page_mvp.ForgotPasswordPage.View.ChangePassword
 {
     internal interface IViewChangePasswod
     {
-       
 
 
+        public void ClearPasswords();
         public void EnablepasswordSField();
+        public void DisablepasswordSField();
 
-        
+        public void MakeVisibleErrorLable();
+        public void MakeNotVisibleErrorLable();
+
+
         //fields
         event EventHandler<string> LeaveCodeField;
         event Action EnterInPassswordsFields;
 
         // save new password button
-        event EventHandler<(string,string)> Save_New_Password_buttonClick;
+        event EventHandler<(string, string)> Save_New_Password_buttonClick;
 
         //exit button
         event Action ExitForgotpageButtonClick;
-        event EventHandler ExitButtonEntered;
-        event EventHandler ExitButtonLeavd;
+        event EventHandler<Color> ExitButtonEntered;
+        event EventHandler<Color> ExitButtonLeavd;
 
         //Back button
         event Action GoBackButtonCLick;
