@@ -2,10 +2,14 @@
 using OTSC_ui.ExtendedTool.Connect_and_query.Connect;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using User_Interface.Login_page_mvp.ForgotPassword;
+using User_Interface.Login_page_mvp.ForgotPasswordPage.Model;
+using User_Interface.Login_page_mvp.ForgotPasswordPage.View;
 using User_Interface.Login_page_mvp.Login_page.Model;
 using User_Interface.Login_page_mvp.Login_page.View;
 using User_Interface.Login_page_mvp.Registr_page.View;
@@ -23,6 +27,8 @@ namespace User_Interface.Login_page_mvp.Login_page
             _imodelka = imodelka ?? throw new ArgumentNullException(nameof(imodelka));
 
             //обработчик для вьювера
+            // for forgot password
+            _loginView.forgotPassworLinkClick += _loginView_forgotPassworLinkClick;
             _loginView.ExitApl += LoginView_Exit;
             _loginView.Enter += EnterButtonClicked;
             _loginView.Show_Psw += View_show_Psw;
@@ -34,6 +40,27 @@ namespace User_Interface.Login_page_mvp.Login_page
             _imodelka.LoginGo += _imodelka_LoginGo;
 
         }
+
+        //обработчик для вьювера
+        private void _loginView_forgotPassworLinkClick()
+        {
+            Form? thisform = _loginView as Form;
+            if (thisform != null)
+            {
+                ChangePasswordFormForm changePasswordFormForm = new ChangePasswordFormForm();
+                EmailEnterfrom emailEnterfrom = new EmailEnterfrom();
+                ModelForgorPasswordPage modelForgorPasswordPage = new ModelForgorPasswordPage();
+                PresenterForgotPasswoedPage presenterForgotPasswoedPage = new PresenterForgotPasswoedPage(modelForgorPasswordPage, changePasswordFormForm, emailEnterfrom);
+                thisform.Hide();
+                DialogResult result = emailEnterfrom.ShowDialog();//можно конечно что то делать но бог с ним
+
+                thisform.Show();
+            }    
+        }
+
+
+
+
         /// <summary>
         /// затычка
         /// </summary>

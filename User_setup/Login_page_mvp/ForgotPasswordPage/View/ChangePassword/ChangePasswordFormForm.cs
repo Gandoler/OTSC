@@ -73,6 +73,17 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
         public void MakeVisibleErrorLable()
         {
             PswMissmatchLabel.Visible = true;
+
+        }
+
+        public void MakeCloseButtonRed()
+        {
+            ExitButton.ForeColor = Color.Red;
+        }
+
+        public void MakeCloseButtonBlack()
+        {
+            ExitButton.ForeColor = Color.Black;
         }
     }
 }

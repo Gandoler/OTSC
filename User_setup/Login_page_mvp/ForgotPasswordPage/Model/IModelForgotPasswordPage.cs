@@ -8,11 +8,11 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.Model
 {
     internal interface IModelForgotPasswordPage
     {
-       public int Code { get; set; }
+        internal bool SendCode(string email);
+        internal void MakeNewPasswordQuery(string First, string Second);
+        internal bool CheckCode(short Code);
 
-        internal bool isSecEqualFirst(string First, string Second);
 
-        
 
     }
 }

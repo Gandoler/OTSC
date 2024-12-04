@@ -19,6 +19,8 @@ namespace User_Interface.Login_page_mvp.Login_page.View
         event EventHandler<EventArgs> CharKeyPresd;
         event EventHandler Registr_click;
 
+        // for forgot password
+        event Action forgotPassworLinkClick;
 
         void ShowPsw();
         void UnShowPsw();

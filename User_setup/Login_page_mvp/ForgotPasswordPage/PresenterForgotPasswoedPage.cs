@@ -77,31 +77,42 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
         //press sendcodebutton
         private void _viewEmailEnter_SendCodeButtonClick()
         {
-            Form? thisForm = _viewEmailEnter as Form;
-            Form? nextForm = _viewNewPasswordPage as Form;
-            if (thisForm != null && nextForm != null)
+            if (_viewEmailEnter.CheckCorrectInputEmail())
             {
-                thisForm.Hide();//тут мы прячем форму для ввода имейла
-                DialogResult response = nextForm.ShowDialog();// тут как диалог открываем окно для нового пароля как диалог
-                if (response == DialogResult.TryAgain)// это будет если кнопку назад нажать
+                Form? thisForm = _viewEmailEnter as Form;
+                Form? nextForm = _viewNewPasswordPage as Form;
+                if (thisForm != null && nextForm != null)
                 {
-                    thisForm.Show();
+
+                    thisForm.Hide();//тут мы прячем форму для ввода имейла
+                    DialogResult response = nextForm.ShowDialog();// тут как диалог открываем окно для нового пароля как диалог
+                    if (response == DialogResult.TryAgain)// это будет если кнопку назад нажать
+                    {
+                        thisForm.Show();
+                    }
+                    else// это будет если кнопку закрытия нажать
+                    {
+                        thisForm.DialogResult = DialogResult.Cancel;
+                        thisForm.Close();
+                    }
+
                 }
-                else// это будет если кнопку закрытия нажать
-                {
-                    thisForm.DialogResult = DialogResult.Cancel;
-                    thisForm.Close();
-                }
-                
+            }
+            else
+            {
+                Log.Information("input incorrect email");
+                _viewEmailEnter.MakeSendButtonDisable();
+                _viewEmailEnter.MakeVisibleEmailerror();
             }
 
         }
         //leave and enter feom email textbox
         private void _viewEmailEnter_LeaveEmailBoxAndCheckCorrect(object? sender, string email_string)
         {
-            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-            if(Regex.IsMatch(email_string, emailPattern))
+            
+            if (_viewEmailEnter.CheckCorrectInputEmail())
             {
+                Log.Information("email correct");
                 /////////////////////////////////////
                 ////////////////////////////////////////
                 //////////////////////////////////////// Model performance
@@ -109,10 +120,12 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
                 if (/*tut*/true)
                 {
                     _viewEmailEnter.MakeSendButtonEnable();
+                    _viewEmailEnter.MakeNotVisibleEmailerror();
                 }
             }
             else
             {
+                Log.Information("input incorrect email");
                 _viewEmailEnter.MakeSendButtonDisable();
                 _viewEmailEnter.MakeVisibleEmailerror();
             }
@@ -133,14 +146,14 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
                 thisForm.Close();
             }
         }
-        private void _viewEmailEnter_LeaveExitButton(object? sender, Color e)
+        private void _viewEmailEnter_LeaveExitButton()
         {
-            e = Color.Black;
+            _viewEmailEnter.MakeCloseButtonBlack();
         }
         
-        private void _viewEmailEnter_EnterExitButton(object? sender, Color e)
+        private void _viewEmailEnter_EnterExitButton()
         {
-           e= Color.Red;
+            _viewEmailEnter.MakeCloseButtonRed();
         }
         #endregion
 
@@ -162,12 +175,12 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
 
         private void _viewNewPasswordPage_ExitButtonLeavd(object? sender, Color e)
         {
-            e = Color.Black;
+            _viewNewPasswordPage.MakeCloseButtonBlack();
         }
 
         private void _viewNewPasswordPage_ExitButtonEntered(object? sender, Color e)
         {
-            e = Color.Red;
+            _viewNewPasswordPage.MakeCloseButtonRed();
         }
 
         // save new password button
@@ -203,18 +216,25 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
         //code Field
         private void _viewNewPasswordPage_LeaveCodeField(object? sender, string e)
         {
-            /////////////////////////////////////
-            ////////////////////////////////////////
-            //////////////////////////////////////// Model performance
-            /////////////////////////////////////
-            if (DidPasswordChange  &&  /*model*/true )
+            short code = 0;
+            if (short.TryParse(e,out code))
             {
-                _viewNewPasswordPage.EnablepasswordSField();
-                
-            }
-            else
-            {
-                _viewNewPasswordPage.DisablepasswordSField();
+
+
+                /////////////////////////////////////
+                ////////////////////////////////////////
+                //////////////////////////////////////// Model performance
+                /////////////////////////////////////
+                if (/*model*/true)
+                {
+                    _viewNewPasswordPage.EnablepasswordSField();
+
+
+                }
+                else
+                {
+                    _viewNewPasswordPage.DisablepasswordSField();
+                }
             }
         }
 

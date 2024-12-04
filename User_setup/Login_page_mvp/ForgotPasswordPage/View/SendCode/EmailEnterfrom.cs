@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,13 +19,14 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
         {
             InitializeComponent();
             //exit button
-            ExitButton.Enter += (s, e) => EnterExitButton?.Invoke(this, ExitButton.ForeColor);
-            ExitButton.Leave += (s, e) => LeaveExitButton?.Invoke(this.ForeColor, ExitButton.ForeColor);
+            ExitButton.MouseEnter += (s, e) => EnterExitButton?.Invoke();
+            ExitButton.MouseLeave += (s, e) => LeaveExitButton?.Invoke();
             ExitButton.Click += (s, e) => ExitForgotPageButtonClick?.Invoke();
 
             //email field
             EmailFieldTextBox.Enter += (s, e) => EnterEmailTextBox?.Invoke();
-            EmailFieldTextBox.Leave += (s, e) => LeaveEmailBoxAndCheckCorrect?.Invoke(this, EmailFieldTextBox.Text);
+            EmailFieldTextBox.TextChanged += (s, e) => LeaveEmailBoxAndCheckCorrect?.Invoke(this, EmailFieldTextBox.Text);
+            
 
 
             //send code button
@@ -49,8 +51,8 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
 
         //exit button
         public event Action ExitForgotPageButtonClick;
-        public event EventHandler<Color> EnterExitButton;
-        public event EventHandler<Color> LeaveExitButton;
+        public event Action EnterExitButton;
+        public event Action LeaveExitButton;
 
         public void MakeVisibleEmailerror()
         {
@@ -70,6 +72,26 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
         public void MakeSendButtonDisable()
         {
             SendCodeButton.Enabled = false;
+        }
+
+        public void MakeCloseButtonRed()
+        {
+            ExitButton.ForeColor = Color.Red;
+        }
+
+        public void MakeCloseButtonBlack()
+        {
+            ExitButton.ForeColor = Color.Black;
+        }
+
+        public bool CheckCorrectInputEmail()
+        {
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            if (Regex.IsMatch(EmailFieldTextBox.Text, emailPattern))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

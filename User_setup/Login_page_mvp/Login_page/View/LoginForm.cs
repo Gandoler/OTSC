@@ -44,6 +44,10 @@ namespace User_Interface.Login_page_mvp.View
             // registrButton
             // 
             guna2ButtonRegistr.Click += (s, e) => Registr_click?.Invoke(this, EventArgs.Empty);
+            //
+            // forgotPasswordLinkClcik
+            //
+            ForgotPasswordLink.Click += (s, e) => forgotPassworLinkClick?.Invoke();
         }
 
         
@@ -58,6 +62,9 @@ namespace User_Interface.Login_page_mvp.View
         public event EventHandler Enter;
         public event EventHandler<EventArgs> CharKeyPresd;
         public event EventHandler Registr_click;
+
+        // for forgot password
+        public event Action forgotPassworLinkClick;
 
         public void ClearAll()
         {

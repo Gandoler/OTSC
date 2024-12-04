@@ -23,21 +23,24 @@ namespace User_setup
 
 
 
-            //LoginFrom formLogin = new LoginFrom();
-            //ModelLogin model = new ModelLogin();
+            LoginFrom formLogin = new LoginFrom();
+            ModelLogin model = new ModelLogin();
 
-            //PresenterLogin presenter = new PresenterLogin(formLogin, model);
-            //Log.Information("Приложение запущено.");
-            //Application.Run(formLogin);
+            PresenterLogin presenter = new PresenterLogin(formLogin, model);
+            Log.Information("Приложение запущено.");
+            Application.Run(formLogin);
 
 
 
-            EmailEnterfrom emailEnterfrom = new EmailEnterfrom();
-            ChangePasswordFormForm changePasswordFormForm  = new ChangePasswordFormForm();
-            ModelForgorPasswordPage modelForgorPasswordPage = new ModelForgorPasswordPage();
-            PresenterForgotPasswoedPage presenterForgotPasswoedPage = new PresenterForgotPasswoedPage(modelForgorPasswordPage, changePasswordFormForm, emailEnterfrom);
-            Application.Run(emailEnterfrom);
-            Log.CloseAndFlush();
+            //EmailEnterfrom emailEnterfrom = new EmailEnterfrom();
+            //ChangePasswordFormForm changePasswordFormForm  = new ChangePasswordFormForm();
+            //ModelForgorPasswordPage modelForgorPasswordPage = new ModelForgorPasswordPage();
+            //PresenterForgotPasswoedPage presenterForgotPasswoedPage = new PresenterForgotPasswoedPage(modelForgorPasswordPage, changePasswordFormForm, emailEnterfrom);
+            //Application.Run(emailEnterfrom);
+            //Log.CloseAndFlush();
+
+
+
             //Application.Run(new CustomShowBox());
         }
     }

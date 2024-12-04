@@ -9,26 +9,20 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.Model
     internal class ModelForgorPasswordPage : IModelForgotPasswordPage
     {
         private int _code;
-        public int Code
+
+        bool IModelForgotPasswordPage.CheckCode(short Code)
         {
-            get
-            {
-                return _code;
-            }
-            set
-            {
-                if (value < 100000 || value>= 1000000)
-                {
-                    throw new ArgumentException("code format: xxxxxx");
-                }
-                _code = value;
-            }
+            throw new NotImplementedException();
         }
 
-        public bool isSecEqualFirst(string First, string Second)
+        void IModelForgotPasswordPage.MakeNewPasswordQuery(string First, string Second)
         {
-            if (First.CompareTo(Second) == 0) return true;
-            else return false;
+            throw new NotImplementedException();
+        }
+
+        bool IModelForgotPasswordPage.SendCode(string email)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -9,7 +9,8 @@ namespace OTSC_ui.Login_page_mvp.ForgotPasswordPage.View.ChangePassword
     internal interface IViewChangePasswod
     {
 
-
+        public void MakeCloseButtonRed();
+        public void MakeCloseButtonBlack();
         public void ClearPasswords();
         public void EnablepasswordSField();
         public void DisablepasswordSField();

@@ -13,13 +13,17 @@ namespace OTSC_ui.Login_page_mvp.ForgotPasswordPage.View.SendCode
         public void MakeNotVisibleEmailerror();
         public void MakeSendButtonEnable();
         public void MakeSendButtonDisable();
+        public void MakeCloseButtonRed();
+        public void MakeCloseButtonBlack();
+
+        public bool CheckCorrectInputEmail();
 
         public bool ImageErrorrVisible { set; }
         event Action EnterEmailTextBox;
         event EventHandler<string> LeaveEmailBoxAndCheckCorrect;
         event Action SendCodeButtonClick;
         event Action ExitForgotPageButtonClick;
-        event EventHandler<Color> EnterExitButton;
-        event EventHandler<Color> LeaveExitButton;
+        event Action EnterExitButton;
+        event Action LeaveExitButton;
     }
 }
