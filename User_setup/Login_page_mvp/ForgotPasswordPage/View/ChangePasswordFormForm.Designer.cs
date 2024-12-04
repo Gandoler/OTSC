@@ -98,7 +98,6 @@
             // GoBackButton
             // 
             GoBackButton.BackColor = Color.Transparent;
-            GoBackButton.BackgroundImage = Properties.Resources.free_icon_back_4562793;
             GoBackButton.BackgroundImageLayout = ImageLayout.Stretch;
             GoBackButton.BorderColor = Color.FromArgb(0, 0, 64);
             GoBackButton.DisabledState.BorderColor = Color.DarkGray;
@@ -134,7 +133,6 @@
             // 
             logoPanel.Anchor = AnchorStyles.Left;
             logoPanel.BackColor = Color.Transparent;
-            logoPanel.BackgroundImage = Properties.Resources.logo_removebg_preview;
             logoPanel.BackgroundImageLayout = ImageLayout.Zoom;
             logoPanel.Location = new Point(125, 274);
             logoPanel.Name = "logoPanel";
@@ -220,7 +218,6 @@
             // 
             panel1.Anchor = AnchorStyles.Left;
             panel1.BackColor = Color.Transparent;
-            panel1.BackgroundImage = Properties.Resources.logo_removebg_preview;
             panel1.BackgroundImageLayout = ImageLayout.Zoom;
             panel1.Location = new Point(248, 274);
             panel1.Name = "panel1";
@@ -271,7 +268,6 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources._1709693764_bogatyr_club_f06x_p_fon_dlya_prilozheniya_10;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(300, 350);
             Controls.Add(CodeFieldTextBox1);

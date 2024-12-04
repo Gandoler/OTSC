@@ -252,7 +252,6 @@
             // 
             panel1.Anchor = AnchorStyles.Left;
             panel1.BackColor = Color.Transparent;
-            panel1.BackgroundImage = Properties.Resources.logo_removebg_preview;
             panel1.BackgroundImageLayout = ImageLayout.Zoom;
             panel1.Location = new Point(638, 388);
             panel1.Name = "panel1";
@@ -282,7 +281,6 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources._1709693764_bogatyr_club_f06x_p_fon_dlya_prilozheniya_101;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 500);
             Controls.Add(panel1);

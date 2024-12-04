@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace User_Interface.Properties {
+namespace OTSC_ui.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace User_Interface.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("User_Interface.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OTSC_ui.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,129 +63,9 @@ namespace User_Interface.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1709693764_bogatyr_club_f06x_p_fon_dlya_prilozheniya_10 {
+        internal static System.Drawing.Bitmap Fon_LOGINPAGE {
             get {
-                object obj = ResourceManager.GetObject("1709693764_bogatyr-club-f06x-p-fon-dlya-prilozheniya-10", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1709693764_bogatyr_club_f06x_p_fon_dlya_prilozheniya_101 {
-            get {
-                object obj = ResourceManager.GetObject("1709693764_bogatyr-club-f06x-p-fon-dlya-prilozheniya-101", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1709693764_bogatyr_club_f06x_p_fon_dlya_prilozheniya_102 {
-            get {
-                object obj = ResourceManager.GetObject("1709693764_bogatyr-club-f06x-p-fon-dlya-prilozheniya-102", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1709693764_bogatyr_club_f06x_p_fon_dlya_prilozheniya_103 {
-            get {
-                object obj = ResourceManager.GetObject("1709693764_bogatyr-club-f06x-p-fon-dlya-prilozheniya-103", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1709693764_bogatyr_club_f06x_p_fon_dlya_prilozheniya_104 {
-            get {
-                object obj = ResourceManager.GetObject("1709693764_bogatyr-club-f06x-p-fon-dlya-prilozheniya-104", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap free_icon_back_4562793 {
-            get {
-                object obj = ResourceManager.GetObject("free-icon-back-4562793", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap free_icon_error_2731804 {
-            get {
-                object obj = ResourceManager.GetObject("free-icon-error-2731804", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap free_icon_error_27318041 {
-            get {
-                object obj = ResourceManager.GetObject("free-icon-error-27318041", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap free_icon_error_27318042 {
-            get {
-                object obj = ResourceManager.GetObject("free-icon-error-27318042", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap free_icon_error_27318043 {
-            get {
-                object obj = ResourceManager.GetObject("free-icon-error-27318043", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap free_icon_turn_back_3585896 {
-            get {
-                object obj = ResourceManager.GetObject("free-icon-turn-back-3585896", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap logo {
-            get {
-                object obj = ResourceManager.GetObject("logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap logo_removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("logo-removebg-preview", resourceCulture);
+                object obj = ResourceManager.GetObject("Fon_LOGINPAGE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

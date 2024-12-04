@@ -1,6 +1,11 @@
 ﻿//using User_Interface.ExtendedTool;
 
 
+using Guna.UI2.WinForms.Suite;
+using System.Resources;
+using System.Windows.Forms.PropertyGridInternal;
+using static Guna.UI2.WinForms.Suite.Descriptions;
+
 namespace User_Interface.Login_page_mvp.View
 {
     partial class LoginFrom
@@ -32,20 +37,20 @@ namespace User_Interface.Login_page_mvp.View
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginFrom));
+            CustomizableEdges customizableEdges3 = new CustomizableEdges();
+            CustomizableEdges customizableEdges4 = new CustomizableEdges();
+            CustomizableEdges customizableEdges1 = new CustomizableEdges();
+            CustomizableEdges customizableEdges2 = new CustomizableEdges();
+            CustomizableEdges customizableEdges5 = new CustomizableEdges();
+            CustomizableEdges customizableEdges6 = new CustomizableEdges();
+            CustomizableEdges customizableEdges7 = new CustomizableEdges();
+            CustomizableEdges customizableEdges8 = new CustomizableEdges();
+            CustomizableEdges customizableEdges9 = new CustomizableEdges();
+            CustomizableEdges customizableEdges10 = new CustomizableEdges();
+            CustomizableEdges customizableEdges11 = new CustomizableEdges();
+            CustomizableEdges customizableEdges12 = new CustomizableEdges();
             panelBackTitle = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            ExitButton = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
             LoginLabel = new Label();
             checkBoxSWhowPsw = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -57,7 +62,6 @@ namespace User_Interface.Login_page_mvp.View
             textBoxPasswordGuna = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ButtonRegistr = new Guna.UI2.WinForms.Guna2Button();
             guna2ButtonLogin = new Guna.UI2.WinForms.Guna2Button();
-            ExitButton = new Guna.UI2.WinForms.Guna2Button();
             panelBackTitle.SuspendLayout();
             SuspendLayout();
             // 
@@ -76,6 +80,25 @@ namespace User_Interface.Login_page_mvp.View
             panelBackTitle.ShadowDecoration.CustomizableEdges = customizableEdges4;
             panelBackTitle.Size = new Size(800, 35);
             panelBackTitle.TabIndex = 1;
+            // 
+            // ExitButton
+            // 
+            ExitButton.BackColor = Color.Transparent;
+            ExitButton.CustomizableEdges = customizableEdges1;
+            ExitButton.DisabledState.BorderColor = Color.DarkGray;
+            ExitButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            ExitButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            ExitButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            ExitButton.FillColor = Color.Transparent;
+            ExitButton.Font = new Font("Arial Rounded MT Bold", 14F);
+            ExitButton.ForeColor = Color.Black;
+            ExitButton.Location = new Point(762, 0);
+            ExitButton.Name = "ExitButton";
+            ExitButton.PressedColor = Color.Transparent;
+            ExitButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            ExitButton.Size = new Size(35, 35);
+            ExitButton.TabIndex = 40;
+            ExitButton.Text = "X";
             // 
             // label1
             // 
@@ -129,7 +152,6 @@ namespace User_Interface.Login_page_mvp.View
             // 
             logoPanel.Anchor = AnchorStyles.Left;
             logoPanel.BackColor = Color.Transparent;
-            logoPanel.BackgroundImage = Properties.Resources.logo_removebg_preview;
             logoPanel.BackgroundImageLayout = ImageLayout.Zoom;
             logoPanel.Location = new Point(638, 388);
             logoPanel.Name = "logoPanel";
@@ -241,30 +263,10 @@ namespace User_Interface.Login_page_mvp.View
             guna2ButtonLogin.TabIndex = 18;
             guna2ButtonLogin.Text = "LOGIN";
             // 
-            // ExitButton
-            // 
-            ExitButton.BackColor = Color.Transparent;
-            ExitButton.CustomizableEdges = customizableEdges1;
-            ExitButton.DisabledState.BorderColor = Color.DarkGray;
-            ExitButton.DisabledState.CustomBorderColor = Color.DarkGray;
-            ExitButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            ExitButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            ExitButton.FillColor = Color.Transparent;
-            ExitButton.Font = new Font("Arial Rounded MT Bold", 14F);
-            ExitButton.ForeColor = Color.Black;
-            ExitButton.Location = new Point(762, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.PressedColor = Color.Transparent;
-            ExitButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            ExitButton.Size = new Size(35, 35);
-            ExitButton.TabIndex = 40;
-            ExitButton.Text = "X";
-            // 
-            // formLogin
+            // LoginFrom
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources._1709693764_bogatyr_club_f06x_p_fon_dlya_prilozheniya_101;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 500);
             Controls.Add(guna2ButtonLogin);
@@ -276,9 +278,8 @@ namespace User_Interface.Login_page_mvp.View
             Controls.Add(checkBoxSWhowPsw);
             Controls.Add(panelBackTitle);
             FormBorderStyle = FormBorderStyle.None;
-            Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
-            Name = "formLogin";
+            Name = "LoginFrom";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             panelBackTitle.ResumeLayout(false);

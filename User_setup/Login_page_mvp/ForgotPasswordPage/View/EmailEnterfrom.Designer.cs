@@ -105,7 +105,6 @@
             // 
             logoPanel.Anchor = AnchorStyles.Left;
             logoPanel.BackColor = Color.Transparent;
-            logoPanel.BackgroundImage = Properties.Resources.logo_removebg_preview;
             logoPanel.BackgroundImageLayout = ImageLayout.Zoom;
             logoPanel.Location = new Point(125, 287);
             logoPanel.Name = "logoPanel";
@@ -116,7 +115,6 @@
             // 
             panel1.Anchor = AnchorStyles.Left;
             panel1.BackColor = Color.Transparent;
-            panel1.BackgroundImage = Properties.Resources.logo_removebg_preview;
             panel1.BackgroundImageLayout = ImageLayout.Zoom;
             panel1.Location = new Point(248, 287);
             panel1.Name = "panel1";
@@ -175,7 +173,6 @@
             // 
             guna2ImageButton1.CheckedState.ImageSize = new Size(64, 64);
             guna2ImageButton1.HoverState.ImageSize = new Size(64, 64);
-            guna2ImageButton1.Image = Properties.Resources.free_icon_error_27318043;
             guna2ImageButton1.ImageOffset = new Point(0, 0);
             guna2ImageButton1.ImageRotate = 0F;
             guna2ImageButton1.ImageSize = new Size(32, 32);
@@ -192,7 +189,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CadetBlue;
-            BackgroundImage = Properties.Resources._1709693764_bogatyr_club_f06x_p_fon_dlya_prilozheniya_10;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(300, 350);
             Controls.Add(guna2ImageButton1);
