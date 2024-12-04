@@ -34,13 +34,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomShowBox));
             panelBackTitle = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            buttonExit = new Button();
             pathExceptionlabbel = new Label();
             guna2TextBoxFilePath = new Guna.UI2.WinForms.Guna2TextBox();
             label1 = new Label();
             guna2ButtonOk = new Guna.UI2.WinForms.Guna2Button();
-            buttonExit = new Button();
             panelBackTitle.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,6 +58,18 @@
             panelBackTitle.ShadowDecoration.CustomizableEdges = customizableEdges2;
             panelBackTitle.Size = new Size(300, 35);
             panelBackTitle.TabIndex = 2;
+            // 
+            // buttonExit
+            // 
+            buttonExit.BackColor = Color.FromArgb(201, 209, 200);
+            buttonExit.Dock = DockStyle.Right;
+            buttonExit.Location = new Point(270, 0);
+            buttonExit.Name = "buttonExit";
+            buttonExit.Size = new Size(30, 35);
+            buttonExit.TabIndex = 3;
+            buttonExit.Text = "X";
+            buttonExit.UseVisualStyleBackColor = false;
+            buttonExit.Click += buttonExit_Click;
             // 
             // pathExceptionlabbel
             // 
@@ -133,31 +144,20 @@
             guna2ButtonOk.Text = "OK";
             guna2ButtonOk.Click += guna2ButtonOk_Click;
             // 
-            // buttonExit
-            // 
-            buttonExit.BackColor = Color.FromArgb(201, 209, 200);
-            buttonExit.Dock = DockStyle.Right;
-            buttonExit.Location = new Point(270, 0);
-            buttonExit.Name = "buttonExit";
-            buttonExit.Size = new Size(30, 35);
-            buttonExit.TabIndex = 3;
-            buttonExit.Text = "X";
-            buttonExit.UseVisualStyleBackColor = false;
-            buttonExit.Click += buttonExit_Click;
-            // 
             // CustomShowBox
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            BackgroundImage = Properties.Resources._1709693764_bogatyr_club_f06x_p_fon_dlya_prilozheniya_10;
+            BackgroundImage = OTSC_ui.Properties.Resources.OnlyReflenniy;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(300, 200);
             Controls.Add(guna2ButtonOk);
             Controls.Add(label1);
             Controls.Add(guna2TextBoxFilePath);
             Controls.Add(panelBackTitle);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
-            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CustomShowBox";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PathError";
