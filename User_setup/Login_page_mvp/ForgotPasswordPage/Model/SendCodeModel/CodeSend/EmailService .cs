@@ -8,21 +8,12 @@ using System.Threading.Tasks;
 
 namespace OTSC_ui.Login_page_mvp.ForgotPasswordPage.Model.SendCodeModel.CodeSend
 {
-    internal class EmailService : IEmailService
+    internal class EmailService(string senderEmail, string senderPassword, string smtpHost, int smtpPort) : IEmailService
     {
-        private readonly string _senderEmail;
-        private readonly string _senderPassword;
-        private readonly string _smtpHost;
-        private readonly int _smtpPort;
-
-
-        public EmailService(string senderEmail, string senderPassword, string smtpHost, int smtpPort)
-        {
-            _senderEmail = senderEmail;
-            _senderPassword = senderPassword;
-            _smtpHost = smtpHost;
-            _smtpPort = smtpPort;
-        }
+        private readonly string _senderEmail = senderEmail;
+        private readonly string _senderPassword = senderPassword;
+        private readonly string _smtpHost = smtpHost;
+        private readonly int _smtpPort = smtpPort;
 
         public void SendEmail(string recipientEmail, string subject, string body)
         {
@@ -36,15 +27,13 @@ namespace OTSC_ui.Login_page_mvp.ForgotPasswordPage.Model.SendCodeModel.CodeSend
 
             mail.To.Add(recipientEmail);
 
-            using (var smtpClient = new SmtpClient(_smtpHost, _smtpPort)
+            using var smtpClient = new SmtpClient(_smtpHost, _smtpPort)
             {
                 Credentials = new NetworkCredential(_senderEmail, _senderPassword),
                 EnableSsl = true
-            })
-            {
-                smtpClient.Send(mail);
-            }
+            };
+            smtpClient.Send(mail);
         }
     }
-}
+
 }

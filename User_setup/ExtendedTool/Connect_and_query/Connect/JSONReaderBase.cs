@@ -1,7 +1,6 @@
-﻿using System.Runtime.Serialization;
+﻿using Serilog;
 using System.Text.Json;
 using User_Interface.ExtendedTool;
-using Serilog;
 
 namespace OTSC_ui.ExtendedTool.Connect_and_query.Connect
 {
@@ -17,7 +16,9 @@ namespace OTSC_ui.ExtendedTool.Connect_and_query.Connect
             {
                 Log.Information(filePath + "-exist");
             }
-
+        //этому методу нужна переработка
+        
+            
             if (filePath == null)
             {
                 using (var inputForm = new CustomShowBox())

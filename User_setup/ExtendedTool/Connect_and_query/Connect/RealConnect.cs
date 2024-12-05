@@ -54,10 +54,7 @@ internal static class RealConnect
     {
         try
         {
-            if (_connection == null)
-            {
-                _connection = new MySqlConnection(_connectionString);
-            }
+            _connection ??= new MySqlConnection(_connectionString);
 
             if (_connection.State == System.Data.ConnectionState.Closed)
             {

@@ -43,16 +43,16 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
             } 
         }
         //send code button
-        public event Action SendCodeButtonClick;
+        public event Action? SendCodeButtonClick;
 
         //email field
-        public event EventHandler<string> LeaveEmailBoxAndCheckCorrect;
-        public event Action EnterEmailTextBox;
+        public event EventHandler<string>? LeaveEmailBoxAndCheckCorrect;
+        public event Action? EnterEmailTextBox;
 
         //exit button
-        public event Action ExitForgotPageButtonClick;
-        public event Action EnterExitButton;
-        public event Action LeaveExitButton;
+        public event Action? ExitForgotPageButtonClick;
+        public event Action? EnterExitButton;
+        public event Action? LeaveExitButton;
 
         public void MakeVisibleEmailerror()
         {

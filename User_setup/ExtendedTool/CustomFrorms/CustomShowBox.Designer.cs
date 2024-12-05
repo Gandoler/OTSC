@@ -69,7 +69,7 @@
             buttonExit.TabIndex = 3;
             buttonExit.Text = "X";
             buttonExit.UseVisualStyleBackColor = false;
-            buttonExit.Click += buttonExit_Click;
+            buttonExit.Click += ButtonExit_Click;
             // 
             // pathExceptionlabbel
             // 
@@ -108,8 +108,8 @@
             guna2TextBoxFilePath.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2TextBoxFilePath.Size = new Size(200, 36);
             guna2TextBoxFilePath.TabIndex = 3;
-            guna2TextBoxFilePath.Enter += guna2TextBoxFilePath_Enter;
-            guna2TextBoxFilePath.MouseEnter += guna2TextBoxFilePath_MouseEnter;
+            guna2TextBoxFilePath.Enter += Guna2TextBoxFilePath_Enter;
+            guna2TextBoxFilePath.MouseEnter += Guna2TextBoxFilePath_MouseEnter;
             // 
             // label1
             // 
@@ -142,7 +142,7 @@
             guna2ButtonOk.Size = new Size(72, 33);
             guna2ButtonOk.TabIndex = 4;
             guna2ButtonOk.Text = "OK";
-            guna2ButtonOk.Click += guna2ButtonOk_Click;
+            guna2ButtonOk.Click += Guna2ButtonOk_Click;
             // 
             // CustomShowBox
             // 

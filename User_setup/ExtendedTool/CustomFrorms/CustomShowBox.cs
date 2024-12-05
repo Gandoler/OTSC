@@ -17,7 +17,7 @@ namespace User_Interface.ExtendedTool
     public partial class CustomShowBox : Form
     {
         
-        public string FilePath { get; private set; }
+        public string FilePath { get; private set; } = string.Empty;
         public DBdata? DBdata { get; set; }
 
         public CustomShowBox()
@@ -25,9 +25,7 @@ namespace User_Interface.ExtendedTool
             InitializeComponent();
         }
 
-        
-
-        private void guna2ButtonOk_Click(object sender, EventArgs e)
+        private void Guna2ButtonOk_Click(object sender, EventArgs e)
         {
             FilePath = guna2TextBoxFilePath.Text;
             if (File.Exists(FilePath) )
@@ -65,19 +63,19 @@ namespace User_Interface.ExtendedTool
             }
         }
 
-        private void guna2TextBoxFilePath_Enter(object sender, EventArgs e)
+        private void Guna2TextBoxFilePath_Enter(object sender, EventArgs e)
         {
             label1.ForeColor = SystemColors.ButtonFace;
             label1.Text = "Enter Json Fpath";
         }
 
-        private void guna2TextBoxFilePath_MouseEnter(object sender, EventArgs e)
+        private void Guna2TextBoxFilePath_MouseEnter(object sender, EventArgs e)
         {
             label1.ForeColor = SystemColors.ButtonFace;
             label1.Text = "Enter Json Fpath";
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
             Close();
         }

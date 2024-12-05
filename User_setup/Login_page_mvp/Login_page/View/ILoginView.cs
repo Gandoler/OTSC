@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User_Interface.Login_page_mvp.Login_page.View
+namespace OTSC_ui.Login_page_mvp.Login_page.View
 {
     internal interface ILoginView
     {
@@ -15,18 +15,18 @@ namespace User_Interface.Login_page_mvp.Login_page.View
 
         event EventHandler ExitApl;
         event EventHandler<bool> Show_Psw;
-        event EventHandler Enter;
+        event EventHandler ErnterInField;
         event EventHandler<EventArgs> CharKeyPresd;
         event EventHandler Registr_click;
 
         // for forgot password
-        event Action forgotPassworLinkClick;
+        event Action ForgotPassworLinkClick;
 
         void ShowPsw();
         void UnShowPsw();
         void NextPage();
         void ClearAll();
-        (string,string) CopyUserLogin();
+        (string, string) CopyUserLogin();
 
 
 

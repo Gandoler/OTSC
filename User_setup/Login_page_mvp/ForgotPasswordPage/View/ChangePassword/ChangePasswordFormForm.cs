@@ -35,17 +35,17 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
 
        
         //exit and back buttons
-        public event Action ExitForgotpageButtonClick;
-        public event Action GoBackButtonCLick;
-        public event Action ExitButtonEntered;
-        public event Action ExitButtonLeavd;
+        public event Action? ExitForgotpageButtonClick;
+        public event Action? GoBackButtonCLick;
+        public event Action? ExitButtonEntered;
+        public event Action? ExitButtonLeavd;
 
         //fields
-        public event EventHandler<string> LeaveCodeField;
-        public event Action EnterInPassswordsFields;
+        public event EventHandler<string>? LeaveCodeField;
+        public event Action? EnterInPassswordsFields;
         
         //buton confirm
-        public event EventHandler<(string, string)> Save_New_Password_buttonClick;
+        public event EventHandler<(string, string)>? Save_New_Password_buttonClick;
 
         public void ClearPasswords()
         {

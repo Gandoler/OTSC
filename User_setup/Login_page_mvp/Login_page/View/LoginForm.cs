@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OTSC_ui.Login_page_mvp.Login_page.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using User_Interface.Login_page_mvp.Login.View.Registr;
-using User_Interface.Login_page_mvp.Login_page.View;
 
 namespace User_Interface.Login_page_mvp.View
 {
@@ -39,7 +39,7 @@ namespace User_Interface.Login_page_mvp.View
             // 
             // buttonEnter
             // 
-            guna2ButtonLogin.Click += (s, e) => Enter?.Invoke(this, EventArgs.Empty);
+            guna2ButtonLogin.Click += (s, e) => ErnterInField?.Invoke(this, EventArgs.Empty);
             // 
             // registrButton
             // 
@@ -47,7 +47,7 @@ namespace User_Interface.Login_page_mvp.View
             //
             // forgotPasswordLinkClcik
             //
-            ForgotPasswordLink.Click += (s, e) => forgotPassworLinkClick?.Invoke();
+            ForgotPasswordLink.Click += (s, e) => ForgotPassworLinkClick?.Invoke();
         }
 
         
@@ -57,14 +57,14 @@ namespace User_Interface.Login_page_mvp.View
         public string Login => textBoxLoginGuna.Text;
 
 
-        public event EventHandler<bool> Show_Psw;
-        public event EventHandler ExitApl;
-        public event EventHandler Enter;
-        public event EventHandler<EventArgs> CharKeyPresd;
-        public event EventHandler Registr_click;
+        public event EventHandler<bool>? Show_Psw;
+        public event EventHandler? ExitApl;
+        public event EventHandler? ErnterInField;
+        public event EventHandler<EventArgs>? CharKeyPresd;
+        public event EventHandler? Registr_click;
 
         // for forgot password
-        public event Action forgotPassworLinkClick;
+        public event Action? ForgotPassworLinkClick;
 
         public void ClearAll()
         {

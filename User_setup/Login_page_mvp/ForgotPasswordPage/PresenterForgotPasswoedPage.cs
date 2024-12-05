@@ -11,12 +11,10 @@ using OTSC_ui.Login_page_mvp.ForgotPasswordPage.View.SendCode;
 using User_Interface.Login_page_mvp.ForgotPasswordPage.Model;
 using User_Interface.Login_page_mvp.Login_page;
 using User_Interface.Login_page_mvp.Login_page.Model;
-using User_Interface.Login_page_mvp.Login_page.View;
 using User_Interface.Login_page_mvp.View;
-using User_setup;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
-namespace User_Interface.Login_page_mvp.ForgotPassword
+namespace OTSC_ui.Login_page_mvp.ForgotPasswordPage
 {
     internal class PresenterForgotPasswoedPage
     {
@@ -26,20 +24,20 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
 
         public PresenterForgotPasswoedPage(IModelForgotPasswordPage modelForgotPasswordPage, IViewChangePasswod viewForgotPasswordPage, IViewEmailEnter viewEmailEnter)
         {
-            _modelForgotPasswordPage= modelForgotPasswordPage;
+            _modelForgotPasswordPage = modelForgotPasswordPage;
 
             #region emailEnterPageListeners
             //for email enter page
             _viewEmailEnter = viewEmailEnter;
             //exit button
-            _viewEmailEnter.EnterExitButton += _viewEmailEnter_EnterExitButton;
-            _viewEmailEnter.LeaveExitButton += _viewEmailEnter_LeaveExitButton;
-            _viewEmailEnter.ExitForgotPageButtonClick += _viewEmailEnter_ExitForgotPageButtonClick;
+            _viewEmailEnter.EnterExitButton += ViewEmailEnter_EnterExitButton;
+            _viewEmailEnter.LeaveExitButton += ViewEmailEnter_LeaveExitButton;
+            _viewEmailEnter.ExitForgotPageButtonClick += ViewEmailEnter_ExitForgotPageButtonClick;
             //leave and enter feom email textbox
-            _viewEmailEnter.LeaveEmailBoxAndCheckCorrect += _viewEmailEnter_LeaveEmailBoxAndCheckCorrect;
-            _viewEmailEnter.EnterEmailTextBox += _viewEmailEnter_EnterEmailTextBox;
+            _viewEmailEnter.LeaveEmailBoxAndCheckCorrect += ViewEmailEnter_LeaveEmailBoxAndCheckCorrect;
+            _viewEmailEnter.EnterEmailTextBox += ViewEmailEnter_EnterEmailTextBox;
             //press sendcodebutton
-            _viewEmailEnter.SendCodeButtonClick += _viewEmailEnter_SendCodeButtonClick;
+            _viewEmailEnter.SendCodeButtonClick += ViewEmailEnter_SendCodeButtonClick;
             #endregion
 
 
@@ -49,22 +47,22 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
 
 
             //exit button
-            _viewNewPasswordPage.ExitButtonEntered += _viewNewPasswordPage_ExitButtonEntered;
-            _viewNewPasswordPage.ExitButtonLeavd += _viewNewPasswordPage_ExitButtonLeavd;
-            _viewNewPasswordPage.ExitForgotpageButtonClick += _viewNewPasswordPage_ExitForgotpageButtonClick;
+            _viewNewPasswordPage.ExitButtonEntered += ViewNewPasswordPage_ExitButtonEntered;
+            _viewNewPasswordPage.ExitButtonLeavd += ViewNewPasswordPage_ExitButtonLeavd;
+            _viewNewPasswordPage.ExitForgotpageButtonClick += ViewNewPasswordPage_ExitForgotpageButtonClick;
 
 
             // save new password button
-            _viewNewPasswordPage.Save_New_Password_buttonClick += _viewNewPasswordPage_Save_New_Password_buttonClick;
+            _viewNewPasswordPage.Save_New_Password_buttonClick += ViewNewPasswordPage_Save_New_Password_buttonClick;
 
             //code Field
-            _viewNewPasswordPage.LeaveCodeField += _viewNewPasswordPage_LeaveCodeField;
+            _viewNewPasswordPage.LeaveCodeField += ViewNewPasswordPage_LeaveCodeField;
 
             //PasswordsFields
-            _viewNewPasswordPage.EnterInPassswordsFields += _viewNewPasswordPage_EnterInPassswordsFields;
-                
+            _viewNewPasswordPage.EnterInPassswordsFields += ViewNewPasswordPage_EnterInPassswordsFields;
+
             //back button
-            _viewNewPasswordPage.GoBackButtonCLick += _viewNewPasswordPage_GoBackButtonCLick;
+            _viewNewPasswordPage.GoBackButtonCLick += ViewNewPasswordPage_GoBackButtonCLick;
             #endregion
         }
 
@@ -74,12 +72,11 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
 
         #region emailpage
         //press sendcodebutton
-        private void _viewEmailEnter_SendCodeButtonClick()
+        private void ViewEmailEnter_SendCodeButtonClick()
         {
             if (_viewEmailEnter.CheckCorrectInputEmail())
             {
-                Form? thisForm = _viewEmailEnter as Form;
-                if (thisForm != null && _viewNewPasswordPage is Form nextForm)
+                if (_viewEmailEnter is Form thisForm && _viewNewPasswordPage is Form nextForm)
                 {
 
                     thisForm.Hide();//тут мы прячем форму для ввода имейла
@@ -105,9 +102,9 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
 
         }
         //leave and enter feom email textbox
-        private void _viewEmailEnter_LeaveEmailBoxAndCheckCorrect(object? sender, string email_string)
+        private void ViewEmailEnter_LeaveEmailBoxAndCheckCorrect(object? sender, string email_string)
         {
-            
+
             if (_viewEmailEnter.CheckCorrectInputEmail())
             {
                 Log.Information("email correct");
@@ -128,28 +125,27 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
                 _viewEmailEnter.MakeVisibleEmailerror();
             }
         }
-        private void _viewEmailEnter_EnterEmailTextBox()
+        private void ViewEmailEnter_EnterEmailTextBox()
         {
             _viewEmailEnter.MakeSendButtonDisable();
-           _viewEmailEnter.MakeNotVisibleEmailerror();
+            _viewEmailEnter.MakeNotVisibleEmailerror();
         }
-        
+
         //exit button
-        private void _viewEmailEnter_ExitForgotPageButtonClick()
+        private void ViewEmailEnter_ExitForgotPageButtonClick()
         {
-            var thisForm = _viewEmailEnter as Form;
-            if (thisForm != null)
+            if (_viewEmailEnter is Form thisForm)
             {
                 thisForm.DialogResult = DialogResult.Cancel;
                 thisForm.Close();
             }
         }
-        private void _viewEmailEnter_LeaveExitButton()
+        private void ViewEmailEnter_LeaveExitButton()
         {
             _viewEmailEnter.MakeCloseButtonBlack();
         }
-        
-        private void _viewEmailEnter_EnterExitButton()
+
+        private void ViewEmailEnter_EnterExitButton()
         {
             _viewEmailEnter.MakeCloseButtonRed();
         }
@@ -161,45 +157,44 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
 
         //exit button
 
-        private void _viewNewPasswordPage_ExitForgotpageButtonClick()
+        private void ViewNewPasswordPage_ExitForgotpageButtonClick()
         {
-            Form? thisForm = _viewNewPasswordPage as Form;
-            if (thisForm != null)
+            if (_viewNewPasswordPage is Form thisForm)
             {
                 thisForm.DialogResult = DialogResult.Cancel;
                 thisForm.Close();
             }
         }
 
-        private void _viewNewPasswordPage_ExitButtonLeavd()
+        private void ViewNewPasswordPage_ExitButtonLeavd()
         {
             _viewNewPasswordPage.MakeCloseButtonBlack();
         }
 
-        private void _viewNewPasswordPage_ExitButtonEntered()
+        private void ViewNewPasswordPage_ExitButtonEntered()
         {
             _viewNewPasswordPage.MakeCloseButtonRed();
         }
 
         // save new password button
 
-        private void _viewNewPasswordPage_Save_New_Password_buttonClick(object? sender, (string, string) e)
+        private void ViewNewPasswordPage_Save_New_Password_buttonClick(object? sender, (string, string) e)
         {
-            if(e.Item1==e.Item2 && e.Item1!="")
-            { 
+            if (e.Item1 == e.Item2 && e.Item1 != "")
+            {
                 try
                 {
                     /////////////////////////////////////
                     ////////////////////////////////////////
                     //////////////////////////////////////// Model performance
                     /////////////////////////////////////
-                                            
-                    
+
+
                 }
-                catch(Exception ex) 
+                catch (Exception ex)
                 {
-                    Log.Error(ex.Message, "Ошибка в {MethodName} Class {ClassName}", 
-                        nameof(_viewNewPasswordPage_Save_New_Password_buttonClick), nameof(PresenterForgotPasswoedPage));
+                    Log.Error(ex.Message, "Ошибка в {MethodName} Class {ClassName}",
+                        nameof(ViewNewPasswordPage_Save_New_Password_buttonClick), nameof(PresenterForgotPasswoedPage));
                     MessageBox.Show("Произошла ошибка!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -211,14 +206,12 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
         }
 
         //code Field
-        private void _viewNewPasswordPage_LeaveCodeField(object? sender, string e)
-        {   if (e != null && e != "")
+        private void ViewNewPasswordPage_LeaveCodeField(object? sender, string e)
+        {
+            if (e != null && e != "")
             {
-                int code = 0;
-                if (int.TryParse(e, out code))
+                if (int.TryParse(e, result: out int code))
                 {
-
-
                     /////////////////////////////////////
                     ////////////////////////////////////////
                     //////////////////////////////////////// Model performance
@@ -238,16 +231,15 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
         }
 
         //PasswordsFields
-        private void _viewNewPasswordPage_EnterInPassswordsFields()
+        private void ViewNewPasswordPage_EnterInPassswordsFields()
         {
             _viewNewPasswordPage.MakeNotVisibleErrorLable();
         }
 
         //back button
-        private void _viewNewPasswordPage_GoBackButtonCLick()
+        private void ViewNewPasswordPage_GoBackButtonCLick()
         {
-            Form? thisForm = _viewNewPasswordPage as Form;
-            if (thisForm != null)
+            if (_viewNewPasswordPage is Form thisForm)
             {
                 thisForm.DialogResult = DialogResult.TryAgain;
                 thisForm.Close();

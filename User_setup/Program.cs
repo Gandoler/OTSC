@@ -8,12 +8,11 @@ using Serilog.Sinks.File;
 using User_Interface.Login_page_mvp.ForgotPasswordPage.Model;
 using User_Interface.Login_page_mvp.ForgotPasswordPage.View;
 using User_Interface.Login_page_mvp.ForgotPasswordPage;
-using User_Interface.Login_page_mvp.ForgotPassword;
-namespace User_setup
+namespace OTSC_ui
 {
     internal static class Program
     {
-        
+
         [STAThread]
         static void Main()
         {
@@ -23,10 +22,10 @@ namespace User_setup
 
 
 
-            LoginFrom formLogin = new LoginFrom();
-            ModelLogin model = new ModelLogin();
+            LoginFrom formLogin = new();
+            ModelLogin model = new();
 
-            PresenterLogin presenter = new PresenterLogin(formLogin, model);
+            PresenterLogin presenter = new(formLogin, model);
             Log.Information("Приложение запущено.");
             Application.Run(formLogin);
 

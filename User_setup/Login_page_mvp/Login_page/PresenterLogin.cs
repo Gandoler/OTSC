@@ -1,5 +1,8 @@
 ﻿using Microsoft.Win32;
 using OTSC_ui.ExtendedTool.Connect_and_query.Connect;
+using OTSC_ui.Login_page_mvp.ForgotPasswordPage;
+using OTSC_ui.Login_page_mvp.ForgotPasswordPage.Model;
+using OTSC_ui.Login_page_mvp.Login_page.View;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,11 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using User_Interface.Login_page_mvp.ForgotPassword;
-using User_Interface.Login_page_mvp.ForgotPasswordPage.Model;
 using User_Interface.Login_page_mvp.ForgotPasswordPage.View;
 using User_Interface.Login_page_mvp.Login_page.Model;
-using User_Interface.Login_page_mvp.Login_page.View;
 using User_Interface.Login_page_mvp.Registr_page.View;
 
 namespace User_Interface.Login_page_mvp.Login_page
@@ -28,9 +28,9 @@ namespace User_Interface.Login_page_mvp.Login_page
 
             //обработчик для вьювера
             // for forgot password
-            _loginView.forgotPassworLinkClick += _loginView_forgotPassworLinkClick;
+            _loginView.ForgotPassworLinkClick += _loginView_forgotPassworLinkClick;
             _loginView.ExitApl += LoginView_Exit;
-            _loginView.Enter += EnterButtonClicked;
+            _loginView.ErnterInField += EnterButtonClicked;
             _loginView.Show_Psw += View_show_Psw;
             _loginView.CharKeyPresd += OnlyEnglishCheck;
             _loginView.Registr_click += Registr_click;

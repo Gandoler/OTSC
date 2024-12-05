@@ -26,14 +26,14 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
 
         public string ConfirmPassword => throw new NotImplementedException();
 
-        public event EventHandler ExitApl;
-        public event EventHandler<string> leaveLEmailTextBox;
-        public event EventHandler<string> leavePasswordTextBox;
-        public event EventHandler<string> leaveSecondPasswordTextBox;
-        public event EventHandler<string> leaveLoginTextBox;
-        public event EventHandler<bool> show_Psw;
-        public event EventHandler enter;
-        public event EventHandler<EventArgs> charKeyPresd;
+        public event EventHandler? ExitApl;
+        public event EventHandler<string>? leaveLEmailTextBox;
+        public event EventHandler<string>? leavePasswordTextBox;
+        public event EventHandler<string>? leaveSecondPasswordTextBox;
+        public event EventHandler<string>? leaveLoginTextBox;
+        public event EventHandler<bool>? show_Psw;
+        public event EventHandler? enter;
+        public event EventHandler<EventArgs>? charKeyPresd;
 
         public void BlockSecPsw()
         {
