@@ -79,8 +79,7 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
             if (_viewEmailEnter.CheckCorrectInputEmail())
             {
                 Form? thisForm = _viewEmailEnter as Form;
-                Form? nextForm = _viewNewPasswordPage as Form;
-                if (thisForm != null && nextForm != null)
+                if (thisForm != null && _viewNewPasswordPage is Form nextForm)
                 {
 
                     thisForm.Hide();//тут мы прячем форму для ввода имейла
