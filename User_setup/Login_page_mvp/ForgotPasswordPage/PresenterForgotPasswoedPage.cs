@@ -23,7 +23,6 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
         private readonly IModelForgotPasswordPage _modelForgotPasswordPage;
         private readonly IViewChangePasswod _viewNewPasswordPage;
         private readonly IViewEmailEnter _viewEmailEnter;
-        private bool DidPasswordChange = false;
 
         public PresenterForgotPasswoedPage(IModelForgotPasswordPage modelForgotPasswordPage, IViewChangePasswod viewForgotPasswordPage, IViewEmailEnter viewEmailEnter)
         {
@@ -173,12 +172,12 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
             }
         }
 
-        private void _viewNewPasswordPage_ExitButtonLeavd(object? sender, Color e)
+        private void _viewNewPasswordPage_ExitButtonLeavd()
         {
             _viewNewPasswordPage.MakeCloseButtonBlack();
         }
 
-        private void _viewNewPasswordPage_ExitButtonEntered(object? sender, Color e)
+        private void _viewNewPasswordPage_ExitButtonEntered()
         {
             _viewNewPasswordPage.MakeCloseButtonRed();
         }
@@ -187,7 +186,7 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
 
         private void _viewNewPasswordPage_Save_New_Password_buttonClick(object? sender, (string, string) e)
         {
-            if(e.Item1==e.Item2)
+            if(e.Item1==e.Item2 && e.Item1!="")
             { 
                 try
                 {
@@ -195,8 +194,7 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
                     ////////////////////////////////////////
                     //////////////////////////////////////// Model performance
                     /////////////////////////////////////
-                    DidPasswordChange = true;
-                    
+                                            
                     
                 }
                 catch(Exception ex) 
@@ -215,25 +213,27 @@ namespace User_Interface.Login_page_mvp.ForgotPassword
 
         //code Field
         private void _viewNewPasswordPage_LeaveCodeField(object? sender, string e)
-        {
-            short code = 0;
-            if (short.TryParse(e,out code))
+        {   if (e != null && e != "")
             {
-
-
-                /////////////////////////////////////
-                ////////////////////////////////////////
-                //////////////////////////////////////// Model performance
-                /////////////////////////////////////
-                if (/*model*/true)
+                int code = 0;
+                if (int.TryParse(e, out code))
                 {
-                    _viewNewPasswordPage.EnablepasswordSField();
 
 
-                }
-                else
-                {
-                    _viewNewPasswordPage.DisablepasswordSField();
+                    /////////////////////////////////////
+                    ////////////////////////////////////////
+                    //////////////////////////////////////// Model performance
+                    /////////////////////////////////////
+                    if (/*model*/true)
+                    {
+                        _viewNewPasswordPage.EnablepasswordSField();
+
+
+                    }
+                    else
+                    {
+                        _viewNewPasswordPage.DisablepasswordSField();
+                    }
                 }
             }
         }

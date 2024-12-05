@@ -28,8 +28,8 @@ namespace OTSC_ui.Login_page_mvp.ForgotPasswordPage.View.ChangePassword
 
         //exit button
         event Action ExitForgotpageButtonClick;
-        event EventHandler<Color> ExitButtonEntered;
-        event EventHandler<Color> ExitButtonLeavd;
+        event Action ExitButtonEntered;
+        event Action ExitButtonLeavd;
 
         //Back button
         event Action GoBackButtonCLick;

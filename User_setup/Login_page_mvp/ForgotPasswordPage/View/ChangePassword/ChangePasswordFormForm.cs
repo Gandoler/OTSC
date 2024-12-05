@@ -20,8 +20,8 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
 
             //exit and back buttons
             GoBackButton.Click += (s, e) => GoBackButtonCLick?.Invoke();
-            ExitButton.Enter += (s, e) => ExitButtonEntered?.Invoke(ExitButton,ExitButton.ForeColor);
-            ExitButton.Leave += (s, e) => ExitButtonLeavd?.Invoke(ExitButton, ExitButton.ForeColor);
+            ExitButton.Enter += (s, e) => ExitButtonEntered?.Invoke();
+            ExitButton.Leave += (s, e) => ExitButtonLeavd?.Invoke();
             ExitButton.Click += (s, e) => ExitForgotpageButtonClick?.Invoke();
 
             //fields
@@ -37,8 +37,8 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
         //exit and back buttons
         public event Action ExitForgotpageButtonClick;
         public event Action GoBackButtonCLick;
-        public event EventHandler<Color> ExitButtonEntered;
-        public event EventHandler<Color> ExitButtonLeavd;
+        public event Action ExitButtonEntered;
+        public event Action ExitButtonLeavd;
 
         //fields
         public event EventHandler<string> LeaveCodeField;
