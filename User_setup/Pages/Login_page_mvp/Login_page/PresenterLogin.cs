@@ -24,18 +24,22 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             //обработчик для вьювера
             // for forgot password
             _loginView.ForgotPassworLinkClick += _loginView_forgotPassworLinkClick;
-            _loginView.ExitApl += LoginView_Exit;
+            _loginView.ExitButtonClick += LoginView_Exit;
             _loginView.ErnterInField += EnterButtonClicked;
-            _loginView.Show_Psw += View_show_Psw;
+            _loginView.Show_PswButtonClick += View_show_Psw;
             _loginView.CharKeyPresd += OnlyEnglishCheck;
-            _loginView.Registr_click += Registr_click;
+            _loginView.LoginButtonClick += Registr_click;
 
             //обработчик для модели
             _imodelka.LogMismatch += _imodelka_LogMismatch;
             _imodelka.LoginGo += _imodelka_LoginGo;
 
+            //login page
+            _loginView = loginView ?? throw new ArgumentNullException(nameof(loginView));
+            
         }
 
+        #region LoginPage
         //обработчик для вьювера
         private void _loginView_forgotPassworLinkClick()
         {
@@ -112,7 +116,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             }
             else
             {
-                _loginView.UnShowPsw();
+                _loginView.HidePsw();
             }
         }
 
@@ -132,6 +136,8 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         {
             ExitSaftyClass.AplicationExitSafety();
         }
+        #endregion
+        
 
     }
 }

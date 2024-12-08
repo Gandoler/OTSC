@@ -2,25 +2,26 @@
 {
     internal interface ILoginView
     {
-        string Login { get; }
-        string Password { get; }
+     
+        // Exit button
+        event Action ExitButtonClick;
+        
+        // Show password button
+        event EventHandler<bool> Show_PswButtonClick;
+        
+        // Login button
+        event EventHandler<(string, string)> LoginButtonClick;
 
+        // Resgistr button
+        event Action RegistrButtonClick;
 
-
-        event EventHandler ExitApl;
-        event EventHandler<bool> Show_Psw;
-        event EventHandler ErnterInField;
-        event EventHandler<EventArgs> CharKeyPresd;
-        event EventHandler Registr_click;
-
-        // for forgot password
+        // Forgot password
         event Action ForgotPassworLinkClick;
 
+        //
         void ShowPsw();
-        void UnShowPsw();
-        void NextPage();
-        void ClearAll();
-        (string, string) CopyUserLogin();
+        void HidePsw();
+        
 
 
 

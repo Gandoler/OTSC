@@ -23,9 +23,10 @@ namespace OTSC_ui
 
 
             LoginFrom formLogin = new();
+            RegistrForm registrForm = new();
             ModelLogin model = new();
 
-            PresenterLogin presenter = new(formLogin, model);
+            PresenterLogin presenter = new(formLogin, model,registrForm);
             Log.Information("Приложение запущено.");
             Application.Run(formLogin);
 
