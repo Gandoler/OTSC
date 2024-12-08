@@ -11,16 +11,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Login_page_mvp\Forgor_password\**" />
-    <Compile Remove="Login_page_mvp\Registration\**" />
-    <EmbeddedResource Remove="Login_page_mvp\Forgor_password\**" />
-    <EmbeddedResource Remove="Login_page_mvp\Registration\**" />
-    <None Remove="Login_page_mvp\Forgor_password\**" />
-    <None Remove="Login_page_mvp\Registration\**" />
+    <Compile Remove="Pages\Login_page_mvp\Forgor_password\**" />
+    <Compile Remove="Pages\Login_page_mvp\Registration\**" />
+    <Compile Remove="Pages\MainPageMvp\NotifyPage\**" />
+    <EmbeddedResource Remove="Pages\Login_page_mvp\Forgor_password\**" />
+    <EmbeddedResource Remove="Pages\Login_page_mvp\Registration\**" />
+    <EmbeddedResource Remove="Pages\MainPageMvp\NotifyPage\**" />
+    <None Remove="Pages\Login_page_mvp\Forgor_password\**" />
+    <None Remove="Pages\Login_page_mvp\Registration\**" />
+    <None Remove="Pages\MainPageMvp\NotifyPage\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Login_page_mvp\Login_page\View\ckm2wih0.ll0~" />
+    <None Remove="Pages\Login_page_mvp\Login_page\View\ckm2wih0.ll0~" />
   </ItemGroup>
 
   <ItemGroup>
@@ -62,8 +65,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Login_page_mvp\ForgotPasswordPage\Model\SendCodeModel\JsonEmailConfigReader\" />
-    <Folder Include="MainPageMvp\NotifyPage\" />
+    <Folder Include="Pages\Login_page_mvp\ForgotPasswordPage\Model\SendCodeModel\JsonEmailConfigReader\" />
   </ItemGroup>
 
   <ItemGroup>

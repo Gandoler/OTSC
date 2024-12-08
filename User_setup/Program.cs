@@ -6,8 +6,8 @@ using Serilog.Sinks.File;
 
 using User_Interface.Login_page_mvp.ForgotPasswordPage.View;
 using User_Interface.Login_page_mvp.ForgotPasswordPage;
-using OTSC_ui.Login_page_mvp.Login_page;
-using OTSC_ui.Login_page_mvp.Login_page.Model;
+using OTSC_ui.Pages.Login_page_mvp.Login_page;
+using OTSC_ui.Pages.Login_page_mvp.Login_page.Model;
 namespace OTSC_ui
 {
     internal static class Program
