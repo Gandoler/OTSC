@@ -2,6 +2,7 @@
 using OTSC_ui.DBTools.Operations;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,27 +16,34 @@ namespace OTSC_ui.DBTools
         public DataManager(IConnectManager ConnectManager, ISqlOperation SqlOperation) { 
             _connectManager = ConnectManager;
             _sqlOperation = SqlOperation;
-        }
+            _connectManager.Connect();
+       }
 
         public void InsertData(string query)
         {
-
+            _sqlOperation.Insert(query);
         }
 
 
         public void UpdateData(string query) 
         { 
-        
+            _sqlOperation.Update(query);
         }
 
         public void DeleteData(string query) 
         {
-
+            _sqlOperation.Delete(query); 
         }
 
-        public void GetDataTable(string query) 
+        public DataTable GetDataTable(string query) 
         {
+            _sqlOperation.Select(query, out var results);
+            return results;
+        }
 
+        public void CloseConnecction()
+        {
+            _connectManager.Disconnect();
         }
 
 

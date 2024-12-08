@@ -14,6 +14,6 @@ namespace OTSC_ui.DBTools.Connection
         void Disconnect();
         MySqlConnection? SqlConnection { get; }
 
-        static abstract explicit operator MySqlConnection(IConnectManager v);
+        
     }
 }
