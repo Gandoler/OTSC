@@ -1,14 +1,14 @@
 ﻿using MySql.Data.MySqlClient;
+using OTSC_ui.OldCode.ExtendedTool.Connect_and_query.query;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using User_Interface.ExtendedTool.Connect_and_query;
-using User_Interface.ExtendedTool.Connect_and_query.query;
 using static Guna.UI2.WinForms.Suite.Descriptions;
 
-namespace User_Interface.Login_page_mvp.Login_page.Model
+namespace OTSC_ui.Login_page_mvp.Login_page.Model
 {
     internal class ModelLogin : ImodelLogin
     {
@@ -33,7 +33,7 @@ namespace User_Interface.Login_page_mvp.Login_page.Model
                 }
                 catch (Exception exception)
                 {
-                    throw new Exception("Bad parse"+exception.Message);
+                    throw new Exception("Bad parse" + exception.Message);
                 }
                 if (tmp <= 0)
                 {
@@ -66,7 +66,7 @@ namespace User_Interface.Login_page_mvp.Login_page.Model
             }
         }
 
-      
+
 
         public void LogInApl()
         {
@@ -76,8 +76,8 @@ namespace User_Interface.Login_page_mvp.Login_page.Model
 
                 if (CheckExistANDRegistrUsers.CheckOFExistUser(RealConnect.Connection, _login, _password ?? throw new Exception("Bad Password")))
                 {
-                    
-                    OTSC_ui.Properties.Settings1.Default.ID = _login;
+
+                    Properties.Settings1.Default.ID = _login;
                     LoginGo.Invoke();
                 }
                 else

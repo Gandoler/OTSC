@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User_Interface.ExtendedTool.Connect_and_query.query
+namespace OTSC_ui.OldCode.ExtendedTool.Connect_and_query.query
 {
     internal static class CheckExistANDRegistrUsers
     {
-        public static bool CheckOFExistUser(MySqlConnection connection,long login,string psw)
+        public static bool CheckOFExistUser(MySqlConnection connection, long login, string psw)
         {
             string query = "SELECT COUNT(*) FROM UsersLogins WHERE id = @login and password = @psw;";
             try
@@ -19,7 +19,7 @@ namespace User_Interface.ExtendedTool.Connect_and_query.query
                 query_command.Parameters.AddWithValue("@login", login);
                 query_command.Parameters.AddWithValue("@psw", psw);
                 var result = query_command.ExecuteScalar();
-                Log.Information("user input:"+login.ToString() +' '+ psw.ToString());
+                Log.Information("user input:" + login.ToString() + ' ' + psw.ToString());
                 Log.Information($"SQL ANSWER: {result}");
                 return Convert.ToInt32(result) == 1;
             }
@@ -30,7 +30,7 @@ namespace User_Interface.ExtendedTool.Connect_and_query.query
             catch (Exception ex)
             {
                 Log.Error(ex.Message, "Ошибка в {MethodName}", nameof(CheckOFExistUser));
-                
+
             }
             throw new Exception("ERORR WITH CHECK YOU IN DB");//хз как грамотно эту ошибку дернуть
 

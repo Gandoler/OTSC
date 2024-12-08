@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace OTSC_ui.ExtendedTool.Connect_and_query.Connect
+namespace OTSC_ui.OldCode.ExtendedTool.Connect_and_query.Connect
 {
     public class DBdata
     {
@@ -22,7 +22,7 @@ namespace OTSC_ui.ExtendedTool.Connect_and_query.Connect
             this.Username = Database;
             this.PSW = PSW;
             this.PORT = PORT;
-            
+
         }
         override
         public string ToString()

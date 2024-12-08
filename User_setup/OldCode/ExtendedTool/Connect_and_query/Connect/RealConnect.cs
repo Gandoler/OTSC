@@ -1,5 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using OTSC_ui.ExtendedTool.Connect_and_query.Connect;
+using OTSC_ui.OldCode.ExtendedTool.Connect_and_query.Connect;
 using Serilog;
 
 internal static class RealConnect

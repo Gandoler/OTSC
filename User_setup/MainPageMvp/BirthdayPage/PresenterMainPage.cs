@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User_Interface.MainPageMvp.BirthdayPage
+namespace OTSC_ui.MainPageMvp.BirthdayPage
 {
     internal class PresenterMainPage
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User_Interface.Login_page_mvp.Registr_page.Model
+namespace OTSC_ui.Login_page_mvp.Registr_page.Model
 {
     internal interface ImodelRegistr
     {

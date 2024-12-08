@@ -8,11 +8,11 @@ using Serilog;
 
 using OTSC_ui.Login_page_mvp.ForgotPasswordPage.View.ChangePassword;
 using OTSC_ui.Login_page_mvp.ForgotPasswordPage.View.SendCode;
-using User_Interface.Login_page_mvp.ForgotPasswordPage.Model;
 using User_Interface.Login_page_mvp.Login_page;
 using User_Interface.Login_page_mvp.Login_page.Model;
 using User_Interface.Login_page_mvp.View;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using OTSC_ui.Login_page_mvp.ForgotPasswordPage.Model;
 
 namespace OTSC_ui.Login_page_mvp.ForgotPasswordPage
 {

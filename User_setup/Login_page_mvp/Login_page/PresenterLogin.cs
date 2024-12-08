@@ -1,8 +1,9 @@
 ﻿using Microsoft.Win32;
-using OTSC_ui.ExtendedTool.Connect_and_query.Connect;
 using OTSC_ui.Login_page_mvp.ForgotPasswordPage;
 using OTSC_ui.Login_page_mvp.ForgotPasswordPage.Model;
+using OTSC_ui.Login_page_mvp.Login_page.Model;
 using OTSC_ui.Login_page_mvp.Login_page.View;
+using OTSC_ui.OldCode.ExtendedTool.Connect_and_query.Connect;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,16 +12,15 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using User_Interface.Login_page_mvp.ForgotPasswordPage.View;
-using User_Interface.Login_page_mvp.Login_page.Model;
 using User_Interface.Login_page_mvp.Registr_page.View;
 
-namespace User_Interface.Login_page_mvp.Login_page
+namespace OTSC_ui.Login_page_mvp.Login_page
 {
     internal class PresenterLogin
     {
         private ILoginView _loginView;
         private ImodelLogin _imodelka;
-        
+
         internal PresenterLogin(ILoginView loginView, ImodelLogin imodelka)
         {
             _loginView = loginView ?? throw new ArgumentNullException(nameof(loginView));
@@ -55,7 +55,7 @@ namespace User_Interface.Login_page_mvp.Login_page
                 DialogResult result = emailEnterfrom.ShowDialog();//можно конечно что то делать но бог с ним
 
                 thisform.Show();
-            }    
+            }
         }
 
 
@@ -72,7 +72,7 @@ namespace User_Interface.Login_page_mvp.Login_page
         private void _imodelka_LogMismatch()
         {
             _loginView.ClearAll();
-            MessageBox.Show("LOGIN OR PASSWORD MISMATCH", "ERROR", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            MessageBox.Show("LOGIN OR PASSWORD MISMATCH", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void Registr_click(object? sender, EventArgs e)
@@ -93,8 +93,8 @@ namespace User_Interface.Login_page_mvp.Login_page
                 {
 
                     args.Handled = true;
-                    if(label is not null)
-                    label.Visible = true;
+                    if (label is not null)
+                        label.Visible = true;
 
                 }
                 else
@@ -123,15 +123,15 @@ namespace User_Interface.Login_page_mvp.Login_page
 
         private void EnterButtonClicked(object? sender, EventArgs e)
         {
-            
+
             (_imodelka.Login, _imodelka.Password) = _loginView.CopyUserLogin();
-            _imodelka.LogInApl();   
+            _imodelka.LogInApl();
         }
 
-       
 
 
-        
+
+
 
         private void LoginView_Exit(object? sender, EventArgs e)
         {

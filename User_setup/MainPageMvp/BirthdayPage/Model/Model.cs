@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User_Interface.MainPageMvp.BirthdayPage.Model
+namespace OTSC_ui.MainPageMvp.BirthdayPage.Model
 {
-    internal class Model: IModelMainPage
+    internal class Model : IModelMainPage
     {
     }
 }

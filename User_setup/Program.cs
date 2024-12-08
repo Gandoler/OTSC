@@ -1,13 +1,13 @@
 using User_Interface.Login_page_mvp.View;
 using User_Interface.Login_page_mvp.Login.View.Registr;
 using User_Interface.ExtendedTool;
-using User_Interface.Login_page_mvp.Login_page.Model;
-using User_Interface.Login_page_mvp.Login_page;
 using Serilog;
 using Serilog.Sinks.File;
-using User_Interface.Login_page_mvp.ForgotPasswordPage.Model;
+
 using User_Interface.Login_page_mvp.ForgotPasswordPage.View;
 using User_Interface.Login_page_mvp.ForgotPasswordPage;
+using OTSC_ui.Login_page_mvp.Login_page;
+using OTSC_ui.Login_page_mvp.Login_page.Model;
 namespace OTSC_ui
 {
     internal static class Program

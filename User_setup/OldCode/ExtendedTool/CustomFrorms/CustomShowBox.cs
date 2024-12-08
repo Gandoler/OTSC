@@ -10,7 +10,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using OTSC_ui.ExtendedTool.Connect_and_query.Connect;
+using OTSC_ui.OldCode.ExtendedTool.Connect_and_query.Connect;
 
 namespace User_Interface.ExtendedTool
 {

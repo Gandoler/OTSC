@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User_Interface.MainPageMvp.BirthdayPage.View
+namespace OTSC_ui.MainPageMvp.BirthdayPage.View
 {
     internal interface IViewMainPage
     {

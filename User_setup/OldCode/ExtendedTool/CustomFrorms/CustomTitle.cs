@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace User_Interface.ExtendedTool.CustomFrorms
+namespace OTSC_ui.OldCode.ExtendedTool.CustomFrorms
 {
     internal static class CustomTitle
     {

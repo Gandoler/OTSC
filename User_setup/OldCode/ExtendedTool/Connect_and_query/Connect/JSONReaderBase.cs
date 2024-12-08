@@ -2,7 +2,7 @@
 using System.Text.Json;
 using User_Interface.ExtendedTool;
 
-namespace OTSC_ui.ExtendedTool.Connect_and_query.Connect
+namespace OTSC_ui.OldCode.ExtendedTool.Connect_and_query.Connect
 {
     internal static class JSONReader
     {
@@ -16,9 +16,9 @@ namespace OTSC_ui.ExtendedTool.Connect_and_query.Connect
             {
                 Log.Information(filePath + "-exist");
             }
-        //этому методу нужна переработка
-        
-            
+            //этому методу нужна переработка
+
+
             if (filePath == null)
             {
                 using (var inputForm = new CustomShowBox())
@@ -35,7 +35,7 @@ namespace OTSC_ui.ExtendedTool.Connect_and_query.Connect
 
             if (File.Exists(filePath))
             {
-                
+
                 try
                 {
                     string jsonchikData = File.ReadAllText(filePath);
@@ -50,12 +50,12 @@ namespace OTSC_ui.ExtendedTool.Connect_and_query.Connect
                 catch (JsonException ex)
                 {
                     Log.Error("JSON deserialization error: {Message}", ex.Message);
-                    
+
                 }
                 catch (Exception ex)
                 {
                     Log.Error("Unexpected error: {Message}", ex.Message);
-                
+
                 }
             }
 

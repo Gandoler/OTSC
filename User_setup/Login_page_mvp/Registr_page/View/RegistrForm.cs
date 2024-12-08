@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OTSC_ui.Login_page_mvp.Registr_page.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using User_Interface.Login_page_mvp.Registr_page.View;
 
 namespace User_Interface.Login_page_mvp.Login.View.Registr
 {

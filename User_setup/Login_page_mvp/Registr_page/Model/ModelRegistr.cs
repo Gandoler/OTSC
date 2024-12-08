@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
-namespace User_Interface.Login_page_mvp.Registr_page.Model
+namespace OTSC_ui.Login_page_mvp.Registr_page.Model
 {
-    internal class ModelRegistr: ImodelRegistr
+    internal class ModelRegistr : ImodelRegistr
     {
         private long _login;
         private string? _password;
