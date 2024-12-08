@@ -5,13 +5,13 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
 {
     internal class ModelLogin : ImodelLogin
     {
-        //
+        
         private long _login;
         private string? _password;
         private string? _email;
 
-        public event Action LoginGo;
-        public event Action LogMismatch;
+        public event Action? LoginGo;
+        public event Action? LogMismatch;
         //public event Action UserExist;
 
         public string Login

@@ -21,18 +21,159 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             _imodelka = imodelka ?? throw new ArgumentNullException(nameof(imodelka));
             _registrView = registrView ?? throw new ArgumentNullException(nameof(registrView));
 
-            
-           
 
+
+            #region LoginPageConstr
             //login page
             _loginView = loginView ?? throw new ArgumentNullException(nameof(loginView));
-            
+
+
+            // Exit button
+            _loginView.ExitButtonClick += _loginView_ExitButtonClick;
+            _loginView.ExitButtonEntered += _loginView_ExitButtonEntered;
+            _loginView.ExitButtonLeavd += _loginView_ExitButtonLeavd;
+
+
+            // Show password button
+            _loginView.Show_PswButtonClick += _loginView_Show_PswButtonClick;
+
+            // Login button
+            _loginView.LoginButtonClick += _loginView_LoginButtonClick;
+
+            // Resgistr button
+            _loginView.RegistrButtonClick += _loginView_RegistrButtonClick;
+
+            // Forgot password
+            _loginView.ForgotPassworLinkClick += _loginView_ForgotPassworLinkClick;
+            #endregion
+
+            #region RegistrpageConstr
+            // Exit button
+            _registrView.ExitButtonClick += _registrView_ExitButtonClick;
+            _registrView.ExitButtonEntered += _registrView_ExitButtonEntered;
+            _registrView.ExitButtonLeavd += _registrView_ExitButtonLeavd;
+
+            // Resgistr button
+
+
+            //back button
+            _registrView.GoBackButtonClick += _registrView_GoBackButtonClick;
+
+            //email field button
+
+            #endregion
         }
 
+
+
+
+        // Exit button
+        private void _registrView_ExitButtonClick()
+        { 
+                Application.Exit();
+        }
+        private void _registrView_ExitButtonLeavd()
+        {
+            _registrView.MakeExitButtonForeBlack();
+        }
+
+        private void _registrView_ExitButtonEntered()
+        {
+            _registrView.MakeExitButtonForeRed();
+        }
+
+
+        // Resgistr button
+
+        //back button
+        private void _registrView_GoBackButtonClick()
+        {
+            Form? thisform = _registrView as Form;
+            if (thisform != null)
+            {
+                thisform.Close();
+            }
+        }
+
+        //email field button
+
+
         #region LoginPage
-        
+
+        // Exit button
+        private void _loginView_ExitButtonLeavd()
+        {
+            _loginView.MakeExitButtonForeBlack();
+        }
+
+        private void _loginView_ExitButtonEntered()
+        {
+            _loginView.MakeExitButtonForeRed();
+        }
+
+        private void _loginView_ExitButtonClick()
+        {
+            Application.Exit();
+        }
+
+        // Show password button
+        private void _loginView_Show_PswButtonClick(object? sender, bool e)
+        {
+            if (e)
+            {
+                _loginView.ShowPsw();
+            }
+            else
+            {
+                _loginView.HidePsw();
+            }
+        }
+
+
+        // Login button
+        private void _loginView_LoginButtonClick(object? sender, (string, string) e)
+        {
+            (_imodelka.Login, _imodelka.Password) = e;
+            _imodelka.LogInApl();
+        }
+
+
+        // Resgistr button
+        private void _loginView_RegistrButtonClick()
+        {
+            Form? thisform = _loginView as Form;
+            if (thisform != null)
+            {
+                Form? nextform = _registrView as Form;
+                if (nextform != null)
+                {
+                    thisform.Hide();
+                    nextform.Show();
+
+                    //when user clode Registr Form
+                    thisform.Show();
+                }
+            }
+        }
+
+        // Forgot password
+        private void _loginView_ForgotPassworLinkClick()
+        {
+            Form? thisform = _loginView as Form;
+            if (thisform != null)
+            {
+                ChangePasswordFormForm changePasswordFormForm = new ChangePasswordFormForm();
+                EmailEnterfrom emailEnterfrom = new EmailEnterfrom();
+                ModelForgorPasswordPage modelForgorPasswordPage = new ModelForgorPasswordPage();
+                PresenterForgotPasswoedPage presenterForgotPasswoedPage = new PresenterForgotPasswoedPage(modelForgorPasswordPage, changePasswordFormForm, emailEnterfrom);
+                thisform.Hide();
+                DialogResult result = emailEnterfrom.ShowDialog();//можно конечно что то делать но бог с ним
+
+                thisform.Show();
+            }
+        }
         #endregion
-        
 
     }
+        
 }

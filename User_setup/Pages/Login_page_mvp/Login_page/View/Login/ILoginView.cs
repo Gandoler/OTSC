@@ -20,7 +20,7 @@
         // Forgot password
         event Action ForgotPassworLinkClick;
 
-        //
+       
         void ShowPsw();
         void HidePsw();
 

@@ -10,6 +10,8 @@
 
         event Action LoginGo;
         event Action LogMismatch;
+        event Action UserExist;
+        event Action UserRegistered;
 
     }
 }
