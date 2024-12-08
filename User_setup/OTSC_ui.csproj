@@ -7,6 +7,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>preview</LangVersion>
+    <UserSecretsId>7c544e61-5477-4506-9362-93fda5b5d89f</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,6 +25,7 @@
 
   <ItemGroup>
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
     <PackageReference Include="MySql.Data" Version="9.1.0" />
     <PackageReference Include="Serilog" Version="4.1.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
@@ -58,6 +60,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Login_page_mvp\ForgotPasswordPage\Model\SendCodeModel\JsonEmailConfigReader\" />
     <Folder Include="MainPageMvp\NotifyPage\" />
   </ItemGroup>
 

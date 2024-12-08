@@ -37,13 +37,14 @@ namespace OTSC_ui.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\glkru\\OneDrive\\Desktop\\prj\\Project_cpo\\User_setup\\RealSecret.json")]
-        public string Jsonpath {
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\glkru\\OneDrive\\Desktop\\prj\\Project_cpo\\User_setup\\RealSServerSetings.jso" +
+            "n")]
+        public string Serverpath {
             get {
-                return ((string)(this["Jsonpath"]));
+                return ((string)(this["Serverpath"]));
             }
             set {
-                this["Jsonpath"] = value;
+                this["Serverpath"] = value;
             }
         }
         
@@ -56,6 +57,19 @@ namespace OTSC_ui.Properties {
             }
             set {
                 this["ID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\glkru\\OneDrive\\Desktop\\prj\\Project_cpo\\User_setup\\ReslSEmailSetings.json" +
+            "")]
+        public string EmailPath {
+            get {
+                return ((string)(this["EmailPath"]));
+            }
+            set {
+                this["EmailPath"] = value;
             }
         }
     }

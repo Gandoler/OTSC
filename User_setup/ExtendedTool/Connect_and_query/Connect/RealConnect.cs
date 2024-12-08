@@ -22,9 +22,16 @@ internal static class RealConnect
                     $"Database={(dBdata.Database ?? "default_database")};" +
                     $"User={(dBdata.Username ?? "default_user")};" +
                     $"Password={(dBdata.PSW ?? "default_password")};";
+                Log.Information("########################################################################################################\r\n" +
+                    _connectionString +
+                    "\r\n########################################################################################################\r\n" +
+                    "-connection string");
+
+
             }
             else
             {
+
                 Log.Information("Empty set in JSON in RealConnect class");
                 MessageBox.Show("Problems with JSON", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

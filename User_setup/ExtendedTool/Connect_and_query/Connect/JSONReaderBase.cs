@@ -9,7 +9,7 @@ namespace OTSC_ui.ExtendedTool.Connect_and_query.Connect
 
         public static DBdata? bdata()
         {
-            string filePath = Properties.Settings1.Default.Jsonpath;
+            string filePath = Properties.Settings1.Default.Serverpath;
 
             Log.Information(filePath + "-filepath");
             if (File.Exists(filePath))

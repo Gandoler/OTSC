@@ -5,11 +5,14 @@
     <Setting Name="Theme" Type="System.String" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Jsonpath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\glkru\OneDrive\Desktop\prj\Project_cpo\User_setup\RealSecret.json</Value>
+    <Setting Name="Serverpath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\glkru\OneDrive\Desktop\prj\Project_cpo\User_setup\RealSServerSetings.json</Value>
     </Setting>
     <Setting Name="ID" Type="System.Int64" Scope="User">
       <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="EmailPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\glkru\OneDrive\Desktop\prj\Project_cpo\User_setup\ReslSEmailSetings.json</Value>
     </Setting>
   </Settings>
 </SettingsFile>

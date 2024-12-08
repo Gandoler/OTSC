@@ -39,7 +39,7 @@ namespace OTSC_ui
             //Log.CloseAndFlush();
 
 
-
+            Log.CloseAndFlush();
             //Application.Run(new CustomShowBox());
         }
     }

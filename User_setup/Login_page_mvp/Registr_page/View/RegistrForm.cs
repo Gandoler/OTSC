@@ -69,5 +69,10 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
         {
 
         }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
