@@ -35,21 +35,27 @@ namespace OTSC_ui.ExtendedTool.Connect_and_query.Connect
 
             if (File.Exists(filePath))
             {
+                
                 try
                 {
                     string jsonchikData = File.ReadAllText(filePath);
                     DBdata? dBdata = JsonSerializer.Deserialize<DBdata>(jsonchikData);
-                    return dBdata;
+                    if (dBdata != null)
+                    {
+                        Log.Information("Successfully deserialized JSON data: {DBdata}", dBdata.ToString());
+                        return dBdata;
+                    }
+                    Log.Warning("Deserialized DBdata is null.");
                 }
                 catch (JsonException ex)
                 {
-                    Log.Error(ex.Message, "Ошибка в {MethodName}", nameof(DBdata));
-                    throw;
+                    Log.Error("JSON deserialization error: {Message}", ex.Message);
+                    
                 }
                 catch (Exception ex)
                 {
-                    Log.Error(ex.Message, "Ошибка в {MethodName}", nameof(DBdata));
-                    throw;
+                    Log.Error("Unexpected error: {Message}", ex.Message);
+                
                 }
             }
 

@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
     <PackageReference Include="MySql.Data" Version="9.1.0" />
     <PackageReference Include="Serilog" Version="4.1.0" />
@@ -62,6 +63,10 @@
   <ItemGroup>
     <Folder Include="Login_page_mvp\ForgotPasswordPage\Model\SendCodeModel\JsonEmailConfigReader\" />
     <Folder Include="MainPageMvp\NotifyPage\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
 

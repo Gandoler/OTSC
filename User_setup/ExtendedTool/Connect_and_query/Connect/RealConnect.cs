@@ -22,10 +22,7 @@ internal static class RealConnect
                     $"Database={(dBdata.Database ?? "default_database")};" +
                     $"User={(dBdata.Username ?? "default_user")};" +
                     $"Password={(dBdata.PSW ?? "default_password")};";
-                Log.Information("########################################################################################################\r\n" +
-                    _connectionString +
-                    "\r\n########################################################################################################\r\n" +
-                    "-connection string");
+                Log.Information( _connectionString + "-connection string");
 
 
             }

@@ -38,7 +38,7 @@ namespace OTSC_ui
             //Application.Run(emailEnterfrom);
             //Log.CloseAndFlush();
 
-
+            Log.Information("Приложение закрыто.");
             Log.CloseAndFlush();
             //Application.Run(new CustomShowBox());
         }

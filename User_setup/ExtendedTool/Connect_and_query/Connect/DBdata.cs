@@ -22,6 +22,12 @@ namespace OTSC_ui.ExtendedTool.Connect_and_query.Connect
             this.Username = Database;
             this.PSW = PSW;
             this.PORT = PORT;
+            
+        }
+        override
+        public string ToString()
+        {
+            return ip + ":" + Database + ":" + Username + ":" + PSW + ":" + PORT;
         }
 
     }
