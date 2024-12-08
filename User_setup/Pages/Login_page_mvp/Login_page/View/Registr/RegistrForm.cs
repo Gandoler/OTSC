@@ -1,4 +1,5 @@
 ﻿using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Registr;
+using System.Text.RegularExpressions;
 
 namespace User_Interface.Login_page_mvp.Login.View.Registr
 {
@@ -7,63 +8,65 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
         public RegistrForm()
         {
             InitializeComponent();
+            // Exit button
+            ExitButton.Click += (s, e) => ExitButtonClick?.Invoke();
+            ExitButton.MouseEnter += (s, e) => ExitButtonEntered?.Invoke();
+            ExitButton.MouseLeave += (s, e) => ExitButtonLeavd?.Invoke();
+           
+            // Resgistr button
+            RegistrButton.Click += (s, e) => RegistrButtonClick?.Invoke();
+
+            //back button
+            GoBackButton.Click += (s, e) => GoBackButtonClick?.Invoke();
+
+            //email field button
+            EmailTextBox.Enter += (s, e) => EnterEmailTextBox?.Invoke();
+            EmailTextBox.TextChanged += (s, e) => LeaveEmailBoxAndCheckCorrect?.Invoke(this, EmailTextBox.Text);
         }
 
-        public string Login => throw new NotImplementedException();
+        // Exit button
+        public event Action? ExitButtonClick;
+        public event Action? ExitButtonEntered;
+        public event Action? ExitButtonLeavd;
 
-        public string Email => throw new NotImplementedException();
+        // Resgistr button
+        public event Action? RegistrButtonClick;
 
-        public string Password => throw new NotImplementedException();
+        //back button
+        public event Action? GoBackButtonClick;
 
-        public string ConfirmPassword => throw new NotImplementedException();
+        //email field button
+        public event Action? EnterEmailTextBox;
+        public event EventHandler<string>? LeaveEmailBoxAndCheckCorrect;
 
-        public event EventHandler? ExitApl;
-        public event EventHandler<string>? leaveLEmailTextBox;
-        public event EventHandler<string>? leavePasswordTextBox;
-        public event EventHandler<string>? leaveSecondPasswordTextBox;
-        public event EventHandler<string>? leaveLoginTextBox;
-        public event EventHandler<bool>? show_Psw;
-        public event EventHandler? enter;
-        public event EventHandler<EventArgs>? charKeyPresd;
-
-        public void BlockSecPsw()
+        public bool CheckCorrectInputEmail()
         {
-            throw new NotImplementedException();
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            if (Regex.IsMatch(EmailTextBox.Text, emailPattern))
+            {
+                return true;
+            }
+            return false;
         }
 
-        public void ClearPasswords()
+        public void MakeExitButtonForeBlack()
         {
-            throw new NotImplementedException();
+            ExitButton.ForeColor = Color.Black;
         }
 
-        public void ShowPasswordMismatchMessageBox(string message)
+        public void MakeExitButtonForeRed()
         {
-            throw new NotImplementedException();
+            ExitButton.ForeColor = Color.Red;
         }
 
-        public void ShowPsw()
+        public void MakeNotVisibleEmailerror()
         {
-            throw new NotImplementedException();
+            EmailErrorPicture.Visible = false;
         }
 
-        public void UnBlockSecPsw()
+        public void MakeVisibleEmailerror()
         {
-            throw new NotImplementedException();
-        }
-
-        public void UnShowPsw()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void RegistrForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+            EmailErrorPicture.Visible = true;
         }
     }
 }

@@ -175,8 +175,8 @@ namespace User_Interface.Login_page_mvp.View
             LogintextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             LogintextBox.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LogintextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            LogintextBox.Location = new Point(300, 99);
-            LogintextBox.Margin = new Padding(5, 4, 5, 4);
+            LogintextBox.Location = new Point(300, 97);
+            LogintextBox.Margin = new Padding(6, 6, 6, 6);
             LogintextBox.MaxLength = 20;
             LogintextBox.Name = "LogintextBox";
             LogintextBox.PasswordChar = '\0';

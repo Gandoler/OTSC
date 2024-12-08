@@ -24,14 +24,7 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
 
         }
 
-        public bool ImageErrorrVisible
-        { 
-            set 
-            { 
-                guna2ImageButton1.Visible = value;
-                if (!value) SendCodeButton.Enabled = true;
-            } 
-        }
+       
         //send code button
         public event Action? SendCodeButtonClick;
 

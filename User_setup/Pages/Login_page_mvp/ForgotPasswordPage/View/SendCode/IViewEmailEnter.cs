@@ -2,22 +2,28 @@
 {
     internal interface IViewEmailEnter
     {
+        // Exit button
+        event Action EnterExitButton;
+        event Action LeaveExitButton;
+        event Action ExitForgotPageButtonClick;
+
+        // Email field
+        event Action EnterEmailTextBox;
+        event EventHandler<string> LeaveEmailBoxAndCheckCorrect;
+
+        // SendCode Button
+        event Action SendCodeButtonClick;
+
+
 
         public void MakeVisibleEmailerror();
         public void MakeNotVisibleEmailerror();
         public void MakeSendButtonEnable();
         public void MakeSendButtonDisable();
+
         public void MakeCloseButtonRed();
         public void MakeCloseButtonBlack();
 
         public bool CheckCorrectInputEmail();
-
-        public bool ImageErrorrVisible { set; }
-        event Action EnterEmailTextBox;
-        event EventHandler<string> LeaveEmailBoxAndCheckCorrect;
-        event Action SendCodeButtonClick;
-        event Action ExitForgotPageButtonClick;
-        event Action EnterExitButton;
-        event Action LeaveExitButton;
     }
 }
