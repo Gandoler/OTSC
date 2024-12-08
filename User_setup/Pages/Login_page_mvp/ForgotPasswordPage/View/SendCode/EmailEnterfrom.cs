@@ -1,15 +1,5 @@
-﻿using Org.BouncyCastle.Tls.Crypto;
-using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.View.SendCode;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.View.SendCode;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
 {

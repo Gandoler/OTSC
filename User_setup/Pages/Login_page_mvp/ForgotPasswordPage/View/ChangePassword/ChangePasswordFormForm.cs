@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.View.ChangePassword;
+﻿using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.View.ChangePassword;
 
 namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
 {

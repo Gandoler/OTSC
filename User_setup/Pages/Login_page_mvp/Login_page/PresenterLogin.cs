@@ -1,17 +1,9 @@
-﻿using Microsoft.Win32;
-using OTSC_ui.OldCode.ExtendedTool.Connect_and_query.Connect;
+﻿using OTSC_ui.OldCode.ExtendedTool.Connect_and_query.Connect;
 using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage;
 using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.Model;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.Model;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Login;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Registr;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using User_Interface.Login_page_mvp.ForgotPasswordPage.View;
 
 

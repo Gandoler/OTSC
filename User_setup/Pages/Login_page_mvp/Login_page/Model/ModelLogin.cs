@@ -1,11 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using OTSC_ui.OldCode.ExtendedTool.Connect_and_query.query;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using User_Interface.ExtendedTool.Connect_and_query;
+﻿using OTSC_ui.OldCode.ExtendedTool.Connect_and_query.query;
 using static Guna.UI2.WinForms.Suite.Descriptions;
 
 namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model

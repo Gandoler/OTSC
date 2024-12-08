@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OTSC_ui.Tools.AppSettingJsonPhars.Temaplates
+﻿namespace OTSC_ui.Tools.AppSettingJsonPhars.Temaplates
 {
     public class ServerSettings : Itemplates
     {

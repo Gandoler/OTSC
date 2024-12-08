@@ -1,15 +1,4 @@
 ﻿using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Login;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using User_Interface.Login_page_mvp.Login.View.Registr;
 
 namespace User_Interface.Login_page_mvp.View

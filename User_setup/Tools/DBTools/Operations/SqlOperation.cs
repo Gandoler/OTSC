@@ -1,13 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using OTSC_ui.Tools.DBTools.Connection;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
-using System.Linq;
-using System.Management;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace OTSC_ui.Tools.DBTools.Operations
 {

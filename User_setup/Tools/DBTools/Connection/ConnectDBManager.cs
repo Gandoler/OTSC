@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using Serilog;
 
 namespace OTSC_ui.Tools.DBTools.Connection
@@ -38,15 +33,53 @@ namespace OTSC_ui.Tools.DBTools.Connection
         public void Connect()
         {
             _connection = new MySqlConnection(_connectionString);
-            _connection.Open();
+            try
+            {
+                _connection.Open();
+            }
+            catch (MySqlException ex)
+            {
+                
+                // Обработка MySQL исключений
+                Log.Error("MySQL error occurred: " + ex.Message);
+            }
+            catch (InvalidOperationException ex)
+            {
+                // Обработка исключений, возникающих при некорректной операции
+                Log.Error("Invalid operation: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Обработка всех остальных исключений
+                Log.Error("An unexpected error occurred: " + ex.Message);
+            }
+            finally
+            {
+                // Закрываем соединение, если оно было открыто
+                if (_connection != null && _connection.State == System.Data.ConnectionState.Open)
+                {
+                    this.Disconnect();
+                }
+            }
         }
 
         public void Disconnect()
         {
             if (_connection != null)
             {
-                _connection.Close();
-                _connection = null;
+                try
+                {
+                    _connection.Close();
+                }
+                catch (MySqlException ex)
+                {
+                    // Обработка исключений, возникающих при закрытии соединения
+                    Log.Error("An error occurred while closing the connection: " + ex.Message);
+                }
+                finally
+                {
+                    _connection = null;
+                }
             }
         }
     }

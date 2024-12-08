@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Serilog;
-using User_Interface.Login_page_mvp.Login_page;
-using User_Interface.Login_page_mvp.Login_page.Model;
-using User_Interface.Login_page_mvp.View;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+﻿using Serilog;
 using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.Model;
 using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.View.ChangePassword;
 using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.View.SendCode;

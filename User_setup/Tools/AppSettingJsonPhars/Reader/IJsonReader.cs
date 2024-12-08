@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OTSC_ui.Tools.AppSettingJsonPhars.Temaplates;
+﻿using OTSC_ui.Tools.AppSettingJsonPhars.Temaplates;
 
 namespace OTSC_ui.Tools.AppSettingJsonPhars.Reader
 {

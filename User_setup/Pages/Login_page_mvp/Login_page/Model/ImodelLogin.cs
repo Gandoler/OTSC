@@ -1,12 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using User_Interface.ExtendedTool.Connect_and_query;
-
-namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
+﻿namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
 {
     internal interface ImodelLogin
     {
