@@ -5,7 +5,9 @@
      
         // Exit button
         event Action ExitButtonClick;
-        
+        event Action ExitButtonEntered;
+        event Action ExitButtonLeavd;
+
         // Show password button
         event EventHandler<bool> Show_PswButtonClick;
         
@@ -21,7 +23,9 @@
         //
         void ShowPsw();
         void HidePsw();
-        
+
+        void MakeExitButtonForeBlack();
+        void MakeExitButtonForeRed();
 
 
 

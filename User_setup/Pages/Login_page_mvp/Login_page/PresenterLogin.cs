@@ -21,18 +21,8 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             _imodelka = imodelka ?? throw new ArgumentNullException(nameof(imodelka));
             _registrView = registrView ?? throw new ArgumentNullException(nameof(registrView));
 
-            //обработчик для вьювера
-            // for forgot password
-            _loginView.ForgotPassworLinkClick += _loginView_forgotPassworLinkClick;
-            _loginView.ExitButtonClick += LoginView_Exit;
-            _loginView.ErnterInField += EnterButtonClicked;
-            _loginView.Show_PswButtonClick += View_show_Psw;
-            _loginView.CharKeyPresd += OnlyEnglishCheck;
-            _loginView.LoginButtonClick += Registr_click;
-
-            //обработчик для модели
-            _imodelka.LogMismatch += _imodelka_LogMismatch;
-            _imodelka.LoginGo += _imodelka_LoginGo;
+            
+           
 
             //login page
             _loginView = loginView ?? throw new ArgumentNullException(nameof(loginView));
@@ -40,102 +30,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         }
 
         #region LoginPage
-        //обработчик для вьювера
-        private void _loginView_forgotPassworLinkClick()
-        {
-            Form? thisform = _loginView as Form;
-            if (thisform != null)
-            {
-                ChangePasswordFormForm changePasswordFormForm = new ChangePasswordFormForm();
-                EmailEnterfrom emailEnterfrom = new EmailEnterfrom();
-                ModelForgorPasswordPage modelForgorPasswordPage = new ModelForgorPasswordPage();
-                PresenterForgotPasswoedPage presenterForgotPasswoedPage = new PresenterForgotPasswoedPage(modelForgorPasswordPage, changePasswordFormForm, emailEnterfrom);
-                thisform.Hide();
-                DialogResult result = emailEnterfrom.ShowDialog();//можно конечно что то делать но бог с ним
-
-                thisform.Show();
-            }
-        }
-
-
-
-
-        /// <summary>
-        /// затычка
-        /// </summary>
-        private void _imodelka_LoginGo()
-        {
-            MessageBox.Show("You ENTER", "OK", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void _imodelka_LogMismatch()
-        {
-            _loginView.ClearAll();
-            MessageBox.Show("LOGIN OR PASSWORD MISMATCH", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void Registr_click(object? sender, EventArgs e)
-        {
-            _loginView.NextPage();
-        }
-
-        private void OnlyEnglishCheck(object? sender, EventArgs e)
-        {
-            var label = sender as Label;
-
-
-            if (e is KeyPressEventArgs args)
-            {
-
-
-                if (!(char.IsDigit(args.KeyChar) || char.IsControl(args.KeyChar)))
-                {
-
-                    args.Handled = true;
-                    if (label is not null)
-                        label.Visible = true;
-
-                }
-                else
-                {
-                    if (label is not null)
-                        label.Visible = false;
-                }
-
-
-            }
-
-
-        }
-
-        private void View_show_Psw(object? sender, bool e)
-        {
-            if (e)
-            {
-                _loginView.ShowPsw();
-            }
-            else
-            {
-                _loginView.HidePsw();
-            }
-        }
-
-        private void EnterButtonClicked(object? sender, EventArgs e)
-        {
-
-            (_imodelka.Login, _imodelka.Password) = _loginView.CopyUserLogin();
-            _imodelka.LogInApl();
-        }
-
-
-
-
-
-
-        private void LoginView_Exit(object? sender, EventArgs e)
-        {
-            ExitSaftyClass.AplicationExitSafety();
-        }
+        
         #endregion
         
 
