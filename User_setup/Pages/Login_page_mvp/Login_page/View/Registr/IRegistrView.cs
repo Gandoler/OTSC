@@ -2,6 +2,10 @@
 {
     internal interface IRegistrView
     {
+        //for all field EXCEPT email
+        event Action EnterInField;
+        event Action TextChengedInFieldExceptEmail;
+
 
         // Exit button
         event Action ExitButtonClick;
@@ -15,17 +19,25 @@
         event Action GoBackButtonClick;
 
         //email field button
-        event Action EnterEmailTextBox;
+        
         event EventHandler<string> LeaveEmailBoxAndCheckCorrect;
 
 
         public void MakeVisibleEmailerror();
         public void MakeNotVisibleEmailerror();
 
-        void MakeExitButtonForeBlack();
-        void MakeExitButtonForeRed();
+        public void MakeExitButtonForeBlack();
+        public void MakeExitButtonForeRed();
 
         public bool CheckCorrectInputEmail();
+
+        public bool CheckForAllFieldsNotEmpty();
+
+        public void makeRegistrButtonEnable();
+        public void makeRegistrButtonDisable();
+
+
+
 
     }
 }

@@ -20,9 +20,27 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
             GoBackButton.Click += (s, e) => GoBackButtonClick?.Invoke();
 
             //email field button
-            EmailTextBox.Enter += (s, e) => EnterEmailTextBox?.Invoke();
             EmailTextBox.TextChanged += (s, e) => LeaveEmailBoxAndCheckCorrect?.Invoke(this, EmailTextBox.Text);
+
+
+            //for all field EXCEPT email
+            //For Enter
+            EmailTextBox.Enter += (s, e) => EnterInField?.Invoke();
+            LoginTextBox.Enter += (s, e) => EnterInField?.Invoke();
+            PasswordTextBox.Enter += (s, e) => EnterInField?.Invoke();
+            SeccondPasswordTextBox.Enter += (s, e) => EnterInField?.Invoke();
+
+
+            //For text changed
+            LoginTextBox.TextChanged += (s, e) => TextChengedInFieldExceptEmail?.Invoke();
+            PasswordTextBox.TextChanged += (s, e) => TextChengedInFieldExceptEmail?.Invoke();
+            SeccondPasswordTextBox.TextChanged += (s, e) => TextChengedInFieldExceptEmail?.Invoke();
+
         }
+        //for all field EXCEPT email
+        public event Action? EnterInField;
+        public event Action? TextChengedInFieldExceptEmail;
+
 
         // Exit button
         public event Action? ExitButtonClick;
@@ -36,7 +54,6 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
         public event Action? GoBackButtonClick;
 
         //email field button
-        public event Action? EnterEmailTextBox;
         public event EventHandler<string>? LeaveEmailBoxAndCheckCorrect;
 
         public bool CheckCorrectInputEmail()
@@ -47,6 +64,18 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
                 return true;
             }
             return false;
+        }
+
+        public bool CheckForAllFieldsNotEmpty()
+        {
+            if (CheckCorrectInputEmail() || string.IsNullOrWhiteSpace(EmailTextBox.Text)
+                || string.IsNullOrWhiteSpace(LoginTextBox.Text) || string.IsNullOrWhiteSpace(PasswordTextBox.Text) ||
+                string.IsNullOrWhiteSpace(SeccondPasswordTextBox.Text))
+            {
+                return true;
+            }
+            return false;
+                
         }
 
         public void MakeExitButtonForeBlack()
@@ -62,6 +91,16 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
         public void MakeNotVisibleEmailerror()
         {
             EmailErrorPicture.Visible = false;
+        }
+
+        public void makeRegistrButtonDisable()
+        {
+            RegistrButton.Enabled = false;
+        }
+
+        public void makeRegistrButtonEnable()
+        {
+            RegistrButton.Enabled = true;
         }
 
         public void MakeVisibleEmailerror()

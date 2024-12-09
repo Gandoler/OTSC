@@ -54,19 +54,28 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             _registrView.ExitButtonLeavd += _registrView_ExitButtonLeavd;
 
             // Resgistr button
-
+            _registrView.RegistrButtonClick += _registrView_RegistrButtonClick;
 
             //back button
             _registrView.GoBackButtonClick += _registrView_GoBackButtonClick;
 
             //email field button
+            _registrView.LeaveEmailBoxAndCheckCorrect += _registrView_LeaveEmailBoxAndCheckCorrect;
 
-            #endregion
-        }
+            //for all field EXCEPT email
+            _registrView.EnterInField += _registrView_EnterInField;
+            _registrView.TextChengedInFieldExceptEmail += _registrView_TextChengedInFieldExceptEmail;
+
+        #endregion
+    }
 
 
 
 
+
+
+
+        #region RegistrPage
         // Exit button
         private void _registrView_ExitButtonClick()
         { 
@@ -84,6 +93,18 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
 
         // Resgistr button
+        private void _registrView_RegistrButtonClick()
+        {
+            if (_registrView.CheckForAllFieldsNotEmpty())
+            {
+                //model do this
+                ////
+                ///
+                ///////
+            }
+        }
+
+
 
         //back button
         private void _registrView_GoBackButtonClick()
@@ -95,8 +116,34 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             }
         }
 
-        //email field button
-
+        //email field 
+        private void _registrView_LeaveEmailBoxAndCheckCorrect(object? sender, string e)
+        {
+            if (_registrView.CheckCorrectInputEmail())
+            {
+                _registrView.MakeNotVisibleEmailerror();
+                _registrView.makeRegistrButtonEnable();
+            }
+            else
+            {
+                _registrView.MakeVisibleEmailerror();
+            }
+        }
+        
+        
+        //for all field EXCEPT email
+        private void _registrView_EnterInField()
+        {
+            _registrView.makeRegistrButtonDisable();
+        }
+        private void _registrView_TextChengedInFieldExceptEmail()
+        {
+            if (_registrView.CheckForAllFieldsNotEmpty())
+            {
+                _registrView.makeRegistrButtonEnable();
+            }
+        }
+        #endregion
 
         #region LoginPage
 
