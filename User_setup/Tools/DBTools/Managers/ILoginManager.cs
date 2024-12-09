@@ -10,8 +10,8 @@ namespace OTSC_ui.Tools.DBTools.Managers
 {
     internal interface ILoginManager
     {
-        public void Login(long login, string passwoerd);
-        public void Registr(long login, string email, string passwoerd);
+        public bool Login(long login, string passwoerd);
+        public bool Registr(long login, string email, string passwoerd);
         public void Dispose();
     }
 }

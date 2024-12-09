@@ -9,10 +9,10 @@
 
         event Action LoginGo;
         event Action LogMismatch;
-        event Action LoginFailed;
+        event EventHandler<string> LoginFailed;
         event Action UserExist;
         event Action UserRegistered;
-        event Action UserNotRegistered;
+        event EventHandler<string> UserNotRegistered;
         internal void LogInApl();
         internal void Registr();
 
