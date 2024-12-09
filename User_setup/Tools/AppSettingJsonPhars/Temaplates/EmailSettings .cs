@@ -23,5 +23,9 @@ namespace OTSC_ui.Tools.AppSettingJsonPhars.Temaplates
 
             return $"smtp://{SmtpServer}:{SmtpPort};Username={SenderEmail};Password={SenderPassword};";
         }
+        public override string ToString()
+        {
+            return $"SmtpServer: {SmtpServer}, SmtpPort: {SmtpPort}, SenderEmail: {SenderEmail}, SenderPassword: {SenderPassword}";
+        }
     }
 }

@@ -12,10 +12,25 @@ namespace OTSC_ui.Tools.AppSettingJsonPhars.Reader
             try
             {
                 if (!File.Exists(filePath))
+                {
+                    Log.Information($"File path - {filePath}");
                     throw new FileNotFoundException($"File not found: {filePath}");
+                }
 
                 string jsonContent = File.ReadAllText(filePath);
-                return JsonConvert.DeserializeObject<T>(jsonContent) ?? throw new JsonException("empty or bad file");
+                Log.Information("json content:" + jsonContent);
+
+                T deserializedObject = JsonConvert.DeserializeObject<T>(jsonContent);
+
+                if (deserializedObject == null)
+                {
+                    Log.Error("JsonReaderForConfig:     Failed to deserialize JSON content.");
+                    throw new JsonException("Empty or bad file");
+                }
+
+                Log.Information($"JsonReaderForConfig:      Deserialized object: {deserializedObject.ToString()}");
+
+                return deserializedObject;
             }
             catch (Exception ex)
             {

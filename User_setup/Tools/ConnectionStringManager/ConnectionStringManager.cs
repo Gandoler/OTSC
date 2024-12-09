@@ -14,6 +14,7 @@ namespace OTSC_ui.Tools.ConnectionStringManager
             try
             {
                 settings = jsonReader.Read<ServerSettings>(Properties.Settings1.Default.AppsettingsPath);
+                Log.Information($"ConnectionStringManager: settings:{settings.ToString()}");
             }
             catch (Exception ex) 
             {
