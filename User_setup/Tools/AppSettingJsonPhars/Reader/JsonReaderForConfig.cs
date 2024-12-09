@@ -5,7 +5,7 @@ using Serilog;
 
 namespace OTSC_ui.Tools.AppSettingJsonPhars.Reader
 {
-    internal class JsonReader : IJsonReader
+    internal class JsonReaderForConfig : IJsonReaderForConfig
     {
         public T Read<T>(string filePath) where T : Itemplates
         {

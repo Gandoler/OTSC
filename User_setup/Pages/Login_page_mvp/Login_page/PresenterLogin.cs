@@ -4,6 +4,7 @@ using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.Model;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.Model;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Login;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Registr;
+using OTSC_ui.Tools.DBTools.Managers;
 using User_Interface.Login_page_mvp.ForgotPasswordPage.View;
 
 
@@ -17,11 +18,9 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
         internal PresenterLogin(ILoginView loginView, ImodelLogin imodelka, IRegistrView registrView)
         {
-            _loginView = loginView ?? throw new ArgumentNullException(nameof(loginView));
+            // Model
             _imodelka = imodelka ?? throw new ArgumentNullException(nameof(imodelka));
-            _registrView = registrView ?? throw new ArgumentNullException(nameof(registrView));
-
-
+            
 
             #region LoginPageConstr
             //login page
@@ -48,6 +47,9 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             #endregion
 
             #region RegistrpageConstr
+            _registrView = registrView ?? throw new ArgumentNullException(nameof(registrView));
+
+
             // Exit button
             _registrView.ExitButtonClick += RegistrView_ExitButtonClick;
             _registrView.ExitButtonEntered += RegistrView_ExitButtonEntered;

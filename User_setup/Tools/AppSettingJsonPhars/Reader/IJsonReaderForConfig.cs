@@ -2,7 +2,7 @@
 
 namespace OTSC_ui.Tools.AppSettingJsonPhars.Reader
 {
-    internal interface IJsonReader
+    internal interface IJsonReaderForConfig
     {
         T Read<T>(string filePath) where T : Itemplates;
     }

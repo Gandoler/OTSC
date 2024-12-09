@@ -98,7 +98,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
         {
             try
             {
-                if (_loginManager.Registr(_login, _email, _password){
+                if (_loginManager.Registr(_login, _email, _password)){
                     LoginGo?.Invoke();
                 }
                 else

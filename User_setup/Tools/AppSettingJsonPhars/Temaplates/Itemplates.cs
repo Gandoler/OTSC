@@ -2,5 +2,6 @@
 {
     internal interface Itemplates
     {
+        public string GetConnectionString();
     }
 }
