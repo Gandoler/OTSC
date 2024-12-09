@@ -199,7 +199,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage
         {
             if (e != null && e != "")
             {
-                if (int.TryParse(e, result: out int code))
+                if (int.TryParse(e, result: out _))
                 {
                     /////////////////////////////////////
                     ////////////////////////////////////////

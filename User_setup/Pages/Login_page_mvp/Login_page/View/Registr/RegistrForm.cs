@@ -93,12 +93,12 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
             EmailErrorPicture.Visible = false;
         }
 
-        public void makeRegistrButtonDisable()
+        public void MakeRegistrButtonDisable()
         {
             RegistrButton.Enabled = false;
         }
 
-        public void makeRegistrButtonEnable()
+        public void MakeRegistrButtonEnable()
         {
             RegistrButton.Enabled = true;
         }

@@ -33,8 +33,8 @@
 
         public bool CheckForAllFieldsNotEmpty();
 
-        public void makeRegistrButtonEnable();
-        public void makeRegistrButtonDisable();
+        public void MakeRegistrButtonEnable();
+        public void MakeRegistrButtonDisable();
 
 
 

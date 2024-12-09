@@ -12,8 +12,8 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
 
         public event Action? LoginGo;
         public event Action? LogMismatch;
-        public event Action UserExist;
-        public event Action UserRegistered;
+        public event Action? UserExist;
+        public event Action? UserRegistered;
 
         //public event Action UserExist;
 
