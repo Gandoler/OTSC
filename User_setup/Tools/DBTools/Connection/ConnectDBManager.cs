@@ -36,6 +36,9 @@ namespace OTSC_ui.Tools.DBTools.Connection
             try
             {
                 _connection.Open();
+                string query = "Use Users";
+                MySqlCommand command = new MySqlCommand(query, _connection);
+                command.ExecuteNonQuery();
             }
             catch (MySqlException ex)
             {

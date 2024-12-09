@@ -3,7 +3,7 @@ using OTSC_ui.Tools.DBTools.Operations;
 using System.Data;
 
 
-namespace OTSC_ui.Tools.DBTools
+namespace OTSC_ui.Tools.DBTools.Managers
 {
     internal class DataManager
     {

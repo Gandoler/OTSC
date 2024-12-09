@@ -6,12 +6,15 @@
         string Password { set; }
 
 
-        internal void LogInApl();
 
         event Action LoginGo;
         event Action LogMismatch;
+        event Action LoginFailed;
         event Action UserExist;
         event Action UserRegistered;
+        event Action UserNotRegistered;
+        internal void LogInApl();
+        internal void Registr();
 
     }
 }
