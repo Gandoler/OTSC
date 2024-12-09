@@ -19,6 +19,7 @@ namespace OTSC_ui.Tools.DBTools.Managers
         {
             _connectManager = ConnectManager;
             _connectManager.Connect();
+            Log.Information("Открыто подключение к дб");
         }
 
         public bool Login(long login, string passwoerd) 

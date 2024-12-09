@@ -25,21 +25,28 @@ namespace OTSC_ui
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.File("C:/Users/glkru/OneDrive/Desktop/prj/Project_cpo/User_setup/Properties/logs/myapp.log", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
-            
+            Log.Information("Приложение запущено.");
 
             //строка подключения к дб
-            string connectionString = ConnectionStringManager.GetConnectionString();
+            string? connectionString;
+            do
+            {
+                connectionString = ConnectionStringManager.GetConnectionString();
+            } while (connectionString == null);
             // менеджер подключения к дб
-            ConnectDBManager connectDBManager = new ConnectDBManager(connectionString);
+           
+                ConnectDBManager connectDBManager = new ConnectDBManager(connectionString);
+            
+            
             //в модель передаем логин менеджер
-            ModelLogin model = new(new LoginManager(connectDBManager));
 
+            ModelLogin model = new(new LoginManager(connectDBManager));
             LoginFrom loginFrom = new LoginFrom();
             RegistrForm registrForm = new RegistrForm();
 
-            PresenterLogin presenter = new(loginFrom, model,registrForm);
-            Log.Information("Приложение запущено.");
+            PresenterLogin presenter = new(loginFrom, model, registrForm);
             Application.Run(loginFrom);
+
 
 
 

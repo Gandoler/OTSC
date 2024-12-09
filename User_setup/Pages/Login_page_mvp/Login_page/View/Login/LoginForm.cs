@@ -14,6 +14,7 @@ namespace User_Interface.Login_page_mvp.View
             ExitButton.MouseLeave += (s, e) => ExitButtonLeavd?.Invoke();
             // Show password button
             ShowPswCheckBox.Click += (s, e) => Show_PswButtonClick?.Invoke(this, ShowPswCheckBox.Checked);
+            ShowPswCheckBox.CheckedChanged += (s, e) => Show_PswButtonClick?.Invoke(this, ShowPswCheckBox.Checked);
             // Login button
             LoginButton.Click += (s, e) => LoginButtonClick?.Invoke(this, (LogintextBox.Text, PasswordTextBox.Text));
             // Resgistr button
@@ -23,7 +24,7 @@ namespace User_Interface.Login_page_mvp.View
         }
 
         // Exit button
-        public event Action ExitButtonClick;
+        public event Action? ExitButtonClick;
         public event Action? ExitButtonEntered;
         public event Action? ExitButtonLeavd;
 
@@ -42,6 +43,7 @@ namespace User_Interface.Login_page_mvp.View
         public void HidePsw()
         {
             PasswordTextBox.PasswordChar = '*';
+            PasswordTextBox.Refresh();
         }
 
         public void MakeExitButtonForeBlack()
@@ -57,6 +59,7 @@ namespace User_Interface.Login_page_mvp.View
         public void ShowPsw()
         {
             PasswordTextBox.PasswordChar = '\0';
+            PasswordTextBox.Refresh();
         }
     }
 }

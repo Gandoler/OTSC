@@ -20,8 +20,17 @@ namespace OTSC_ui.Tools.AppSettingJsonPhars.Reader
                 string jsonContent = File.ReadAllText(filePath);
                 Log.Information("json content:" + jsonContent);
 
-                T deserializedObject = JsonConvert.DeserializeObject<T>(jsonContent);
-
+                var deserializedObject = JsonConvert.DeserializeObject<T>(jsonContent);
+                if (deserializedObject == null)
+                {
+                    Log.Error("Не удалось десериализовать JSON в объект.");
+                }
+               
+                else
+                {
+                    Log.Error($"Объект успешно десериализован: {deserializedObject}");
+                }
+                Log.Information("deserializedObject T type" + deserializedObject?.ToString());
                 if (deserializedObject == null)
                 {
                     Log.Error("JsonReaderForConfig:     Failed to deserialize JSON content.");

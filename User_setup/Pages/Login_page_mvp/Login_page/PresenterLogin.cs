@@ -71,6 +71,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         #endregion
     }
 
+        
 
 
 
@@ -95,14 +96,12 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
 
         // Resgistr button
-        private void RegistrView_RegistrButtonClick()
+        private void RegistrView_RegistrButtonClick(object? sender, (string, string, string) e)
         {
             if (_registrView.CheckForAllFieldsNotEmpty())
             {
-                //model do this
-                ////
-                ///
-                ///////
+
+               _imodelka.Registr()
             }
         }
 
@@ -111,9 +110,10 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         //back button
         private void RegistrView_GoBackButtonClick()
         {
-            if (_registrView is Form thisform)
+            if (_registrView is Form thisform && _loginView is Form NextForm)
             {
-                thisform.Close();
+                thisform.Hide();
+                NextForm.Show();
             }
         }
 
@@ -181,7 +181,10 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         // Login button
         private void LoginView_LoginButtonClick(object? sender, (string, string) e)
         {
-            (_imodelka.Login, _imodelka.Password) = e;
+            
+                (_imodelka.Login, _imodelka.Password) = (long.Parse(e.Item1),e.Item2);
+            
+
             _imodelka.LogInApl();
         }
 
@@ -196,8 +199,8 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
                     thisform.Hide();
                     nextform.Show();
 
-                    //when user clode Registr Form
-                    thisform.Show();
+                    
+                    
                 }
             }
         }

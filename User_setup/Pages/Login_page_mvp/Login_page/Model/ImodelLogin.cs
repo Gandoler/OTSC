@@ -2,7 +2,7 @@
 {
     internal interface ImodelLogin
     {
-        string Login { set; }
+        long Login { set; }
         string Password { set; }
 
 

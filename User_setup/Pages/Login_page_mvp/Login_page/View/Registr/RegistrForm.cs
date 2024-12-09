@@ -14,7 +14,7 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
             ExitButton.MouseLeave += (s, e) => ExitButtonLeavd?.Invoke();
            
             // Resgistr button
-            RegistrButton.Click += (s, e) => RegistrButtonClick?.Invoke();
+            RegistrButton.Click += (s, e) => RegistrButtonClick?.Invoke(this,(LoginTextBox.Text, EmailTextBox.Text, PasswordTextBox.Text));
 
             //back button
             GoBackButton.Click += (s, e) => GoBackButtonClick?.Invoke();
@@ -48,7 +48,7 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
         public event Action? ExitButtonLeavd;
 
         // Resgistr button
-        public event Action? RegistrButtonClick;
+        public event EventHandler<(string, string, string)>? RegistrButtonClick;
 
         //back button
         public event Action? GoBackButtonClick;

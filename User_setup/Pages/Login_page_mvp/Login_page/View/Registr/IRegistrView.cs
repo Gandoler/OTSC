@@ -13,7 +13,7 @@
         event Action ExitButtonLeavd;
 
         // Resgistr button
-        event Action RegistrButtonClick;
+        event EventHandler<(string,string,string)> RegistrButtonClick;
 
         //back button
         event Action GoBackButtonClick;

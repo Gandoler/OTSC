@@ -7,20 +7,24 @@ namespace OTSC_ui.Tools.ConnectionStringManager
 {
     internal static class ConnectionStringManager
     {
-        public static string GetConnectionString()
+        public static string? GetConnectionString()
         {
-            ServerSettings settings = new ServerSettings();
+            RootConfig settings = new RootConfig();
             JsonReaderForConfig jsonReader = new JsonReaderForConfig();
             try
             {
-                settings = jsonReader.Read<ServerSettings>(Properties.Settings1.Default.AppsettingsPath);
+                settings = jsonReader.Read<RootConfig>(Properties.Settings1.Default.AppsettingsPath);
                 Log.Information($"ConnectionStringManager: settings:{settings.ToString()}");
             }
             catch (Exception ex) 
             {
                 Log.Error($"In ConnectionStringManager {ex.Message}");
             }
-            return settings.GetConnectionString();
+            if (settings.ServerSettings != null)
+            {  
+                return settings.ServerSettings.GetConnectionString();
+            }
+            return null;
         }
     }
 }

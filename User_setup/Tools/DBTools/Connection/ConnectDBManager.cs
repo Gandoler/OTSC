@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Serilog;
+using System.Data;
 
 namespace OTSC_ui.Tools.DBTools.Connection
 {
@@ -12,15 +13,21 @@ namespace OTSC_ui.Tools.DBTools.Connection
         {
             get
             {
-                if (_connection != null)
-                {
-                    return _connection;
-                }
-                else
+                if (_connection == null)
                 {
                     Connect();
-                    return _connection;
                 }
+                else if (_connection.State == ConnectionState.Closed)
+                {
+                    _connection.Open(); 
+                }
+                else if (_connection.State == ConnectionState.Broken)
+                {
+                    _connection.Close();
+                    Connect();
+                }
+
+                return _connection;
             }
         }
 
@@ -56,14 +63,7 @@ namespace OTSC_ui.Tools.DBTools.Connection
                 // Обработка всех остальных исключений
                 Log.Error("An unexpected error occurred: " + ex.Message);
             }
-            finally
-            {
-                // Закрываем соединение, если оно было открыто
-                if (_connection != null && _connection.State == System.Data.ConnectionState.Open)
-                {
-                    this.Disconnect();
-                }
-            }
+            
         }
 
         public void Disconnect()

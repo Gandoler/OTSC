@@ -25,30 +25,11 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
 
         //public event Action UserExist;
 
-        public string Login
+        public long Login
         {
-
             set
             {
-                long tmp;
-                try
-                {
-                    tmp = long.Parse(value);
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("bad Pharse Long from string in ModelLotgin");
-                    throw new Exception("Bad pharse" + exception.Message);
-                }
-                if (tmp <= 0)
-                {
-                    Log.Error("bad Pharse Long from string in ModelLotgin");
-                    throw new ArgumentOutOfRangeException(nameof(value));
-                }
-                else
-                {
-                    _login = tmp;
-                }
+                _login = value;
             }
         }
 
