@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OTSC_ui.Tools.SendMailWithcode.CodeGenerate
 {
-    internal interface ICodeGenerator
+    internal interface ICodeGeneratorMail
     {
         string GenerateCode() => new Random().Next(0, 10).ToString();
 

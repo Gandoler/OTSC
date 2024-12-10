@@ -32,7 +32,7 @@ namespace OTSC_ui.Tools.SendMailWithcode.CodeSend
                 Credentials = new NetworkCredential(_senderEmail, _senderPassword),
                 EnableSsl = true
             };
-            smtpClient.Send(mail);
+            smtpClient.SendMailAsync(mail);
         }
     }
 
