@@ -11,7 +11,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.Model
         //code send 
         event Action CodeSendSuccessful;
         event Action CodeSendFailed;
-        
+        /
         // code check
         event Action CodeMismatch;
 
