@@ -7,24 +7,31 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>preview</LangVersion>
+    <UserSecretsId>7c544e61-5477-4506-9362-93fda5b5d89f</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Login_page_mvp\Forgor_password\**" />
-    <Compile Remove="Login_page_mvp\Registration\**" />
-    <EmbeddedResource Remove="Login_page_mvp\Forgor_password\**" />
-    <EmbeddedResource Remove="Login_page_mvp\Registration\**" />
-    <None Remove="Login_page_mvp\Forgor_password\**" />
-    <None Remove="Login_page_mvp\Registration\**" />
+    <Compile Remove="Pages\Login_page_mvp\Forgor_password\**" />
+    <Compile Remove="Pages\Login_page_mvp\Registration\**" />
+    <Compile Remove="Pages\MainPageMvp\NotifyPage\**" />
+    <EmbeddedResource Remove="Pages\Login_page_mvp\Forgor_password\**" />
+    <EmbeddedResource Remove="Pages\Login_page_mvp\Registration\**" />
+    <EmbeddedResource Remove="Pages\MainPageMvp\NotifyPage\**" />
+    <None Remove="Pages\Login_page_mvp\Forgor_password\**" />
+    <None Remove="Pages\Login_page_mvp\Registration\**" />
+    <None Remove="Pages\MainPageMvp\NotifyPage\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Login_page_mvp\Login_page\View\ckm2wih0.ll0~" />
+    <None Remove="Pages\Login_page_mvp\Login_page\View\ckm2wih0.ll0~" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
     <PackageReference Include="MySql.Data" Version="9.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Serilog" Version="4.1.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
     <PackageReference Include="System.Text.Json" Version="9.0.0" />
@@ -58,7 +65,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MainPageMvp\NotifyPage\" />
+    <Folder Include="Pages\Login_page_mvp\ForgotPasswordPage\Model\SendCodeModel\JsonEmailConfigReader\" />
+    <Folder Include="Properties\logs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
 

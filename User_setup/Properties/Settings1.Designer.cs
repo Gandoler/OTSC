@@ -37,14 +37,14 @@ namespace OTSC_ui.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\\\Users\\\\glkru\\\\OneDrive\\\\Desktop\\\\prj\\\\Project_cpo\\\\User_setup\\\\Properties\\\\Re" +
-            "alSecret.json")]
-        public string Jsonpath {
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\glkru\\OneDrive\\Desktop\\prj\\Project_cpo\\User_setup\\Tools\\AppSettingJsonPh" +
+            "ars\\RealSAppSettimgs.json")]
+        public string AppsettingsPath {
             get {
-                return ((string)(this["Jsonpath"]));
+                return ((string)(this["AppsettingsPath"]));
             }
             set {
-                this["Jsonpath"] = value;
+                this["AppsettingsPath"] = value;
             }
         }
         
