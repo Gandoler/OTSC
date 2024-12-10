@@ -112,7 +112,5 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
                 Log.Error($"Erorr in LoginModel  :{ex.Message}");
             }
         }
-
-
     }
 }
