@@ -117,9 +117,8 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
         //login
         private void _imodelka_LoginGo()
-        {///
-          // пока что некуда
-          //
+        {//пока вникуда
+            MessageBox.Show("ты зашел бро", "Круто", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void _imodelka_LoginFailed(object? sender, string e)
