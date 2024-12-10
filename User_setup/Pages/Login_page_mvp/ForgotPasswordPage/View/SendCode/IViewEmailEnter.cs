@@ -9,10 +9,10 @@
 
         // Email field
         event Action EnterEmailTextBox;
-        event EventHandler<string> LeaveEmailBoxAndCheckCorrect;
+        event Action LeaveEmailBoxAndCheckCorrect;
 
         // SendCode Button
-        event Action SendCodeButtonClick;
+        event EventHandler<string> SendCodeButtonClick;
 
 
 
