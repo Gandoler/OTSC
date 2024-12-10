@@ -54,6 +54,25 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
             }
         }
 
+        public string Email
+        {
+
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    Log.Error("bad Set Email  in ModelLotgin");
+                    ArgumentNullException argumentNullException = new(nameof(_login));
+                    throw argumentNullException;
+                }
+                else
+                {
+                    _email = value;
+                }
+
+
+            }
+        }
 
 
         public void LogInApl()
@@ -62,6 +81,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
             {
                 if (_loginManager.Login(_login, _password))
                 {
+                    Properties.Settings1.Default.ID = _login;// вот тут запись айди
                     LoginGo?.Invoke();
                 }
                 else
@@ -80,11 +100,11 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
             try
             {
                 if (_loginManager.Registr(_login, _email, _password)){
-                    LoginGo?.Invoke();
+                    UserRegistered?.Invoke();
                 }
                 else
                 {
-                    LogMismatch?.Invoke();
+                    UserExist?.Invoke();
                 }
             }
             catch (Exception ex)

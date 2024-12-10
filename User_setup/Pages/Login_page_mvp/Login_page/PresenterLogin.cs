@@ -6,6 +6,7 @@ using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Login;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Registr;
 using OTSC_ui.Tools.DBTools.Managers;
 using User_Interface.Login_page_mvp.ForgotPasswordPage.View;
+using ZstdSharp.Unsafe;
 
 
 namespace OTSC_ui.Pages.Login_page_mvp.Login_page
@@ -18,8 +19,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
         internal PresenterLogin(ILoginView loginView, ImodelLogin imodelka, IRegistrView registrView)
         {
-            // Model
-            _imodelka = imodelka ?? throw new ArgumentNullException(nameof(imodelka));
+            
             
 
             #region LoginPageConstr
@@ -68,11 +68,71 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             _registrView.EnterInField += RegistrView_EnterInField;
             _registrView.TextChengedInFieldExceptEmail += RegistrView_TextChengedInFieldExceptEmail;
 
+            #endregion
+
+
+            #region ModelConstruct
+            // Model
+            _imodelka = imodelka ?? throw new ArgumentNullException(nameof(imodelka));
+
+            // registration
+            _imodelka.UserExist += _imodelka_UserExist;
+            _imodelka.UserRegistered += _imodelka_UserRegistered;
+            _imodelka.UserNotRegistered += _imodelka_UserNotRegistered;
+
+            //login
+            _imodelka.LogMismatch += _imodelka_LogMismatch;
+            _imodelka.LoginFailed += _imodelka_LoginFailed;
+            _imodelka.LoginGo += _imodelka_LoginGo;
+
+
+
+
+            #endregion
+        }
+
+
+
+        #region model
+        // registration
+        private void _imodelka_UserNotRegistered(object? sender, string e)
+        {
+            MessageBox.Show("Unexpected Error", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void _imodelka_UserRegistered()
+        {
+            if (_registrView is Form thisform && _loginView is Form NextForm)
+            {
+                thisform.Hide();
+                NextForm.Show();
+            }
+        }
+
+        private void _imodelka_UserExist()
+        {
+            MessageBox.Show("Such User Exist", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        //login
+        private void _imodelka_LoginGo()
+        {///
+          // пока что некуда
+          //
+        }
+
+        private void _imodelka_LoginFailed(object? sender, string e)
+        {
+            MessageBox.Show("Unexpected Error", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void _imodelka_LogMismatch()
+        {
+            MessageBox.Show("Invalid Password Or Login", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         #endregion
-    }
-
-        
-
 
 
 
@@ -99,9 +159,9 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         private void RegistrView_RegistrButtonClick(object? sender, (string, string, string) e)
         {
             if (_registrView.CheckForAllFieldsNotEmpty())
-            {
+            { (_imodelka.Login, _imodelka.Email, _imodelka.Password) = (long.Parse(e.Item1), e.Item2, e.Item3);
 
-               _imodelka.Registr()
+                _imodelka.Registr();
             }
         }
 

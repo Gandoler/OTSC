@@ -4,7 +4,7 @@
     {
         long Login { set; }
         string Password { set; }
-
+        string Email{ set;}
 
 
         event Action LoginGo;
