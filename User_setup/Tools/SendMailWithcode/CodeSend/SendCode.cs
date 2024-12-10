@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.Model.SendCodeModel.query
+namespace OTSC_ui.Tools.SendMailWithcode.CodeSend
 {
-    internal static class NewPasswordQuery
+    internal class SendCode
     {
-
-
     }
 }

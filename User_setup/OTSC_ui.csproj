@@ -65,7 +65,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Login_page_mvp\ForgotPasswordPage\Model\SendCodeModel\JsonEmailConfigReader\" />
     <Folder Include="Properties\logs\" />
   </ItemGroup>
 

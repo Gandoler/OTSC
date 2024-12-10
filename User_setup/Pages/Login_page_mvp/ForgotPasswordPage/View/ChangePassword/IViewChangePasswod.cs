@@ -3,14 +3,6 @@
     internal interface IViewChangePasswod
     {
 
-        public void MakeCloseButtonRed();
-        public void MakeCloseButtonBlack();
-        public void ClearPasswords();
-        public void EnablepasswordSField();
-        public void DisablepasswordSField();
-
-        public void MakeVisibleErrorLable();
-        public void MakeNotVisibleErrorLable();
 
 
         //fields
@@ -28,5 +20,13 @@
         //Back button
         event Action GoBackButtonCLick;
 
+        public void MakeCloseButtonRed();
+        public void MakeCloseButtonBlack();
+        public void ClearPasswords();
+        public void EnablepasswordSField();
+        public void DisablepasswordSField();
+
+        public void MakeVisibleErrorLable();
+        public void MakeNotVisibleErrorLable();
     }
 }

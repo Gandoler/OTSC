@@ -40,6 +40,8 @@
 
         public void checkEmptyFieldsAndBackPlaceHolder();
 
+        public bool CheckPasswordsMatch();
+
 
     }
 }
