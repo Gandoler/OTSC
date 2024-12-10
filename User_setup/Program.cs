@@ -2,10 +2,11 @@ using User_Interface.Login_page_mvp.View;
 using Serilog;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.Model;
 using OTSC_ui.Pages.Login_page_mvp.Login_page;
-using OTSC_ui.Tools.ConnectionStringManager;
 using OTSC_ui.Tools.DBTools.Connection;
 using OTSC_ui.Tools.DBTools.Managers;
 using User_Interface.Login_page_mvp.Login.View.Registr;
+using OTSC_ui.Tools.DBTools.Managers.Login;
+using OTSC_ui.Tools.AppSettingJsonPhars.ConnectionStringManager;
 
 
 namespace OTSC_ui
@@ -19,6 +20,7 @@ namespace OTSC_ui
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.File("C:/Users/glkru/OneDrive/Desktop/prj/Project_cpo/User_setup/Properties/logs/myapp.log", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
+
             string? connectionString;
             do
             {

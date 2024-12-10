@@ -15,7 +15,7 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
 
             //email field
             EmailFieldTextBox.Enter += (s, e) => EnterEmailTextBox?.Invoke();
-            EmailFieldTextBox.TextChanged += (s, e) => LeaveEmailBoxAndCheckCorrect?.Invoke(this, EmailFieldTextBox.Text);
+            EmailFieldTextBox.TextChanged += (s, e) => LeaveEmailBoxAndCheckCorrect?.Invoke();
             
 
 
