@@ -1,4 +1,4 @@
-﻿using OTSC_ui.Tools.DBTools.Managers;
+﻿using OTSC_ui.Tools.DBTools.Managers.Login;
 using OTSC_ui.Tools.SendMailWithcode.CodeGenerate;
 using OTSC_ui.Tools.SendMailWithcode.CodeSend;
 
@@ -32,7 +32,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.Model
 
         public void SendCode(string email)
         {
-            _emailService.
+            _emailService.SendEmail(email, "You code", $"{_code}");
         }
 
         public void ChangePassword(string First, string Second)

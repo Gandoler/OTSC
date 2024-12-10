@@ -1,5 +1,4 @@
-﻿using OTSC_ui.OldCode.ExtendedTool.Connect_and_query.Connect;
-using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage;
+﻿using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage;
 using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.Model;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.Model;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Login;
@@ -125,6 +124,11 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         private void _imodelka_LoginGo()
         {//пока вникуда
             MessageBox.Show("ты зашел бро", "Круто", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if(_registrView is Form thisform && _loginView is Form Nextform){
+                Nextform.Close();
+                thisform.Close();
+            }
+
         }
 
         private void _imodelka_LoginFailed(object? sender, string e)
@@ -177,7 +181,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         {
             if (_registrView is Form thisform && _loginView is Form NextForm)
             {
-                thisform.Hide();
+                thisform.Close();
                 NextForm.Show();
             }
         }

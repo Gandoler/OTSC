@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OTSC_ui.Tools.DBTools.Managers
+namespace OTSC_ui.Tools.DBTools.Managers.Login
 {
     internal interface ILoginManager
     {
         public bool Login(long login, string passwoerd);
         public bool Registr(long login, string email, string password);
-        public bool ChangePassword(string password);
+
         public void Dispose();
     }
 }

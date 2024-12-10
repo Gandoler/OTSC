@@ -10,19 +10,19 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 
 
-namespace OTSC_ui.Tools.DBTools.Managers
+namespace OTSC_ui.Tools.DBTools.Managers.Login
 {
-    internal class LoginManager: ILoginManager
+    internal class LoginManager : ILoginManager
     {
         private readonly IConnectManager _connectManager;
-        public LoginManager(IConnectManager ConnectManager) 
+        public LoginManager(IConnectManager ConnectManager)
         {
             _connectManager = ConnectManager;
             _connectManager.Connect();
-            Log.Information("Открыто подключение к дб");
+            Log.Information($"Открыто подключение к дб для {nameof(LoginManager)}");
         }
 
-        public bool Login(long login, string passwoerd) 
+        public bool Login(long login, string passwoerd)
         {
             string query = $"SELECT * FROM UsersLogins WHERE login = @Login AND password = @Password";
             Log.Information("Try to Login in LoginManager");
@@ -44,7 +44,7 @@ namespace OTSC_ui.Tools.DBTools.Managers
             }
             Log.Warning("Error with Command");
             throw new Exception("Unexpected database error");
-            
+
 
 
         }
@@ -68,6 +68,7 @@ namespace OTSC_ui.Tools.DBTools.Managers
             }
             throw new Exception("Unexpected database error");
         }
+      
 
         public bool Registr(long login, string email, string passwoerd)
         {
@@ -86,14 +87,8 @@ namespace OTSC_ui.Tools.DBTools.Managers
                 throw new Exception("Unexpected database error");
             }
             return false;
-           
-        }
 
-        public bool ChangePassword(string password)
-        {
-            throw new NotImplementedException();
         }
-
 
 
 
