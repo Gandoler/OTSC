@@ -48,15 +48,14 @@ namespace OTSC_ui.Tools.DBTools.Managers
 
 
         }
-        private bool CheckUserDidntExist(long login, string passwoerd)
+        private bool CheckUserDidntExist(long login)
         {
-            string queryCheckExist = $"SELECT * FROM UsersLogins WHERE login = @Login AND password = @Password";
+            string queryCheckExist = $"SELECT * FROM UsersLogins WHERE login = @Login";
             using (MySqlCommand command = new MySqlCommand(queryCheckExist, _connectManager.SqlConnection))
             {
                 command.Parameters.AddWithValue("@Login", login);
-                command.Parameters.AddWithValue("@Password", passwoerd);
                 int execute = Convert.ToInt32(command.ExecuteScalar());
-                if (execute == 1)
+                if (execute != 0)
                 {
                     Log.Information("User EXIST");
                     return false;
@@ -74,7 +73,7 @@ namespace OTSC_ui.Tools.DBTools.Managers
         {
             string queryRegistr = $"INSERT INTO UsersLogins (login,email, password) VALUES (@Login, @Email, @Password)";
             Log.Information("Try to Regsitr in LoginManager");
-            if (CheckUserDidntExist(login, passwoerd))
+            if (CheckUserDidntExist(login))
             {
                 using (MySqlCommand command = new MySqlCommand(queryRegistr, _connectManager.SqlConnection))
                 {

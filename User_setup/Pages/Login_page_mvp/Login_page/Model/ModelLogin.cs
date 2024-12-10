@@ -110,6 +110,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
             catch (Exception ex)
             {
                 UserNotRegistered?.Invoke(this, ex.Message);
+                Log.Error($"Erorr in LoginModel  :{ex.Message}");
             }
         }
 
