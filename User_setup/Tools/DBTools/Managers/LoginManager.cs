@@ -90,12 +90,19 @@ namespace OTSC_ui.Tools.DBTools.Managers
            
         }
 
+        public bool ChangePassword(string password)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+
 
         public void Dispose()
         {
             _connectManager.Disconnect();
         }
-
 
     }
 }

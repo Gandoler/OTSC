@@ -67,7 +67,7 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
 
 
         //for all field leave
-        public event Action LeaveFromFields;
+        public event Action? LeaveFromFields;
 
         public bool CheckCorrectInputEmail()
         {
@@ -105,6 +105,18 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
             
             return false;
                 
+        }
+
+        public bool CheckPasswordsMatch()
+        {
+            if (PasswordTextBox.Text.Equals(SeccondPasswordTextBox.Text))
+            {
+                return true;
+            }
+            MessageBox.Show("Passwords Mismatch", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            SeccondPasswordTextBox.Clear();
+
+            return false;
         }
 
         public void MakeExitButtonForeBlack()

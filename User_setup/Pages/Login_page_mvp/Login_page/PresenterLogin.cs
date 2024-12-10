@@ -162,8 +162,8 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
         // Resgistr button
         private void RegistrView_RegistrButtonClick(object? sender, (string, string, string) e)
-        {
-            if (_registrView.CheckForAllFieldsNotEmpty())
+        {   
+            if (_registrView.CheckPasswordsMatch() &&_registrView.CheckForAllFieldsNotEmpty())
             { (_imodelka.Login, _imodelka.Email, _imodelka.Password) = (long.Parse(e.Item1), e.Item2, e.Item3);
 
                 _imodelka.Registr();
