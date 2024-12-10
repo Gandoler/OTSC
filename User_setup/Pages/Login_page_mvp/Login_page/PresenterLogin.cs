@@ -44,6 +44,9 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
             // Forgot password
             _loginView.ForgotPassworLinkClick += LoginView_ForgotPassworLinkClick;
+
+            //for all field when leave
+            _loginView.LeaveFromFields += _loginView_LeaveFromFields; ;
             #endregion
 
             #region RegistrpageConstr
@@ -68,6 +71,9 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             _registrView.EnterInField += RegistrView_EnterInField;
             _registrView.TextChengedInFieldExceptEmail += RegistrView_TextChengedInFieldExceptEmail;
 
+
+            //for all field when leave
+            _registrView.LeaveFromFields += _registrView_LeaveFromFields;
             #endregion
 
 
@@ -179,6 +185,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         //email field 
         private void RegistrView_LeaveEmailBoxAndCheckCorrect(object? sender, string e)
         {
+
             if (_registrView.CheckCorrectInputEmail())
             {
                 _registrView.MakeNotVisibleEmailerror();
@@ -203,6 +210,18 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
                 _registrView.MakeRegistrButtonEnable();
             }
         }
+
+
+
+
+        //for all field when leave
+        private void _registrView_LeaveFromFields()
+        {
+            _registrView.checkEmptyFieldsAndBackPlaceHolder();
+        }
+
+
+
         #endregion
 
         #region LoginPage
@@ -279,6 +298,14 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
                 thisform.Show();
             }
         }
+        //for all field when leave
+        private void _loginView_LeaveFromFields()
+        {
+            _loginView.checkEmptyFieldsAndBackPlaceHolder();
+        }
+
+
+
         #endregion
 
     }

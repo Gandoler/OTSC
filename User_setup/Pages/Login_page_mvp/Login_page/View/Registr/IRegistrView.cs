@@ -22,6 +22,8 @@
         
         event EventHandler<string> LeaveEmailBoxAndCheckCorrect;
 
+        //for all field leave
+        event Action LeaveFromFields;
 
         public void MakeVisibleEmailerror();
         public void MakeNotVisibleEmailerror();
@@ -36,7 +38,7 @@
         public void MakeRegistrButtonEnable();
         public void MakeRegistrButtonDisable();
 
-
+        public void checkEmptyFieldsAndBackPlaceHolder();
 
 
     }

@@ -36,7 +36,16 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
             PasswordTextBox.TextChanged += (s, e) => TextChengedInFieldExceptEmail?.Invoke();
             SeccondPasswordTextBox.TextChanged += (s, e) => TextChengedInFieldExceptEmail?.Invoke();
 
+            //for all field leave
+            LoginTextBox.Leave += (s, e) => LeaveFromFields?.Invoke();
+            PasswordTextBox.Leave += (s, e) => LeaveFromFields?.Invoke();
+            SeccondPasswordTextBox.Leave += (s, e) => LeaveFromFields?.Invoke();
+            EmailTextBox.Leave += (s, e) => LeaveFromFields?.Invoke();
+
         }
+
+      
+
         //for all field EXCEPT email
         public event Action? EnterInField;
         public event Action? TextChengedInFieldExceptEmail;
@@ -56,6 +65,10 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
         //email field button
         public event EventHandler<string>? LeaveEmailBoxAndCheckCorrect;
 
+
+        //for all field leave
+        public event Action LeaveFromFields;
+
         public bool CheckCorrectInputEmail()
         {
             string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
@@ -66,6 +79,21 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
             return false;
         }
 
+        public void checkEmptyFieldsAndBackPlaceHolder()
+        {
+            if (EmailTextBox.Text.Equals("")) 
+            { 
+                EmailTextBox.Clear();
+                EmailTextBox.Refresh();
+            }
+
+            if (LoginTextBox.Text.Equals("")) { LoginTextBox.Clear(); LoginTextBox.Refresh(); }
+
+            if (PasswordTextBox.Text.Equals("")) { PasswordTextBox.Clear(); PasswordTextBox.Refresh(); }
+            if (SeccondPasswordTextBox.Text.Equals("")) { SeccondPasswordTextBox.Clear(); SeccondPasswordTextBox.Refresh(); }
+
+        }
+
         public bool CheckForAllFieldsNotEmpty()
         {
             if (CheckCorrectInputEmail() || string.IsNullOrWhiteSpace(EmailTextBox.Text)
@@ -74,6 +102,7 @@ namespace User_Interface.Login_page_mvp.Login.View.Registr
             {
                 return true;
             }
+            
             return false;
                 
         }
