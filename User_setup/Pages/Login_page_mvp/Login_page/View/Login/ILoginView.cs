@@ -20,14 +20,15 @@
         // Forgot password
         event Action ForgotPassworLinkClick;
 
-       
+       //for all field leave
+        event Action LeaveFromFields;
         void ShowPsw();
         void HidePsw();
 
         void MakeExitButtonForeBlack();
         void MakeExitButtonForeRed();
 
-
+        public void checkEmptyFieldsAndBackPlaceHolder();
 
     }
 }

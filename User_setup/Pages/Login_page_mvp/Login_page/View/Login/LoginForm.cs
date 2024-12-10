@@ -21,6 +21,9 @@ namespace User_Interface.Login_page_mvp.View
             RegistrButton.Click += (s, e) => RegistrButtonClick?.Invoke();
             // Forgot password link
             ForgotPasswordLink.Click += (s, e) => ForgotPassworLinkClick?.Invoke();
+            //for all field leave
+            LogintextBox.Leave += (s, e) => LeaveFromFields?.Invoke();
+            PasswordTextBox.Leave += (s, e) => LeaveFromFields?.Invoke();
         }
 
         // Exit button
@@ -39,6 +42,21 @@ namespace User_Interface.Login_page_mvp.View
 
         // Forgot password link
         public event Action? ForgotPassworLinkClick;
+
+        //for all field WHEN LEAVE
+        public event Action LeaveFromFields;
+
+        public void checkEmptyFieldsAndBackPlaceHolder()
+        {
+            if (LogintextBox.Text.Equals(""))
+            {
+                LogintextBox.Clear();
+                LogintextBox.Refresh();
+            }
+
+            if (PasswordTextBox.Text.Equals("")) { PasswordTextBox.Clear(); PasswordTextBox.Refresh(); }
+
+        }
 
         public void HidePsw()
         {
