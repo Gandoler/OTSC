@@ -1,13 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using OTSC_ui.Tools.DBTools.Connection;
 using Serilog;
-using OTSC_ui.Tools.DBTools.Operations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics;
 
 
 namespace OTSC_ui.Tools.DBTools.Managers.Login

@@ -1,11 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using OTSC_ui.Tools.DBTools.Connection;
 using Serilog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace OTSC_ui.Tools.DBTools.Managers.ForgotPSW
 {

@@ -5,13 +5,10 @@ using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Login;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Registr;
 using OTSC_ui.Tools.AppSettingJsonPhars.ConnectionStringManager;
 using OTSC_ui.Tools.DBTools.Connection;
-using OTSC_ui.Tools.DBTools.Managers;
 using OTSC_ui.Tools.DBTools.Managers.ForgotPSW;
 using OTSC_ui.Tools.SendMailWithcode.CodeGenerate;
 using OTSC_ui.Tools.SendMailWithcode.CodeSend;
 using User_Interface.Login_page_mvp.ForgotPasswordPage.View;
-using ZstdSharp.Unsafe;
-
 
 namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 {

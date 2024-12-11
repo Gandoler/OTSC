@@ -1,9 +1,6 @@
 ﻿using OTSC_ui.Tools.DBTools.Managers.ForgotPSW;
-using OTSC_ui.Tools.DBTools.Managers.Login;
 using OTSC_ui.Tools.SendMailWithcode.CodeGenerate;
 using OTSC_ui.Tools.SendMailWithcode.CodeSend;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-
 namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.Model
 {
     internal class ModelForgorPasswordPage : IModelForgotPasswordPage
