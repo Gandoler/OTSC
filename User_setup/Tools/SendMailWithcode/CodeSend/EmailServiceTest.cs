@@ -1,34 +1,25 @@
-﻿using System;
+﻿using OTSC_ui.Tools.AppSettingJsonPhars.Temaplates;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using OTSC_ui.Tools.AppSettingJsonPhars.Temaplates;
 using Serilog;
 
 namespace OTSC_ui.Tools.SendMailWithcode.CodeSend
 {
-    internal class EmailServiceWithTemplate(EmailSettings emailSettings ) : IEmailService
+    internal class EmailServiceTest : IEmailService
     {
-        private readonly string _senderEmail = emailSettings.SenderEmail;
-        private readonly string _senderPassword = emailSettings.SenderPassword;
-        private readonly string _smtpHost = emailSettings.SmtpServer;
-        private readonly int _smtpPort = emailSettings.SmtpPort;
+        private readonly string _senderEmail = "smtp@mailtrap.io";
+        private readonly string _senderPassword = "bcd1d261c83fc9cb5b4658ef317e1ea9";
+        private readonly string _smtpHost = "live.smtp.mailtrap.io";
+        private readonly int _smtpPort = 587;
 
 
         public void SendEmail(string recipientEmail, string subject, string body)
         {
-            var mail = new MailMessage
-            {
-                From = new MailAddress(_senderEmail, "OTSC"),
-                Subject = subject,
-                Body = body,
-                IsBodyHtml = false
-            };
-
-            mail.To.Add(recipientEmail);
 
             using var smtpClient = new SmtpClient(_smtpHost, _smtpPort)
             {
@@ -37,9 +28,10 @@ namespace OTSC_ui.Tools.SendMailWithcode.CodeSend
             };
             try
             {
-                smtpClient.Send(mail);
+                smtpClient.Send("hello@demomailtrap.com", "ldsloop.dkod@gmail.com", "Mytest", "testbody");
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 Log.Error($"Email send error {nameof(EmailServiceWithTemplate)} ERORR:{ex.Message}");
             }
             Log.Information($"Email send in {nameof(EmailServiceWithTemplate)}to({recipientEmail})");

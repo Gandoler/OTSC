@@ -156,13 +156,13 @@ namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage
 
             if (_viewEmailEnter.CheckCorrectInputEmail())
             {
-                Log.Information("email correct");
+               
                     _viewEmailEnter.MakeSendButtonEnable();
                     _viewEmailEnter.MakeNotVisibleEmailerror();
             }
             else
             {
-                Log.Information("input incorrect email");
+                
                 _viewEmailEnter.MakeSendButtonDisable();
                 _viewEmailEnter.MakeVisibleEmailerror();
             }
