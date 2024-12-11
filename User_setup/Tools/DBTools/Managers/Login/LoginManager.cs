@@ -24,7 +24,7 @@ namespace OTSC_ui.Tools.DBTools.Managers.Login
                 command.Parameters.AddWithValue("@Login", login);
                 command.Parameters.AddWithValue("@Password", passwoerd);
                 int execute = Convert.ToInt32(command.ExecuteScalar());
-                if (execute == 1)
+                if (execute != 1)
                 {
                     Log.Information("Log in Successfull");
                     return true;
