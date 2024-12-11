@@ -312,14 +312,14 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
                 ConnectDBManager connectDBManager = new ConnectDBManager(connectionString);
 
                 CodeGeneratorsix codeGenerator = new CodeGeneratorsix();
-                //EmailServiceWithTemplate emailService = new EmailServiceWithTemplate(ConnectionStringManager.GetEmailSettings());
-               EmailServiceTest emailServiceTest = new EmailServiceTest();
+                EmailServiceWithTemplate emailService = new EmailServiceWithTemplate(ConnectionStringManager.GetEmailSettings());
+               //EmailServiceTest emailServiceTest = new EmailServiceTest();
                 
                 ForgotpasswordManager forgotpasswordManager = new ForgotpasswordManager(connectDBManager);
 
 
                 //модель
-                ModelForgorPasswordPage modelForgorPasswordPage = new(emailServiceTest, forgotpasswordManager, codeGenerator);
+                ModelForgorPasswordPage modelForgorPasswordPage = new(emailService, forgotpasswordManager, codeGenerator);
                 _ = new PresenterForgotPasswoedPage(modelForgorPasswordPage, changePasswordFormForm, emailEnterfrom);
                 thisform.Hide();
                 emailEnterfrom.ShowDialog();//можно конечно что то делать но бог с ним
