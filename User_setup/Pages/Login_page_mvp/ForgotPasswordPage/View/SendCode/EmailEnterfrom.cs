@@ -15,21 +15,21 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
 
             //email field
             EmailFieldTextBox.Enter += (s, e) => EnterEmailTextBox?.Invoke();
-            EmailFieldTextBox.TextChanged += (s, e) => LeaveEmailBoxAndCheckCorrect?.Invoke(this, EmailFieldTextBox.Text);
+            EmailFieldTextBox.TextChanged += (s, e) => LeaveEmailBoxAndCheckCorrect?.Invoke();
             
 
 
             //send code button
-            SendCodeButton.Click += (s, e) => SendCodeButtonClick?.Invoke();
+            SendCodeButton.Click += (s, e) => SendCodeButtonClick?.Invoke(this, EmailFieldTextBox.Text);
 
         }
 
        
         //send code button
-        public event Action? SendCodeButtonClick;
+        public event EventHandler<string>? SendCodeButtonClick;
 
         //email field
-        public event EventHandler<string>? LeaveEmailBoxAndCheckCorrect;
+        public event Action? LeaveEmailBoxAndCheckCorrect;
         public event Action? EnterEmailTextBox;
 
         //exit button

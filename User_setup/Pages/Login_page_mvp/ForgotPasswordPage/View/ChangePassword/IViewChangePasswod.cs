@@ -28,5 +28,8 @@
 
         public void MakeVisibleErrorLable();
         public void MakeNotVisibleErrorLable();
+
+        public void EnableConfirmButton();
+        public void DisableConfirmButton();
     }
 }

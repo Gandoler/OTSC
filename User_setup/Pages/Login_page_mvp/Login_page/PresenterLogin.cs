@@ -1,13 +1,14 @@
-﻿using OTSC_ui.OldCode.ExtendedTool.Connect_and_query.Connect;
-using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage;
+﻿using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage;
 using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.Model;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.Model;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Login;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Registr;
-using OTSC_ui.Tools.DBTools.Managers;
+using OTSC_ui.Tools.AppSettingJsonPhars.ConnectionStringManager;
+using OTSC_ui.Tools.DBTools.Connection;
+using OTSC_ui.Tools.DBTools.Managers.ForgotPSW;
+using OTSC_ui.Tools.SendMailWithcode.CodeGenerate;
+using OTSC_ui.Tools.SendMailWithcode.CodeSend;
 using User_Interface.Login_page_mvp.ForgotPasswordPage.View;
-using ZstdSharp.Unsafe;
-
 
 namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 {
@@ -16,10 +17,10 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         private readonly ILoginView _loginView;
         private readonly ImodelLogin _imodelka;
         private readonly IRegistrView _registrView;
+        
 
         internal PresenterLogin(ILoginView loginView, ImodelLogin imodelka, IRegistrView registrView)
         {
-            
             
 
             #region LoginPageConstr
@@ -125,6 +126,11 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         private void _imodelka_LoginGo()
         {//пока вникуда
             MessageBox.Show("ты зашел бро", "Круто", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if(_registrView is Form thisform && _loginView is Form Nextform){
+                Nextform.Close();
+                thisform.Close();
+            }
+
         }
 
         private void _imodelka_LoginFailed(object? sender, string e)
@@ -177,7 +183,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         {
             if (_registrView is Form thisform && _loginView is Form NextForm)
             {
-                thisform.Hide();
+                thisform.Close();
                 NextForm.Show();
             }
         }
@@ -288,9 +294,29 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         {
             if (_loginView is Form thisform)
             {
+                // формы
                 ChangePasswordFormForm changePasswordFormForm = new();
                 EmailEnterfrom emailEnterfrom = new();
-                ModelForgorPasswordPage modelForgorPasswordPage = new();
+
+
+                // для бд
+                string? connectionString;
+                do
+                {
+                    connectionString = ConnectionStringManager.GetConnectionString();
+                } while (connectionString == null);
+
+                ConnectDBManager connectDBManager = new ConnectDBManager(connectionString);
+
+                CodeGeneratorsix codeGenerator = new CodeGeneratorsix();
+                EmailServiceWithTemplate emailService = new EmailServiceWithTemplate(ConnectionStringManager.GetEmailSettings());
+               //EmailServiceTest emailServiceTest = new EmailServiceTest();
+                
+                ForgotpasswordManager forgotpasswordManager = new ForgotpasswordManager(connectDBManager);
+
+
+                //модель
+                ModelForgorPasswordPage modelForgorPasswordPage = new(emailService, forgotpasswordManager, codeGenerator);
                 _ = new PresenterForgotPasswoedPage(modelForgorPasswordPage, changePasswordFormForm, emailEnterfrom);
                 thisform.Hide();
                 emailEnterfrom.ShowDialog();//можно конечно что то делать но бог с ним

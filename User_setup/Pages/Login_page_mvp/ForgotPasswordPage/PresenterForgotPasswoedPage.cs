@@ -13,7 +13,26 @@ namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage
 
         public PresenterForgotPasswoedPage(IModelForgotPasswordPage modelForgotPasswordPage, IViewChangePasswod viewForgotPasswordPage, IViewEmailEnter viewEmailEnter)
         {
+            #region ModelConstruct
+
+
             _modelForgotPasswordPage = modelForgotPasswordPage;
+            //code send 
+            _modelForgotPasswordPage.CodeSendSuccessful += _modelForgotPasswordPage_CodeSendSuccessful;
+            _modelForgotPasswordPage.CodeSendFailedUserdidntExist += _modelForgotPasswordPage_CodeSendFailedUserdidntExist;
+
+
+            // code check
+            _modelForgotPasswordPage.CodeMatch += _modelForgotPasswordPage_CodeMatch;
+            _modelForgotPasswordPage.CodeMismatch += _modelForgotPasswordPage_CodeMismatch;
+
+
+            // Password change
+            _modelForgotPasswordPage.PasswordChangeFailed += _modelForgotPasswordPage_PasswordChangeFailed;
+            _modelForgotPasswordPage.PasswordChangeSuccessfull += _modelForgotPasswordPage_PasswordChangeSuccessfull;
+
+
+            #endregion
 
             #region emailEnterPageListeners
             //for email enter page
@@ -55,32 +74,75 @@ namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage
             #endregion
         }
 
+        //code send 
+        private void _modelForgotPasswordPage_CodeSendFailedUserdidntExist()
+        {
+            MessageBox.Show("User didnt Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        private void _modelForgotPasswordPage_CodeSendSuccessful()
+        {
+            if (_viewEmailEnter is Form thisForm && _viewNewPasswordPage is Form nextForm)
+            {
+                thisForm.Hide();//тут мы прячем форму для ввода имейла
+                DialogResult response = nextForm.ShowDialog();// тут как диалог открываем окно для нового пароля как диалог
+                if (response == DialogResult.TryAgain)// это будет если кнопку назад нажать
+                {
+                    thisForm.Show();
+                }
+                else// это будет если кнопку закрытия нажать
+                {
+                    thisForm.DialogResult = DialogResult.Cancel;
+                    thisForm.Close();
+                    nextForm.Close();
+                }
+            }
+        }
+
+
+
+        // code check
+        private void _modelForgotPasswordPage_CodeMismatch()
+        {
+            MessageBox.Show("Code Mismath", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _viewNewPasswordPage.DisablepasswordSField();
+            _viewNewPasswordPage.DisableConfirmButton();
+        }
+
+        private void _modelForgotPasswordPage_CodeMatch()
+        {
+            _viewNewPasswordPage.EnablepasswordSField();
+            _viewNewPasswordPage.EnableConfirmButton();
+        }
+
+
+        // Password change
+        private void _modelForgotPasswordPage_PasswordChangeSuccessfull()
+        {
+            if (_viewNewPasswordPage is Form thisForm)
+            {
+                thisForm.DialogResult = DialogResult.TryAgain;
+                thisForm.Close();
+            }
+        }
+
+        private void _modelForgotPasswordPage_PasswordChangeFailed()
+        {
+            MessageBox.Show("Unexpected ERrror soryyy bro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
 
 
 
 
         #region emailpage
         //press sendcodebutton
-        private void ViewEmailEnter_SendCodeButtonClick()
+        private void ViewEmailEnter_SendCodeButtonClick(object? sender, string email_string)
         {
             if (_viewEmailEnter.CheckCorrectInputEmail())
             {
-                if (_viewEmailEnter is Form thisForm && _viewNewPasswordPage is Form nextForm)
-                {
-
-                    thisForm.Hide();//тут мы прячем форму для ввода имейла
-                    DialogResult response = nextForm.ShowDialog();// тут как диалог открываем окно для нового пароля как диалог
-                    if (response == DialogResult.TryAgain)// это будет если кнопку назад нажать
-                    {
-                        thisForm.Show();
-                    }
-                    else// это будет если кнопку закрытия нажать
-                    {
-                        thisForm.DialogResult = DialogResult.Cancel;
-                        thisForm.Close();
-                    }
-
-                }
+                _modelForgotPasswordPage.SendCode(email_string);
             }
             else
             {
@@ -91,25 +153,18 @@ namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage
 
         }
         //leave and enter feom email textbox
-        private void ViewEmailEnter_LeaveEmailBoxAndCheckCorrect(object? sender, string email_string)
+        private void ViewEmailEnter_LeaveEmailBoxAndCheckCorrect()
         {
 
             if (_viewEmailEnter.CheckCorrectInputEmail())
             {
-                Log.Information("email correct");
-                /////////////////////////////////////
-                ////////////////////////////////////////
-                //////////////////////////////////////// Model performance
-                /////////////////////////////////////
-                if (/*tut*/true)
-                {
+               
                     _viewEmailEnter.MakeSendButtonEnable();
                     _viewEmailEnter.MakeNotVisibleEmailerror();
-                }
             }
             else
             {
-                Log.Information("input incorrect email");
+                
                 _viewEmailEnter.MakeSendButtonDisable();
                 _viewEmailEnter.MakeVisibleEmailerror();
             }
@@ -173,12 +228,8 @@ namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage
             {
                 try
                 {
-                    /////////////////////////////////////
-                    ////////////////////////////////////////
-                    //////////////////////////////////////// Model performance
-                    /////////////////////////////////////
 
-
+                    _modelForgotPasswordPage.ChangePassword(e.Item1);
                 }
                 catch (Exception ex)
                 {
@@ -197,26 +248,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage
         //code Field
         private void ViewNewPasswordPage_LeaveCodeField(object? sender, string e)
         {
-            if (e != null && e != "")
-            {
-                if (int.TryParse(e, result: out _))
-                {
-                    /////////////////////////////////////
-                    ////////////////////////////////////////
-                    //////////////////////////////////////// Model performance
-                    /////////////////////////////////////
-                    if (/*model*/true)
-                    {
-                        _viewNewPasswordPage.EnablepasswordSField();
-
-
-                    }
-                    else
-                    {
-                        _viewNewPasswordPage.DisablepasswordSField();
-                    }
-                }
-            }
+            _modelForgotPasswordPage.CheckCode(e);
         }
 
         //PasswordsFields

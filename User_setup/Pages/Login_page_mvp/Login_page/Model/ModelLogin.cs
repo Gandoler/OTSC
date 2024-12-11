@@ -1,5 +1,4 @@
-﻿using OTSC_ui.OldCode.ExtendedTool.Connect_and_query.query;
-using OTSC_ui.Tools.DBTools.Managers;
+﻿using OTSC_ui.Tools.DBTools.Managers.Login;
 using Serilog;
 
 namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
@@ -113,7 +112,5 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
                 Log.Error($"Erorr in LoginModel  :{ex.Message}");
             }
         }
-
-
     }
 }

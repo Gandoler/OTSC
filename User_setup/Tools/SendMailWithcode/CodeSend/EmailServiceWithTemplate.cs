@@ -1,16 +1,16 @@
 ﻿using System.Net.Mail;
 using System.Net;
+using OTSC_ui.Tools.AppSettingJsonPhars.Temaplates;
 using Serilog;
 
 namespace OTSC_ui.Tools.SendMailWithcode.CodeSend
 {
-    internal class EmailService(string senderEmail, string senderPassword, string smtpHost, int smtpPort) : IEmailService
+    internal class EmailServiceWithTemplate(EmailSettings emailSettings ) : IEmailService
     {
-        private readonly string _senderEmail = senderEmail;
-        private readonly string _senderPassword = senderPassword;
-        private readonly string _smtpHost = smtpHost;
-        private readonly int _smtpPort = smtpPort;
-
+        private readonly string _senderEmail = emailSettings.SenderEmail;
+        private readonly string _senderPassword = emailSettings.SenderPassword;
+        private readonly string _smtpHost = emailSettings.SmtpServer;
+        private readonly int _smtpPort = emailSettings.SmtpPort;
 
 
         private MailMessage GenerateMail(string recipientEmail, string subject, string body)
@@ -65,6 +65,6 @@ namespace OTSC_ui.Tools.SendMailWithcode.CodeSend
             }
             Log.Information($"Email sent in {nameof(EmailServiceWithTemplate)} to ({recipientEmail})");
         }
-    }
 
+    }
 }

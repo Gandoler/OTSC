@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using Serilog;
+﻿using Serilog;
 
 namespace OTSC_ui.Tools.AppSettingJsonPhars.Temaplates
 {

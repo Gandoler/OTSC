@@ -1,28 +1,21 @@
 ﻿using MySql.Data.MySqlClient;
 using OTSC_ui.Tools.DBTools.Connection;
 using Serilog;
-using OTSC_ui.Tools.DBTools.Operations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics;
 
 
-namespace OTSC_ui.Tools.DBTools.Managers
+namespace OTSC_ui.Tools.DBTools.Managers.Login
 {
-    internal class LoginManager: ILoginManager
+    internal class LoginManager : ILoginManager
     {
         private readonly IConnectManager _connectManager;
-        public LoginManager(IConnectManager ConnectManager) 
+        public LoginManager(IConnectManager ConnectManager)
         {
             _connectManager = ConnectManager;
             _connectManager.Connect();
-            Log.Information("Открыто подключение к дб");
+            Log.Information($"Открыто подключение к дб для {nameof(LoginManager)}");
         }
 
-        public bool Login(long login, string passwoerd) 
+        public bool Login(long login, string passwoerd)
         {
             string query = $"SELECT * FROM UsersLogins WHERE login = @Login AND password = @Password";
             Log.Information("Try to Login in LoginManager");
@@ -31,7 +24,7 @@ namespace OTSC_ui.Tools.DBTools.Managers
                 command.Parameters.AddWithValue("@Login", login);
                 command.Parameters.AddWithValue("@Password", passwoerd);
                 int execute = Convert.ToInt32(command.ExecuteScalar());
-                if (execute == 1)
+                if (execute != 1)
                 {
                     Log.Information("Log in Successfull");
                     return true;
@@ -44,16 +37,17 @@ namespace OTSC_ui.Tools.DBTools.Managers
             }
             Log.Warning("Error with Command");
             throw new Exception("Unexpected database error");
-            
+
 
 
         }
-        private bool CheckUserDidntExist(long login)
+        private bool CheckUserDidntExist(long login, string email)
         {
-            string queryCheckExist = $"SELECT * FROM UsersLogins WHERE login = @Login";
+            string queryCheckExist = $"SELECT * FROM UsersLogins WHERE login = @Login or email  =@EMAIL";
             using (MySqlCommand command = new MySqlCommand(queryCheckExist, _connectManager.SqlConnection))
             {
                 command.Parameters.AddWithValue("@Login", login);
+                command.Parameters.AddWithValue("@EMAIL", email);
                 int execute = Convert.ToInt32(command.ExecuteScalar());
                 if (execute != 0)
                 {
@@ -68,12 +62,13 @@ namespace OTSC_ui.Tools.DBTools.Managers
             }
             throw new Exception("Unexpected database error");
         }
+      
 
         public bool Registr(long login, string email, string passwoerd)
         {
             string queryRegistr = $"INSERT INTO UsersLogins (login,email, password) VALUES (@Login, @Email, @Password)";
             Log.Information("Try to Regsitr in LoginManager");
-            if (CheckUserDidntExist(login))
+            if (CheckUserDidntExist(login,email))
             {
                 using (MySqlCommand command = new MySqlCommand(queryRegistr, _connectManager.SqlConnection))
                 {
@@ -86,14 +81,8 @@ namespace OTSC_ui.Tools.DBTools.Managers
                 throw new Exception("Unexpected database error");
             }
             return false;
-           
-        }
 
-        public bool ChangePassword(string password)
-        {
-            throw new NotImplementedException();
         }
-
 
 
 
