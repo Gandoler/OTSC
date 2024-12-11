@@ -107,11 +107,13 @@ namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage
         {
             MessageBox.Show("Code Mismath", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             _viewNewPasswordPage.DisablepasswordSField();
+            _viewNewPasswordPage.DisableConfirmButton();
         }
 
         private void _modelForgotPasswordPage_CodeMatch()
         {
             _viewNewPasswordPage.EnablepasswordSField();
+            _viewNewPasswordPage.EnableConfirmButton();
         }
 
 

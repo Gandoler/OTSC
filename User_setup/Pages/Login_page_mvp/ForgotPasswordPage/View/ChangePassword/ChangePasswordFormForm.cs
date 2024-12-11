@@ -76,5 +76,15 @@ namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
         {
             ExitButton.ForeColor = Color.Black;
         }
+
+        public void EnableConfirmButton()
+        {
+            SaveNewPasswordButton.Enabled = true;
+        }
+
+        public void DisableConfirmButton()
+        {
+            SaveNewPasswordButton.Enabled = false;
+        }
     }
 }
