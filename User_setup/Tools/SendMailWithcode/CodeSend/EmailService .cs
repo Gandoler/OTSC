@@ -5,6 +5,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Serilog;
 
 namespace OTSC_ui.Tools.SendMailWithcode.CodeSend
 {
@@ -15,7 +16,9 @@ namespace OTSC_ui.Tools.SendMailWithcode.CodeSend
         private readonly string _smtpHost = smtpHost;
         private readonly int _smtpPort = smtpPort;
 
-        public void SendEmail(string recipientEmail, string subject, string body)
+
+
+        private MailMessage GenerateMail(string recipientEmail, string subject, string body)
         {
             var mail = new MailMessage
             {
@@ -26,13 +29,46 @@ namespace OTSC_ui.Tools.SendMailWithcode.CodeSend
             };
 
             mail.To.Add(recipientEmail);
+            return mail;
+        }
 
-            using var smtpClient = new SmtpClient(_smtpHost, _smtpPort)
+        private SmtpClient CreateSmtpClient()
+        {
+            return new SmtpClient(_smtpHost, _smtpPort)
             {
                 Credentials = new NetworkCredential(_senderEmail, _senderPassword),
                 EnableSsl = true
             };
-            smtpClient.SendMailAsync(mail);
+        }
+
+        public async Task SendEmailAsync(string recipientEmail, string subject, string body)
+        {
+            try
+            {
+                var mail = GenerateMail(recipientEmail, subject, body);
+                using var smtpClient = CreateSmtpClient();
+                await smtpClient.SendMailAsync(mail);
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Email send error {nameof(EmailServiceWithTemplate)} ERROR: {ex.Message}");
+            }
+            Log.Information($"Email sent in {nameof(EmailServiceWithTemplate)} to ({recipientEmail})");
+        }
+
+        void IEmailService.SendEmail(string recipientEmail, string subject, string body)
+        {
+            try
+            {
+                var mail = GenerateMail(recipientEmail, subject, body);
+                using var smtpClient = CreateSmtpClient();
+                smtpClient.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Email send error {nameof(EmailServiceWithTemplate)} ERROR: {ex.Message}");
+            }
+            Log.Information($"Email sent in {nameof(EmailServiceWithTemplate)} to ({recipientEmail})");
         }
     }
 

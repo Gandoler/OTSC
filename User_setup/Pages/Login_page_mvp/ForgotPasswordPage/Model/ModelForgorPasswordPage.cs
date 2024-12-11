@@ -39,7 +39,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.Model
             if (_forgotpasswordManager.CheckUserExist(email))
             {
                 _email= email;
-                _emailService.SendEmail(email, "You code", $"{_code}");
+                _emailService.SendEmailAsync(email, "You code", $"{_code}");
                 CodeSendSuccessful?.Invoke();
             }
             else

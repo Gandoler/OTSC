@@ -17,18 +17,36 @@ namespace OTSC_ui.Tools.SendMailWithcode.CodeSend
         private readonly string _smtpHost = "live.smtp.mailtrap.io";
         private readonly int _smtpPort = 587;
 
-
-        public void SendEmail(string recipientEmail, string subject, string body)
+        private SmtpClient GenerateMail()
         {
-
             using var smtpClient = new SmtpClient(_smtpHost, _smtpPort)
             {
                 Credentials = new NetworkCredential(_senderEmail, _senderPassword),
                 EnableSsl = true
             };
+            return smtpClient;
+
+        }
+        public void SendEmail(string recipientEmail, string subject, string body)
+        {
+
+          
             try
             {
-                smtpClient.Send("hello@demomailtrap.com", "ldsloop.dkod@gmail.com", "Mytest", "testbody");
+                GenerateMail().Send("hello@demomailtrap.com", "ldsloop.dkod@gmail.com", "Mytest", "testbody");
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Email send error {nameof(EmailServiceWithTemplate)} ERORR:{ex.Message}");
+            }
+            Log.Information($"Email send in {nameof(EmailServiceWithTemplate)}to({recipientEmail})");
+        }
+
+        public async Task SendEmailAsync(string recipientEmail, string subject, string body)
+        {
+            try
+            {
+                await GenerateMail().SendMailAsync("hello@demomailtrap.com", "ldsloop.dkod@gmail.com", "Mytest", "testbody");
             }
             catch (Exception ex)
             {
