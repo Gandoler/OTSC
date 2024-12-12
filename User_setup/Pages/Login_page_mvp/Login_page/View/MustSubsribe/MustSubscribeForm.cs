@@ -29,47 +29,49 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.MustSubsribe
 
 
             //code Field
-            CodeFieldTextBox.TextChanged += (s, e) => CodeFieldTextChenged?.Invoke(this, CodeFieldTextBox.);
+            CodeFieldTextBox.TextChanged += (s, e) => CodeFieldTextChenged?.Invoke(this, e);
+            CodeFieldTextBox.Leave += (s, e) => LeaveCodeField?.Invoke();
 
             //enter code button
+            EnterCodeButton.Click += (s, e) => CodeEnterButtonClciked?.Invoke();
     }
 
         public event EventHandler<EventArgs>? CodeFieldTextChenged;
         public event Action? TgBotButtonClickClick;
         public event Action? LeaveCodeField;
-        public event Action? CodeEnterButton;
+        public event Action? CodeEnterButtonClciked;
         public event Action? ExitButtonClick;
         public event Action? ExitButtonEntered;
         public event Action? ExitButtonLeavd;
 
         public void MakeEnterCodeButtonEnable()
         {
-            throw new NotImplementedException();
+            EnterCodeButton.Enabled = true;
         }
 
         public void MakeEnterCodeEnterButtonDisable()
         {
-            throw new NotImplementedException();
+            EnterCodeButton.Enabled = false;
         }
 
-        public void MakeErrorImageDisable()
+        public void MakeErrorImageVisibleFalse()
         {
-            throw new NotImplementedException();
+            ErrorImage.Visible = false;
         }
 
-        public void MakeErrorImageEnable()
+        public void MakeErrorImageVisibleTrue()
         {
-            throw new NotImplementedException();
+            ErrorImage.Visible = true;
         }
 
         public void MakeExitButtonForeBlack()
         {
-            throw new NotImplementedException();
+            ExitButton.ForeColor = Color.Black;
         }
 
         public void MakeExitButtonForeRed()
         {
-            throw new NotImplementedException();
+            ExitButton.ForeColor = Color.Red;
         }
     }
 }

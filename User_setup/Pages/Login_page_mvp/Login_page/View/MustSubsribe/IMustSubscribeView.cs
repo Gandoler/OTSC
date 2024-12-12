@@ -23,13 +23,13 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.View.MustSubsribe
 
 
         //enter code button
-        event Action CodeEnterButton;
+        event Action CodeEnterButtonClciked;
 
 
 
 
-        void MakeErrorImageEnable();
-        void MakeErrorImageDisable();
+        void MakeErrorImageVisibleTrue();
+        void MakeErrorImageVisibleFalse();
         void MakeEnterCodeButtonEnable();
         void MakeEnterCodeEnterButtonDisable();
         void MakeExitButtonForeRed();

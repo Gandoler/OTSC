@@ -2,6 +2,7 @@
 using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.Model;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.Model;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Login;
+using OTSC_ui.Pages.Login_page_mvp.Login_page.View.MustSubsribe;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Registr;
 using OTSC_ui.Tools.AppSettingJsonPhars.ConnectionStringManager;
 using OTSC_ui.Tools.DBTools.Connection;
@@ -17,15 +18,40 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         private readonly ILoginView _loginView;
         private readonly ImodelLogin _imodelka;
         private readonly IRegistrView _registrView;
-        
+        private readonly IMustSubscribeView _mustSubscribeView;
 
-        internal PresenterLogin(ILoginView loginView, ImodelLogin imodelka, IRegistrView registrView)
+
+        internal PresenterLogin(ILoginView loginView, ImodelLogin imodelka, IRegistrView registrView, IMustSubscribeView mustSubscribeView)
         {
-            
 
-            #region LoginPageConstr
-            //login page
-            _loginView = loginView ?? throw new ArgumentNullException(nameof(loginView));
+            #region MustRegistr
+            //init
+            _mustSubscribeView = mustSubscribeView;
+
+            //exit button
+            _mustSubscribeView.ExitButtonClick += _mustSubscribeView_ExitButtonClick;
+            _mustSubscribeView.ExitButtonEntered += _mustSubscribeView_ExitButtonEntered;
+            _mustSubscribeView.ExitButtonLeavd += _mustSubscribeView_ExitButtonLeavd;
+
+            //tg button
+
+
+            //code Field
+       
+
+
+            //enter code button
+       
+
+
+
+        #endregion
+
+
+
+        #region LoginPageConstr
+        //login page
+        _loginView = loginView ?? throw new ArgumentNullException(nameof(loginView));
 
 
             // Exit button
@@ -97,6 +123,31 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
             #endregion
         }
+
+
+
+        //exit button
+        private void _mustSubscribeView_ExitButtonClick()
+        {
+            //model performance
+            if (true)
+            {
+                if(_mustSubscribeView is Form thisformMustRegisr)
+                {
+                    thisformMustRegisr.Hide();
+                }
+            }
+        }
+
+        private void _mustSubscribeView_ExitButtonEntered()
+        {
+            throw new NotImplementedException();
+        }
+        private void _mustSubscribeView_ExitButtonLeavd()
+        {
+            throw new NotImplementedException();
+        }
+
 
 
 
