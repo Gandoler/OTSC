@@ -44,7 +44,7 @@ namespace User_Interface.Login_page_mvp.View
         public event Action? ForgotPassworLinkClick;
 
         //for all field WHEN LEAVE
-        public event Action LeaveFromFields;
+        public event Action? LeaveFromFields;
 
         public void checkEmptyFieldsAndBackPlaceHolder()
         {

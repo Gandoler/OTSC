@@ -18,8 +18,8 @@ namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage
 
             _modelForgotPasswordPage = modelForgotPasswordPage;
             //code send 
-            _modelForgotPasswordPage.CodeSendSuccessful += _modelForgotPasswordPage_CodeSendSuccessful;
-            _modelForgotPasswordPage.CodeSendFailedUserdidntExist += _modelForgotPasswordPage_CodeSendFailedUserdidntExist;
+            _modelForgotPasswordPage.CodeSendSuccessful += ModelForgotPasswordPage_CodeSendSuccessful;
+            _modelForgotPasswordPage.CodeSendFailedUserdidntExist += ModelForgotPasswordPage_CodeSendFailedUserdidntExist;
 
 
             // code check
@@ -75,13 +75,13 @@ namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage
         }
 
         //code send 
-        private void _modelForgotPasswordPage_CodeSendFailedUserdidntExist()
+        private void ModelForgotPasswordPage_CodeSendFailedUserdidntExist()
         {
             MessageBox.Show("User didnt Exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
-        private void _modelForgotPasswordPage_CodeSendSuccessful()
+        private void ModelForgotPasswordPage_CodeSendSuccessful()
         {
             if (_viewEmailEnter is Form thisForm && _viewNewPasswordPage is Form nextForm)
             {

@@ -6,6 +6,10 @@ using OTSC_ui.Tools.DBTools.Connection;
 using User_Interface.Login_page_mvp.Login.View.Registr;
 using OTSC_ui.Tools.DBTools.Managers.Login;
 using OTSC_ui.Tools.AppSettingJsonPhars.ConnectionStringManager;
+using OTSC_ui.Pages.Login_page_mvp.MustSubsribe;
+using OTSC_ui.Pages.Login_page_mvp.Login_page.MustSubsribe;
+using OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model;
+
 
 
 namespace OTSC_ui
@@ -32,19 +36,16 @@ namespace OTSC_ui
             RegistrForm registrForm = new RegistrForm();
 
             PresenterLogin presenter = new(loginFrom, model, registrForm);
+
             Application.Run(loginFrom);
 
 
-            //EmailEnterfrom emailEnterfrom = new EmailEnterfrom();
-            //ChangePasswordFormForm changePasswordFormForm  = new ChangePasswordFormForm();
-            //ModelForgorPasswordPage modelForgorPasswordPage = new ModelForgorPasswordPage();
-            //PresenterForgotPasswoedPage presenterForgotPasswoedPage = new PresenterForgotPasswoedPage(modelForgorPasswordPage, changePasswordFormForm, emailEnterfrom);
-            //Application.Run(emailEnterfrom);
-            //Log.CloseAndFlush();
+
+            Log.CloseAndFlush();
 
 
 
-            //Application.Run(new CustomShowBox());
+         
         }
     }
 }

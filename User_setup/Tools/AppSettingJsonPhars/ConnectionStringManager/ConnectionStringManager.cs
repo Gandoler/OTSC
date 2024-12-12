@@ -9,12 +9,12 @@ namespace OTSC_ui.Tools.AppSettingJsonPhars.ConnectionStringManager
 
         private static RootConfig GoDeserialiseObject()
         {
-            RootConfig settings = new RootConfig();
-            JsonReaderForConfig jsonReader = new JsonReaderForConfig();
+            RootConfig settings = new();
+            JsonReaderForConfig jsonReader = new();
             try
             {
                 settings = jsonReader.Read<RootConfig>(Properties.Settings1.Default.AppsettingsPath);
-                Log.Information($"ConnectionStringManager: settings:{settings.ToString()}");
+                Log.Information($"ConnectionStringManager: settings:{settings}");
             }
             catch (Exception ex)
             {
@@ -34,7 +34,9 @@ namespace OTSC_ui.Tools.AppSettingJsonPhars.ConnectionStringManager
         }
         public static EmailSettings GetEmailSettings()
         {
+
             RootConfig settings = GoDeserialiseObject();
+
             return settings.EmailSettings;
 
         }

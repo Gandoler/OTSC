@@ -5,10 +5,10 @@ namespace OTSC_ui.Tools.AppSettingJsonPhars.Temaplates
     internal class RootConfig : Itemplates
     {
         [JsonProperty("serverSetings")] // Укажите правильное имя из JSON
-        public ServerSettings ServerSettings { get; set; }
+        public ServerSettings ServerSettings { get; set; } = new ServerSettings();
 
         [JsonProperty("emailSetings")]
-        public EmailSettings EmailSettings { get; set; }
+        public EmailSettings EmailSettings { get; set; } = new EmailSettings();
 
         public string GetConnectionString()
         {

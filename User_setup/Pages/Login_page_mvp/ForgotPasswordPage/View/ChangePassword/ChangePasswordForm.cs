@@ -2,10 +2,10 @@
 
 namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
 {
-    public partial class ChangePasswordFormForm : Form, IViewChangePasswod
+    public partial class ChangePasswordForm : Form, IViewChangePasswod
     {
        
-        public ChangePasswordFormForm()
+        public ChangePasswordForm()
         {
             InitializeComponent();
 
