@@ -40,6 +40,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
             //code Field
             _mustSubscribeView.CodeFieldKeyPressed += _mustSubscribeView_CodeFieldTextChenged;
+            _mustSubscribeView.LeaveCodeField += _mustSubscribeView_LeaveCodeField;
 
 
             //enter code button
@@ -126,13 +127,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             #endregion
         }
 
-        private void _mustSubscribeView_CodeFieldTextChenged(object? sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) 
-            {
-                e.Handled = true; 
-            }
-        }
+
 
 
 
@@ -172,6 +167,18 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         }
 
 
+        //code Field
+        private void _mustSubscribeView_CodeFieldTextChenged(object? sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) 
+            {
+                e.Handled = true; 
+            }
+        }
+        private void _mustSubscribeView_LeaveCodeField()
+        {
+            throw new NotImplementedException();
+        }
 
 
 
