@@ -56,7 +56,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             _loginView.ForgotPassworLinkClick += LoginView_ForgotPassworLinkClick;
 
             //for all field when leave
-            _loginView.LeaveFromFields += _loginView_LeaveFromFields; ;
+            _loginView.LeaveFromFields += LoginView_LeaveFromFields; ;
             #endregion
 
             #region RegistrpageConstr
@@ -83,7 +83,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
 
             //for all field when leave
-            _registrView.LeaveFromFields += _registrView_LeaveFromFields;
+            _registrView.LeaveFromFields += RegistrView_LeaveFromFields;
             #endregion
 
 
@@ -92,14 +92,14 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             _imodelka = imodelka ?? throw new ArgumentNullException(nameof(imodelka));
 
             // registration
-            _imodelka.UserExist += _imodelka_UserExist;
-            _imodelka.UserRegistered += _imodelka_UserRegistered;
-            _imodelka.UserNotRegistered += _imodelka_UserNotRegistered;
+            _imodelka.UserExist += Imodelka_UserExist;
+            _imodelka.UserRegistered += Imodelka_UserRegistered;
+            _imodelka.UserNotRegistered += Imodelka_UserNotRegistered;
 
             //login
-            _imodelka.LogMismatch += _imodelka_LogMismatch;
-            _imodelka.LoginFailed += _imodelka_LoginFailed;
-            _imodelka.LoginGo += _imodelka_LoginGo;
+            _imodelka.LogMismatch += Imodelka_LogMismatch;
+            _imodelka.LoginFailed += Imodelka_LoginFailed;
+            _imodelka.LoginGo += Imodelka_LoginGo;
 
 
 
@@ -117,20 +117,20 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
         #region model
         // registration
-        private void _imodelka_UserNotRegistered(object? sender, string e)
+        private void Imodelka_UserNotRegistered(object? sender, string e)
         {
             MessageBox.Show("Unexpected Error", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void _imodelka_UserRegistered()
+        private void Imodelka_UserRegistered()
         {
             if (_registrView is Form thisform && _loginView is Form NextForm)
             {
                 thisform.Hide();
 
                 IMustSubscribeModel mustSubscribeModel = new MustSubscribeModel();
-                MustSubscribeForm mustSubscribeForm = new MustSubscribeForm();
-                PresenterMustSubscribe presenterMustSubscribe = new PresenterMustSubscribe(mustSubscribeForm, mustSubscribeModel);
+                MustSubscribeForm mustSubscribeForm = new();
+                _ = new PresenterMustSubscribe(mustSubscribeForm, mustSubscribeModel);
 
                 mustSubscribeForm.ShowDialog();
 
@@ -138,14 +138,14 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             }
         }
 
-        private void _imodelka_UserExist()
+        private void Imodelka_UserExist()
         {
             MessageBox.Show("Such User Exist", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
         //login
-        private void _imodelka_LoginGo()
+        private void Imodelka_LoginGo()
         {//пока вникуда
             MessageBox.Show("ты зашел бро", "Круто", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if(_registrView is Form thisform && _loginView is Form Nextform){
@@ -155,12 +155,12 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
         }
 
-        private void _imodelka_LoginFailed(object? sender, string e)
+        private void Imodelka_LoginFailed(object? sender, string e)
         {
             MessageBox.Show("Unexpected Error", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void _imodelka_LogMismatch()
+        private void Imodelka_LogMismatch()
         {
             MessageBox.Show("Invalid Password Or Login", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -243,7 +243,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
 
         //for all field when leave
-        private void _registrView_LeaveFromFields()
+        private void RegistrView_LeaveFromFields()
         {
             _registrView.checkEmptyFieldsAndBackPlaceHolder();
         }
@@ -320,7 +320,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             if (_loginView is Form thisform)
             {
                 // формы
-                ChangePasswordFormForm changePasswordFormForm = new();
+                ChangePasswordForm changePasswordFormForm = new();
                 EmailEnterfrom emailEnterfrom = new();
 
 
@@ -331,13 +331,13 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
                     connectionString = ConnectionStringManager.GetConnectionString();
                 } while (connectionString == null);
 
-                ConnectDBManager connectDBManager = new ConnectDBManager(connectionString);
+                ConnectDBManager connectDBManager = new(connectionString);
 
-                CodeGeneratorsix codeGenerator = new CodeGeneratorsix();
-                EmailServiceWithTemplate emailService = new EmailServiceWithTemplate(ConnectionStringManager.GetEmailSettings());
+                CodeGeneratorsix codeGenerator = new();
+                EmailServiceWithTemplate emailService = new(ConnectionStringManager.GetEmailSettings());
                //EmailServiceTest emailServiceTest = new EmailServiceTest();
                 
-                ForgotpasswordManager forgotpasswordManager = new ForgotpasswordManager(connectDBManager);
+                ForgotpasswordManager forgotpasswordManager = new(connectDBManager);
 
 
                 //модель
@@ -350,7 +350,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             }
         }
         //for all field when leave
-        private void _loginView_LeaveFromFields()
+        private void LoginView_LeaveFromFields()
         {
             _loginView.checkEmptyFieldsAndBackPlaceHolder();
         }

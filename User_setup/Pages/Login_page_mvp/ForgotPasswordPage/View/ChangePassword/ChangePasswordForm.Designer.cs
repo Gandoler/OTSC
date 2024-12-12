@@ -298,7 +298,6 @@
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow2;
         private Guna.UI2.WinForms.Guna2Button SaveNewPasswordButton;
-        private Guna.UI2.WinForms.Guna2TextBox CodeField;
         private Guna.UI2.WinForms.Guna2TextBox SecondPasswordField;
         private Guna.UI2.WinForms.Guna2TextBox FirstPasswordField;
         private Panel panel1;

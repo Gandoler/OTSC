@@ -20,7 +20,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model
 
         public void CheckCode(string Code)
         {
-            throw new NotImplementedException();
+            CodeCorrect?.Invoke();
         }
 
         public void GoLink()
@@ -36,7 +36,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model
                 Log.Information($"User go to link {url}");
             }
             catch (Exception ex) {
-                Log.Error($"User cant go to link in {nameof(GoLink)} in {nameof(MustSubscribeModel)}");
+                Log.Error($"User cant go to link in {nameof(GoLink)} in {nameof(MustSubscribeModel)} exception:{ex.Message}");
             }
         }
 
