@@ -24,35 +24,28 @@ namespace OTSC_ui
                 .WriteTo.File("C:/Users/glkru/OneDrive/Desktop/prj/Project_cpo/User_setup/Properties/logs/myapp.log", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
-            //string? connectionString;
-            //do
-            //{
-            //    connectionString = ConnectionStringManager.GetConnectionString();
-            //} while (connectionString == null);
+            string? connectionString;
+            do
+            {
+                connectionString = ConnectionStringManager.GetConnectionString();
+            } while (connectionString == null);
 
-            //ConnectDBManager connectDBManager = new ConnectDBManager(connectionString);
-            //ModelLogin model = new(new LoginManager(connectDBManager));
-            //LoginFrom loginFrom = new LoginFrom();
-            //RegistrForm registrForm = new RegistrForm();
+            ConnectDBManager connectDBManager = new ConnectDBManager(connectionString);
+            ModelLogin model = new(new LoginManager(connectDBManager));
+            LoginFrom loginFrom = new LoginFrom();
+            RegistrForm registrForm = new RegistrForm();
 
-            //PresenterLogin presenter = new(loginFrom, model, registrForm);
+            PresenterLogin presenter = new(loginFrom, model, registrForm);
 
-            IMustSubscribeModel mustSubscribeModel = new MustSubscribeModel();
-            MustSubscribeForm mustSubscribeForm = new MustSubscribeForm();
-            PresenterMustSubscribe presenterMustSubscribe = new PresenterMustSubscribe(mustSubscribeForm, mustSubscribeModel);
-            Application.Run(mustSubscribeForm);
-
-
-            //EmailEnterfrom emailEnterfrom = new EmailEnterfrom();
-            //ChangePasswordFormForm changePasswordFormForm  = new ChangePasswordFormForm();
-            //ModelForgorPasswordPage modelForgorPasswordPage = new ModelForgorPasswordPage();
-            //PresenterForgotPasswoedPage presenterForgotPasswoedPage = new PresenterForgotPasswoedPage(modelForgorPasswordPage, changePasswordFormForm, emailEnterfrom);
-            //Application.Run(emailEnterfrom);
-            //Log.CloseAndFlush();
+            Application.Run(loginFrom);
 
 
 
-            //Application.Run(new CustomShowBox());
+            Log.CloseAndFlush();
+
+
+
+         
         }
     }
 }

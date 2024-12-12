@@ -1,8 +1,11 @@
 ﻿using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage;
 using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.Model;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.Model;
+using OTSC_ui.Pages.Login_page_mvp.Login_page.MustSubsribe;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Login;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Registr;
+using OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model;
+using OTSC_ui.Pages.Login_page_mvp.MustSubsribe;
 using OTSC_ui.Pages.Login_page_mvp.MustSubsribe.View;
 using OTSC_ui.Tools.AppSettingJsonPhars.ConnectionStringManager;
 using OTSC_ui.Tools.DBTools.Connection;
@@ -124,6 +127,13 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             if (_registrView is Form thisform && _loginView is Form NextForm)
             {
                 thisform.Hide();
+
+                IMustSubscribeModel mustSubscribeModel = new MustSubscribeModel();
+                MustSubscribeForm mustSubscribeForm = new MustSubscribeForm();
+                PresenterMustSubscribe presenterMustSubscribe = new PresenterMustSubscribe(mustSubscribeForm, mustSubscribeModel);
+
+                mustSubscribeForm.ShowDialog();
+
                 NextForm.Show();
             }
         }

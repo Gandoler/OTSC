@@ -1,6 +1,6 @@
 ﻿namespace User_Interface.Login_page_mvp.ForgotPasswordPage.View
 {
-    partial class ChangePasswordFormForm
+    partial class ChangePasswordForm
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePasswordFormForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePasswordForm));
             panelBackTitle = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             ExitButton = new Guna.UI2.WinForms.Guna2Button();
             GoBackButton = new Guna.UI2.WinForms.Guna2CircleButton();

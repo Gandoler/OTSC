@@ -26,20 +26,20 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe
 
             //exit button
             _mustSubscribeView.ExitButtonClick += _mustSubscribeView_ExitButtonClick;
-            _mustSubscribeView.ExitButtonEntered += _mustSubscribeView_ExitButtonEntered;
-            _mustSubscribeView.ExitButtonLeavd += _mustSubscribeView_ExitButtonLeavd;
+            _mustSubscribeView.ExitButtonEntered += MustSubscribeView_ExitButtonEntered;
+            _mustSubscribeView.ExitButtonLeavd += MustSubscribeView_ExitButtonLeavd;
 
             //tg button
-            _mustSubscribeView.TgBotButtonClickClick += _mustSubscribeView_TgBotButtonClickClick;
+            _mustSubscribeView.TgBotButtonClickClick += MustSubscribeView_TgBotButtonClickClick;
 
 
             //code Field
-            _mustSubscribeView.CodeFieldKeyPressed += _mustSubscribeView_CodeFieldTextChenged;
+            _mustSubscribeView.CodeFieldKeyPressed += MustSubscribeView_CodeFieldTextChenged;
             _mustSubscribeView.LeaveCodeField += _mustSubscribeView_LeaveCodeField;
 
 
             //enter code button
-            _mustSubscribeView.CodeEnterButtonClciked += _mustSubscribeView_CodeEnterButtonClciked
+            _mustSubscribeView.CodeEnterButtonClciked += MustSubscribeView_CodeEnterButtonClciked
                 ;
 
 
@@ -58,30 +58,30 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe
             {
                 if (_mustSubscribeView is Form thisformMustRegisr)
                 {
-                    thisformMustRegisr.Hide();
+                    thisformMustRegisr.Close();
                 }
             }
         }
 
-        private void _mustSubscribeView_ExitButtonEntered()
+        private void MustSubscribeView_ExitButtonEntered()
         {
             _mustSubscribeView.MakeExitButtonForeRed();
         }
-        private void _mustSubscribeView_ExitButtonLeavd()
+        private void MustSubscribeView_ExitButtonLeavd()
         {
             _mustSubscribeView.MakeExitButtonForeBlack();
         }
 
 
         //tg button
-        private void _mustSubscribeView_TgBotButtonClickClick()
+        private void MustSubscribeView_TgBotButtonClickClick()
         {
             _mustSubscribeModel.GoLink();
         }
 
 
         //code Field
-        private void _mustSubscribeView_CodeFieldTextChenged(object? sender, KeyPressEventArgs e)
+        private void MustSubscribeView_CodeFieldTextChenged(object? sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
@@ -95,7 +95,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe
 
 
         //enter code button
-        private void _mustSubscribeView_CodeEnterButtonClciked()
+        private void MustSubscribeView_CodeEnterButtonClciked()
         {
             throw new NotImplementedException();
         }
