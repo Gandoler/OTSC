@@ -18,7 +18,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.View.MustSubsribe
 
 
         //code Field
-        event EventHandler<EventArgs> CodeFieldTextChenged;
+        event EventHandler<KeyPressEventArgs> CodeFieldKeyPressed;
         event Action LeaveCodeField;
 
 

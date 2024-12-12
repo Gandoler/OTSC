@@ -39,7 +39,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
 
             //code Field
-       
+            _mustSubscribeView.CodeFieldKeyPressed += _mustSubscribeView_CodeFieldTextChenged;
 
 
             //enter code button
@@ -126,15 +126,14 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             #endregion
         }
 
-        private void _mustSubscribeView_TgBotButtonClickClick()
+        private void _mustSubscribeView_CodeFieldTextChenged(object? sender, KeyPressEventArgs e)
         {
-            string url = "t.me/HappyBDay_OTSC_bot";
-            Process.Start(new ProcessStartInfo
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) 
             {
-                FileName = url,
-                UseShellExecute = true // Использовать оболочку операционной системы
-            });
+                e.Handled = true; 
+            }
         }
+
 
 
 
@@ -162,7 +161,15 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
 
         //tg button
-
+        private void _mustSubscribeView_TgBotButtonClickClick()
+        {
+            string url = "t.me/HappyBDay_OTSC_bot";
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true // Использовать оболочку операционной системы
+            });
+        }
 
 
 

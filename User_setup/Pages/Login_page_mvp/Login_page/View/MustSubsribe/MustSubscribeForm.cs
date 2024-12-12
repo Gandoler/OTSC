@@ -29,14 +29,14 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.MustSubsribe
 
 
             //code Field
-            CodeFieldTextBox.TextChanged += (s, e) => CodeFieldTextChenged?.Invoke(this, e);
+            CodeFieldTextBox.KeyPress += (s, e) => CodeFieldKeyPressed?.Invoke(this, e);
             CodeFieldTextBox.Leave += (s, e) => LeaveCodeField?.Invoke();
 
             //enter code button
             EnterCodeButton.Click += (s, e) => CodeEnterButtonClciked?.Invoke();
     }
 
-        public event EventHandler<EventArgs>? CodeFieldTextChenged;
+        public event EventHandler<KeyPressEventArgs>? CodeFieldKeyPressed;
         public event Action? TgBotButtonClickClick;
         public event Action? LeaveCodeField;
         public event Action? CodeEnterButtonClciked;
