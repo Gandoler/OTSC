@@ -11,5 +11,8 @@
     <Setting Name="ID" Type="System.Int64" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="TelegramBot" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://t.me/HappyBDay_OTSC_bot</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

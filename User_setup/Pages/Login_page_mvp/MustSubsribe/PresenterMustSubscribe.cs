@@ -14,7 +14,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe
 
         private readonly IMustSubscribeView _mustSubscribeView;
         private readonly IMustSubscribeModel _mustSubscribeModel;
-        PresenterMustSubscribe(IMustSubscribeView mustSubscribeView, IMustSubscribeModel mustSubscribeModel)
+        public PresenterMustSubscribe(IMustSubscribeView mustSubscribeView, IMustSubscribeModel mustSubscribeModel)
         {
             _mustSubscribeModel = mustSubscribeModel;
 
@@ -76,12 +76,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe
         //tg button
         private void _mustSubscribeView_TgBotButtonClickClick()
         {
-            string url = "t.me/HappyBDay_OTSC_bot";
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = url,
-                UseShellExecute = true
-            });
+            _mustSubscribeModel.GoLink();
         }
 
 

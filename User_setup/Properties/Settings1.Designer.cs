@@ -59,5 +59,17 @@ namespace OTSC_ui.Properties {
                 this["ID"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://t.me/HappyBDay_OTSC_bot")]
+        public string TelegramBot {
+            get {
+                return ((string)(this["TelegramBot"]));
+            }
+            set {
+                this["TelegramBot"] = value;
+            }
+        }
     }
 }

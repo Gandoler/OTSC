@@ -6,7 +6,10 @@ using OTSC_ui.Tools.DBTools.Connection;
 using User_Interface.Login_page_mvp.Login.View.Registr;
 using OTSC_ui.Tools.DBTools.Managers.Login;
 using OTSC_ui.Tools.AppSettingJsonPhars.ConnectionStringManager;
+using OTSC_ui.Pages.Login_page_mvp.MustSubsribe;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.MustSubsribe;
+using OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model;
+
 
 
 namespace OTSC_ui
@@ -34,9 +37,9 @@ namespace OTSC_ui
 
             //PresenterLogin presenter = new(loginFrom, model, registrForm);
 
-
-
-            MustSubscribeForm mustSubscribeForm = new MustSubscribeForm();  
+            IMustSubscribeModel mustSubscribeModel = new MustSubscribeModel();
+            MustSubscribeForm mustSubscribeForm = new MustSubscribeForm();
+            PresenterMustSubscribe presenterMustSubscribe = new PresenterMustSubscribe(mustSubscribeForm, mustSubscribeModel);
             Application.Run(mustSubscribeForm);
 
 
