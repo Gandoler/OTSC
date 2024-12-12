@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OTSC_ui.Pages.Login_page_mvp.Login_page.View.MustSubsribe
+namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.View
 {
     internal interface IMustSubscribeView
     {
@@ -35,5 +35,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.View.MustSubsribe
         void MakeExitButtonForeRed();
         void MakeExitButtonForeBlack();
 
+
+        void CheckEmptyField();
     }
 }

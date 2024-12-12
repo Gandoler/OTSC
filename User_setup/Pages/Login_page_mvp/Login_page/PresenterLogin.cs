@@ -2,8 +2,8 @@
 using OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.Model;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.Model;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Login;
-using OTSC_ui.Pages.Login_page_mvp.Login_page.View.MustSubsribe;
 using OTSC_ui.Pages.Login_page_mvp.Login_page.View.Registr;
+using OTSC_ui.Pages.Login_page_mvp.MustSubsribe.View;
 using OTSC_ui.Tools.AppSettingJsonPhars.ConnectionStringManager;
 using OTSC_ui.Tools.DBTools.Connection;
 using OTSC_ui.Tools.DBTools.Managers.ForgotPSW;
@@ -19,40 +19,17 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         private readonly ILoginView _loginView;
         private readonly ImodelLogin _imodelka;
         private readonly IRegistrView _registrView;
-        private readonly IMustSubscribeView _mustSubscribeView;
 
 
-        internal PresenterLogin(ILoginView loginView, ImodelLogin imodelka, IRegistrView registrView, IMustSubscribeView mustSubscribeView)
+
+        internal PresenterLogin(ILoginView loginView, ImodelLogin imodelka, IRegistrView registrView)
         {
 
-            #region MustRegistr
-            //init
-            _mustSubscribeView = mustSubscribeView;
-
-            //exit button
-            _mustSubscribeView.ExitButtonClick += _mustSubscribeView_ExitButtonClick;
-            _mustSubscribeView.ExitButtonEntered += _mustSubscribeView_ExitButtonEntered;
-            _mustSubscribeView.ExitButtonLeavd += _mustSubscribeView_ExitButtonLeavd;
-
-            //tg button
-            _mustSubscribeView.TgBotButtonClickClick += _mustSubscribeView_TgBotButtonClickClick;
-
-
-            //code Field
-            _mustSubscribeView.CodeFieldKeyPressed += _mustSubscribeView_CodeFieldTextChenged;
-            _mustSubscribeView.LeaveCodeField += _mustSubscribeView_LeaveCodeField;
-
-
-            //enter code button
-       
+           
 
 
 
-        #endregion
-
-
-
-        #region LoginPageConstr
+            #region LoginPageConstr
         //login page
         _loginView = loginView ?? throw new ArgumentNullException(nameof(loginView));
 
@@ -130,55 +107,8 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
 
 
+       
 
-
-        //exit button
-        private void _mustSubscribeView_ExitButtonClick()
-        {
-            //model performance
-            if (true)
-            {
-                if(_mustSubscribeView is Form thisformMustRegisr)
-                {
-                    thisformMustRegisr.Hide();
-                }
-            }
-        }
-
-        private void _mustSubscribeView_ExitButtonEntered()
-        {
-            _mustSubscribeView.MakeExitButtonForeRed();
-        }
-        private void _mustSubscribeView_ExitButtonLeavd()
-        {
-            _mustSubscribeView.MakeExitButtonForeBlack();
-        }
-
-
-        //tg button
-        private void _mustSubscribeView_TgBotButtonClickClick()
-        {
-            string url = "t.me/HappyBDay_OTSC_bot";
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = url,
-                UseShellExecute = true // Использовать оболочку операционной системы
-            });
-        }
-
-
-        //code Field
-        private void _mustSubscribeView_CodeFieldTextChenged(object? sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) 
-            {
-                e.Handled = true; 
-            }
-        }
-        private void _mustSubscribeView_LeaveCodeField()
-        {
-            throw new NotImplementedException();
-        }
 
 
 
@@ -265,7 +195,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
         {
             if (_registrView is Form thisform && _loginView is Form NextForm)
             {
-                thisform.Close();
+                thisform.Hide();
                 NextForm.Show();
             }
         }
@@ -311,6 +241,9 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
 
         #endregion
+
+
+
 
         #region LoginPage
 

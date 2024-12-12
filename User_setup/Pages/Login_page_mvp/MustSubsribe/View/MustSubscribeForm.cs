@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using OTSC_ui.Pages.Login_page_mvp.Login_page.View.MustSubsribe;
+using OTSC_ui.Pages.Login_page_mvp.MustSubsribe.View;
 
 namespace OTSC_ui.Pages.Login_page_mvp.Login_page.MustSubsribe
 {
@@ -43,6 +43,15 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.MustSubsribe
         public event Action? ExitButtonClick;
         public event Action? ExitButtonEntered;
         public event Action? ExitButtonLeavd;
+
+        public void CheckEmptyField()
+        {
+            if (CodeFieldTextBox.Text.Equals(""))
+            {
+                CodeFieldTextBox.Clear();
+                CodeFieldTextBox.Refresh();
+            }
+        }
 
         public void MakeEnterCodeButtonEnable()
         {
