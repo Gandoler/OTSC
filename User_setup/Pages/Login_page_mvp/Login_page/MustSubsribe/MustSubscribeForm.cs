@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace OTSC_ui.Pages.Login_page_mvp.Login_page.MustSubsribe
 {
-    public partial class MustSubscribe : Form
+    public partial class MustSubscribeForm : Form
     {
-        public MustSubscribe()
+        public MustSubscribeForm()
         {
             InitializeComponent();
+        }
+
+        private void guna2ButtonTEstPictrue_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

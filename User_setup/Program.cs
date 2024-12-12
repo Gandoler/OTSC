@@ -6,6 +6,7 @@ using OTSC_ui.Tools.DBTools.Connection;
 using User_Interface.Login_page_mvp.Login.View.Registr;
 using OTSC_ui.Tools.DBTools.Managers.Login;
 using OTSC_ui.Tools.AppSettingJsonPhars.ConnectionStringManager;
+using OTSC_ui.Pages.Login_page_mvp.Login_page.MustSubsribe;
 
 
 namespace OTSC_ui
@@ -20,19 +21,23 @@ namespace OTSC_ui
                 .WriteTo.File("C:/Users/glkru/OneDrive/Desktop/prj/Project_cpo/User_setup/Properties/logs/myapp.log", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
-            string? connectionString;
-            do
-            {
-                connectionString = ConnectionStringManager.GetConnectionString();
-            } while (connectionString == null);
+            //string? connectionString;
+            //do
+            //{
+            //    connectionString = ConnectionStringManager.GetConnectionString();
+            //} while (connectionString == null);
 
-            ConnectDBManager connectDBManager = new ConnectDBManager(connectionString);
-            ModelLogin model = new(new LoginManager(connectDBManager));
-            LoginFrom loginFrom = new LoginFrom();
-            RegistrForm registrForm = new RegistrForm();
+            //ConnectDBManager connectDBManager = new ConnectDBManager(connectionString);
+            //ModelLogin model = new(new LoginManager(connectDBManager));
+            //LoginFrom loginFrom = new LoginFrom();
+            //RegistrForm registrForm = new RegistrForm();
 
-            PresenterLogin presenter = new(loginFrom, model, registrForm);
-            Application.Run(loginFrom);
+            //PresenterLogin presenter = new(loginFrom, model, registrForm);
+
+
+
+            MustSubscribeForm mustSubscribeForm = new MustSubscribeForm();  
+            Application.Run(mustSubscribeForm);
 
 
             //EmailEnterfrom emailEnterfrom = new EmailEnterfrom();

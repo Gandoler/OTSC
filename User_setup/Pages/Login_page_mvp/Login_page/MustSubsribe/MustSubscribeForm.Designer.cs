@@ -1,6 +1,6 @@
 ﻿namespace OTSC_ui.Pages.Login_page_mvp.Login_page.MustSubsribe
 {
-    partial class MustSubscribe
+    partial class MustSubscribeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MustSubscribe));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MustSubscribeForm));
             panelBackTitle = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             ExitButton = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
@@ -49,7 +51,8 @@
             EmailFieldTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             panel1 = new Panel();
             SendCodeButton = new Guna.UI2.WinForms.Guna2Button();
-            linkLabel1 = new LinkLabel();
+            guna2ButtonTEstPictrue = new Guna.UI2.WinForms.Guna2Button();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panelBackTitle.SuspendLayout();
             SuspendLayout();
             // 
@@ -99,7 +102,7 @@
             label1.Name = "label1";
             label1.Size = new Size(300, 31);
             label1.TabIndex = 4;
-            label1.Text = "RECOVERY";
+            label1.Text = "Subsicription";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // logoPanel
@@ -188,24 +191,47 @@
             SendCodeButton.TabIndex = 49;
             SendCodeButton.Text = "Enter Code";
             // 
-            // linkLabel1
+            // guna2ButtonTEstPictrue
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(123, 97);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(60, 15);
-            linkLabel1.TabIndex = 54;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "linkLabel1";
+            guna2ButtonTEstPictrue.BackColor = Color.Transparent;
+            guna2ButtonTEstPictrue.BorderRadius = 15;
+            guna2ButtonTEstPictrue.CustomizableEdges = customizableEdges10;
+            guna2ButtonTEstPictrue.DisabledState.BorderColor = Color.DarkGray;
+            guna2ButtonTEstPictrue.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2ButtonTEstPictrue.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2ButtonTEstPictrue.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2ButtonTEstPictrue.FillColor = Color.FromArgb(63, 99, 145);
+            guna2ButtonTEstPictrue.Font = new Font("Segoe UI", 9F);
+            guna2ButtonTEstPictrue.ForeColor = Color.White;
+            guna2ButtonTEstPictrue.Image = Properties.Resources.Telegram_2013_logo_svg;
+            guna2ButtonTEstPictrue.ImageSize = new Size(40, 40);
+            guna2ButtonTEstPictrue.Location = new Point(199, 83);
+            guna2ButtonTEstPictrue.Name = "guna2ButtonTEstPictrue";
+            guna2ButtonTEstPictrue.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            guna2ButtonTEstPictrue.Size = new Size(50, 50);
+            guna2ButtonTEstPictrue.TabIndex = 55;
             // 
-            // MustSubscribe
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Stencil", 22F);
+            guna2HtmlLabel1.ForeColor = Color.FromArgb(63, 99, 145);
+            guna2HtmlLabel1.IsSelectionEnabled = false;
+            guna2HtmlLabel1.Location = new Point(48, 90);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(66, 36);
+            guna2HtmlLabel1.TabIndex = 57;
+            guna2HtmlLabel1.Text = "BOT:";
+            // 
+            // MustSubscribeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.OnlyReflenniyForMustSubscribe;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(300, 350);
-            Controls.Add(linkLabel1);
+            Controls.Add(guna2HtmlLabel1);
+            Controls.Add(guna2ButtonTEstPictrue);
             Controls.Add(panelBackTitle);
             Controls.Add(logoPanel);
             Controls.Add(guna2ImageButton1);
@@ -215,7 +241,7 @@
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "MustSubscribe";
+            Name = "MustSubscribeForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "MustSubscribe";
             panelBackTitle.ResumeLayout(false);
@@ -235,6 +261,7 @@
         private Guna.UI2.WinForms.Guna2TextBox EmailFieldTextBox;
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2Button SendCodeButton;
-        private LinkLabel linkLabel1;
+        private Guna.UI2.WinForms.Guna2Button guna2ButtonTEstPictrue;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }
