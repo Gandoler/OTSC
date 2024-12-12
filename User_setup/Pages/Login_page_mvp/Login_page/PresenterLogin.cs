@@ -9,6 +9,7 @@ using OTSC_ui.Tools.DBTools.Connection;
 using OTSC_ui.Tools.DBTools.Managers.ForgotPSW;
 using OTSC_ui.Tools.SendMailWithcode.CodeGenerate;
 using OTSC_ui.Tools.SendMailWithcode.CodeSend;
+using System.Diagnostics;
 using User_Interface.Login_page_mvp.ForgotPasswordPage.View;
 
 namespace OTSC_ui.Pages.Login_page_mvp.Login_page
@@ -34,6 +35,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             _mustSubscribeView.ExitButtonLeavd += _mustSubscribeView_ExitButtonLeavd;
 
             //tg button
+            _mustSubscribeView.TgBotButtonClickClick += _mustSubscribeView_TgBotButtonClickClick;
 
 
             //code Field
@@ -124,6 +126,16 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             #endregion
         }
 
+        private void _mustSubscribeView_TgBotButtonClickClick()
+        {
+            string url = "t.me/HappyBDay_OTSC_bot";
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true // Использовать оболочку операционной системы
+            });
+        }
+
 
 
         //exit button
@@ -141,12 +153,17 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
         private void _mustSubscribeView_ExitButtonEntered()
         {
-            throw new NotImplementedException();
+            _mustSubscribeView.MakeExitButtonForeRed();
         }
         private void _mustSubscribeView_ExitButtonLeavd()
         {
-            throw new NotImplementedException();
+            _mustSubscribeView.MakeExitButtonForeBlack();
         }
+
+
+        //tg button
+
+
 
 
 
