@@ -10,6 +10,9 @@ namespace OTSC_ui.Tools.AppSettingJsonPhars.Temaplates
         [JsonProperty("emailSetings")]
         public EmailSettings EmailSettings { get; set; } = new EmailSettings();
 
+        [JsonProperty("botSettings")]
+        public BotSettings BotSettings { get; set; }  =new BotSettings();
+
         public string GetConnectionString()
         {
             return EmailSettings?.ToString() + ServerSettings?.ToString();

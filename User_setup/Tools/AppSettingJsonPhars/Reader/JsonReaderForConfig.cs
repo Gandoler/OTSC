@@ -37,7 +37,7 @@ namespace OTSC_ui.Tools.AppSettingJsonPhars.Reader
                     throw new JsonException("Empty or bad file");
                 }
 
-                Log.Information($"JsonReaderForConfig:      Deserialized object: {deserializedObject.ToString()}");
+                Log.Information($"JsonReaderForConfig:      Deserialized object: {deserializedObject}");
 
                 return deserializedObject;
             }
