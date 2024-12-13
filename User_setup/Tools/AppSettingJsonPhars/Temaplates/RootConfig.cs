@@ -2,7 +2,7 @@
 
 namespace OTSC_ui.Tools.AppSettingJsonPhars.Temaplates
 {
-    internal class RootConfig : Itemplates
+    internal class RootConfig : ITemplates
     {
         [JsonProperty("serverSetings")] // Укажите правильное имя из JSON
         public ServerSettings ServerSettings { get; set; } = new ServerSettings();
@@ -10,8 +10,6 @@ namespace OTSC_ui.Tools.AppSettingJsonPhars.Temaplates
         [JsonProperty("emailSetings")]
         public EmailSettings EmailSettings { get; set; } = new EmailSettings();
 
-        [JsonProperty("botSettings")]
-        public BotSettings BotSettings { get; set; }  =new BotSettings();
 
         public string GetConnectionString()
         {
