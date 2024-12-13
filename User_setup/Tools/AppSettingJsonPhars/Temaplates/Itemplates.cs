@@ -1,6 +1,6 @@
 ﻿namespace OTSC_ui.Tools.AppSettingJsonPhars.Temaplates
 {
-    internal interface Itemplates
+    internal interface ITemplates
     {
         public string GetConnectionString();
     }

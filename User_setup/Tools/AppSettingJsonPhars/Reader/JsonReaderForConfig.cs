@@ -7,7 +7,7 @@ namespace OTSC_ui.Tools.AppSettingJsonPhars.Reader
 {
     internal class JsonReaderForConfig : IJsonReaderForConfig
     {
-        public T Read<T>(string filePath) where T : Itemplates
+        public T Read<T>(string filePath) where T : ITemplates
         {
             try
             {

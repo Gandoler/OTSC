@@ -2,7 +2,7 @@
 
 namespace OTSC_ui.Tools.AppSettingJsonPhars.Temaplates
 {
-    public class ServerSettings : Itemplates
+    public class ServerSettings : ITemplates
     {
         public string Server { get; set; } = string.Empty;
         public int Port { get; set; }

@@ -2,7 +2,7 @@
 
 namespace OTSC_ui.Tools.AppSettingJsonPhars.Temaplates
 {
-    public class EmailSettings : Itemplates
+    public class EmailSettings : ITemplates
     {
         public string SmtpServer { get; set; } = string.Empty;
         public int SmtpPort { get; set; }

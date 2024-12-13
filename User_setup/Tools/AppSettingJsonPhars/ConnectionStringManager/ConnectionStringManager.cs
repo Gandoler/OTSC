@@ -40,10 +40,6 @@ namespace OTSC_ui.Tools.AppSettingJsonPhars.ConnectionStringManager
         {
             return rootConfig.EmailSettings;
         }
-        public static string GetToken()
-        {
-            return rootConfig.BotSettings.GetConnectionString() ?? string.Empty;
-        }
-
+       
     }
 }
