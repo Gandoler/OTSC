@@ -24,6 +24,8 @@ namespace OTSC_ui
                 .WriteTo.File("C:/Users/glkru/OneDrive/Desktop/prj/Project_cpo/User_setup/Properties/logs/myapp.log", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
+
+            Log.Information("App start");
             string? connectionString;
             do
             {
@@ -38,7 +40,7 @@ namespace OTSC_ui
             PresenterLogin presenter = new(loginFrom, model, registrForm);
 
             Application.Run(loginFrom);
-
+            Log.Information("App stop");
 
 
             Log.CloseAndFlush();

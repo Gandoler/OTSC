@@ -67,7 +67,6 @@
 
   <ItemGroup>
     <Folder Include="Properties\logs\" />
-    <Folder Include="Tools\TelegramTools\" />
   </ItemGroup>
 
   <ItemGroup>
