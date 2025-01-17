@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,17 +11,19 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model
 {
     internal class MustSubscribeModel : IMustSubscribeModel
     {
+        private readonly HttpClient _httpClient;
         public event Action? CodeCorrect;
+        private int code;
 
-
-        public MustSubscribeModel()
+        public MustSubscribeModel( HttpClient httpClient)
         {
-
+            _httpClient = httpClient;
         }
 
         public void CheckCode(string Code)
         {
             CodeCorrect?.Invoke();
+           
         }
 
         public void GoLink()
@@ -40,9 +43,17 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model
             }
         }
 
-        public void SendCode(string Code)
+        public void SendCode()// пока как есть напишу потом над все грамотно вынести
         {
-            throw new NotImplementedException();
+            string url = "http://localhost:5291/VerificationCode/";
+            url += Properties.Settings1.Default.ID;
+
+
+            var requestbody = new
+            {
+                message,
+                Code
+            };
         }
 
         public Task SendCodeToTelegram()
