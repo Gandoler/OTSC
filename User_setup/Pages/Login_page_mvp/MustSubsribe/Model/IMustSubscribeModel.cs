@@ -15,7 +15,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model
 
 
         void CheckCode(string Code);
-        Task GetCode();
+        Task GetCodeHttp();
 
         void GoLink();
     }

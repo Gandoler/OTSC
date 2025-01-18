@@ -57,7 +57,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model
             }
         }
 
-        public async Task GetCode()// пока как есть напишу потом над все грамотно вынести
+        public async Task GetCodeHttp()// пока как есть напишу потом над все грамотно вынести
         {
             string url = "http://localhost:5291/VerificationCode/";
             url += Properties.Settings1.Default.ID.ToString();
@@ -88,7 +88,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model
             }
             else
             {
-                Log.Information($"Bad response in {nameof(GetCode)}");
+                Log.Information($"Bad response in {nameof(GetCodeHttp)}");
                 
             }
         }
@@ -125,7 +125,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model
             }
             else
             {
-                Log.Information($"Bad response in {nameof(GetCode)}");
+                Log.Information($"Bad response in {nameof(GetCodeHttp)}");
 
             }
         }

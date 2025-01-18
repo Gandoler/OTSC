@@ -16,9 +16,13 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe
         private readonly IMustSubscribeModel _mustSubscribeModel;
         public PresenterMustSubscribe(IMustSubscribeView mustSubscribeView, IMustSubscribeModel mustSubscribeModel)
         {
+            #region Model
+
             _mustSubscribeModel = mustSubscribeModel;
+            _mustSubscribeModel.CodeIncorect += _mustSubscribeModel_CodeIncorect;
+            _mustSubscribeModel.CodeCorrect += _mustSubscribeModel_CodeСorect;
 
-
+            #endregion
 
             #region MustRegistr
             //init
@@ -36,16 +40,38 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe
             //code Field
             _mustSubscribeView.CodeFieldKeyPressed += MustSubscribeView_CodeFieldTextChenged;
             _mustSubscribeView.LeaveCodeField += _mustSubscribeView_LeaveCodeField;
-            _mustSubscribeView.CodeFieldEntered += _mustSubscribeView_CodeFieldEntered;
+            
 
             //enter code button
-            _mustSubscribeView.CodeEnterButtonClciked += MustSubscribeView_CodeEnterButtonClciked
-                ;
+            _mustSubscribeView.CodeEnterButtonClciked += MustSubscribeView_CodeEnterButtonClciked;
 
-
+            //send Code Button
+            _mustSubscribeView.SendCodeButtonLeavd += () => _mustSubscribeView.MakeBackColorSendCodeDefault();
+            _mustSubscribeView.SendCodeButtonEntered += () => _mustSubscribeView.MakeBackColorSendCodeBlue();
+            _mustSubscribeView.sendCodeButtonClick += _mustSubscribeView_sendCodeButtonClick;
 
             #endregion
         }
+
+
+
+        #region ModelFunc
+        private void _mustSubscribeModel_CodeIncorect()
+        {
+            MessageBox.Show("Code Mismatch", "error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void _mustSubscribeModel_CodeСorect()
+        {
+            if(this._mustSubscribeView is Form ThisForm){
+                ThisForm.DialogResult = DialogResult.OK;
+                ThisForm.Close();
+
+            }
+        }
+        #endregion
+
+
 
 
 
@@ -88,22 +114,28 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe
             {
                 e.Handled = true;
             }
+            
         }
         private void _mustSubscribeView_LeaveCodeField()
         {
             _mustSubscribeView.CheckEmptyField();
         }
-        private void _mustSubscribeView_CodeFieldEntered()
-        {
-            _mustSubscribeModel.GetCode();
-        }
+       
 
 
         //enter code button
-        private void MustSubscribeView_CodeEnterButtonClciked()
+        private void MustSubscribeView_CodeEnterButtonClciked(string input)
         {
-            throw new NotImplementedException();
+            _mustSubscribeModel.CheckCode(input);
+        }
+        
+        
+        //send Code Button
+        private void _mustSubscribeView_sendCodeButtonClick()
+        {
+            _mustSubscribeModel.GetCodeHttp();
         }
         #endregion
+
     }
 }

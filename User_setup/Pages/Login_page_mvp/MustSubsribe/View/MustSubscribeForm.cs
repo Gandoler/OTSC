@@ -31,20 +31,39 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.MustSubsribe
             //code Field
             CodeFieldTextBox.KeyPress += (s, e) => CodeFieldKeyPressed?.Invoke(this, e);
             CodeFieldTextBox.Leave += (s, e) => LeaveCodeField?.Invoke();
-            CodeFieldTextBox.Enter += (s, e) => CodeFieldEntered?.Invoke();
+
 
             //enter code button
-            EnterCodeButton.Click += (s, e) => CodeEnterButtonClciked?.Invoke();
-        }
+            CodeEnterButton.Click += (s, e) => CodeEnterButtonClciked?.Invoke(CodeFieldTextBox.Text);
 
-        public event EventHandler<KeyPressEventArgs>? CodeFieldKeyPressed;
+
+            //send Code Button
+            CodeSendButton.Enter += (s, e) => SendCodeButtonEntered?.Invoke();
+            CodeSendButton.Leave += (s, e) => SendCodeButtonLeavd?.Invoke();
+            CodeSendButton.Click += (s, e) => sendCodeButtonClick?.Invoke();
+
+
+        }
+        //tg button
         public event Action? TgBotButtonClickClick;
+
+        //code Field
+        public event EventHandler<KeyPressEventArgs>? CodeFieldKeyPressed;
         public event Action? LeaveCodeField;
-        public event Action? CodeEnterButtonClciked;
+
+        //enter code button
+        public event Action<string>? CodeEnterButtonClciked;
+        
+        //exit button
         public event Action? ExitButtonClick;
         public event Action? ExitButtonEntered;
         public event Action? ExitButtonLeavd;
-        public event Action? CodeFieldEntered;
+        
+        
+        //send Code Button
+        public event Action? sendCodeButtonClick;
+        public event Action? SendCodeButtonEntered;
+        public event Action? SendCodeButtonLeavd;
 
         public void CheckEmptyField()
         {
@@ -55,14 +74,24 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.MustSubsribe
             }
         }
 
+        public void MakeBackColorSendCodeBlue()
+        {
+            CodeSendButton.FillColor=Color.AliceBlue;
+        }
+
+        public void MakeBackColorSendCodeDefault()
+        {
+            CodeSendButton.FillColor=Color.FromArgb(201, 209, 200);
+        }
+
         public void MakeEnterCodeButtonEnable()
         {
-            EnterCodeButton.Enabled = true;
+            CodeEnterButton.Enabled = true;
         }
 
         public void MakeEnterCodeEnterButtonDisable()
         {
-            EnterCodeButton.Enabled = false;
+            CodeEnterButton.Enabled = false;
         }
 
         public void MakeErrorImageVisibleFalse()

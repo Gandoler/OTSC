@@ -20,23 +20,38 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.View
         //code Field
         event EventHandler<KeyPressEventArgs> CodeFieldKeyPressed;
         event Action LeaveCodeField;
-        event Action CodeFieldEntered;
+        
 
 
         //enter code button
-        event Action CodeEnterButtonClciked;
+        event Action<string> CodeEnterButtonClciked;
+
+
+        //send Code Button
+        
+        event Action sendCodeButtonClick;
+        event Action SendCodeButtonEntered;
+        event Action SendCodeButtonLeavd;
 
 
 
 
-        void MakeErrorImageVisibleTrue();
-        void MakeErrorImageVisibleFalse();
-        void MakeEnterCodeButtonEnable();
-        void MakeEnterCodeEnterButtonDisable();
+        //exit button
         void MakeExitButtonForeRed();
         void MakeExitButtonForeBlack();
 
 
+        //code Field
         void CheckEmptyField();
+        void MakeErrorImageVisibleTrue();
+        void MakeErrorImageVisibleFalse();
+
+        //enter code button
+        void MakeEnterCodeButtonEnable();
+        void MakeEnterCodeEnterButtonDisable();
+
+        //send Code Button
+        void MakeBackColorSendCodeBlue();
+        void MakeBackColorSendCodeDefault();
     }
 }

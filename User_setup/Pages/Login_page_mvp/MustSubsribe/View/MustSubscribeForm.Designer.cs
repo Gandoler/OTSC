@@ -40,6 +40,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MustSubscribeForm));
             panelBackTitle = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             ExitButton = new Guna.UI2.WinForms.Guna2Button();
@@ -50,9 +52,10 @@
             ErrorImage = new Guna.UI2.WinForms.Guna2ImageButton();
             CodeFieldTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             panel1 = new Panel();
-            EnterCodeButton = new Guna.UI2.WinForms.Guna2Button();
             TgButton = new Guna.UI2.WinForms.Guna2Button();
             BotLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            CodeSendButton = new Guna.UI2.WinForms.Guna2Button();
+            CodeEnterButton = new Guna.UI2.WinForms.Guna2Button();
             panelBackTitle.SuspendLayout();
             SuspendLayout();
             // 
@@ -125,7 +128,7 @@
             ErrorImage.ImageOffset = new Point(0, 0);
             ErrorImage.ImageRotate = 0F;
             ErrorImage.ImageSize = new Size(32, 32);
-            ErrorImage.Location = new Point(200, 159);
+            ErrorImage.Location = new Point(188, 159);
             ErrorImage.Name = "ErrorImage";
             ErrorImage.PressedState.ImageSize = new Size(64, 64);
             ErrorImage.ShadowDecoration.CustomizableEdges = customizableEdges5;
@@ -149,7 +152,7 @@
             CodeFieldTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             CodeFieldTextBox.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             CodeFieldTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            CodeFieldTextBox.Location = new Point(48, 150);
+            CodeFieldTextBox.Location = new Point(62, 150);
             CodeFieldTextBox.Margin = new Padding(5, 4, 5, 4);
             CodeFieldTextBox.MaxLength = 20;
             CodeFieldTextBox.Name = "CodeFieldTextBox";
@@ -158,7 +161,7 @@
             CodeFieldTextBox.PlaceholderText = "Telegram code:";
             CodeFieldTextBox.SelectedText = "";
             CodeFieldTextBox.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            CodeFieldTextBox.Size = new Size(200, 50);
+            CodeFieldTextBox.Size = new Size(168, 50);
             CodeFieldTextBox.TabIndex = 52;
             // 
             // panel1
@@ -171,31 +174,11 @@
             panel1.Size = new Size(0, 0);
             panel1.TabIndex = 51;
             // 
-            // EnterCodeButton
-            // 
-            EnterCodeButton.BackColor = Color.Transparent;
-            EnterCodeButton.BorderRadius = 15;
-            EnterCodeButton.CustomizableEdges = customizableEdges8;
-            EnterCodeButton.DisabledState.BorderColor = Color.DarkGray;
-            EnterCodeButton.DisabledState.CustomBorderColor = Color.DarkGray;
-            EnterCodeButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            EnterCodeButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            EnterCodeButton.Enabled = false;
-            EnterCodeButton.FillColor = Color.FromArgb(48, 64, 64);
-            EnterCodeButton.Font = new Font("Microsoft Sans Serif", 10F);
-            EnterCodeButton.ForeColor = Color.White;
-            EnterCodeButton.Location = new Point(48, 207);
-            EnterCodeButton.Name = "EnterCodeButton";
-            EnterCodeButton.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            EnterCodeButton.Size = new Size(200, 50);
-            EnterCodeButton.TabIndex = 49;
-            EnterCodeButton.Text = "Enter Code";
-            // 
             // TgButton
             // 
             TgButton.BackColor = Color.Transparent;
             TgButton.BorderRadius = 15;
-            TgButton.CustomizableEdges = customizableEdges10;
+            TgButton.CustomizableEdges = customizableEdges8;
             TgButton.DisabledState.BorderColor = Color.DarkGray;
             TgButton.DisabledState.CustomBorderColor = Color.DarkGray;
             TgButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -205,9 +188,9 @@
             TgButton.ForeColor = Color.White;
             TgButton.Image = Properties.Resources.Telegram_2013_logo_svg;
             TgButton.ImageSize = new Size(40, 40);
-            TgButton.Location = new Point(200, 90);
+            TgButton.Location = new Point(238, 90);
             TgButton.Name = "TgButton";
-            TgButton.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            TgButton.ShadowDecoration.CustomizableEdges = customizableEdges9;
             TgButton.Size = new Size(50, 50);
             TgButton.TabIndex = 55;
             // 
@@ -217,11 +200,51 @@
             BotLabel.Font = new Font("Microsoft Sans Serif", 22F);
             BotLabel.ForeColor = Color.FromArgb(63, 99, 145);
             BotLabel.IsSelectionEnabled = false;
-            BotLabel.Location = new Point(48, 97);
+            BotLabel.Location = new Point(118, 97);
             BotLabel.Name = "BotLabel";
             BotLabel.Size = new Size(71, 35);
             BotLabel.TabIndex = 57;
             BotLabel.Text = "BOT:";
+            // 
+            // CodeSendButton
+            // 
+            CodeSendButton.BackColor = Color.Transparent;
+            CodeSendButton.BorderRadius = 15;
+            CodeSendButton.CustomizableEdges = customizableEdges10;
+            CodeSendButton.DisabledState.BorderColor = Color.DarkGray;
+            CodeSendButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            CodeSendButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            CodeSendButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            CodeSendButton.FillColor = Color.FromArgb(201, 209, 200);
+            CodeSendButton.Font = new Font("Segoe UI", 9F);
+            CodeSendButton.ForeColor = Color.White;
+            CodeSendButton.Image = Properties.Resources.free_icon_qr_code_scan_5703759;
+            CodeSendButton.ImageSize = new Size(40, 40);
+            CodeSendButton.Location = new Point(238, 150);
+            CodeSendButton.Name = "CodeSendButton";
+            CodeSendButton.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            CodeSendButton.Size = new Size(50, 50);
+            CodeSendButton.TabIndex = 58;
+            // 
+            // CodeEnterButton
+            // 
+            CodeEnterButton.BackColor = Color.Transparent;
+            CodeEnterButton.BorderRadius = 15;
+            CodeEnterButton.CustomizableEdges = customizableEdges12;
+            CodeEnterButton.DisabledState.BorderColor = Color.DarkGray;
+            CodeEnterButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            CodeEnterButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            CodeEnterButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            CodeEnterButton.Enabled = false;
+            CodeEnterButton.FillColor = Color.FromArgb(48, 64, 64);
+            CodeEnterButton.Font = new Font("Microsoft Sans Serif", 10F);
+            CodeEnterButton.ForeColor = Color.White;
+            CodeEnterButton.Location = new Point(62, 207);
+            CodeEnterButton.Name = "CodeEnterButton";
+            CodeEnterButton.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            CodeEnterButton.Size = new Size(168, 50);
+            CodeEnterButton.TabIndex = 59;
+            CodeEnterButton.Text = "Enter";
             // 
             // MustSubscribeForm
             // 
@@ -230,6 +253,8 @@
             BackgroundImage = Properties.Resources.OnlyReflenniyForMustSubscribe;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(300, 350);
+            Controls.Add(CodeEnterButton);
+            Controls.Add(CodeSendButton);
             Controls.Add(BotLabel);
             Controls.Add(TgButton);
             Controls.Add(panelBackTitle);
@@ -237,7 +262,6 @@
             Controls.Add(ErrorImage);
             Controls.Add(CodeFieldTextBox);
             Controls.Add(panel1);
-            Controls.Add(EnterCodeButton);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -260,8 +284,9 @@
         private Guna.UI2.WinForms.Guna2ImageButton ErrorImage;
         private Guna.UI2.WinForms.Guna2TextBox CodeFieldTextBox;
         private Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button EnterCodeButton;
         private Guna.UI2.WinForms.Guna2Button TgButton;
         private Guna.UI2.WinForms.Guna2HtmlLabel BotLabel;
+        private Guna.UI2.WinForms.Guna2Button CodeSendButton;
+        private Guna.UI2.WinForms.Guna2Button CodeEnterButton;
     }
 }
