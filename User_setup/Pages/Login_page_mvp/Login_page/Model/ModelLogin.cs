@@ -99,6 +99,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
             try
             {
                 if (_loginManager.Registr(_login, _email, _password)){
+                    Properties.Settings1.Default.ID = _login;
                     UserRegistered?.Invoke();
                 }
                 else

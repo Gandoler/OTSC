@@ -49,7 +49,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe
             _mustSubscribeView.SendCodeButtonLeavd += () => _mustSubscribeView.MakeBackColorSendCodeDefault();
             _mustSubscribeView.SendCodeButtonEntered += () => _mustSubscribeView.MakeBackColorSendCodeBlue();
             _mustSubscribeView.sendCodeButtonClick += _mustSubscribeView_sendCodeButtonClick;
-
+            _mustSubscribeView.sendCodeButtonClick += () => _mustSubscribeView.MakeEnterCodeButtonEnable();
             #endregion
         }
 
