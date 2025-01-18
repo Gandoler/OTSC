@@ -14,12 +14,15 @@
     <Compile Remove="Pages\Login_page_mvp\Forgor_password\**" />
     <Compile Remove="Pages\Login_page_mvp\Registration\**" />
     <Compile Remove="Pages\MainPageMvp\NotifyPage\**" />
+    <Compile Remove="Properties\logs\**" />
     <EmbeddedResource Remove="Pages\Login_page_mvp\Forgor_password\**" />
     <EmbeddedResource Remove="Pages\Login_page_mvp\Registration\**" />
     <EmbeddedResource Remove="Pages\MainPageMvp\NotifyPage\**" />
+    <EmbeddedResource Remove="Properties\logs\**" />
     <None Remove="Pages\Login_page_mvp\Forgor_password\**" />
     <None Remove="Pages\Login_page_mvp\Registration\**" />
     <None Remove="Pages\MainPageMvp\NotifyPage\**" />
+    <None Remove="Properties\logs\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -66,7 +69,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Properties\logs\" />
+    <Folder Include="Logs\" />
   </ItemGroup>
 
   <ItemGroup>

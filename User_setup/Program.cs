@@ -21,7 +21,7 @@ namespace OTSC_ui
         static void Main()
         {
             Log.Logger = new LoggerConfiguration()
-                .WriteTo.File("C:/Users/glkru/OneDrive/Desktop/prj/Project_cpo/User_setup/Properties/logs/myapp.log", rollingInterval: RollingInterval.Day)
+                .WriteTo.File(@"C:\Users\Николай\Source\Repos\Gandoler\Project_cpo\User_setup\Logs\myapp.log", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
 

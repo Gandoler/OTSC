@@ -12,7 +12,7 @@ namespace OTSC_ui.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.11.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.12.0.0")]
     internal sealed partial class Settings1 : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings1 defaultInstance = ((Settings1)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings1())));
@@ -37,8 +37,8 @@ namespace OTSC_ui.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\glkru\\OneDrive\\Desktop\\prj\\Project_cpo\\User_setup\\Tools\\AppSettingJsonPh" +
-            "ars\\RealSAppSettimgs.json")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Николай\\Source\\Repos\\Gandoler\\Project_cpo\\User_setup\\Properties\\Secretik" +
+            "i.json")]
         public string AppsettingsPath {
             get {
                 return ((string)(this["AppsettingsPath"]));

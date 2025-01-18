@@ -1,11 +1,14 @@
-﻿using Serilog;
+﻿using Newtonsoft.Json;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model
 {
@@ -43,20 +46,36 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model
             }
         }
 
-        public void SendCode()// пока как есть напишу потом над все грамотно вынести
+        public async void SendCode()// пока как есть напишу потом над все грамотно вынести
         {
             string url = "http://localhost:5291/VerificationCode/";
             url += Properties.Settings1.Default.ID;
 
-
-            var requestbody = new
+            var requestBody = new
             {
-                message,
-                Code
+                username,
+                telegramId = telegramId
             };
+
+            var response = await _httpClient.GetAsync( url );
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonResponse = await response.Content.ReadAsStringAsync();
+                if (!string.IsNullOrEmpty(jsonResponse)) 
+                {
+                    var verificationResponse = JsonConvert.DeserializeObject<requestBody>(jsonResponse);
+                }
+
+            }
+            
         }
 
         public Task SendCodeToTelegram()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SendCode(string Code)
         {
             throw new NotImplementedException();
         }
