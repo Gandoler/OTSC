@@ -10,14 +10,12 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model
     {
 
         event Action CodeCorrect;
-        
+        event Action CodeIncorect;
 
 
 
         void CheckCode(string Code);
-        Task SendCodeToTelegram();
-
-        void SendCode(string Code);
+        Task GetCode();
 
         void GoLink();
     }

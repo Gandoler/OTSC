@@ -36,7 +36,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe
             //code Field
             _mustSubscribeView.CodeFieldKeyPressed += MustSubscribeView_CodeFieldTextChenged;
             _mustSubscribeView.LeaveCodeField += _mustSubscribeView_LeaveCodeField;
-
+            _mustSubscribeView.CodeFieldEntered += _mustSubscribeView_CodeFieldEntered;
 
             //enter code button
             _mustSubscribeView.CodeEnterButtonClciked += MustSubscribeView_CodeEnterButtonClciked
@@ -46,6 +46,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe
 
             #endregion
         }
+
 
 
 
@@ -91,6 +92,10 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe
         private void _mustSubscribeView_LeaveCodeField()
         {
             _mustSubscribeView.CheckEmptyField();
+        }
+        private void _mustSubscribeView_CodeFieldEntered()
+        {
+            _mustSubscribeModel.GetCode();
         }
 
 

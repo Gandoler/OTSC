@@ -31,10 +31,11 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.MustSubsribe
             //code Field
             CodeFieldTextBox.KeyPress += (s, e) => CodeFieldKeyPressed?.Invoke(this, e);
             CodeFieldTextBox.Leave += (s, e) => LeaveCodeField?.Invoke();
+            CodeFieldTextBox.Enter += (s, e) => CodeFieldEntered?.Invoke();
 
             //enter code button
             EnterCodeButton.Click += (s, e) => CodeEnterButtonClciked?.Invoke();
-    }
+        }
 
         public event EventHandler<KeyPressEventArgs>? CodeFieldKeyPressed;
         public event Action? TgBotButtonClickClick;
@@ -43,6 +44,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.MustSubsribe
         public event Action? ExitButtonClick;
         public event Action? ExitButtonEntered;
         public event Action? ExitButtonLeavd;
+        public event Action? CodeFieldEntered;
 
         public void CheckEmptyField()
         {
@@ -82,5 +84,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.MustSubsribe
         {
             ExitButton.ForeColor = Color.Red;
         }
+
+      
     }
 }

@@ -20,6 +20,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.View
         //code Field
         event EventHandler<KeyPressEventArgs> CodeFieldKeyPressed;
         event Action LeaveCodeField;
+        event Action CodeFieldEntered;
 
 
         //enter code button
