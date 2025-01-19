@@ -109,6 +109,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
             }
             else
             {
+                Properties.Settings1.Default.ID = _login;
                 UserDidntExist?.Invoke();
             }
 
