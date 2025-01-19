@@ -15,14 +15,21 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
             _loginManager = loginManager;
         }
 
+        
+        //login
         public event Action? LoginGo;
         public event Action? LogMismatch;
-        public event Action? UserExist;
-        public event Action? UserRegistered;
         public event EventHandler<string>? LoginFailed;
+
+        //registr
+        public event Action? UserRegistered;
         public event EventHandler<string>? UserNotRegistered;
 
-        //public event Action UserExist;
+
+
+        //check user existance
+        public event Action? UserExist;
+        public event Action? UserDidntExist;
 
         public long Login
         {
@@ -91,6 +98,21 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
             catch (Exception exception) {
                 LoginFailed?.Invoke(this, exception.Message);
             }
+
+        }
+
+        public void CheckUserDidntExist()
+        {
+            if(!_loginManager.CheckUserDidntExist(_login, _email))
+            {
+                UserExist?.Invoke();
+            }
+            else
+            {
+                UserDidntExist?.Invoke();
+            }
+
+
 
         }
 

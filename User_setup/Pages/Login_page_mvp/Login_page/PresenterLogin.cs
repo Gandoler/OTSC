@@ -93,6 +93,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
             // registration
             _imodelka.UserExist += Imodelka_UserExist;
+            _imodelka.UserDidntExist += _imodelka_UserDidntExist;
             _imodelka.UserRegistered += Imodelka_UserRegistered;
             _imodelka.UserNotRegistered += Imodelka_UserNotRegistered;
 
@@ -110,7 +111,8 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
 
 
-       
+
+
 
 
 
@@ -124,6 +126,20 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 
         private void Imodelka_UserRegistered()
         {
+            if(_registrView is Form thisPAGE && _loginView is Form PreviusPage)
+            {
+                thisPAGE.Hide();
+                PreviusPage.Show();
+            }
+        }
+
+        private void Imodelka_UserExist()
+        {
+            MessageBox.Show("Such User Exist", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+        private void _imodelka_UserDidntExist()
+        {
             if (_registrView is Form thisform && _loginView is Form NextForm)
             {
                 thisform.Hide();
@@ -132,16 +148,15 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
                 MustSubscribeForm mustSubscribeForm = new();
                 _ = new PresenterMustSubscribe(mustSubscribeForm, mustSubscribeModel);
 
-                mustSubscribeForm.ShowDialog();
+                DialogResult dialogResult = mustSubscribeForm.ShowDialog();
+                if (dialogResult == DialogResult.OK)
+                {
+                    _imodelka.Registr();
+                }
+
 
                 NextForm.Show();
             }
-        }
-
-        private void Imodelka_UserExist()
-        {
-            MessageBox.Show("Such User Exist", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
         }
 
         //login

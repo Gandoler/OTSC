@@ -41,7 +41,7 @@ namespace OTSC_ui.Tools.DBTools.Managers.Login
 
 
         }
-        private bool CheckUserDidntExist(long login, string email)
+        public bool CheckUserDidntExist(long login, string email)
         {
             string queryCheckExist = $"SELECT * FROM UsersLogins WHERE login = @Login or email  =@EMAIL";
             using (MySqlCommand command = new MySqlCommand(queryCheckExist, _connectManager.SqlConnection))
