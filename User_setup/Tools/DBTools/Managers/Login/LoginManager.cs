@@ -17,14 +17,14 @@ namespace OTSC_ui.Tools.DBTools.Managers.Login
 
         public bool Login(long login, string passwoerd)
         {
-            string query = $"SELECT * FROM UsersLogins WHERE login = @Login AND password = @Password";
+            string query = $"SELECT COUNT(*) FROM UsersLogins WHERE login = @Login AND password = @Password";
             Log.Information("Try to Login in LoginManager");
             using (MySqlCommand command = new MySqlCommand(query, _connectManager.SqlConnection))
             {
                 command.Parameters.AddWithValue("@Login", login);
                 command.Parameters.AddWithValue("@Password", passwoerd);
                 int execute = Convert.ToInt32(command.ExecuteScalar());
-                if (execute != 1)
+                if (execute == 1)
                 {
                     Log.Information("Log in Successfull");
                     return true;
@@ -43,13 +43,13 @@ namespace OTSC_ui.Tools.DBTools.Managers.Login
         }
         public bool CheckUserDidntExist(long login, string email)
         {
-            string queryCheckExist = $"SELECT * FROM UsersLogins WHERE login = @Login or email  =@EMAIL";
+            string queryCheckExist = $"SELECT COUNT(*) FROM UsersLogins WHERE login = @Login or email  =@EMAIL";
             using (MySqlCommand command = new MySqlCommand(queryCheckExist, _connectManager.SqlConnection))
             {
                 command.Parameters.AddWithValue("@Login", login);
                 command.Parameters.AddWithValue("@EMAIL", email);
                 int execute = Convert.ToInt32(command.ExecuteScalar());
-                if (execute != 0)
+                if (execute == 0)
                 {
                     Log.Information("User EXIST");
                     return false;
