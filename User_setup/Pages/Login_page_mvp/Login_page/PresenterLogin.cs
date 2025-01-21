@@ -14,6 +14,7 @@ using OTSC_ui.Tools.SendMailWithcode.CodeGenerate;
 using OTSC_ui.Tools.SendMailWithcode.CodeSend;
 using System.Diagnostics;
 using User_Interface.Login_page_mvp.ForgotPasswordPage.View;
+using OTSC_ui.Tools.HTTPqUERY;
 
 namespace OTSC_ui.Pages.Login_page_mvp.Login_page
 {
@@ -144,7 +145,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             {
                 thisform.Hide();
 
-                IMustSubscribeModel mustSubscribeModel = new MustSubscribeModel(new HttpClient());
+                IMustSubscribeModel mustSubscribeModel = new MustSubscribeModel(new HttpQuerysGet(new HttpClient(), "http://localhost:5291"));
                 MustSubscribeForm mustSubscribeForm = new();
                 _ = new PresenterMustSubscribe(mustSubscribeForm, mustSubscribeModel);
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace OTSC_ui.Tools.HTTPqUERY
 {
-    internal class HttpQuerysGet
+    internal class HttpQuerysGet: IHttpQuerysGet
     {
         private readonly HttpClient _httpClient;
         private readonly string _url = string.Empty;
