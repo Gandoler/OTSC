@@ -71,5 +71,17 @@ namespace OTSC_ui.Properties {
                 this["TelegramBot"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:5291")]
+        public string ServerUrl {
+            get {
+                return ((string)(this["ServerUrl"]));
+            }
+            set {
+                this["ServerUrl"] = value;
+            }
+        }
     }
 }

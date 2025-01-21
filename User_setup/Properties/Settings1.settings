@@ -14,5 +14,8 @@
     <Setting Name="TelegramBot" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://t.me/HappyBDay_OTSC_bot</Value>
     </Setting>
+    <Setting Name="ServerUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost:5291</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

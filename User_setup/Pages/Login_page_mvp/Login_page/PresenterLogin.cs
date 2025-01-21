@@ -145,7 +145,7 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page
             {
                 thisform.Hide();
 
-                IMustSubscribeModel mustSubscribeModel = new MustSubscribeModel(new HttpQuerysPost(new HttpClient(), "http://localhost:5291"));
+                IMustSubscribeModel mustSubscribeModel = new MustSubscribeModel(new HttpQuerysPost(new HttpClient(), Properties.Settings1.Default.ServerUrl));
                 MustSubscribeForm mustSubscribeForm = new();
                 _ = new PresenterMustSubscribe(mustSubscribeForm, mustSubscribeModel);
 

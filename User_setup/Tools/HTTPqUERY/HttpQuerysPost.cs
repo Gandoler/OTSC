@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace OTSC_ui.Tools.HTTPqUERY
 {
-    internal class HttpQuerysPost: IHttpQuerysPost
+    public class HttpQuerysPost: IHttpQuerysPost
     {
         private readonly HttpClient _httpClient;
         private readonly string _url = string.Empty;
@@ -32,7 +32,7 @@ namespace OTSC_ui.Tools.HTTPqUERY
             var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
 
-            var response = await _httpClient.PostAsync(_url, content);
+            var response = await _httpClient.PostAsync(_url+ "/VerificationCode", content);
             if (response.IsSuccessStatusCode)
             {
                 var jsonResponse = await response.Content.ReadAsStringAsync();
