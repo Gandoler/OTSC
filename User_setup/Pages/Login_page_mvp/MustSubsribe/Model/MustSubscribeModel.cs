@@ -18,14 +18,14 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model
     public class MustSubscribeModel : IMustSubscribeModel
     {
        
-        private readonly IHttpQuerysGet httpQuerysGet;
+        private readonly IHttpQuerysPost httpQuerysGet;
         public event Action? CodeCorrect;
         public event Action? CodeIncorect;
 
         private int code;
 
 
-        public MustSubscribeModel(IHttpQuerysGet httpQuerysGet)
+        public MustSubscribeModel(IHttpQuerysPost httpQuerysGet)
         {
             this.httpQuerysGet = httpQuerysGet;
         }

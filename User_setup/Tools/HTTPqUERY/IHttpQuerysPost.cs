@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OTSC_ui.Tools.HTTPqUERY
 {
-    public interface IHttpQuerysGet
+    public interface IHttpQuerysPost
     {
         public  Task<int> SendTgCodeToTgAsync();
         public Task<int> SendTgCodeToTgAsync(long id);
