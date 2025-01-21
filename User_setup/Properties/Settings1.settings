@@ -6,7 +6,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="AppsettingsPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\Николай\Source\Repos\Gandoler\Project_cpo\User_setup\Properties\Secretiki.json</Value>
+      <Value Profile="(Default)">C:\Users\glkru\OneDrive\Desktop\prj\Project_cpo\User_setup\Tools\AppSettingJsonPhars\RealSAppSettimgs.json</Value>
     </Setting>
     <Setting Name="ID" Type="System.Int64" Scope="User">
       <Value Profile="(Default)">0</Value>

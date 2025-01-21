@@ -49,7 +49,7 @@ namespace OTSC_ui.Tools.DBTools.Managers.Login
                 command.Parameters.AddWithValue("@Login", login);
                 command.Parameters.AddWithValue("@EMAIL", email);
                 int execute = Convert.ToInt32(command.ExecuteScalar());
-                if (execute == 0)
+                if (execute != 0)
                 {
                     Log.Information("User EXIST");
                     return false;

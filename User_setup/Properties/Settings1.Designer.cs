@@ -37,8 +37,8 @@ namespace OTSC_ui.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Николай\\Source\\Repos\\Gandoler\\Project_cpo\\User_setup\\Properties\\Secretik" +
-            "i.json")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\glkru\\OneDrive\\Desktop\\prj\\Project_cpo\\User_setup\\Tools\\AppSettingJsonPh" +
+            "ars\\RealSAppSettimgs.json")]
         public string AppsettingsPath {
             get {
                 return ((string)(this["AppsettingsPath"]));
