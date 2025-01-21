@@ -1,14 +1,13 @@
-﻿using Newtonsoft.Json;
-using Serilog;
+﻿using Serilog;
 
 namespace OTSC_ui.Tools.AppSettingJsonPhars.Temaplates
 {
-    public class EmailSettings : Itemplates
+    public class EmailSettings : ITemplates
     {
-        public string SmtpServer { get; set; }
+        public string SmtpServer { get; set; } = string.Empty;
         public int SmtpPort { get; set; }
-        public string SenderEmail { get; set; }
-        public string SenderPassword { get; set; }
+        public string SenderEmail { get; set; } = string.Empty;
+        public string SenderPassword { get; set; } = string.Empty;
 
 
         public string GetConnectionString()

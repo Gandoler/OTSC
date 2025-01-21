@@ -1,5 +1,4 @@
-﻿using OTSC_ui.OldCode.ExtendedTool.Connect_and_query.query;
-using OTSC_ui.Tools.DBTools.Managers;
+﻿using OTSC_ui.Tools.DBTools.Managers.Login;
 using Serilog;
 
 namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
@@ -16,14 +15,21 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
             _loginManager = loginManager;
         }
 
+        
+        //login
         public event Action? LoginGo;
         public event Action? LogMismatch;
-        public event Action? UserExist;
-        public event Action? UserRegistered;
         public event EventHandler<string>? LoginFailed;
+
+        //registr
+        public event Action? UserRegistered;
         public event EventHandler<string>? UserNotRegistered;
 
-        //public event Action UserExist;
+
+
+        //check user existance
+        public event Action? UserExist;
+        public event Action? UserDidntExist;
 
         public long Login
         {
@@ -95,11 +101,28 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
 
         }
 
+        public void CheckUserDidntExist()
+        {
+            if(!_loginManager.CheckUserDidntExist(_login, _email))
+            {
+                UserExist?.Invoke();
+            }
+            else
+            {
+                Properties.Settings1.Default.ID = _login;
+                UserDidntExist?.Invoke();
+            }
+
+
+
+        }
+
         public void Registr()
         {
             try
             {
                 if (_loginManager.Registr(_login, _email, _password)){
+                    Properties.Settings1.Default.ID = _login;
                     UserRegistered?.Invoke();
                 }
                 else
@@ -110,9 +133,8 @@ namespace OTSC_ui.Pages.Login_page_mvp.Login_page.Model
             catch (Exception ex)
             {
                 UserNotRegistered?.Invoke(this, ex.Message);
+                Log.Error($"Erorr in LoginModel  :{ex.Message}");
             }
         }
-
-
     }
 }

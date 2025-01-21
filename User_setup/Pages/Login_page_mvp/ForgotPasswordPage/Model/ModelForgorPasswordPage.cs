@@ -1,24 +1,72 @@
-﻿namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.Model
+﻿using OTSC_ui.Tools.DBTools.Managers.ForgotPSW;
+using OTSC_ui.Tools.SendMailWithcode.CodeGenerate;
+using OTSC_ui.Tools.SendMailWithcode.CodeSend;
+namespace OTSC_ui.Pages.Login_page_mvp.ForgotPasswordPage.Model
 {
     internal class ModelForgorPasswordPage : IModelForgotPasswordPage
+
     {
-        private int _code;
 
-        public int Code { get => _code; set => _code = value; }
+        private readonly IEmailService _emailService;
+        private readonly IForgotpasswordManager _forgotpasswordManager;
+        private readonly ICodeGeneratorMail _codegen;
+        private string _code;
+        private string _email = string.Empty;
 
-        bool IModelForgotPasswordPage.CheckCode(short Code)
+        public string Code { get => _code;}
+
+        public event Action? CodeSendSuccessful;
+        public event Action? CodeSendFailedUserdidntExist;
+        public event Action? CodeMismatch;
+        public event Action? PasswordChangeSuccessfull;
+        public event Action? PasswordChangeFailed;
+        public event Action? CodeMatch;
+
+
+        public ModelForgorPasswordPage(IEmailService emailService, IForgotpasswordManager forgotpasswordManager, ICodeGeneratorMail codegen)
         {
-            throw new NotImplementedException();
+            _emailService = emailService;
+            _forgotpasswordManager = forgotpasswordManager;
+            _codegen = codegen;
+            _code = _codegen.GenerateCode();
         }
 
-        void IModelForgotPasswordPage.MakeNewPasswordQuery(string First, string Second)
+        public void SendCode(string email)
         {
-            throw new NotImplementedException();
+            if (_forgotpasswordManager.CheckUserExist(email))
+            {
+                _email= email;
+                _emailService.SendEmailAsync(email, "You code", $"{_code}");
+                CodeSendSuccessful?.Invoke();
+            }
+            else
+            {
+                CodeSendFailedUserdidntExist?.Invoke();
+            }
         }
 
-        bool IModelForgotPasswordPage.SendCode(string email)
+        public void ChangePassword(string password)
         {
-            throw new NotImplementedException();
+            if (_forgotpasswordManager.ChangePassword(password, _email))
+            {
+                PasswordChangeSuccessfull?.Invoke();
+            }
+            else
+            {
+                PasswordChangeFailed?.Invoke();
+            }
+        }
+
+        void IModelForgotPasswordPage.CheckCode(string code)
+        {
+            if (code.Equals(_code))
+            {
+                CodeMatch?.Invoke();
+            }
+            else
+            {
+                CodeMismatch?.Invoke();
+            }
         }
     }
 }

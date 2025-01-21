@@ -103,6 +103,16 @@ namespace OTSC_ui.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_qr_code_scan_5703759 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-qr-code-scan-5703759", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GoBack_newPassword {
             get {
                 object obj = ResourceManager.GetObject("GoBack_newPassword", resourceCulture);
@@ -146,6 +156,66 @@ namespace OTSC_ui.Properties {
         internal static System.Drawing.Bitmap OnlyReflenniy {
             get {
                 object obj = ResourceManager.GetObject("OnlyReflenniy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OnlyReflenniyForMustSubscribe {
+            get {
+                object obj = ResourceManager.GetObject("OnlyReflenniyForMustSubscribe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap telegram {
+            get {
+                object obj = ResourceManager.GetObject("telegram", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap telegram__1_ {
+            get {
+                object obj = ResourceManager.GetObject("telegram (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap telegram__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("telegram (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Telegram_2013_logo_svg {
+            get {
+                object obj = ResourceManager.GetObject("Telegram_2013_logo.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap telegram1 {
+            get {
+                object obj = ResourceManager.GetObject("telegram1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

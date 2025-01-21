@@ -19,6 +19,7 @@ namespace OTSC_ui.Tools.DBTools.Connection
                 }
                 else if (_connection.State == ConnectionState.Closed)
                 {
+                    
                     _connection.Open(); 
                 }
                 else if (_connection.State == ConnectionState.Broken)
