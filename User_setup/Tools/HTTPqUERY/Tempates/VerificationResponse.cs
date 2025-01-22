@@ -1,4 +1,4 @@
-﻿namespace OTSC_ui.Tools.HTTPqUERY
+﻿namespace OTSC_ui.Tools.HTTPqUERY.Tempates
 {
     public class VerificationResponse
     {

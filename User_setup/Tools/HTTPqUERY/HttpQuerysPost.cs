@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using OTSC_ui.Tools.HTTPqUERY.Tempates;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -64,9 +65,21 @@ namespace OTSC_ui.Tools.HTTPqUERY
             }
         }
 
+        public async Task<int>SendCodeToMail(string email)
+        {
+            ChangePassRequest changePassRequest = new ChangePassRequest(email);
+            var jsonContent = JsonConvert.SerializeObject(changePassRequest);
+            var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
 
+            var response = await _httpClient.PostAsync(_url + "/SendMail", content);
+            if (response.IsSuccessStatusCode)
+            {
 
+            }
+        }
+
+        
 
     }
 }
