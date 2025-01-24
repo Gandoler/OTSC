@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OTSC_ui.Tools.HTTPqUERY.Tempates
+namespace OTSC_ui.Tools.Http.Mail.Templates
 {
     internal class ChangePassRequest
     {
-        public string Email { get; set; } = String.Empty;
+        public string Email { get; set; } = string.Empty;
 
 
 

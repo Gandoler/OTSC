@@ -1,4 +1,4 @@
-﻿namespace OTSC_ui.Tools.HTTPqUERY.Tempates
+﻿namespace OTSC_ui.Tools.Http.Telegram.Templates
 {
     public class VerificationResponse
     {

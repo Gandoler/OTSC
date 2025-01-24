@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using OTSC_ui.Tools.Http.Mail.Templates;
+using OTSC_ui.Tools.Http.Telegram.Templates;
 using OTSC_ui.Tools.HTTPqUERY.Tempates;
 using Serilog;
 using System;
@@ -9,9 +11,9 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OTSC_ui.Tools.HTTPqUERY
+namespace OTSC_ui.Tools.Http.Telegram
 {
-    public class HttpQuerysPost: IHttpQuerysPost
+    public class HttpQuerysPost : IHttpQuerysPost
     {
         private readonly HttpClient _httpClient;
         private readonly string _url = string.Empty;
@@ -23,7 +25,7 @@ namespace OTSC_ui.Tools.HTTPqUERY
         }
 
         public async Task<int> SendTgCodeToTgAsync() => await MakePostQueryTelegram(Properties.Settings1.Default.ID);
-        public async Task<int> SendTgCodeToTgAsync(long id) => await  MakePostQueryTelegram(id);
+        public async Task<int> SendTgCodeToTgAsync(long id) => await MakePostQueryTelegram(id);
 
 
         private async Task<int> MakePostQueryTelegram(long id)
@@ -33,7 +35,7 @@ namespace OTSC_ui.Tools.HTTPqUERY
             var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
 
-            var response = await _httpClient.PostAsync(_url+ "/VerificationCode", content);
+            var response = await _httpClient.PostAsync(_url + "/VerificationCode", content);
             if (response.IsSuccessStatusCode)
             {
                 var jsonResponse = await response.Content.ReadAsStringAsync();
@@ -65,7 +67,7 @@ namespace OTSC_ui.Tools.HTTPqUERY
             }
         }
 
-        public async Task<int>SendCodeToMail(string email)
+        public async Task<int> SendCodeToMail(string email)
         {
             ChangePassRequest changePassRequest = new ChangePassRequest(email);
             var jsonContent = JsonConvert.SerializeObject(changePassRequest);
@@ -79,7 +81,7 @@ namespace OTSC_ui.Tools.HTTPqUERY
             }
         }
 
-        
+
 
     }
 }

@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using OTSC_ui.Tools.HTTPqUERY;
+using OTSC_ui.Tools.Http.Telegram.Templates;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -17,17 +16,16 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model
 {
     public class MustSubscribeModel : IMustSubscribeModel
     {
-       
-        private readonly IHttpQuerysPost httpQuerysGet;
+        private readonly HttpClient _httpClient;
         public event Action? CodeCorrect;
         public event Action? CodeIncorect;
 
         private int code;
 
 
-        public MustSubscribeModel(IHttpQuerysPost httpQuerysGet)
+        public MustSubscribeModel( HttpClient httpClient)
         {
-            this.httpQuerysGet = httpQuerysGet;
+            _httpClient = httpClient;
         }
 
         public void CheckCode(string Code)
@@ -62,27 +60,74 @@ namespace OTSC_ui.Pages.Login_page_mvp.MustSubsribe.Model
 
         public async Task GetCodeHttp()// пока как есть напишу потом над все грамотно вынести
         {
-            int i = await httpQuerysGet.SendTgCodeToTgAsync();
-            if (i != 0)
+            string url = "http://localhost:5291/VerificationCode/";
+            url += Properties.Settings1.Default.ID.ToString();
+
+            
+
+            var response = await _httpClient.GetAsync( url );
+            if (response.IsSuccessStatusCode)
             {
-                this.code = i;
+                var jsonResponse = await response.Content.ReadAsStringAsync();
+                var verificationResponse = new VerificationResponse();
+                if (!string.IsNullOrEmpty(jsonResponse))
+                {
+                    verificationResponse = JsonConvert.DeserializeObject<VerificationResponse>(jsonResponse);
+                }
+
+                if (verificationResponse != null && verificationResponse.IsSubscribed)
+                {
+                    this.code = verificationResponse.Code;
+                    Log.Information($"Verification code received: {this.code}");
+                }
+                else
+                {
+                    // Обработка ситуации, если пользователь не подписан
+                    Log.Information($"User is not subscribed to the bot");
+                    MessageBox.Show("Вы ещё не подписались на бота. Пожалуйста, подпишитесь и повторите попытку.", "Подписка на бота", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                MessageBox.Show("Вы ещё не подписались на бота. Пожалуйста, подпишитесь и повторите попытку.", "Подписка на бота", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Log.Information($"Bad response in {nameof(GetCodeHttp)}");
+                
             }
         }
 
         public async Task GetCode(long id)// пока как есть напишу потом над все грамотно вынести
         {
-            int i = await httpQuerysGet.SendTgCodeToTgAsync(id);
-            if (i != 0)
+            string url = "http://localhost:5291/VerificationCode/";
+            url += id.ToString();
+
+
+
+            var response = await _httpClient.GetAsync(url);
+            
+            if (response.IsSuccessStatusCode)
             {
-                this.code = i;
+                var jsonResponse = await response.Content.ReadAsStringAsync();
+                var verificationResponse = new VerificationResponse();
+                if (!string.IsNullOrEmpty(jsonResponse))
+                {
+                    verificationResponse = JsonConvert.DeserializeObject<VerificationResponse>(jsonResponse);
+                }
+
+                if (verificationResponse != null && verificationResponse.IsSubscribed)
+                {
+                    this.code = verificationResponse.Code;
+                    Log.Information($"Verification code received: {this.code}");
+                }
+                else
+                {
+                    // Обработка ситуации, если пользователь не подписан
+                    Log.Information($"User is not subscribed to the bot");
+                    MessageBox.Show("Вы ещё не подписались на бота. Пожалуйста, подпишитесь и повторите попытку.", "Подписка на бота", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                MessageBox.Show("Вы ещё не подписались на бота. Пожалуйста, подпишитесь и повторите попытку.", "Подписка на бота", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Log.Information($"Bad response in {nameof(GetCodeHttp)}");
+
             }
         }
 

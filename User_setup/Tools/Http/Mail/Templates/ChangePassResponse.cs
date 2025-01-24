@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OTSC_ui.Tools.HTTPqUERY.Tempates
+namespace OTSC_ui.Tools.Http.Mail.Templates
 {
     internal class ChangePassResponse
     {
